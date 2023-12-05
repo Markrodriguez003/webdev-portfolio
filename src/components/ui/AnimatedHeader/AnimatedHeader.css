@@ -1,0 +1,21 @@
+.header1 {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-family: "body", serif;
+  letter-spacing: -3px;
+  transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  color: PaleGoldenRod;
+  outline: none;
+  text-align: start;
+  cursor: pointer;
+}
+
+.header1:hover {
+  font-variation-settings: "wght" 582;
+  letter-spacing: 0.1px;
+  color: black;
+  padding: 0.5px;
+  background-color: rgb(245, 255, 250);
+}
