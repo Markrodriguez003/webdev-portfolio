@@ -9,7 +9,7 @@ export const Card = styled.div`
   /* background: rgb(2, 120, 36); */
   border: rgba(255, 255, 255, 0.1) 1px solid;
   /* width: 50vw; */
-  height: 800px;
+  height: 90vh;
 `;
 
 export const CardHeader = styled.div`
@@ -48,49 +48,11 @@ export const CardFooter = styled.section`
   width: 100%;
   bottom: 0;
   font-family: "body";
-  letter-spacing: 0.5px;
   color: white;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 10px;
-
-  & button {
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 4px;
-    padding: 6px 15px;
-    cursor: pointer;
-    background-color: transparent;
-    transition: 0.4s ease-in-out;
-  }
-
-  & button:active {
-    background-color: yellow;
-  }
-  & span * {
-    vertical-align: auto;
-    padding-right: 4px;
-  }
-
-  & button.youtube {
-    border: red 2px solid;
-    &:hover{
-      background-color: red;
-    }
-  }
-  & button.github {
-    border: green 2px solid;
-    &:hover{
-      background-color: green;
-    }
-  }
-  & button.website {
-    border: blue 2px solid;
-    &:hover{
-      background-color: blue;
-    }
+  background-color: rgba(255,25,255,0.2);
+  & * {
+    
   }
 `;

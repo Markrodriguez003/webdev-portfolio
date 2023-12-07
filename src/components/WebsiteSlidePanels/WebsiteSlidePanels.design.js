@@ -1,5 +1,20 @@
 import styled, { css, keyframes } from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+function heightSetter(h) {
+  console.log(`Styled component height: `, h);
+
+  return "795px";
+}
+
+export const StyledSwiper = styled(Swiper)`
+  width: 100%;
+  /* height: 739px; */
+  height: ${(props) => props.windowheight !== undefined ? `${props.windowheight}px` : "10px"};
+  margin-top: 0px;
+
+  text-align: center;
+`;
 export const IntroductionContainer = styled.div`
   display: inline-flex;
   position: relative;
@@ -21,6 +36,7 @@ export const WelcomeContainer = styled.div`
     width: 500px;
     padding-bottom: 50px;
     margin-bottom: -38px;
+    font-size: 18px;
   }
   & h1 {
     font-size: 5.2em;
@@ -49,9 +65,9 @@ export const NavContainer = styled.nav`
   & ul li a {
     color: white;
     font-size: 3em;
-    font-weight: bold;
-    letter-spacing: 1.8px;
-    font-family: "header";
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    font-family: "body";
     text-decoration: none;
     /* padding: 2px; */
     transition: linear 0.2s;
@@ -71,12 +87,4 @@ export const NavContainer = styled.nav`
   }
 `;
 
-export const PaginationTag = styled.span`
-  position: absolute;
-  right: -10px;
-  bottom:280px;
-  color: rgba(235, 235, 235, 0.6);
-  font-size: 20px;
-  font-family: body;
-  transform: rotate(-90deg);
-`;
+ 

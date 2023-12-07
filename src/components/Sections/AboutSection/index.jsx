@@ -1,5 +1,9 @@
 import HeaderBorderBox from "../../ui/HeaderBorderBox";
 import { TechnologiesSkillsBar, FutureTechSkillsBar } from "../../ui/SkillBars";
+import { FaRegEnvelope } from "react-icons/fa";
+import { LuMenuSquare } from "react-icons/lu";
+import PaginationTag from "../../ui/PaginationTag";
+import githubIcon from "../../../assets/icons/github-icon-w.png";
 // ? Notes:
 // ? https://www.youtube.com/watch?v=h4227nm08G8
 // ? https://codepen.io/yomateo/pen/ypbNrJ
@@ -17,11 +21,28 @@ function AboutSection() {
       <SectionContainer>
         {/* // todo: move this to another component */}
         <LeftHeaderColumn>
-          <HeaderBorderBox props={{ type: "planets", title: "ABOUT" }} />
+          <HeaderBorderBox props={{ type: "boxes", title: "ABOUT" }} />
           <p>Here is some information about me.</p>
+          <br />
+          <p>
+            <LuMenuSquare
+              style={{ verticalAlign: "center", paddingRight: "5px" }}
+            />
+            Resume: <a href="#">View</a> | <a href="#">Download</a>
+          </p>
+          <br />
+          <p>
+            <img
+              src={githubIcon}
+              width={"20px"}
+              height={"20px"}
+              style={{ paddingRight: "10px" }}
+            />
+            Github: github.com/MarkRodriguez003
+          </p>
         </LeftHeaderColumn>
         <RightColumnPanel>
-          <h1 id="inverted-header">Coding and beyond..</h1>
+          <h1 id="inverted-header">>_Coding and beyond..</h1>
           <p>
             I have been studying web development coding for 3 years and my
             interest has only grown in the field! I want to continue to expand

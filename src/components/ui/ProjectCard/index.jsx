@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Card, CardHeader, CardBody, CardFooter } from "./ProjectCard.design";
 import Accordion from "../Accordion";
+import SiteButton from "../SiteButton";
 // ICONS
 import { IoLogoYoutube } from "react-icons/io5";
 import { BsGithub, BsGlobe } from "react-icons/bs";
@@ -43,30 +44,29 @@ function ProjectCard({ props }) {
             <Accordion props={props} />
           </CardBody>
           <CardFooter>
-            <a href={youtube}>
-              <button className="youtube">
-                <span>
-                  <IoLogoYoutube />
-                </span>
-                Youtube
-              </button>
-            </a>
-            <a href={github}>
-              <button className="github">
-                <span>
-                  <BsGithub />
-                </span>
-                Github
-              </button>
-            </a>
-            <a href={website}>
-              <button className="website">
-                <span>
-                  <BsGlobe />
-                </span>
-                Site
-              </button>
-            </a>
+            <SiteButton
+              url="https://www.youtube.com"
+              styling="youtube"
+              title="Youtube"
+              icon={<IoLogoYoutube />}
+            />
+            <SiteButton
+              url="https://www.github.com"
+              styling="github"
+              title="Github"
+              icon={<BsGithub />}
+            />
+            <SiteButton
+              url="https://www.nhl.com"
+              styling="website"
+              title="Website"
+              icon={<BsGlobe />}
+            />
+            <SiteButton
+              url="https://www.nhl.com"
+              title="Website"
+              icon={<BsGlobe />}
+            />
           </CardFooter>
         </Card>
       </div>

@@ -155,64 +155,63 @@ export const BoxContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  padding-left: 960px;
-  padding-top: 80px;
+  transform: scale(1.25) translate(-5px, 70px);
 `;
 export const BoxFlex = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80px;
-  height: 80px;
+  height: 40px;
   margin: 0 -80px 0 0;
-
-  &:nth-of-type(4) div:nth-of-type(1) {
+  transform: scale(0.6) translate(0px, -70px);
+  & .cube:nth-of-type(4) .wall:nth-of-type(1) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s infinite;
   }
 
-  &:nth-of-type(4) div:nth-of-type(1) {
+  & .cube:nth-of-type(4) .wall:nth-of-type(1) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(2) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(2) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(1) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(1) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.7s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(2) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(2) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.7s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(3) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(3) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(1) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(1) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(2) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(2) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(3) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(3) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(4) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(4) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(2) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(2) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(3) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(3) {
     animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(4) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(4) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(3) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(3) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 1s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(4) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(4) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 1s infinite;
   }
-  &:nth-of-type(4) div:nth-of-type(4) {
+  &.cube:nth-of-type(4) .wall:nth-of-type(4) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 1.1s infinite;
   }
 `;
@@ -221,9 +220,9 @@ export const BoxFlex = styled.div`
 
 export const Cube = styled.div`
   position: relative;
-  width: 1px;
-  height: 1px;
-  margin: 0 80px 0 0;
+  /* width: 100px; */
+  height: 20px;
+  margin: 0 65px 0 0;
   transform-style: preserve-3d;
 `;
 
@@ -238,22 +237,22 @@ export const CubeBox = styled.div`
   border: solid 1px #fff;
   animation: color 2s linear 1.5s infinite;
 
-  &.front {
+  &.wall .front {
     transform: translateZ(calc(40px / 2));
   }
-  &.back {
+  &.wall .back {
     transform: translateZ(calc(-40px / 2)) rotateY(180deg);
   }
-  &.right {
+  &.wall .right {
     transform: translateX(calc(40px / 2)) rotateY(90deg);
   }
-  &.left {
+  &.wall .left {
     transform: translateX(calc(-40px / 2)) rotateY(-90deg);
   }
-  &.top {
+  &.wall .top {
     transform: translateY(calc(-40px / 2)) rotateX(90deg);
   }
-  &.bottom {
+  &.wall .bottom {
     transform: translateY(calc(40px / 2)) rotateX(-90deg);
   }
 `;

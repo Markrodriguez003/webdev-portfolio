@@ -3,6 +3,30 @@
   padding: 0;
 } */
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: white;
+}
+
 @font-face {
   font-family: "header";
   src: url("assets/fonts/Jost-VariableFont_wght.ttf");

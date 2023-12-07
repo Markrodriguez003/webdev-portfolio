@@ -23,10 +23,12 @@ export const BarContainer = styled.div`
     margin-right: auto;
     transition: 2s ease-in-out;
     color: aliceblue;
+  }
 
-    & div#flex-icon:hover {
-      background-color: orange;
-    }
+  & div #flex-icon {
+    background-color: goldenrod;
+    color: white;
+    font-size: 30px;
   }
 `;
 

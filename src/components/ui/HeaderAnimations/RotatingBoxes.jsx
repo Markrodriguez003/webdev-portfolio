@@ -8,9 +8,9 @@ import {
 function RotatingBoxes() {
   return (
     <>
-      <BoxContainer>
-        <BoxFlex>
-          <Cube>
+      {/* <BoxContainer className="container">
+        <BoxFlex className="flex">
+          <Cube className="cube">
             <CubeBox className="wall front"></CubeBox>
             <CubeBox className="wall back"></CubeBox>
             <CubeBox className="wall left"></CubeBox>
@@ -18,7 +18,7 @@ function RotatingBoxes() {
             <CubeBox className="wall top"></CubeBox>
             <CubeBox className="wall bottom"></CubeBox>
           </Cube>
-          <Cube>
+          <Cube className="cube">
             <CubeBox className="wall front"></CubeBox>
             <CubeBox className="wall back"></CubeBox>
             <CubeBox className="wall left"></CubeBox>
@@ -26,7 +26,7 @@ function RotatingBoxes() {
             <CubeBox className="wall top"></CubeBox>
             <CubeBox className="wall bottom"></CubeBox>
           </Cube>
-          <Cube>
+          <Cube className="cube">
             <CubeBox className="wall front"></CubeBox>
             <CubeBox className="wall back"></CubeBox>
             <CubeBox className="wall left"></CubeBox>
@@ -34,7 +34,7 @@ function RotatingBoxes() {
             <CubeBox className="wall top"></CubeBox>
             <CubeBox className="wall bottom"></CubeBox>
           </Cube>
-          <Cube>
+          <Cube className="cube">
             <CubeBox className="wall front"></CubeBox>
             <CubeBox className="wall back"></CubeBox>
             <CubeBox className="wall left"></CubeBox>
@@ -45,7 +45,7 @@ function RotatingBoxes() {
         </BoxFlex>
 
         <BoxFlex>
-          <Cube>
+        <Cube className="cube">
             <CubeBox className="wall front"></CubeBox>
             <CubeBox className="wall back"></CubeBox>
             <CubeBox className="wall left"></CubeBox>
@@ -53,7 +53,7 @@ function RotatingBoxes() {
             <CubeBox className="wall top"></CubeBox>
             <CubeBox className="wall bottom"></CubeBox>
           </Cube>
-          <Cube>
+          <Cube className="cube">
             <CubeBox className="wall front"></CubeBox>
             <CubeBox className="wall back"></CubeBox>
             <CubeBox className="wall left"></CubeBox>
@@ -61,7 +61,7 @@ function RotatingBoxes() {
             <CubeBox className="wall top"></CubeBox>
             <CubeBox className="wall bottom"></CubeBox>
           </Cube>
-          <Cube>
+          <Cube className="cube">
             <CubeBox className="wall front"></CubeBox>
             <CubeBox className="wall back"></CubeBox>
             <CubeBox className="wall left"></CubeBox>
@@ -69,7 +69,7 @@ function RotatingBoxes() {
             <CubeBox className="wall top"></CubeBox>
             <CubeBox className="wall bottom"></CubeBox>
           </Cube>
-          <Cube>
+          <Cube className="cube">
             <CubeBox className="wall front"></CubeBox>
             <CubeBox className="wall back"></CubeBox>
             <CubeBox className="wall left"></CubeBox>
@@ -112,6 +112,76 @@ function RotatingBoxes() {
             <CubeBox className="wall bottom"></CubeBox>
           </Cube>
         </BoxFlex>
+      </BoxContainer> */}
+      <BoxContainer >
+        <BoxFlex className="flex">
+          <div className="cube">
+            <div className="wall front"></div>
+            <div className="wall back"></div>
+            <div className="wall left"></div>
+            <div className="wall right"></div>
+            <div className="wall top"></div>
+            <div className="wall bottom"></div>
+          </div>
+          <div className="cube">
+            <div className="wall front"></div>
+            <div className="wall back"></div>
+            <div className="wall left"></div>
+            <div className="wall right"></div>
+            <div className="wall top"></div>
+            <div className="wall bottom"></div>
+          </div>
+          <div className="cube">
+            <div className="wall front"></div>
+            <div className="wall back"></div>
+            <div className="wall left"></div>
+            <div className="wall right"></div>
+            <div className="wall top"></div>
+            <div className="wall bottom"></div>
+          </div>
+          <div className="cube">
+            <div className="wall front"></div>
+            <div className="wall back"></div>
+            <div className="wall left"></div>
+            <div className="wall right"></div>
+            <div className="wall top"></div>
+            <div className="wall bottom"></div>
+          </div>
+        </BoxFlex>
+        <div className="flex">
+          <div className="cube">
+            <div className="wall front"></div>
+            <div className="wall back"></div>
+            <div className="wall left"></div>
+            <div className="wall right"></div>
+            <div className="wall top"></div>
+            <div className="wall bottom"></div>
+          </div>
+          <div className="cube">
+            <div className="wall front"></div>
+            <div className="wall back"></div>
+            <div className="wall left"></div>
+            <div className="wall right"></div>
+            <div className="wall top"></div>
+            <div className="wall bottom"></div>
+          </div>
+          <div className="cube">
+            <div className="wall front"></div>
+            <div className="wall back"></div>
+            <div className="wall left"></div>
+            <div className="wall right"></div>
+            <div className="wall top"></div>
+            <div className="wall bottom"></div>
+          </div>
+          <div className="cube">
+            <div className="wall front"></div>
+            <div className="wall back"></div>
+            <div className="wall left"></div>
+            <div className="wall right"></div>
+            <div className="wall top"></div>
+            <div className="wall bottom"></div>
+          </div>
+        </div>
       </BoxContainer>
     </>
   );

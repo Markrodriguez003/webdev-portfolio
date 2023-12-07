@@ -1,5 +1,5 @@
 import { SpaceBackground } from "./BackgroundScenery.design";
-import { scrollContext } from "../../WelcomeNavBlock";
+import { scrollContext } from "../../WebsiteSlidePanels";
 
 import { useContext, useEffect } from "react";
 function BackgroundScenery() {

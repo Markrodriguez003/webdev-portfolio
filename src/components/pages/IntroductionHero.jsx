@@ -1,8 +1,8 @@
-import WelcomeNavBlock from "../WelcomeNavBlock";
+import WebsiteSlidePanels from "../WebsiteSlidePanels";
 function IntroductionHero() {
   return (
     <>
-      <WelcomeNavBlock />
+      <WebsiteSlidePanels />
     </>
   );
 }

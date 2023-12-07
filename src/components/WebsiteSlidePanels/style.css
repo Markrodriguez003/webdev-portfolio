@@ -1,7 +1,9 @@
 .mySwiper {
   /* background-color: red; */
   width: 100%;
-  height: 950px;
+  /* max-height: 950px;; */
+  /* min-height; */
+  height: 1200px;
   margin-top: 0px;
   text-align: center;
 }
