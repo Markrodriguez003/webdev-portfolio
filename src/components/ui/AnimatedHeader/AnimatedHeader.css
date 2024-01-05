@@ -1,11 +1,12 @@
 .header1 {
-  font-size: 35px;
+  font-size: 32px;
   text-transform: uppercase;
   font-family: "body", serif;
   letter-spacing: -3px;
   transition: 700ms ease;
   font-variation-settings: "wght" 311;
   margin-bottom: 0.8rem;
+  margin-right:10px;
   color: PaleGoldenRod;
   outline: none;
   text-align: start;

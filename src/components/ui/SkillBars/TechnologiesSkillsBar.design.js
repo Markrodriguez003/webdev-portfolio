@@ -7,6 +7,7 @@ export const BarContainer = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 25px;
+
   justify-content: space-evenly;
   align-content: center;
   align-items: center;
@@ -18,11 +19,15 @@ export const BarContainer = styled.div`
     justify-content: center;
     align-items: center;
     align-content: center;
-    font-size: 1.2em;
+    font-size: 0.9em;
     margin-left: auto;
     margin-right: auto;
     transition: 2s ease-in-out;
     color: aliceblue;
+    margin-bottom: 12px;
+    @media (max-width: 1199px) {
+      margin-bottom: 0px;
+    }
   }
 
   & div #flex-icon {

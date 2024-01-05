@@ -6,7 +6,7 @@ export const SectionContainer = styled.div`
   flex-direction: row;
   overflow: hidden;
   height: 100%;
-  /* background-color: blueviolet; */
+  transition: none;
 `;
 
 export const RightColumnPanel = styled.div`
@@ -21,19 +21,19 @@ export const RightColumnPanel = styled.div`
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  /* background-color: crimson; */
-  
+
   & h1 {
-    font-size: 60px;
+    font-size: 2.5em;
     background-color: aliceblue;
     color: black;
     display: inline-block;
-    padding-right: 20px;
     margin-bottom: 20px;
+    padding: 5px;
   }
   & h2 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     display: inline-block;
+    padding: 5px;
 
     & h2 #normal-header {
       text-align: left;
@@ -59,10 +59,37 @@ export const RightColumnPanel = styled.div`
   }
 `;
 
+export const ProjectItem = styled.li`
+  cursor: pointer;
+  margin-bottom: 5px;
+  color: ${(props) => (props.selected === true ? "black" : "white")};
+  background-color: ${(props) =>
+    props.selected === true ? "white" : "transparent"};
+  font-variation-settings: ${(props) =>
+    props.selected === true ? "wght 582" : "wght 311"};
+  letter-spacing: ${(props) => (props.selected === true ? "-3px" : "0.1px")};
+  transition: 0.2s linear;
+  /* &:not(:nth-child(5)){
+    color:red;
+  }; */
+
+  /* &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  } */
+`;
+export const ProjectsUL = styled.ul`
+  text-decoration: none;
+  list-style: none;
+  font-family: "body";
+  font-weight: bold;
+  padding-top: 0px;
+  text-align: start;
+`;
+
 export const LeftHeaderColumn = styled.div`
   display: flex;
   flex-direction: column;
-  /* background-color: pink; */
+
   flex-wrap: wrap;
 
   & p {

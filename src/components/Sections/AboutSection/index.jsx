@@ -21,7 +21,7 @@ function AboutSection() {
       <SectionContainer>
         {/* // todo: move this to another component */}
         <LeftHeaderColumn>
-          <HeaderBorderBox props={{ type: "boxes", title: "ABOUT" }} />
+          <HeaderBorderBox props={{ type: "waves", title: "ABOUT" }} />
           <p>Here is some information about me.</p>
           <br />
           <p>
@@ -56,20 +56,19 @@ function AboutSection() {
           </p>{" "}
           <br />
           <h2 id="normal-header">
-            Some of the technologies & skills I have acquired:{" "}
+            Technologies & skills I have acquired:{" "}
           </h2>
           <TechnologiesSkillsBar />
           <br />
           <h2 id="normal-header">
-            Current technologies currently being unpacked:{" "}
+            Technologies currently being unpacked:{" "}
           </h2>
           <FutureTechSkillsBar />
           <br />
           <h2 id="inverted-header">Besides coding...</h2>
           <p>
-            I am also a musician who likes to spend his time writing music. I am
-            into many different styles. I also like to write and currently
-            working on a sci-fi novel.
+            I love all things art! I am a musician who likes to spend his time writing and producing music of various genres.
+            In addition to music I also moonlight as an writer of sci-fi and fantasy novels.  
           </p>
         </RightColumnPanel>
       </SectionContainer>

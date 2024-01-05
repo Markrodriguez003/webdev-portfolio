@@ -10,7 +10,7 @@ export const CustomButton = styled.a`
     border: ${(props) =>
       props.styling !== undefined ? "white 2px solid" : "white 2px solid"};
     border-radius: 6px;
-    font-size: 24px;
+    font-size: 1em;
     font-weight: bold;
     margin: 4px;
     padding: 6px 15px;

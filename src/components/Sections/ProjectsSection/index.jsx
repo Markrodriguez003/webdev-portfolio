@@ -2,43 +2,68 @@ import {
   SectionContainer,
   LeftHeaderColumn,
   RightColumnPanel,
+  ProjectsUL,
+  ProjectItem,
 } from "../Sections.design";
 
+import { useState, useRef, useEffect } from "react";
 import AnimatedHeader from "../../ui/AnimatedHeader";
 import HeaderBorderBox from "../../ui/HeaderBorderBox";
 import ProjectCard from "../../ui/ProjectCard";
-
-// TEST DATA
-
-let test = {
-  title: "SASEO",
-  subHeader: "Book suggestion & Organization site",
-  content: ` Are you having a hard time finding a book? Well Saseo can help
-    you! Saseo offers users the ability to be suggested books by
-    subject or at random! Users will also have the ability to search
-    for more information on their favorite authors, as well as find
-    books via ISBN. In addition, users will be able to create their
-    own accounts and suggest reading lists to your friends and
-    families.`,
-  technologies: ["ReactJS", "MongoDB", "Axios", "OpenLibrary", "Express"],
-  techniques: [
-    "Form Validation & submission",
-    "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios, ",
-    "Use of ReactJS hooks such as:  useMemo, useContext, useState, useReducer & useCallback",
-    "Storing & retrieving site cookies",
-    "User account creation & loading",
-  ],
-  youtube: "https://www.youtube.com/",
-  github: "https://www.github.com",
-  site: "https://www.nhl.com",
-};
+import { projects } from "../../../../data/projectContent";
 
 function ProjectsSection() {
+  const [SlideProject, setSlideProject] = useState(0);
+  const [click, setClick] = useState(false);
+  const [update, setUpdate] = useState(false);
+  const [revealFade, setRevealFade] = useState(false);
+  const [projectSelect, setProjectSelect] = useState([
+    false, // SASEO
+    false, // NEPTUNES COVE
+    false, // OWADI-OWIWI
+    false, // ONLOAD
+    false, // WAAGWORD
+  ]);
+
+  function onClickSelect(key, event) {
+    setClick(() => !click);
+    setRevealFade(() => !revealFade);
+    setUpdate(!update);
+    let placeholderArr = projectSelect.map(
+      (element, index, arr) => (arr[index] = false)
+    );
+    let updatedArr = [...placeholderArr];
+    updatedArr[key] = !projectSelect[key];
+    setSlideProject(() => key);
+    setProjectSelect(() => updatedArr);
+  }
+
+  useEffect(() => {
+    console.log("Arry:", projectSelect);
+  }, [update]);
+
+  // Creates list of Projects List Items
+  const listOfProjects = projects.map((project) => {
+    return (
+      <ProjectItem
+        key={project.key}
+        data-key={project.title}
+        style={{ fontSize: "38px", textTransform: "uppercase" }}
+        onClick={(event) => onClickSelect(project.key, event)}
+        // eslint-disable-next-line react/no-unknown-property
+        toggle={revealFade}
+        selected={projectSelect[project.key]}
+      >
+        {project.title}
+      </ProjectItem>
+    );
+  });
+
   return (
     <>
       <SectionContainer>
         <LeftHeaderColumn>
-          <HeaderBorderBox props={{ type: "waves", title: "PROJECTS" }} />
+          <HeaderBorderBox props={{ type: "boxes", title: "PROJECTS" }} />
           <p>
             Here are some of my projects. I have others in the chamber as well
             so check back to see any updates!
@@ -46,37 +71,24 @@ function ProjectsSection() {
           <br />
           <br />
           <br />
-          <ul
+          <span
             style={{
               color: "white",
-              textDecoration: "none",
-              listStyle: "none",
-              fontSize: "40px",
-              fontFamily: "body",
-              fontWeight: "bold",
-              paddingTop: "0px",
-              textAlign: "start",
+              backgroundColor: "white",
+              fontSize: "1px",
+              marginBottom: "8px",
+              marginLeft: "40px",
+              marginRight: "40px",
             }}
           >
-            <li>
-              <AnimatedHeader>SASEO</AnimatedHeader>
-            </li>
-            <li>
-              <AnimatedHeader>NEPTUNES COVE</AnimatedHeader>
-            </li>
-            <li>
-              <AnimatedHeader>OWADI-OWIWI</AnimatedHeader>
-            </li>
-            <li>
-              <AnimatedHeader>ONLOAD</AnimatedHeader>
-            </li>
-            <li>
-              <AnimatedHeader>WAAGWORD</AnimatedHeader>
-            </li>
-          </ul>
+            _
+          </span>
+          <nav>
+            <ProjectsUL>{listOfProjects}</ProjectsUL>
+          </nav>
         </LeftHeaderColumn>
         <RightColumnPanel>
-          <ProjectCard props={test} />
+          <ProjectCard props={projects[SlideProject]} />
         </RightColumnPanel>
       </SectionContainer>
     </>

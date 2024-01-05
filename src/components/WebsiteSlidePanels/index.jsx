@@ -6,7 +6,11 @@
 // https://codepad.co/snippet/retro-wave-animation
 // https://codepen.io/WilliamStaudenmeier/pen/eYQyRXz
 // https://www.youtube.com/watch?v=5f5wwQb22tE&ab_channel=RedStapler
-import { StyledSwiper } from "./WebsiteSlidePanels.design.js";
+import {
+  StyledSwiper,
+  FullView,
+  MiniView,
+} from "./WebsiteSlidePanels.design.js";
 import "./style.css";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -64,38 +68,48 @@ function WebsiteSlidePanels() {
   return (
     <>
       <scrollContext.Provider value={scrollDirection}>
-        <PaginationTag>{sectionType}</PaginationTag>
+        {/* <PaginationTag>{sectionType}</PaginationTag> */}
         <BackgroundScenery />
 
-        <StyledSwiper
-          direction={"vertical"}
-          slidesPerView={1}
-          // spaceBetween={30}
-          mousewheel={true}
-          simulateTouch={true}
-          speed={"985"}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Mousewheel, Pagination]}
-          // className="mySwiper"
-          onActiveIndexChange={(event) => onScrollBehavior(event)}
-          windowheight={windowHeightSize}
-        >
-          <SwiperSlide>
-            <Home />
-          </SwiperSlide>
-          <SwiperSlide>
-            <MeteorShower />
-            <AboutSection />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProjectsSection />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ContactSection />
-          </SwiperSlide>
-        </StyledSwiper>
+        <FullView>
+          <StyledSwiper
+            direction={"vertical"}
+            slidesPerView={1}
+            // spaceBetween={30}
+            mousewheel={true}
+            simulateTouch={true}
+            speed={"985"}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Mousewheel, Pagination]}
+            // className="mySwiper"
+            onActiveIndexChange={(event) => onScrollBehavior(event)}
+            windowheight={windowHeightSize}
+          >
+            <SwiperSlide>
+              <Home />
+            </SwiperSlide>
+            <SwiperSlide>
+              <MeteorShower />
+              <AboutSection />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectsSection />
+            </SwiperSlide>
+            {/* <SwiperSlide>
+              <ContactSection />
+            </SwiperSlide> */}
+          </StyledSwiper>
+        </FullView>
+        {/* 
+        <MiniView>
+          <Home />
+          <MeteorShower />
+          <AboutSection />
+          <ProjectsSection />
+          <ContactSection />
+        </MiniView> */}
       </scrollContext.Provider>
     </>
   );

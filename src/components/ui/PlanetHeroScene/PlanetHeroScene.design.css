@@ -6,7 +6,15 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  height: 300px;
+  /* margin-bottom: calc(15% + 20px); */
+  margin-bottom: 225px;
+  /* height: 300px; */
+}
+
+@media screen and (max-width: 800px) {
+  .centered-container {
+    transform: scale(0.6);
+  }
 }
 
 .planet-background {
@@ -16,9 +24,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  top: -395px;
-  width: 650px;
-  height: 650px;
+  top: -345px;
+  width: 550px;
+  height: 550px;
   border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -47,24 +55,24 @@
 }
 
 @keyframes spin {
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-  
-  @keyframes satellite-spin {
-    49% {
-      z-index: 1;
-    }
-  
-    50% {
-      bottom: 22.3em;
-      left: -23em;
-      z-index: -1;
-    }
-  
-    100% {
-      z-index: -1;
-    }
+}
+
+@keyframes satellite-spin {
+  49% {
+    z-index: 1;
   }
+
+  50% {
+    bottom: 22.3em;
+    left: -23em;
+    z-index: -1;
+  }
+
+  100% {
+    z-index: -1;
+  }
+}
