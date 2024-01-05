@@ -2,12 +2,12 @@ import styled, { css, keyframes } from "styled-components";
 
 const fadeIn = keyframes`
   0% { opacity: 0; }
-  100% { opacity: 1; }
+  100% { opacity: 1;}
 `;
 
 const fadeInUpdate = keyframes`
   0% { opacity: 0; }
-  100% { opacity: 0.2; }
+  100% { opacity: 1; }
 `;
 
 export const Card = styled.div`
@@ -18,14 +18,14 @@ export const Card = styled.div`
   align-content: start;
   border: rgba(255, 255, 255, 0.1) 1px solid;
   height: 90vh;
-  margin-left:12px;
+  margin-left: 12px;
   animation: ${(props) =>
     props.toggle
       ? css`
-          ${fadeIn} 1s linear
+          ${fadeIn} 0.3s ease-in-out
         `
       : css`
-          ${fadeInUpdate} 1s linear
+          ${fadeInUpdate} 0.3s ease-in-out
         `};
 `;
 

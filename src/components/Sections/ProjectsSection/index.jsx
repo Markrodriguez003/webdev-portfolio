@@ -6,6 +6,12 @@ import {
   ProjectItem,
 } from "../Sections.design";
 
+// animation design ideas
+// https://codepen.io/bramus/pen/wvRqVBm
+// https://codepen.io/tyler-chipman/pen/YzxKWMx
+// https://codepen.io/indrekpaas/pen/xEmRVd
+// https://www.youtube.com/watch?v=Il_GKGFggWY&ab_channel=RobotBobby
+
 import { useState, useRef, useEffect } from "react";
 import AnimatedHeader from "../../ui/AnimatedHeader";
 import HeaderBorderBox from "../../ui/HeaderBorderBox";
@@ -27,7 +33,7 @@ function ProjectsSection() {
 
   function onClickSelect(key, event) {
     setClick(() => !click);
-    setRevealFade(() => !revealFade);
+    setRevealFade(!revealFade);
     setUpdate(!update);
     let placeholderArr = projectSelect.map(
       (element, index, arr) => (arr[index] = false)
@@ -48,7 +54,6 @@ function ProjectsSection() {
       <ProjectItem
         key={project.key}
         data-key={project.title}
-        style={{ fontSize: "38px", textTransform: "uppercase" }}
         onClick={(event) => onClickSelect(project.key, event)}
         // eslint-disable-next-line react/no-unknown-property
         toggle={revealFade}
@@ -71,24 +76,17 @@ function ProjectsSection() {
           <br />
           <br />
           <br />
-          <span
-            style={{
-              color: "white",
-              backgroundColor: "white",
-              fontSize: "1px",
-              marginBottom: "8px",
-              marginLeft: "40px",
-              marginRight: "40px",
-            }}
-          >
-            _
-          </span>
+
           <nav>
             <ProjectsUL>{listOfProjects}</ProjectsUL>
           </nav>
         </LeftHeaderColumn>
         <RightColumnPanel>
-          <ProjectCard props={projects[SlideProject]} />
+          <ProjectCard
+            key={(`Project: `, SlideProject)}
+            props={projects[SlideProject]}
+            toggle={revealFade}
+          />
         </RightColumnPanel>
       </SectionContainer>
     </>

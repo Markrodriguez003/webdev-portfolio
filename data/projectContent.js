@@ -96,4 +96,23 @@ export const projects = [
     github: "https://www.github.com",
     site: "https://www.nhl.com",
   },
+  {
+    key: 5,
+    title: "Portfolio",
+    subHeader: "My web developer portfolio",
+    content: `While password generators might seem simple, this specific password generators 
+    offers more robust password generation by adding advance features such as prefix, 
+    postfix and key word insertion. In addition the user has access to create SSH keys.`,
+    technologies: ["Javascript", "Electron", "Jquery", "Crypto.js"],
+    techniques: [
+      "Form Validation & submission",
+      "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios, ",
+      "Use of ReactJS hooks such as:  useMemo, useContext, useState, useReducer & useCallback",
+      "Storing & retrieving site cookies",
+      "User account creation & loading",
+    ],
+    youtube: "https://www.youtube.com/",
+    github: "https://www.github.com",
+    site: "https://www.nhl.com",
+  },
 ];

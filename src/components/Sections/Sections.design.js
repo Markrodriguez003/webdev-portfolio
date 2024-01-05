@@ -61,10 +61,12 @@ export const RightColumnPanel = styled.div`
 
 export const ProjectItem = styled.li`
   cursor: pointer;
-  margin-bottom: 5px;
-  color: ${(props) => (props.selected === true ? "black" : "white")};
+  text-transform: uppercase;
+  font-size: 33px;
+  margin-bottom: 10px;
+  color: ${(props) => (props.selected === true ? "black" : "aliceblue")};
   background-color: ${(props) =>
-    props.selected === true ? "white" : "transparent"};
+    props.selected === true ? "aliceblue" : "transparent"};
   font-variation-settings: ${(props) =>
     props.selected === true ? "wght 582" : "wght 311"};
   letter-spacing: ${(props) => (props.selected === true ? "-3px" : "0.1px")};
@@ -74,7 +76,7 @@ export const ProjectItem = styled.li`
   }; */
 
   /* &:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 255, 0.05);
   } */
 `;
 export const ProjectsUL = styled.ul`
