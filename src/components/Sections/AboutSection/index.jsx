@@ -14,6 +14,8 @@ import {
   RightColumnPanel,
 } from "../Sections.design";
 
+import { ProjectPlanet } from "./AboutSection.design";
+
 import { BiSolidInvader } from "react-icons/bi";
 function AboutSection() {
   return (
@@ -22,7 +24,9 @@ function AboutSection() {
         {/* // todo: move this to another component */}
         <LeftHeaderColumn>
           <HeaderBorderBox props={{ type: "waves", title: "ABOUT" }} />
-          <p>Here is some information about me.</p>
+          <p>
+            Here is some information about me. I hope you find it interesting!
+          </p>
           <br />
           <p>
             <LuMenuSquare
@@ -55,22 +59,20 @@ function AboutSection() {
             />
           </p>{" "}
           <br />
-          <h2 id="normal-header">
-            Technologies & skills I have acquired:{" "}
-          </h2>
+          <h2 id="normal-header">Technologies & skills I have acquired: </h2>
           <TechnologiesSkillsBar />
           <br />
-          <h2 id="normal-header">
-            Technologies currently being unpacked:{" "}
-          </h2>
+          <h2 id="normal-header">Technologies currently being unpacked: </h2>
           <FutureTechSkillsBar />
           <br />
           <h2 id="inverted-header">Besides coding...</h2>
           <p>
-            I love all things art! I am a musician who likes to spend his time writing and producing music of various genres.
-            In addition to music I also moonlight as an writer of sci-fi and fantasy novels.  
+            I love all things art! I am a musician who likes to spend his time
+            writing and producing music of various genres. In addition to music
+            I also moonlight as an writer of sci-fi and fantasy novels.
           </p>
         </RightColumnPanel>
+        {/* <ProjectPlanet /> */}
       </SectionContainer>
     </>
   );

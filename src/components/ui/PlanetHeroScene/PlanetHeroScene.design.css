@@ -82,22 +82,52 @@
 .satellite {
   background: radial-gradient(circle at 100px 100px, #006c31, #000);
   background-blend-mode: darken;
-  /* background-image: url("../../../assets/textures/moon-real.png"); */
-  background-image: url("../../../assets/images/moon-1.png");
+  background-image: url("../../../assets/images/satellite-2.png");
+  /* background-image: url("../../../assets/images/moon-1.png"); */
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  filter: hue-rotate(140deg);
-  height: 4em;
-  width: 4em;
+  /* filter: hue-rotate(140deg); */
+  filter: brightness(1.5);
+  height: 4.5em;
+  width: 4.5em;
   border-radius: 50%;
   position: relative;
-  bottom: -5em;
+  bottom: -15em;
   left: 18.5em;
   z-index: 2;
   animation: satellite-spin 153s infinite linear, spin 35s linear infinite;
 }
 
+.ShinyLight {
+  background: rgb(32, 157, 1);
+  border-radius: 100%;
+  margin: 7px;
+  height: 8px;
+  width: 8px;
+  border: black 1px solid;
+
+  box-shadow: 0 0 0 0 rgb(38, 255, 0);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(149, 255, 96, 0.884);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
 
 @keyframes spin {
   100% {

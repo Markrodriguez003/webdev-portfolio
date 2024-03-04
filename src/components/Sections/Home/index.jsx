@@ -25,6 +25,9 @@ function Home() {
             <li>
               <a href="#">CONTACT</a>
             </li>
+            <li>
+              <a href="#">SITE-INFO</a>
+            </li>
           </ul>
         </NavContainer>
         <WelcomeContainer>

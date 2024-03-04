@@ -19,6 +19,7 @@ import { Mousewheel, Pagination } from "swiper/modules";
 import BackgroundScenery from "../ui/BackgroundScenery/index.jsx";
 import AboutSection from "../Sections/AboutSection/index.jsx";
 import ProjectsSection from "../Sections/ProjectsSection/index.jsx";
+import SiteInfo from "../Sections/SiteInfo/index.jsx";
 import MeteorShower from "../ui/MeteorShower/index.jsx";
 import ContactSection from "../Sections/ContactSection/index.jsx";
 import Home from "../Sections/Home";
@@ -97,8 +98,11 @@ function WebsiteSlidePanels() {
               <ProjectsSection />
             </SwiperSlide>
             <SwiperSlide>
-              {/* <MeteorShower /> */}
               <ContactSection />
+            </SwiperSlide>
+            <SwiperSlide>
+              {/* <MeteorShower /> */}
+              <SiteInfo />
             </SwiperSlide>
           </StyledSwiper>
         </FullView>
