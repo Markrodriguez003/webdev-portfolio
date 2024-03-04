@@ -161,4 +161,30 @@ export const SpaceBackground = styled.div`
         1680px 232px #fff;
     }
   }
+  & div.stars4 {
+    width: 2px;
+    height: 2px;
+    border-radius: 400px;
+    background: transparent;
+    box-shadow: 251px 304px #fff, 1586px 228px #fff, 764px 592px #fff,
+      942px 1920px #fff, 458px 1285px #fff, 511px 1001px #fff,
+      1111px 763px #fff, 911px 414px #fff, 107px 731px #fff,
+      880px 429px #fff;
+    transition: transform 2s ease-in-out;
+    animation: ${animatedStars} 150s linear infinite;
+    /* animation-fill-mode: both; */
+    /* animation-direction: ${(props) => starAnimationChange(props.$starChange)}; */
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 3px;
+      height: 3px;
+      background: transparent;
+      box-shadow: 251px 304px #fff, 1586px 228px #fff, 764px 592px #fff,
+      942px 1920px #fff, 458px 1285px #fff, 511px 1001px #fff,
+      1111px 763px #fff, 911px 414px #fff, 1107px 731px #fff,
+      880px 429px #fff;
+    }
+  }
 `;

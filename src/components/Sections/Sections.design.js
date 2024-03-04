@@ -9,6 +9,16 @@ export const SectionContainer = styled.div`
   transition: none;
 `;
 
+export const SateliteContainer = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  overflow: hidden;
+  height: 100%;
+  transition: none;
+  border: pink 2px solid;
+`;
+
 export const RightColumnPanel = styled.div`
   display: block;
   position: relative;

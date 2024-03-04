@@ -5,7 +5,9 @@ function PlanetHeroScene() {
     <>
       <div className="centered-container">
         <div className="planet-background"> </div>
-        <div className="satellite"> </div>
+        {/* <div className="planet-shadow">f</div> */}
+        {/* <div className="satellite"> </div> */}
+        <div className="astronaut-home"></div>
       </div>
     </>
   );

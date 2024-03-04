@@ -8,7 +8,8 @@ import {
   RightColumnPanel,
   SectionContainer,
   Planet,
-  PlanetContainer
+  PlanetContainer,
+  SateliteContainer,
 } from "../Sections.design";
 
 // ? NOTES
@@ -61,6 +62,7 @@ function ContactSection() {
         </LeftHeaderColumn>
         <RightColumnPanel>
           <ContactForm />
+       
         </RightColumnPanel>
       </SectionContainer>
       <small
@@ -78,11 +80,11 @@ function ContactSection() {
       {/* <Planet /> */}
 
       {/* other image */}
-      <PlanetContainer>
+      {/* <PlanetContainer>
         <Planet>
           <span className="shadow"></span>
         </Planet>
-      </PlanetContainer>
+      </PlanetContainer> */}
     </>
   );
 }

@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { FormContainer } from "./ContactForm.design";
+import {
+  FormContainer,
+  SatellightContainer,
+  AstronautContact,
+  Satellite,
+} from "./ContactForm.design";
 import SiteButton from "../ui/SiteButton";
 import { FaRegEnvelope } from "react-icons/fa";
-import dish from "../../assets/textures/sat.png";
-// import dish from "../../assets/icons/satellite-dish.png";
+
 export default function Multiple() {
   const [formData, setFormData] = useState({
     name: "",
@@ -25,8 +29,20 @@ export default function Multiple() {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
-      <FormContainer onSubmit={handleSubmit}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        border: "rgba(255, 255, 255, 0.1) 0.5px solid",
+      }}
+    >
+      <FormContainer
+        onSubmit={handleSubmit}
+        autoComplete="off"
+        role="presentation"
+        method="post"
+        action=""
+      >
         <h1>Contact me!</h1>
         <label htmlFor="name">Name:</label>
         <input
@@ -35,6 +51,8 @@ export default function Multiple() {
           name="name"
           value={formData.name}
           onChange={handleChange}
+          autoComplete="off"
+          role="presentation"
         />
 
         <label htmlFor="email">
@@ -46,6 +64,8 @@ export default function Multiple() {
           name="company"
           value={formData.company}
           onChange={handleChange}
+          autoComplete="off"
+          role="presentation"
         />
 
         <label htmlFor="email">Email:</label>
@@ -55,6 +75,8 @@ export default function Multiple() {
           name="email"
           value={formData.email}
           onChange={handleChange}
+          autoComplete="off"
+          role="presentation"
         />
 
         <label htmlFor="message">Message:</label>
@@ -71,19 +93,10 @@ export default function Multiple() {
           title="Submit"
         ></SiteButton>
       </FormContainer>
-      <img
-        src={dish}
-        width={"950px"}
-        height="700px"
-        style={{
-          // paddingTop: "280px",
-          transform: "translate(-20px, 475px) scale(0.9)",
-          // transform: "scaleX(-1) translate(-80px, 505px) scale(0.9)",
-          overflow:"hidden",
-          // filter: "invert(100%)",
-          
-        }}
-      ></img>
+      <SatellightContainer>
+        <Satellite />
+        <AstronautContact />
+      </SatellightContainer>
     </div>
   );
 }

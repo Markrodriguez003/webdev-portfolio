@@ -91,15 +91,15 @@ function WebsiteSlidePanels() {
               <Home />
             </SwiperSlide>
             <SwiperSlide>
-              <MeteorShower />
               <AboutSection />
             </SwiperSlide>
             <SwiperSlide>
               <ProjectsSection />
             </SwiperSlide>
-            {/* <SwiperSlide>
+            <SwiperSlide>
+              {/* <MeteorShower /> */}
               <ContactSection />
-            </SwiperSlide> */}
+            </SwiperSlide>
           </StyledSwiper>
         </FullView>
         {/* 

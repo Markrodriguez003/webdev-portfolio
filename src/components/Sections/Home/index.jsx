@@ -6,6 +6,7 @@ import {
 import PlanetHeroScene from "../../ui/PlanetHeroScene/index.jsx";
 import githubIcon from "../../../assets/icons/github-icon-w.png";
 import SoundMeter from "../../ui/HeaderAnimations/SoundMeter.jsx";
+import { FaUserAstronaut } from "react-icons/fa6";
 // import PaginationTag from "../../ui/PaginationTag";
 function Home() {
   return (
@@ -27,6 +28,7 @@ function Home() {
           </ul>
         </NavContainer>
         <WelcomeContainer>
+          {/* <h1>WELCOME <FaUserAstronaut/></h1> */}
           <h1>WELCOME</h1>
 
           <p>

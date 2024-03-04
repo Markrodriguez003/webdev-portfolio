@@ -24,7 +24,7 @@ function ProjectsSection() {
   const [update, setUpdate] = useState(false);
   const [revealFade, setRevealFade] = useState(false);
   const [projectSelect, setProjectSelect] = useState([
-    false, // SASEO
+    true, // SASEO
     false, // NEPTUNES COVE
     false, // OWADI-OWIWI
     false, // ONLOAD
