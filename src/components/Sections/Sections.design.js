@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import planetB from "../../assets/textures/planet-2.png";
+
 export const SectionContainer = styled.div`
   display: flex;
   position: relative;
@@ -7,16 +7,12 @@ export const SectionContainer = styled.div`
   overflow: hidden;
   height: 100%;
   transition: none;
-`;
 
-export const SateliteContainer = styled.div`
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  overflow: hidden;
-  height: 100%;
-  transition: none;
-  border: pink 2px solid;
+  @media (max-width: 1112px) {
+    border-left: none;
+    padding: 0px;
+    flex-direction: column;
+  }
 `;
 
 export const RightColumnPanel = styled.div`
@@ -31,6 +27,15 @@ export const RightColumnPanel = styled.div`
   width: 70%;
   margin-left: auto;
   margin-right: auto;
+  @media (max-width: 380px) {
+    width: 85%;
+  }
+
+  & p {
+    @media (max-width: 380px) {
+      text-align: left;
+    }
+  }
 
   & h1 {
     font-size: 2.5em;
@@ -39,6 +44,9 @@ export const RightColumnPanel = styled.div`
     display: inline-block;
     margin-bottom: 20px;
     padding: 5px;
+    @media (max-width: 1112px) {
+      font-size: 2em;
+    }
   }
   & h2 {
     font-size: 1.5em;
@@ -61,48 +69,45 @@ export const RightColumnPanel = styled.div`
       color: black;
       padding-right: 50px;
       text-align: right;
+
+      @media (max-width: 1112px) {
+        text-align: center;
+        padding-right: 0px;
+      }
     }
   }
 
   & small {
     text-align: center;
   }
-`;
 
-export const ProjectItem = styled.li`
-  cursor: pointer;
-  text-transform: uppercase;
-  font-size: 33px;
-  margin-bottom: 10px;
-  color: ${(props) => (props.selected === true ? "black" : "aliceblue")};
-  background-color: ${(props) =>
-    props.selected === true ? "aliceblue" : "transparent"};
-  font-variation-settings: ${(props) =>
-    props.selected === true ? "wght 582" : "wght 311"};
-  letter-spacing: ${(props) => (props.selected === true ? "-3px" : "0.1px")};
-  transition: 0.2s linear;
-  /* &:not(:nth-child(5)){
-    color:red;
-  }; */
-
-  /* &:hover {
-    background-color: rgba(0, 0, 255, 0.05);
-  } */
+  @media (max-width: 1112px) {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
-export const ProjectsUL = styled.ul`
-  text-decoration: none;
-  list-style: none;
-  font-family: "body";
-  font-weight: bold;
-  padding-top: 0px;
-  text-align: start;
-`;
-
 export const LeftHeaderColumn = styled.div`
   display: flex;
   flex-direction: column;
-
   flex-wrap: wrap;
+  /* background-color: pink; */
+
+  @media (max-width: 1112px) {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    justify-items: center;
+  }
+
+  & p #resume-about {
+    @media (max-width: 380px) {
+      font-size: 0.2em;
+      color:pink;
+    }
+  }
 
   & p {
     font-family: "body";
@@ -111,127 +116,10 @@ export const LeftHeaderColumn = styled.div`
     padding-left: 28px;
     width: 280px;
     text-align: left;
-  }
-`;
 
-// planet
-
-export const PlanetLeftContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 300px;
-`;
-
-const spin = keyframes`
- 100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-`;
-
-// export const Planet = styled.div`
-//   background: radial-gradient(circle at 100px 100px, #5cabff, #000);
-//   background-blend-mode: darken;
-//   background-image: url(${planetB});
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   position: absolute;
-//   background-color: #5cabff;
-//   bottom: -325px;
-//   left: -110px;
-//   width: 550px;
-//   height: 550px;
-//   border-radius: 50%;
-//   animation: ${spin} 115s linear infinite;
-//   box-shadow: inset 0 0 60px #131312;
-//   z-index: 1;
-// `;
-
-// other planet
-
-export const PlanetContainer = styled.div`
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  left: -80px;
-  bottom: -90px;
-  margin: 20px;
-  -webkit-perspective: 1200px;
-  -moz-perspective: 1200px;
-  -ms-perspective: 1200px;
-  -o-perspective: 1200px;
-  perspective: 1200px;
-  overflow: hidden;
-  perspective-origin: 50% 50%;
-`;
-
-const moveMap = keyframes`
-  0% {
-    background-position: -849px 0; }
-
-  100% {
-    background-position: 0 0; } `;
-
-export const Planet = styled.div`
-  display: inline-block;
-  width: 485px;
-  height: 485px;
-  margin: 0;
-  border-radius: 50%;
-
-  transform-style: preserve-3d;
-  background: url(${planetB}) repeat-x;
-  background-size: auto 2360px;
-  animation: ${moveMap} 140s infinite linear, ${spin} 205s linear infinite;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: -40px 10px 70px 10px rgba(0, 0, 0, 0.5) inset;
-    z-index: 2;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    filter: blur(0);
-    opacity: 0.3;
-    background: radial-gradient(
-      circle at 50% 80%,
-      #81e8f6,
-      #76deef 10%,
-      #055194 66%,
-      #062745 100%
-    );
-  }
-
-  & span.shadow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.1) 40%,
-      rgba(0, 0, 0, 0) 50%
-    );
-
-    transform: rotateX(90deg) translateZ(-150px);
-    z-index: -1;
+    @media (max-width: 1112px) {
+      text-align: center;
+      padding-left: 0px;
+    }
   }
 `;

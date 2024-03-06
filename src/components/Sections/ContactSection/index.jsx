@@ -7,9 +7,6 @@ import {
   LeftHeaderColumn,
   RightColumnPanel,
   SectionContainer,
-  Planet,
-  PlanetContainer,
-  SateliteContainer,
 } from "../Sections.design";
 
 // ? NOTES
@@ -60,9 +57,9 @@ function ContactSection() {
             Github: github.com/MarkRodriguez003
           </p>
         </LeftHeaderColumn>
+
         <RightColumnPanel>
           <ContactForm />
-       
         </RightColumnPanel>
       </SectionContainer>
       <small
@@ -77,14 +74,6 @@ function ContactSection() {
       >
         Mark Rodriguez @2023{" "}
       </small>
-      {/* <Planet /> */}
-
-      {/* other image */}
-      {/* <PlanetContainer>
-        <Planet>
-          <span className="shadow"></span>
-        </Planet>
-      </PlanetContainer> */}
     </>
   );
 }

@@ -33,7 +33,7 @@ function starAnimationChange(props) {
   }
 }
 export const SpaceBackground = styled.div`
-  z-index: -1;
+  z-index: -999;
   top: 0;
   bottom: 0;
   height: 100%;
@@ -45,6 +45,12 @@ export const SpaceBackground = styled.div`
   background: radial-gradient(ellipse at bottom, #0b0e12 0%, #090a0f 100%);
   overflow: hidden;
   transition: transform 2s ease-in-out;
+
+  @media screen and (max-width: 1115px) {
+    height: 500vh;
+  }
+
+
   & div.stars {
     width: 1px;
     height: 1px;

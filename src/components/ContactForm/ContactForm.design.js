@@ -1,6 +1,8 @@
 import styled, { css, keyframes } from "styled-components";
 import satellite from "../../assets/images/satellite-1.png";
 import astronautContact from "../../assets/images/astronaut-3.png";
+import qrcode from "../../assets/images/qr-example.png";
+
 export const FormContainer = styled.form`
   display: inline-flex;
   position: relative;
@@ -83,6 +85,23 @@ export const AstronautContact = styled.div`
   top: 300px;
   width: 325px;
   height: 325px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+`;
+
+export const QRCode = styled.div`
+  background-blend-mode: darken;
+
+  background-image: url(${qrcode});
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+
+  left: -405px;
+  top: 590px;
+  width: 185px;
+  height: 185px;
   margin-left: auto;
   margin-right: auto;
   z-index: 1;

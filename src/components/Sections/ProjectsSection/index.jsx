@@ -4,7 +4,7 @@ import {
   RightColumnPanel,
   ProjectsUL,
   ProjectItem,
-} from "../Sections.design";
+} from "./ProjectsSection.design";
 
 // animation design ideas
 // https://codepen.io/bramus/pen/wvRqVBm
@@ -80,6 +80,7 @@ function ProjectsSection() {
           <nav>
             <ProjectsUL>{listOfProjects}</ProjectsUL>
           </nav>
+          
         </LeftHeaderColumn>
         <RightColumnPanel>
           <ProjectCard

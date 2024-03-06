@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export const FullView = styled.div`
   display: block;
   width: 100%;
-  @media (max-width: 1110px) {
+  @media (max-width: 1112px) {
     display: none;
   }
   overflow: hidden;
@@ -18,7 +18,7 @@ export const FullView = styled.div`
 export const MiniView = styled.div`
   display: none;
   width: 100%;
-  @media (max-width: 1110px) {
+  @media (max-width: 1112px) {
     display: block;
   }
 `;

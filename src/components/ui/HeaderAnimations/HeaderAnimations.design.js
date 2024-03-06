@@ -63,7 +63,11 @@ const rotateLine = keyframes`
 // * WAVES
 // ***************************************
 export const WavesContainer = styled.div`
-  transform: translate(0px, -10px);
+  transform: translate(0px, -15px);
+
+  @media (max-width: 1112px) {
+    transform: translate(35px, -18px);
+  }
 `;
 export const WavesAnimation = styled.div`
   height: 175px;
@@ -156,6 +160,12 @@ export const BoxContainer = styled.div`
   margin-right: auto;
   text-align: center;
   transform: scale(1.25) translate(-5px, 70px);
+
+  @media (max-width: 1112px) {
+    transform: translate(-40px, 40px);
+  }
+
+  
 `;
 export const BoxFlex = styled.div`
   display: flex;

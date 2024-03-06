@@ -1,16 +1,23 @@
 import "./PlanetHeroScene.design.css";
 
+import {
+  PlanetContainer,
+  PlanetBackground,
+  AstronautHome,
+  Satellite,
+  ShinyLight,
+} from "./PlanetHeroScene.design";
+
 function PlanetHeroScene() {
   return (
     <>
-      <div className="centered-container">
-        <div className="planet-background"> </div>
-        {/* <div className="planet-shadow">f</div> */}
-        <div className="satellite">
-          <div className="ShinyLight" />
-        </div>
-        <div className="astronaut-home"></div>
-      </div>
+      <PlanetContainer>
+        <PlanetBackground> </PlanetBackground>
+        <Satellite>
+          <ShinyLight />
+        </Satellite>
+        <AstronautHome />
+      </PlanetContainer>
     </>
   );
 }

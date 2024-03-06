@@ -3,20 +3,31 @@ import styled, { css, keyframes } from "styled-components";
 export const HeaderContainer = styled.div`
   position: relative;
   display: block;
-  /* background-color: bisque; */
   margin-right: 20px;
   margin-left: 20px;
   height: 220px;
+  width: 100%;
   padding-top: 25px;
+  /* background-color: pink; */
+  @media (max-width: 1112px) {
+    
+    padding-left:12.5%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:50px;
+  }
 `;
 
 export const BorderCenter = styled.div`
   display: flex;
   position: relative;
-  justify-content: start;
-  align-content: start;
   justify-content: center;
   align-content: center;
+  @media (max-width: 1112px) {
+    border-left: none;
+    padding: 0px;
+    flex-direction: column;
+  }
 `;
 
 export const BorderFrame = styled.div`
@@ -25,11 +36,12 @@ export const BorderFrame = styled.div`
   grid-template-columns: max-content auto;
   grid-template-rows: auto max-content;
   background-size: cover;
-  /* color: white; */
+  margin-left: auto;
+  margin-right: auto;
   color: white;
   width: 240px;
   height: 190px;
-  /* padding: 1.5rem; */
+
   &:before,
   &:after {
     content: "";
@@ -49,8 +61,12 @@ export const BorderFrame = styled.div`
   }
   h2 {
     margin: 1rem 1rem -0.5rem 0;
-    font-family: "Pragati Narrow", sans-serif;
+    font-family: sans-serif;
     font-size: 2rem;
     max-width: 100%;
+
+    @media (max-width: 1112px) {
+      font-size: 2.5rem;
+  }
   }
 `;

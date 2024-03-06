@@ -14,8 +14,6 @@ import {
   RightColumnPanel,
 } from "../Sections.design";
 
-import { ProjectPlanet } from "./AboutSection.design";
-
 import { BiSolidInvader } from "react-icons/bi";
 function AboutSection() {
   return (
@@ -28,14 +26,14 @@ function AboutSection() {
             Here is some information about me. I hope you find it interesting!
           </p>
           <br />
-          <p>
+          <p id='resume-about'>
             <LuMenuSquare
               style={{ verticalAlign: "center", paddingRight: "5px" }}
             />
             Resume: <a href="#">View</a> | <a href="#">Download</a>
           </p>
           <br />
-          <p>
+          <p id='github-about'>
             <img
               src={githubIcon}
               width={"20px"}
@@ -72,7 +70,6 @@ function AboutSection() {
             I also moonlight as an writer of sci-fi and fantasy novels.
           </p>
         </RightColumnPanel>
-        {/* <ProjectPlanet /> */}
       </SectionContainer>
     </>
   );

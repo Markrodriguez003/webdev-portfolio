@@ -1,5 +1,6 @@
 import { SpaceBackground } from "./BackgroundScenery.design";
 import { scrollContext } from "../../WebsiteSlidePanels";
+import MeteorShower from "../MeteorShower";
 
 import { useContext, useEffect } from "react";
 function BackgroundScenery() {
@@ -13,6 +14,7 @@ function BackgroundScenery() {
   return (
     <>
       <SpaceBackground $starChange={starDirection}>
+        <MeteorShower />
         <div className="stars"></div>
         <div className="stars2"></div>
         <div className="stars3"></div>

@@ -106,14 +106,14 @@ function WebsiteSlidePanels() {
             </SwiperSlide>
           </StyledSwiper>
         </FullView>
-        {/* 
+
         <MiniView>
-          <Home />
-          <MeteorShower />
+          {/* <Home /> */}
+          {/* <MeteorShower /> */}
           <AboutSection />
           <ProjectsSection />
           <ContactSection />
-        </MiniView> */}
+        </MiniView>
       </scrollContext.Provider>
     </>
   );

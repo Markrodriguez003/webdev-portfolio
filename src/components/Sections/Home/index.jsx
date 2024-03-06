@@ -31,14 +31,13 @@ function Home() {
           </ul>
         </NavContainer>
         <WelcomeContainer>
-          {/* <h1>WELCOME <FaUserAstronaut/></h1> */}
           <h1>WELCOME</h1>
 
           <p>
             My name is Mark Rodriguez 👋 & I am a full stack developer. Take a
             look at my projects & please do not hesistate to contact me!
           </p>
-          <p>
+          {/* <p>
             <img
               src={githubIcon}
               width={"20px"}
@@ -55,13 +54,13 @@ function Home() {
               style={{ paddingRight: "10px" }}
             />
             Resume: <a href="#"> View</a> | <a href="#"> Download</a>
-          </p>
+          </p> */}
         </WelcomeContainer>
       </IntroductionContainer>
 
-      <SoundMeter />
-
-      <span style={{ color: "grey", fontFamily: "body" }}>
+      {/* <SoundMeter /> */}
+      <br />
+      <span style={{ color: "grey", fontFamily: "body", fontSize:"12px" }}>
         SCROLL TO EXPLORE
       </span>
     </>

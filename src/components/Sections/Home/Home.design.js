@@ -4,9 +4,21 @@ export const IntroductionContainer = styled.div`
   display: inline-flex;
   position: relative;
   flex-direction: row;
-  flex-wrap: wrap-reverse;
+
   font-family: "body";
-  top:-50px;
+  top: -50px;
+
+  @media (max-width: 1112px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const WelcomeContainer = styled.div`
@@ -17,12 +29,33 @@ export const WelcomeContainer = styled.div`
   border-left: white 3.5px solid;
   text-align: left;
   padding-left: 12px;
+
+  @media (max-width: 1112px) {
+    border-left: none;
+    padding: 0px;
+  }
+
   & p {
     color: white;
     width: 500px;
     padding-bottom: 50px;
     margin-bottom: -38px;
     font-size: 18px;
+    @media (max-width: 1112px) {
+      order: 1;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    @media (max-width: 550px) {
+      justify-content: center;
+      align-items: center;
+      padding-left: 0px;
+      width: 80%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   & h1 {
     font-size: 5.2em;
@@ -30,20 +63,28 @@ export const WelcomeContainer = styled.div`
     font-weight: 600;
     margin-bottom: 10px;
     letter-spacing: 3.2px;
-  }
 
-  /* @media (max-width: 832px) {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    border-left: white 0px solid;
-
-    & h1 {
-      color: red;
+    @media (max-width: 1112px) {
+      order: 1;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0px;
+      text-align: center;
     }
-  } */
+
+    @media (max-width: 800px) {
+      font-size: 4.2em;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 415px) {
+      font-size: 3.5em;
+    }
+    @media (max-width: 340px) {
+      font-size: 2.7em;
+    }
+  }
 `;
 
 export const NavContainer = styled.nav`
@@ -54,12 +95,32 @@ export const NavContainer = styled.nav`
   align-content: start;
   padding-right: 12px;
   padding-top: 12px;
+  @media (max-width: 1112px) {
+    order: 1;
+    flex-direction: row;
+    padding-right: 0px;
+  }
+
+  & ul {
+    @media (max-width: 1112px) {
+      order: 1;
+      flex-direction: row;
+      padding: 0px;
+    }
+  }
 
   & ul li {
     text-decoration: none;
     list-style-type: none;
     padding-bottom: 8px;
     text-align: right;
+    @media (max-width: 1112px) {
+      text-align: center;
+    }
+
+    @media (max-width: 340px) {
+      font-size: 0.9em;
+    }
   }
   & ul li a {
     color: white;

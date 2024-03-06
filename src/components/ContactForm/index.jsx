@@ -4,6 +4,7 @@ import {
   SatellightContainer,
   AstronautContact,
   Satellite,
+  QRCode,
 } from "./ContactForm.design";
 import SiteButton from "../ui/SiteButton";
 import { FaRegEnvelope } from "react-icons/fa";
@@ -96,6 +97,8 @@ export default function Multiple() {
       <SatellightContainer>
         <Satellite />
         <AstronautContact />
+        <QRCode>
+        </QRCode>
       </SatellightContainer>
     </div>
   );
