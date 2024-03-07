@@ -38,6 +38,10 @@ export const RightColumnPanel = styled.div`
   margin-left: auto;
   margin-right: auto;
 
+  @media (max-width: 1112px) {
+    width: 90%;
+  }
+
   & h1 {
     font-size: 2.5em;
     background-color: aliceblue;

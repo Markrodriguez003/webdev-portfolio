@@ -108,8 +108,7 @@ function WebsiteSlidePanels() {
         </FullView>
 
         <MiniView>
-          {/* <Home /> */}
-          {/* <MeteorShower /> */}
+          <Home />
           <AboutSection />
           <ProjectsSection />
           <ContactSection />

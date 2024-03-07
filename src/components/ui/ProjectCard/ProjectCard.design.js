@@ -27,6 +27,13 @@ export const Card = styled.div`
       : css`
           ${fadeInUpdate} 0.3s ease-in-out
         `};
+
+  @media screen and (max-width: 1115px) {
+    margin: 0px;
+    /* height: 125vh; */
+    /* justify-content: center; */
+    align-content: center;
+  }
 `;
 
 export const CardHeader = styled.div`
@@ -44,11 +51,14 @@ export const CardHeader = styled.div`
     text-align: start;
     color: white;
     font-size: 2.5em;
+    padding: 2px;
+    margin-bottom: 10px;
   }
 
   & small {
     color: grey;
     font-size: 15px;
+    text-align: left;
   }
 `;
 
@@ -57,6 +67,7 @@ export const CardBody = styled.section`
   letter-spacing: 0.5px;
   color: white;
   padding: 10px 15px;
+  margin-bottom: 10px;
 `;
 
 export const CardFooter = styled.section`
@@ -69,6 +80,11 @@ export const CardFooter = styled.section`
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: rgba(255, 25, 255, 0.02);
-  & * {
+
+  @media screen and (max-width: 1115px) {
+    text-align: center;
+
+    justify-content: center;
+    align-content: center;
   }
 `;

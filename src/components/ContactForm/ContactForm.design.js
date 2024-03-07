@@ -22,6 +22,11 @@ export const FormContainer = styled.form`
   padding-right: 25px;
   /* margin-top: 150px; */
 
+  @media screen and (max-width: 1115px) {
+    justify-content: center;
+    align-items: center;
+  }
+
   & label {
   }
 
@@ -32,6 +37,12 @@ export const FormContainer = styled.form`
     background-color: rgba(191, 191, 191, 0.12);
     color: white;
     font-family: "body";
+    @media screen and (max-width: 1115px) {
+      width: 45vw;
+    }
+    @media screen and (max-width: 675px) {
+      width: 65vw;
+    }
   }
   & textarea {
     width: 30vw;
@@ -40,6 +51,13 @@ export const FormContainer = styled.form`
     background-color: rgba(191, 191, 191, 0.12);
     color: white;
     resize: none;
+    @media screen and (max-width: 1115px) {
+      width: 45vw;
+    }
+
+    @media screen and (max-width: 675px) {
+      width: 65vw;
+    }
   }
 `;
 
@@ -53,6 +71,9 @@ export const SatellightContainer = styled.div`
   margin-right: auto;
   /* border: pink 2px solid; */
   z-index: 1;
+  @media screen and (max-width: 1115px) {
+    display: none;
+  }
 `;
 
 export const Satellite = styled.div`

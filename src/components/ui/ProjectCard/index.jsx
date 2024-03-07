@@ -43,6 +43,7 @@ function ProjectCard({ props }) {
             <br />
             <Accordion props={props} />
           </CardBody>
+          <br />
           <CardFooter>
             <SiteButton
               url="https://www.youtube.com"

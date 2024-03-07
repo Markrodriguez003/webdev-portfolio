@@ -5,6 +5,11 @@
 
 html {
   scroll-behavior: smooth;
+ 
+}
+
+body {
+  cursor: url("assets/icons/mouseIcon.png"), auto !important;
 }
 
 /* unvisited link */

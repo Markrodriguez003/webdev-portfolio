@@ -160,12 +160,9 @@ export const BoxContainer = styled.div`
   margin-right: auto;
   text-align: center;
   transform: scale(1.25) translate(-5px, 70px);
-
   @media (max-width: 1112px) {
     transform: translate(-40px, 40px);
   }
-
-  
 `;
 export const BoxFlex = styled.div`
   display: flex;
@@ -173,6 +170,7 @@ export const BoxFlex = styled.div`
   align-items: center;
   width: 80px;
   height: 40px;
+
   margin: 0 -80px 0 0;
   transform: scale(0.6) translate(0px, -70px);
   & .cube:nth-of-type(4) .wall:nth-of-type(1) {
@@ -359,6 +357,11 @@ export const SolarPanelContainer = styled.div`
   border-radius: 50%;
   /* background-color: red; */
   transform: translate(-2px, 10px) scale(0.9);
+
+  @media screen and (max-width: 1115px) {
+    transform: translate(68px, -12px) scale(1);
+  }
+
   &:before {
     content: "";
     position: absolute;

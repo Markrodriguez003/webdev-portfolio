@@ -12,6 +12,7 @@ export const SectionContainer = styled.div`
     border-left: none;
     padding: 0px;
     flex-direction: column;
+    
   }
 `;
 
@@ -46,6 +47,7 @@ export const RightColumnPanel = styled.div`
     padding: 5px;
     @media (max-width: 1112px) {
       font-size: 2em;
+      
     }
   }
   & h2 {
@@ -100,6 +102,7 @@ export const LeftHeaderColumn = styled.div`
     align-self: center;
     justify-self: center;
     justify-items: center;
+    
   }
 
   & p #resume-about {
@@ -120,6 +123,7 @@ export const LeftHeaderColumn = styled.div`
     @media (max-width: 1112px) {
       text-align: center;
       padding-left: 0px;
+    
     }
   }
 `;

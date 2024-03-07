@@ -1,6 +1,8 @@
 import styled, { css, keyframes } from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import customCursor from "../../assets/icons/mouseIcon.png"
+
 // function heightSetter(h) {
 //   console.log(`Styled component height: `, h);
 
@@ -10,6 +12,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export const FullView = styled.div`
   display: block;
   width: 100%;
+  cursor: url(${customCursor})  -52 -52, auto;
   @media (max-width: 1112px) {
     display: none;
   }

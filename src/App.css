@@ -1,9 +1,11 @@
 * {
   margin: 0;
+  cursor: url("assets/icons/mouseIcon.png"), auto !important;
 }
 
 html {
   scroll-behavior: smooth;
+  cursor: url("assets/icons/mouseIcon.png"), auto !important;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -13,6 +15,6 @@ html {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
