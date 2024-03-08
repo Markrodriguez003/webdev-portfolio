@@ -1,25 +1,30 @@
-
-@keyframes gasMvmt{
-    0%{
-      border-bottom-right-radius:10px;
-      bottom:20px;
-      height:60%;
-      transform:rotate(43deg);
-    }
-    100%{
-      border-bottom-right-radius:20px;
-      bottom:15px;
-      height:58%;
-      transform:rotate(45deg);
-    }
+@keyframes gasMvmt {
+  0% {
+    border-bottom-right-radius: 10px;
+    bottom: 20px;
+    height: 60%;
+    transform: rotate(43deg);
   }
+  100% {
+    border-bottom-right-radius: 20px;
+    bottom: 15px;
+    height: 58%;
+    transform: rotate(45deg);
+  }
+}
 
-#background-video-container{
-    z-index:-9999;
-    position: absolute;
-    filter: opacity(0.09) hue-rotate(2240deg) saturate(1.3);
-    animation: gasMvmt cubic-bezier(1, 0, 0, 1);
-    /* transform: rotate(-90deg) scale(2.2); */
-    transform:  scale(2.2);
+#background-video-container {
+  z-index: -9999;
+  position: absolute;
+  /* FOR NEBULA-19 */
+  filter: opacity(0.09) hue-rotate(2240deg) saturate(1.3);
+  transform: scale(2.2);
+  
+  /* FOR NEBULA-20 */
+  /* filter: opacity(0.2) hue-rotate(100deg) saturate(1.3); */
+  /* transform: scale(1.4); */
 
+  /* **** */
+  /* transform: rotate(-90deg) scale(2.2); */
+  animation: gasMvmt cubic-bezier(1, 0, 0, 1);
 }

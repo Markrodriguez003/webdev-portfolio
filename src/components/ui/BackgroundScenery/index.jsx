@@ -1,13 +1,10 @@
 import { SpaceBackground } from "./BackgroundScenery.design";
 import { scrollContext } from "../../WebsiteSlidePanels";
 import MeteorShower from "../MeteorShower";
-// import nebulaVideo from "../../../assets/video/nebula-7.mp4";
-// import nebulaVideo from "../../../assets/video/nebula-11.mp4";
-// import nebulaVideo from "../../../assets/video/nebula-12.mp4";
-// import nebulaVideo from "../../../assets/video/nebula-13.mp4"; // but slowed
-// import nebulaVideo from "../../../assets/video/nebula-16.mp4";
-import nebulaVideo from "../../../assets/video/nebula-19.mp4";
-// import nebulaVideo from "../../../assets/video/nebula-21.mp4";
+
+import nebulaVideo from "../../../assets/video/nebula-1.mp4";
+// import nebulaVideo from "../../../assets/video/nebula-2.mp4";
+
 import "./BackgroundScene.design.css";
 
 import { useContext, useEffect, useRef } from "react";
@@ -37,7 +34,6 @@ function BackgroundScenery() {
             autoPlay
             loop
             muted
-            
             id="background-video"
             // ref={videoPlaybackSpeed}
           >

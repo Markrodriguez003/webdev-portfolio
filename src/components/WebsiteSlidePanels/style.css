@@ -7,11 +7,10 @@
 
 .swiper-pagination {
   position: absolute;
-  top: 80vh !important; 
+  top: 75vh !important;
   bottom: 30vh;
   padding-right: 30px;
   flex-direction: row;
-  background-color: palegreen !important;
 }
 .swiper-pagination-bullet {
   background-color: rgb(136, 136, 136) !important;
