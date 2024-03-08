@@ -1,5 +1,3 @@
-import "./PlanetHeroScene.design.css";
-
 import {
   PlanetContainer,
   PlanetBackground,

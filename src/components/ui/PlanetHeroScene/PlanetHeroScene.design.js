@@ -11,12 +11,18 @@ const spin = keyframes`
     transform: rotate(360deg);
   }
 `;
-const float = keyframes`
+const floatA = keyframes`
   0% {
-    transform: translate(0, 0px);
+    transform: translate(0, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(0, 28px) rotate(-3deg);
   }
   50% {
-    transform: translate(0, 25px);
+    transform: translate(0, -7px) rotate(0deg);
+  }
+  75% {
+    transform: translate(0, 28px) rotate(4deg);
   }
   100% {
     transform: translate(0, -0px);
@@ -145,16 +151,19 @@ export const AstronautHome = styled.div`
   background: radial-gradient(circle at 100px 100px, #5cabff, #000);
   filter: brightness(1.5) saturate(100%);
   background-image: url(${astronautH});
+
   background-repeat: no-repeat;
   background-size: contain;
+  display: inline-block;
   position: absolute;
-  bottom: 25px;
+  bottom: 38px;
   left: 25px;
   width: 285px;
   height: 285px;
   margin-left: auto;
   margin-right: auto;
-  animation: ${float} 5s ease-in-out infinite;
+  animation: ${floatA} 10s ease-in-out  infinite;
+
   z-index: 1;
 
   @media screen and (max-width: 800px) {
