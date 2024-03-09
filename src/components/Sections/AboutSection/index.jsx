@@ -26,14 +26,14 @@ function AboutSection() {
             Here is some information about me. I hope you find it interesting!
           </p>
           <br />
-          <p id='resume-about'>
+          <p id="resume-about">
             <LuMenuSquare
               style={{ verticalAlign: "center", paddingRight: "5px" }}
             />
             Resume: <a href="#">View</a> | <a href="#">Download</a>
           </p>
           <br />
-          <p id='github-about'>
+          <p id="github-about">
             <img
               src={githubIcon}
               width={"20px"}
@@ -49,8 +49,9 @@ function AboutSection() {
             I have been studying web development coding for 3 years and my
             interest has only grown in the field! I want to continue to expand
             on my knowledge by learning more about AI, back end development and
-            managing databases. One of my dream goals would be to code my own
-            game and release it!{" "}
+            managing databases. I love to research and continue to learn new
+            concepts. One of my dream goals would be to code my own game and
+            release it!{" "}
             <BiSolidInvader
               size={"1.2em"}
               style={{ verticalAlign: "bottom" }}

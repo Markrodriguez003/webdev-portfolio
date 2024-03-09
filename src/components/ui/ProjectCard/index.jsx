@@ -1,10 +1,36 @@
 /* eslint-disable react/prop-types */
-import { Card, CardHeader, CardBody, CardFooter } from "./ProjectCard.design";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  CardSiteImage,
+  ProjectBlurb,
+  ProjectSwiper,
+  ProjectSwiperSlide,
+  ProjectVideo,
+} from "./ProjectCard.design";
+
+// NPM LIBRARIES
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import ReactPlayer from "react-player";
+// CSS
+import "swiper/css";
+import "swiper/css/pagination";
+
+//COMPONENTS
 import Accordion from "../Accordion";
 import SiteButton from "../SiteButton";
+
 // ICONS
 import { IoLogoYoutube } from "react-icons/io5";
 import { BsGithub, BsGlobe } from "react-icons/bs";
+
+// IMAGES
+import saseoA from "../../../assets/images/site-screenshots/Saseo-1.png";
+import saseoB from "../../../assets/images/site-screenshots/Saseo-2.png";
+import saseoC from "../../../assets/images/site-screenshots/Saseo-3.png";
 function ProjectCard({ props }) {
   //   function buttonClick(e) {
   //     e.preventDefault();
@@ -37,12 +63,48 @@ function ProjectCard({ props }) {
             <small> {subHeader}</small>
           </CardHeader>
           <CardBody>
-            <section>
-              <p>{content}</p>
-            </section>
-            <br />
-            <Accordion props={props} />
+            <ProjectSwiper
+              slidesPerView={1}
+              simulateTouch={true}
+              speed={"385"}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+            >
+              {/* <SwiperSlide>
+                <img src={saseo} alt="site-screenshot" />
+              </SwiperSlide> */}
+              <ProjectSwiperSlide>
+                <img src={saseoA} alt="site-screenshot" />
+              </ProjectSwiperSlide>
+              <ProjectSwiperSlide>
+                <img src={saseoB} alt="site-screenshot" />
+              </ProjectSwiperSlide>
+              <ProjectSwiperSlide>
+                <img src={saseoC} alt="site-screenshot" />
+              </ProjectSwiperSlide>
+              <ProjectSwiperSlide>
+                {/* // ! https://stackoverflow.com/questions/73653819/pause-other-videos-when-slide-is-changed-swiper-js-react-player */}
+                <ProjectVideo
+                  url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+                  controls={true}
+                  width="100%"
+                  height="100%"
+                />
+              </ProjectSwiperSlide>
+            </ProjectSwiper>
+
+            {/* <ProjectBlurb>
+              <section>
+                <p>{content}</p>
+              </section>
+              <br />
+            </ProjectBlurb> */}
           </CardBody>
+
+          {/* <Accordion props={props} /> */}
+          <br />
           <br />
           <CardFooter>
             <SiteButton

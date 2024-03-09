@@ -1,5 +1,8 @@
 import styled, { css, keyframes } from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import ReactPlayer from "react-player";
 
+// ANIMATIONS
 const fadeIn = keyframes`
   0% { opacity: 0; }
   100% { opacity: 1;}
@@ -10,6 +13,34 @@ const fadeInUpdate = keyframes`
   100% { opacity: 1; }
 `;
 
+// SWIPER
+export const ProjectSwiper = styled(Swiper)`
+  width: 100%;
+  height: 650px;
+  padding: 0;
+  margin: 0;
+  background-color: pink;
+  text-align: center;
+`;
+
+export const ProjectSwiperSlide = styled(SwiperSlide)`
+  background-color: lime;
+  width: 750px;
+
+  &img {
+    width: 600px;
+    height: auto;
+  }
+`;
+
+// VIDEO
+export const ProjectVideo = styled(ReactPlayer)`
+/* width:100vw; */
+ 
+background-color:red;
+
+`;
+// PROJECT CARD
 export const Card = styled.div`
   position: relative;
   display: flex;
@@ -17,7 +48,9 @@ export const Card = styled.div`
   justify-content: start;
   align-content: start;
   border: rgba(255, 255, 255, 0.1) 1px solid;
-  height: 90vh;
+  height: 100%;
+  width: 100%;
+
   margin-left: 12px;
   animation: ${(props) =>
     props.toggle
@@ -44,6 +77,7 @@ export const CardHeader = styled.div`
   align-items: flex-start;
   padding: 10px 15px;
   letter-spacing: 1.2px;
+  text-transform: uppercase;
   font-family: "body";
   border-bottom: grey 1px solid;
 
@@ -62,7 +96,26 @@ export const CardHeader = styled.div`
   }
 `;
 
+export const CardSiteImage = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  & img {
+    width: 350px;
+    height: auto;
+  }
+`;
+
 export const CardBody = styled.section`
+  display: flex;
+  flex-direction: column;
+  /* padding: 10px 15px; */
+  margin-bottom: 10px;
+  width: 80%;
+  background-color: yellow;
+`;
+
+export const ProjectBlurb = styled.section`
   font-family: "body";
   letter-spacing: 0.5px;
   color: white;

@@ -30,6 +30,27 @@ export const FormContainer = styled.form`
   & label {
   }
 
+  & select {
+    width: 30vw;
+    height: 5.5vh;
+    font-size: 25px;
+    background-color: rgba(191, 191, 191, 0.12);
+    color: white;
+    font-family: "body";
+
+    @media screen and (max-width: 1115px) {
+      width: 45vw;
+    }
+    @media screen and (max-width: 675px) {
+      width: 65vw;
+    }
+
+    * {
+      background-color: black;
+      color: white;
+    }
+  }
+
   & input {
     width: 30vw;
     height: 4vh;

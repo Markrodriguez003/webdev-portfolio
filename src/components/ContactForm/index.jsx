@@ -9,10 +9,14 @@ import {
 import SiteButton from "../ui/SiteButton";
 import { FaRegEnvelope } from "react-icons/fa";
 
+// Country JSON list
+import countries from "../../../data/countries.json";
+
 export default function Multiple() {
   const [formData, setFormData] = useState({
     name: "",
     company: "",
+    country: "",
     email: "",
     message: "",
   });
@@ -25,9 +29,11 @@ export default function Multiple() {
   const handleSubmit = (event) => {
     event.preventDefault();
     alert(
-      `Name: ${formData.name}, Company: ${formData.compant},Email: ${formData.email}, Message: ${formData.message}`
+      `Name: ${formData.name}, Company: ${formData.company},Country: ${formData.country}, Email: ${formData.email}, Message: ${formData.message}`
     );
   };
+
+  console.log(`Countries --> `, countries.length);
 
   return (
     <div
@@ -68,6 +74,18 @@ export default function Multiple() {
           autoComplete="off"
           role="presentation"
         />
+        <label htmlFor="country">
+          Country <small>(Optional)</small>:
+        </label>
+        <select name="country" id="country">
+          {countries.map((country) => {
+            return (
+              <option key={(`option_`, country.name)} value={country.name}>
+                {country.name}
+              </option>
+            );
+          })}
+        </select>
 
         <label htmlFor="email">Email:</label>
         <input
@@ -97,8 +115,7 @@ export default function Multiple() {
       <SatellightContainer>
         <Satellite />
         <AstronautContact />
-        <QRCode>
-        </QRCode>
+        <QRCode></QRCode>
       </SatellightContainer>
     </div>
   );

@@ -100,16 +100,22 @@ export const projects = [
     key: 5,
     title: "Portfolio",
     subHeader: "My web developer portfolio",
-    content: `While password generators might seem simple, this specific password generators 
-    offers more robust password generation by adding advance features such as prefix, 
-    postfix and key word insertion. In addition the user has access to create SSH keys.`,
-    technologies: ["Javascript", "Electron", "Jquery", "Crypto.js"],
+    content: `What better way to show off my skills by providing information on my developer portfolio? I designed 
+    and produced this site to be interesting to the eye and allows to user to explore my skills and traits 
+    smoothly. 
+  `,
+    technologies: [
+      "Javascript",
+      "React",
+      "SwiperJS",
+      "EmailJs",
+      "Styled-Components",
+    ],
     techniques: [
-      "Form Validation & submission",
-      "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios, ",
-      "Use of ReactJS hooks such as:  useMemo, useContext, useState, useReducer & useCallback",
-      "Storing & retrieving site cookies",
-      "User account creation & loading",
+      "Designed website layout",
+      "Maintained a responsive design of various mobile screen sizes",
+      "Utilized EmailJS to provide form submission",
+      "Used React as a frontend springboard",
     ],
     youtube: "https://www.youtube.com/",
     github: "https://www.github.com",
