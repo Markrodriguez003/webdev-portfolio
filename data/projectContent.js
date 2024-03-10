@@ -1,7 +1,7 @@
 export const projects = [
   {
     key: 0,
-    title: "SASEO",
+    title: "Saseo",
     subHeader: "Book suggestion & Organization site",
     content: `Are you having a hard time finding a book? Well Saseo can help
     you! Saseo offers users the ability to be suggested books by
@@ -21,6 +21,13 @@ export const projects = [
     youtube: "https://www.youtube.com/",
     github: "https://www.github.com",
     site: "https://www.nhl.com",
+    images: [
+      "https://drive.google.com/thumbnail?id=1PCXG34_O7Jjx8ygX921j9kcro-S4Ipu0&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1hNTPGCInSHEuNIsKFYYmm-vyp1D0fg_6&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1o7usE8eQjimmfjXOYwj-QVJ5uMoVuSzZ&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1TNvh9dlyCfNO2FEkUuhEyyS2jsGlrCI_&sz=w1000",
+    ],
+    video: "https://www.youtube.com/watch?v=LXb3EKWsInQ"
   },
   {
     key: 1,
@@ -39,6 +46,12 @@ export const projects = [
     youtube: "https://www.youtube.com/",
     github: "https://www.github.com",
     site: "https://www.nhl.com",
+    images: [
+      " https://drive.google.com/thumbnail?id=1v2iz3qQl44QIODN6AToQI23-CCcY4uOH&sz=w1000",
+      " https://drive.google.com/thumbnail?id=1o7usE8eQjimmfjXOYwj-QVJ5uMoVuSzZ&sz=w1000",
+      " https://drive.google.com/thumbnail?id=1TNvh9dlyCfNO2FEkUuhEyyS2jsGlrCI_&sz=w1000",
+    ],
+    video: "https://www.youtube.com/watch?v=z9vCWXuIw00"
   },
   {
     key: 2,
@@ -58,6 +71,13 @@ export const projects = [
     youtube: "https://www.youtube.com/",
     github: "https://www.github.com",
     site: "https://www.nhl.com",
+    images: [
+      "https://drive.google.com/thumbnail?id=1JaZ6pxHqjPGjaC88Ausxa5u6kHunXjWh&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1hNTPGCInSHEuNIsKFYYmm-vyp1D0fg_6&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1o7usE8eQjimmfjXOYwj-QVJ5uMoVuSzZ&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1TNvh9dlyCfNO2FEkUuhEyyS2jsGlrCI_&sz=w1000",
+    ],
+    video: "https://www.youtube.com/watch?v=znNllvBt_Jg"
   },
   {
     key: 3,
@@ -76,6 +96,13 @@ export const projects = [
     youtube: "https://www.youtube.com/",
     github: "https://www.github.com",
     site: "https://www.nhl.com",
+    images: [
+      "https://drive.google.com/thumbnail?id=12V_eFveENQKo5lfiyYKy0EFXWb2Oaj5B&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1hNTPGCInSHEuNIsKFYYmm-vyp1D0fg_6&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1o7usE8eQjimmfjXOYwj-QVJ5uMoVuSzZ&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1TNvh9dlyCfNO2FEkUuhEyyS2jsGlrCI_&sz=w1000",
+    ],
+    video: "https://www.youtube.com/watch?v=F5E711639lM"
   },
   {
     key: 4,
@@ -95,6 +122,13 @@ export const projects = [
     youtube: "https://www.youtube.com/",
     github: "https://www.github.com",
     site: "https://www.nhl.com",
+    images: [
+      "https://drive.google.com/thumbnail?id=17nWWNRlHBgYjQZxBBgQQygaolQZFIAnk&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1ompIzFSn6syYlaX7AK9oZb8qM3EchrXv&sz=w1000",
+      "https://drive.google.com/thumbnail?id=177M8XZnOvwjc95Cwzd2KcWxQaiuCQE9K&sz=w1000",
+      "https://drive.google.com/thumbnail?id=14CAFZouY58-u8Ad3YoeiFOUCp-5PIqk2&sz=w1000",
+    ],
+    video: "https://www.youtube.com/watch?v=Ot5VUi-pp0g"
   },
   {
     key: 5,
@@ -113,12 +147,19 @@ export const projects = [
     ],
     techniques: [
       "Designed website layout",
-      "Maintained a responsive design of various mobile screen sizes",
+      "Maintained a responsive design of various compute and mobile screen sizes",
       "Utilized EmailJS to provide form submission",
       "Used React as a frontend springboard",
     ],
     youtube: "https://www.youtube.com/",
     github: "https://www.github.com",
     site: "https://www.nhl.com",
+    images: [
+      "https://drive.google.com/thumbnail?id=1ndR_XDwCWW60lf1pM6zqJRnEjBWwwzmC&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1hNTPGCInSHEuNIsKFYYmm-vyp1D0fg_6&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1o7usE8eQjimmfjXOYwj-QVJ5uMoVuSzZ&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1TNvh9dlyCfNO2FEkUuhEyyS2jsGlrCI_&sz=w1000",
+    ],
+    video: "https://www.youtube.com/watch?v=AP5SRgDnJQ4"
   },
 ];

@@ -8,7 +8,7 @@ export const SectionContainer = styled.div`
   height: 100%;
   transition: none;
 
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
    flex-direction: column;
    justify-content: center;
    align-items: center;
@@ -38,7 +38,7 @@ export const RightColumnPanel = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     width: 90%;
   }
 
@@ -84,6 +84,7 @@ export const ProjectItem = styled.li`
   text-transform: uppercase;
   font-size: 33px;
   margin-bottom: 10px;
+  width: 350px;
   color: ${(props) => (props.selected === true ? "black" : "aliceblue")};
   background-color: ${(props) =>
     props.selected === true ? "aliceblue" : "transparent"};
@@ -106,7 +107,7 @@ export const ProjectsUL = styled.ul`
   font-weight: bold;
   padding-top: 0px;
   text-align: start;
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 `;

@@ -65,7 +65,7 @@ const rotateLine = keyframes`
 export const WavesContainer = styled.div`
   transform: translate(0px, -15px);
 
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     transform: translate(35px, -18px);
   }
 `;
@@ -160,7 +160,7 @@ export const BoxContainer = styled.div`
   margin-right: auto;
   text-align: center;
   transform: scale(1.25) translate(-5px, 70px);
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     transform: translate(-40px, 40px);
   }
 `;
@@ -358,8 +358,8 @@ export const SolarPanelContainer = styled.div`
   /* background-color: red; */
   transform: translate(-2px, 10px) scale(0.9);
 
-  @media screen and (max-width: 1115px) {
-    transform: translate(68px, -12px) scale(1);
+  @media screen and (max-width: 1200px) {
+    transform: translate(46px, -12px) scale(0.85);
   }
 
   &:before {

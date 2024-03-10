@@ -1,11 +1,11 @@
 * {
   margin: 0;
-  cursor: url("assets/icons/mouseIcon.png"), auto !important;
+  /* cursor: url("assets/icons/mouseIcon.png"), auto !important; */
 }
 
 html {
   scroll-behavior: smooth;
-  cursor: url("assets/icons/mouseIcon.png"), auto !important;
+  /* cursor: url("assets/icons/mouseIcon.png"), auto !important; */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -15,7 +15,38 @@ html {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
+a {
+  cursor: pointer;
+}
+
+.swiper-button-next {
+  color: white !important;
+  padding: 8px;
+  border-radius: 20%;
+  transition: linear 0.4s;
+
+}
+
+.swiper-button-next:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+.swiper-button-prev {
+  color: white !important;
+  padding: 8px;
+  border-radius: 20%;
+  transition: linear 0.4s;
+}
+
+.swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+
+
+}

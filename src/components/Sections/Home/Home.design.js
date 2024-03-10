@@ -8,7 +8,7 @@ export const IntroductionContainer = styled.div`
   font-family: "body";
   top: -50px;
 
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,7 @@ export const WelcomeContainer = styled.div`
   text-align: left;
   padding-left: 12px;
 
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     border-left: none;
     padding: 0px;
   }
@@ -41,7 +41,7 @@ export const WelcomeContainer = styled.div`
     padding-bottom: 50px;
     margin-bottom: -38px;
     font-size: 18px;
-    @media (max-width: 1112px) {
+    @media (max-width: 1200px) {
       order: 1;
       justify-content: center;
       align-items: center;
@@ -64,7 +64,7 @@ export const WelcomeContainer = styled.div`
     margin-bottom: 10px;
     letter-spacing: 3.2px;
 
-    @media (max-width: 1112px) {
+    @media (max-width: 1200px) {
       order: 1;
       justify-content: center;
       align-items: center;
@@ -95,14 +95,15 @@ export const NavContainer = styled.nav`
   align-content: start;
   padding-right: 12px;
   padding-top: 12px;
-  @media (max-width: 1112px) {
+  
+  @media (max-width: 1200px) {
     order: 1;
     flex-direction: row;
     padding-right: 0px;
   }
 
   & ul {
-    @media (max-width: 1112px) {
+    @media (max-width: 1200px) {
       order: 1;
       flex-direction: row;
       padding: 0px;
@@ -114,7 +115,7 @@ export const NavContainer = styled.nav`
     list-style-type: none;
     padding-bottom: 8px;
     text-align: right;
-    @media (max-width: 1112px) {
+    @media (max-width: 1200px) {
       text-align: center;
     }
 
@@ -131,6 +132,7 @@ export const NavContainer = styled.nav`
     text-decoration: none;
     /* padding: 2px; */
     transition: linear 0.2s;
+    
   }
   & ul li a:link {
   }
@@ -139,6 +141,7 @@ export const NavContainer = styled.nav`
   & ul li a:hover {
     font-size: 3.4em;
     padding: 10px;
+    cursor: pointer ;
     /* background<div>
       <small style={{color:"white"}}>{data[0]}</small>
     </div>-color: rgba(232, 236, 241, 0.2); */

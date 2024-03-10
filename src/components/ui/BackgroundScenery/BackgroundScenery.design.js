@@ -46,7 +46,7 @@ export const SpaceBackground = styled.div`
   overflow: hidden;
   transition: transform 2s ease-in-out;
 
-  @media screen and (max-width: 1115px) {
+  @media screen and (max-width: 1200px) {
     height: 785vh;
   }
 

@@ -13,7 +13,7 @@ export const FullView = styled.div`
   display: block;
   width: 100%;
   cursor: url(${customCursor})  -52 -52, auto;
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     display: none;
   }
   overflow: hidden;
@@ -21,7 +21,7 @@ export const FullView = styled.div`
 export const MiniView = styled.div`
   display: none;
   width: 100%;
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     display: block;
   }
 `;

@@ -9,10 +9,6 @@ html {
 }
 
  
-body {
-  cursor: url("assets/icons/mouseIcon.png"), auto !important;
-}
-
 /* unvisited link */
 a:link {
   color: white;
@@ -25,6 +21,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
+  cursor: pointer;
   color: white;
 }
 

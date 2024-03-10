@@ -25,9 +25,6 @@ function Home() {
             <li>
               <a href="#">CONTACT</a>
             </li>
-            <li>
-              <a href="#">SITE-INFO</a>
-            </li>
           </ul>
         </NavContainer>
         <WelcomeContainer>
@@ -60,7 +57,7 @@ function Home() {
 
       {/* <SoundMeter /> */}
       <br />
-      <span style={{ color: "grey", fontFamily: "body", fontSize:"12px" }}>
+      <span style={{ color: "grey", fontFamily: "body", fontSize: "12px" }}>
         SCROLL TO EXPLORE
       </span>
     </>

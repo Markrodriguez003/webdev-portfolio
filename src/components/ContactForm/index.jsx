@@ -23,7 +23,10 @@ export default function Multiple() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    console.log(`Form event:`, event, `form name:`, name, `form value:`, value);
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+
+
   };
 
   const handleSubmit = (event) => {
@@ -32,8 +35,6 @@ export default function Multiple() {
       `Name: ${formData.name}, Company: ${formData.company},Country: ${formData.country}, Email: ${formData.email}, Message: ${formData.message}`
     );
   };
-
-  console.log(`Countries --> `, countries.length);
 
   return (
     <div
@@ -77,7 +78,12 @@ export default function Multiple() {
         <label htmlFor="country">
           Country <small>(Optional)</small>:
         </label>
-        <select name="country" id="country">
+        <select
+          name="country"
+          id="country"
+          value={formData.country}
+          onChange={handleChange}
+        >
           {countries.map((country) => {
             return (
               <option key={(`option_`, country.name)} value={country.name}>

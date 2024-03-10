@@ -9,7 +9,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   padding-top: 25px;
   /* background-color: pink; */
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     
     padding-left:12.5%;
     margin-left:auto;
@@ -23,7 +23,7 @@ export const BorderCenter = styled.div`
   position: relative;
   justify-content: center;
   align-content: center;
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     border-left: none;
     padding: 0px;
     flex-direction: column;
@@ -65,7 +65,7 @@ export const BorderFrame = styled.div`
     font-size: 2rem;
     max-width: 100%;
 
-    @media (max-width: 1112px) {
+    @media (max-width: 1200px) {
       font-size: 2.5rem;
   }
   }

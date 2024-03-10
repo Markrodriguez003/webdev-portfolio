@@ -8,7 +8,7 @@ export const SectionContainer = styled.div`
   height: 100%;
   transition: none;
 
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     border-left: none;
     padding: 0px;
     flex-direction: column;
@@ -45,7 +45,7 @@ export const RightColumnPanel = styled.div`
     display: inline-block;
     margin-bottom: 20px;
     padding: 5px;
-    @media (max-width: 1112px) {
+    @media (max-width: 1200px) {
       font-size: 2em;
       
     }
@@ -72,7 +72,7 @@ export const RightColumnPanel = styled.div`
       padding-right: 50px;
       text-align: right;
 
-      @media (max-width: 1112px) {
+      @media (max-width: 1200px) {
         text-align: center;
         padding-right: 0px;
       }
@@ -83,7 +83,7 @@ export const RightColumnPanel = styled.div`
     text-align: center;
   }
 
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -95,7 +95,7 @@ export const LeftHeaderColumn = styled.div`
   flex-wrap: wrap;
   /* background-color: pink; */
 
-  @media (max-width: 1112px) {
+  @media (max-width: 1200px) {
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -120,7 +120,7 @@ export const LeftHeaderColumn = styled.div`
     width: 280px;
     text-align: left;
 
-    @media (max-width: 1112px) {
+    @media (max-width: 1200px) {
       text-align: center;
       padding-left: 0px;
     

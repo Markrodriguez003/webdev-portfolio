@@ -16,42 +16,81 @@ const fadeInUpdate = keyframes`
 // SWIPER
 export const ProjectSwiper = styled(Swiper)`
   width: 100%;
-  height: 650px;
-  padding: 0;
+  height: 100%;
+  padding: 0px 0px 0px 0px;
   margin: 0;
-  background-color: pink;
+  /* background-color: pink; */
   text-align: center;
 `;
 
-export const ProjectSwiperSlide = styled(SwiperSlide)`
-  background-color: lime;
-  width: 750px;
+export const ProjectSiteImage = styled.div`
+ 
+`
 
-  &img {
-    width: 600px;
-    height: auto;
+export const ProjectSwiperSlide = styled(SwiperSlide)`
+
+  /* background-color: lime; */
+  width: 100%;
+  height:100%;
+  & img  {
+    position:relative ;
+    display:block ;
+    object-fit: contain;
+    margin-left:auto;
+    margin-right:auto;
+ 
+    height: 600px;
+    @media screen and (max-width: 1000px) {
+      width: 80%;
+      height:80%;  
+      object-fit: none;
+      /* height: 50vh; 
+  }
+    @media screen and (max-width: 1400px) {
+      /* height: 60vh;  */
+  }
+    @media screen and (max-width: 1200px) {
+      /* width: 100%;
+      height: 100%; */
+  }
   }
 `;
 
 // VIDEO
-export const ProjectVideo = styled(ReactPlayer)`
-/* width:100vw; */
+// export const ProjectVideo = styled(ReactPlayer)`
+// width:280px;
+// background-color:red;
+// `;
+export const ProjectVideo = styled.div`
+display:block ;
+width:85%;
+height:600px;
  
-background-color:red;
+margin-left:auto;
+margin-right:auto;
 
+& * {
+  display:block;
+  width: 100%;
+  height: 600px;
+  
+}
 `;
+
 // PROJECT CARD
 export const Card = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-content: start;
+  align-content: center;
+ 
   border: rgba(255, 255, 255, 0.1) 1px solid;
-  height: 100%;
+  height: 92vh;
   width: 100%;
-
-  margin-left: 12px;
+  z-index: 1;
+  margin-left: 0px 0px 12px 0px;
+  padding-left: 0px 0px 12px 0px;
   animation: ${(props) =>
     props.toggle
       ? css`
@@ -61,7 +100,9 @@ export const Card = styled.div`
           ${fadeInUpdate} 0.3s ease-in-out
         `};
 
-  @media screen and (max-width: 1115px) {
+    /* background-color:coral ; */
+
+  @media screen and (max-width: 1200px) {
     margin: 0px;
     /* height: 125vh; */
     /* justify-content: center; */
@@ -84,7 +125,7 @@ export const CardHeader = styled.div`
   & h2 {
     text-align: start;
     color: white;
-    font-size: 2.5em;
+    font-size: 2em;
     padding: 2px;
     margin-bottom: 10px;
   }
@@ -96,47 +137,58 @@ export const CardHeader = styled.div`
   }
 `;
 
-export const CardSiteImage = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  & img {
-    width: 350px;
-    height: auto;
-  }
-`;
+
 
 export const CardBody = styled.section`
-  display: flex;
+  /* position: flex;
   flex-direction: column;
+  justify-content:center ;
+  justify-items:center ;
+  align-items:center ;
+  align-content:center ;
+  align-items: center ; */
   /* padding: 10px 15px; */
-  margin-bottom: 10px;
-  width: 80%;
-  background-color: yellow;
+  /* margin-bottom: 10px; */
+  
+  width: 100%;
+  height: 650px;
+  z-index: 1;
+  text-align:center ;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: tomato; */
 `;
 
 export const ProjectBlurb = styled.section`
+position: relative;
+display: block ;
   font-family: "body";
   letter-spacing: 0.5px;
+  font-size: 1rem;
   color: white;
-  padding: 10px 15px;
-  margin-bottom: 10px;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 5px 0px;
+  width: 80%;
+  /* background-color:purple ; */
+  
+ 
 `;
 
 export const CardFooter = styled.section`
   display: block;
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   bottom: 0;
   font-family: "body";
   color: white;
-  padding-top: 10px;
-  padding-bottom: 10px;
   background-color: rgba(255, 25, 255, 0.02);
+  padding-bottom: 15px;
+  margin:0;
 
-  @media screen and (max-width: 1115px) {
+
+  @media screen and (max-width: 1200px) {
     text-align: center;
-
     justify-content: center;
     align-content: center;
   }

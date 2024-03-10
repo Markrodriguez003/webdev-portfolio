@@ -13,10 +13,11 @@ export const AccordionContainer = styled.div`
 export const AccordionPanel = styled.div`
   font-family: "body";
   color: white;
+  margin-bottom:20px;
 
   & h4 {
     cursor: pointer;
-    padding: 10px;
+    padding: 5px;
   }
   & section {
     transition: 0.3s ease-in-out;

@@ -100,9 +100,6 @@ function WebsiteSlidePanels() {
             <SwiperSlide>
               <ContactSection />
             </SwiperSlide>
-            <SwiperSlide>
-              <SiteInfo />
-            </SwiperSlide>
           </StyledSwiper>
         </FullView>
 
@@ -111,7 +108,6 @@ function WebsiteSlidePanels() {
           <AboutSection />
           <ProjectsSection />
           <ContactSection />
-          <SiteInfo />
         </MiniView>
       </scrollContext.Provider>
     </>
