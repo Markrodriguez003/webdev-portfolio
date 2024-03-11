@@ -80,7 +80,6 @@ function ProjectsSection() {
           <nav>
             <ProjectsUL>{listOfProjects}</ProjectsUL>
           </nav>
-          
         </LeftHeaderColumn>
         <RightColumnPanel>
           <ProjectCard

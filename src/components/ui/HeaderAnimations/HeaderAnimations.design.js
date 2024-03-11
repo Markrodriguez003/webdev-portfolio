@@ -156,10 +156,11 @@ export const WavesAnimation = styled.div`
 // * CUBES
 // ***************************************
 export const BoxContainer = styled.div`
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
   text-align: center;
   transform: scale(1.25) translate(-5px, 70px);
+  
   @media (max-width: 1200px) {
     transform: translate(-40px, 40px);
   }

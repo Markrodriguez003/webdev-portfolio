@@ -21,6 +21,31 @@ export const IntroductionContainer = styled.div`
   }
 `;
 
+export const ScrollToExplore = styled.div`
+display: block;
+  color:grey;
+  font-family:"body";
+  font-size: 12px;
+  text-align:center ;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 85px;
+ 
+  
+
+    @media (max-width: 1200px) {
+   
+      margin-top: -50px;
+    margin-bottom: 140px;
+    }
+    @media (max-width: 600px) {
+   
+      margin-top: 20px;
+    margin-bottom: 140px;
+    }
+
+`
+
 export const WelcomeContainer = styled.div`
   display: inline;
   flex-direction: column;

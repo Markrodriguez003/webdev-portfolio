@@ -2,6 +2,7 @@ import {
   WelcomeContainer,
   IntroductionContainer,
   NavContainer,
+  ScrollToExplore,
 } from "../Home/Home.design.js";
 import PlanetHeroScene from "../../ui/PlanetHeroScene/index.jsx";
 import githubIcon from "../../../assets/icons/github-icon-w.png";
@@ -57,9 +58,11 @@ function Home() {
 
       {/* <SoundMeter /> */}
       <br />
-      <span style={{ color: "grey", fontFamily: "body", fontSize: "12px" }}>
-        SCROLL TO EXPLORE
-      </span>
+      <ScrollToExplore>
+        <SoundMeter />
+        <br/>
+        <span>SCROLL TO EXPLORE</span>
+      </ScrollToExplore>
     </>
   );
 }
