@@ -1,10 +1,10 @@
+import { ProjectsUL, ProjectItem } from "./ProjectsSection.design";
+
 import {
   SectionContainer,
   LeftHeaderColumn,
   RightColumnPanel,
-  ProjectsUL,
-  ProjectItem,
-} from "./ProjectsSection.design";
+} from "../Sections.design";
 
 // animation design ideas
 // https://codepen.io/bramus/pen/wvRqVBm

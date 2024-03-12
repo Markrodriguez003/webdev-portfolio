@@ -8,7 +8,7 @@ export const TechniquePanel = styled.div`
       props.togglePanel === false
          ? "0px"
          : "100%"};
- height:600px;
+ height:580px;
  background-color: rgba(0,0,0,0.95);
  color: aliceblue ;
  z-index: 3 ;

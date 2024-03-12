@@ -12,10 +12,49 @@ export const SectionContainer = styled.div`
     border-left: none;
     padding: 0px;
     flex-direction: column;
-    
   }
 `;
 
+// LEFT COLUMN
+export const LeftHeaderColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* background-color: GREEN; */
+  padding: 25px 0px 0px 15px;
+
+  @media (max-width: 1200px) {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    justify-items: center;
+  }
+
+  & p #resume-about {
+    @media (max-width: 380px) {
+      font-size: 0.2em;
+      /* color: pink; */
+    }
+  }
+
+  & p {
+    font-family: "body";
+    color: white;
+    font-size: 1.2em;
+    /* padding-left: 28px; */
+    width: 280px;
+    text-align: left;
+
+    @media (max-width: 1200px) {
+      text-align: center;
+      padding-left: 0px;
+    }
+  }
+`;
+
+// RIGHT COLUMN
 export const RightColumnPanel = styled.div`
   display: block;
   position: relative;
@@ -25,9 +64,10 @@ export const RightColumnPanel = styled.div`
   text-align: left;
   word-wrap: break-word;
   padding-top: 25px;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  margin-left:40px;
+  margin-left:40px;
+  /* background-color: tomato; */
   @media (max-width: 380px) {
     width: 85%;
   }
@@ -47,7 +87,6 @@ export const RightColumnPanel = styled.div`
     padding: 5px;
     @media (max-width: 1200px) {
       font-size: 2em;
-      
     }
   }
   & h2 {
@@ -87,43 +126,5 @@ export const RightColumnPanel = styled.div`
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-  }
-`;
-export const LeftHeaderColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  /* background-color: pink; */
-
-  @media (max-width: 1200px) {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    justify-self: center;
-    justify-items: center;
-    
-  }
-
-  & p #resume-about {
-    @media (max-width: 380px) {
-      font-size: 0.2em;
-      color:pink;
-    }
-  }
-
-  & p {
-    font-family: "body";
-    color: white;
-    font-size: 1.2em;
-    padding-left: 28px;
-    width: 280px;
-    text-align: left;
-
-    @media (max-width: 1200px) {
-      text-align: center;
-      padding-left: 0px;
-    
-    }
   }
 `;

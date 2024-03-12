@@ -9,7 +9,7 @@ export const TechnologyPanel = styled.div`
       props.togglePanel === false
          ? "0%"
          : "100%"};
- height:600px;
+ height:580px;
  background-color: rgba(0,0,0,0.95);
  color: aliceblue ;
  z-index: 2 ;

@@ -9,9 +9,9 @@ export const SectionContainer = styled.div`
   transition: none;
 
   @media (max-width: 1200px) {
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -82,7 +82,7 @@ export const RightColumnPanel = styled.div`
 export const ProjectItem = styled.li`
   cursor: pointer;
   text-transform: uppercase;
-  font-size: 33px;
+  font-size: 28px;
   margin-bottom: 10px;
   /* width: 350px; */
   color: ${(props) => (props.selected === true ? "black" : "aliceblue")};
@@ -101,13 +101,12 @@ export const ProjectItem = styled.li`
   } */
 `;
 export const ProjectsUL = styled.ul`
-/* position:absolute; */
+  position: absolute;
   text-decoration: none;
   list-style: none;
   font-family: "body";
   font-weight: bold;
-  padding-top: 0px;
-  padding-top: 0px;
+  padding: 0px;
   text-align: start;
   @media (max-width: 1200px) {
     display: none;
@@ -117,19 +116,18 @@ export const ProjectsUL = styled.ul`
 export const LeftHeaderColumn = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content:start ;
-  justify-items:start;
-  align-content:start ;
-  /* background-color:tomato; */
+  justify-content: start;
+  justify-items: start;
+  align-content: start;
+  background-color: tomato;
   flex-wrap: wrap;
-  width: 280px;
+  width: 20%;
   & p {
     font-family: "body";
     color: white;
     font-size: 1.2em;
-    padding-left: 0px;
-    margin-left:auto;
-    margin-right:auto;
+    padding: 0px;
+
     text-align: left;
   }
 `;

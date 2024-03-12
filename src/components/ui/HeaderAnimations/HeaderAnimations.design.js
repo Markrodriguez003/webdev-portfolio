@@ -63,7 +63,7 @@ const rotateLine = keyframes`
 // * WAVES
 // ***************************************
 export const WavesContainer = styled.div`
-  transform: translate(0px, -15px);
+  transform: translate(30px, -15px);
 
   @media (max-width: 1200px) {
     transform: translate(35px, -18px);
@@ -72,9 +72,6 @@ export const WavesContainer = styled.div`
 export const WavesAnimation = styled.div`
   height: 175px;
   width: 175px;
-  /* margin-left: 10px; */
-
-  /* transform: translate(0px, -125px); */
   transform-style: preserve-3d;
   transform: perspective(500px) rotateX(60deg);
 
@@ -159,7 +156,7 @@ export const BoxContainer = styled.div`
   /* margin-left: auto; */
   /* margin-right: auto; */
   text-align: center;
-  transform: scale(1.25) translate(-5px, 70px);
+  transform: scale(1.25) translate(80px, 70px);
   
   @media (max-width: 1200px) {
     transform: translate(-40px, 40px);
@@ -357,7 +354,7 @@ export const SolarPanelContainer = styled.div`
   height: 16vh;
   border-radius: 50%;
   /* background-color: red; */
-  transform: translate(-2px, 10px) scale(0.9);
+  transform: translate(42px, 10px) scale(0.9);
 
   @media screen and (max-width: 1200px) {
     transform: translate(46px, -12px) scale(0.85);

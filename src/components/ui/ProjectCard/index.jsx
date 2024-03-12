@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 // NOTES
-{/* // ! https://stackoverflow.com/questions/73653819/pause-other-videos-when-slide-is-changed-swiper-js-react-player */}
+{
+  /* // ! https://stackoverflow.com/questions/73653819/pause-other-videos-when-slide-is-changed-swiper-js-react-player */
+}
 
 // STYLED COMPONENTS
 import {
@@ -9,23 +11,24 @@ import {
   CardBody,
   CardFooter,
   ProjectBlurb,
-  ProjectSwiper,
-  ProjectSwiperSlide,
   ProjectVideo,
-} from "./ProjectCard.design";
+  CarouselContainer,
+} from "./FullProjectCard.design";
 
 // REACT
 import { useState } from "react";
 
 // NPM LIBRARIES
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+
 import ReactPlayer from "react-player";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import { Carousel } from "react-responsive-carousel";
 
 // CSS
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 //COMPONENTS
 import Accordion from "../Accordion";
@@ -39,10 +42,11 @@ import { FaUserAstronaut } from "react-icons/fa";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 
 // IMAGES
-import saseoA from "../../../assets/images/site-screenshots/Saseo-1.png";
+import saseoA from "../../../assets/images/site-screenshots/Portfolio.png";
 import saseoB from "../../../assets/images/site-screenshots/Saseo-2.png";
 import saseoC from "../../../assets/images/site-screenshots/Saseo-3.png";
-function ProjectCard({ props }) {
+
+function FullProjectCard({ props }) {
   const {
     title,
     subHeader,
@@ -56,21 +60,58 @@ function ProjectCard({ props }) {
     video,
   } = props;
 
+  // HANDLES TOGGLE DATA OF ADDITIONAL PROJECT SITE PANELS
   const [technologyToggle, setTechnologyToggle] = useState(false);
   const [techniqueToggle, setTechniqueToggle] = useState(false);
 
+  // HANDLES IMAGE LIGHTBOX
+  const [open, setOpen] = useState(false);
+
+  //
+
+  const [width, setWidth] = useState(120);
+  const [height, setHeight] = useState(80);
+  const [border, setBorder] = useState(1);
+  const [borderRadius, setBorderRadius] = useState(4);
+  const [padding, setPadding] = useState(4);
+  const [gap, setGap] = useState(16);
+  const [preload, setPreload] = useState(2);
+  const [showToggle, setShowToggle] = useState(false);
+
+  // TOGGLES TECNHOLOGY INFO PANEL FOR INDIVIDUAL PROJECT SITE
   function TechnologiesInfoClick(event) {
     setTechnologyToggle((prev) => !technologyToggle);
     setTechniqueToggle((prev) => false);
   }
 
+  // TOGGLES TECHIQUES INFO PANEL FOR INDIVIDUAL PROJECT SITE
   function TechniquesInfoClick(event) {
     setTechniqueToggle((prev) => !techniqueToggle);
     setTechnologyToggle((prev) => false);
   }
 
+  function check(){
+    console.log('you clicked on image!')
+  }
+
   return (
     <>
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={[{ src: { saseoA } }, { src: { saseoB } }, { src: { saseoC } }]}
+        plugins={[Thumbnails]}
+        thumbnails={{
+          position: "bottom",
+          width,
+          height,
+          border,
+          borderRadius,
+          padding,
+          gap,
+          showToggle,
+        }}
+      />
       <div
         style={{
           display: "flex",
@@ -86,44 +127,31 @@ function ProjectCard({ props }) {
           <CardBody>
             <TechnologiesPanel togglePanel={technologyToggle} />
             <TechniquesPanel togglePanel={techniqueToggle} />
-            <ProjectSwiper
-              slidesPerView={1}
-              simulateTouch={true}
-              speed={"385"}
-              spaceBetween={30}
-              centeredSlides={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              rewind={true}
-              pagination={{
-                clickable: true,
-              }}
-              navigation={true}
-              modules={[Autoplay, Pagination, Navigation]}
+
+            <CarouselContainer
+              showThumbs={false}
+              showIndicators={true}
+              showArrows={true}
+              swipeable={true}
+              dynamicHeight={true}
             >
               {images.map((item, count) => {
                 return (
-                  <ProjectSwiperSlide key={title + "-image-" + count}>
-                    <img src={item} class={"project-card-site-image"} alt={"image-" + count} />
-                  </ProjectSwiperSlide>
+                  <img
+                    src={item}
+                    key={title + "-image-" + count}
+                    // className={"project-card-site-image"}
+                    alt={"image-" + count}
+                    // onClick={() => setOpen(true)}
+                    onClick={() => console.log('fhuc')}
+                  />
                 );
               })}
 
-
-
-              <ProjectSwiperSlide>
-                <ProjectVideo>
-                  <ReactPlayer
-                    url={video}
-                    controls={true}
-                    width="100%"
-                    height="470px"
-                  />
-                </ProjectVideo>
-              </ProjectSwiperSlide>
-            </ProjectSwiper>
+              <ProjectVideo>
+                <ReactPlayer url={video} controls={true} />
+              </ProjectVideo>
+            </CarouselContainer>
 
             <ProjectBlurb>
               <section>
@@ -178,4 +206,4 @@ function ProjectCard({ props }) {
   );
 }
 
-export default ProjectCard;
+export default FullProjectCard;

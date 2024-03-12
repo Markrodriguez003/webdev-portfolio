@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Carousel } from "react-responsive-carousel";
 import ReactPlayer from "react-player";
 
 // ANIMATIONS
@@ -13,70 +13,47 @@ const fadeInUpdate = keyframes`
   100% { opacity: 1; }
 `;
 
-// SWIPER
-export const ProjectSwiper = styled(Swiper)`
-  width: 100%;
-  height: 100%;
-  padding: 0px 0px 0px 0px;
-  margin: 0;
-  /* background-color: pink; */
-  text-align: center;
-`;
-
-export const ProjectSiteImage = styled.div`
- 
-`
-
-export const ProjectSwiperSlide = styled(SwiperSlide)`
-
-  /* background-color: lime; */
-  width: 100%;
-  height:100%;
-  & img  {
-    position:relative ;
-    display:block ;
-    object-fit: contain;
-    margin-left:auto;
-    margin-right:auto;
- 
-    height: 600px;
-    @media screen and (max-width: 1000px) {
-      width: 80%;
-      height:80%;  
-      object-fit: none;
-      /* height: 50vh; 
-  }
-    @media screen and (max-width: 1400px) {
-      /* height: 60vh;  */
-  }
-    @media screen and (max-width: 1200px) {
-      /* width: 100%;
-      height: 100%; */
-  }
-  }
-`;
-
 // VIDEO
-// export const ProjectVideo = styled(ReactPlayer)`
-// width:280px;
-// background-color:red;
-// `;
-export const ProjectVideo = styled.div`
-display:block ;
-width:85%;
-height:600px;
- 
-margin-left:auto;
-margin-right:auto;
 
-& * {
-  display:block;
-  width: 100%;
-  height: 600px;
-  
-}
+export const ProjectVideo = styled.div`
+  & * {
+    width: 1000px !important;
+    height: 575px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 `;
 
+export const CarouselContainer = styled(Carousel)`
+  /* display: flex; */
+  width: 72%;
+
+  /* background-color: red; */
+
+  margin-left: auto;
+  margin-right: auto;
+
+  & img {
+    object-fit: contain;
+    height: 650px !important;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 1440px) {
+    width: 92%;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 80%;
+  }
+
+  & .control-arrow {
+    /* background-color: grey !important; */
+  }
+`;
 // PROJECT CARD
 export const Card = styled.div`
   position: relative;
@@ -84,13 +61,13 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: start;
   align-content: center;
- 
+  /* background-color: pink; */
   border: rgba(255, 255, 255, 0.1) 1px solid;
   height: 92vh;
   width: 100%;
+  margin-right: 40px;
   z-index: 1;
-  margin-left: 0px 0px 12px 0px;
-  padding-left: 0px 0px 12px 0px;
+
   animation: ${(props) =>
     props.toggle
       ? css`
@@ -100,13 +77,10 @@ export const Card = styled.div`
           ${fadeInUpdate} 0.3s ease-in-out
         `};
 
-    /* background-color:coral ; */
-
   @media screen and (max-width: 1200px) {
     margin: 0px;
-    /* height: 125vh; */
-    /* justify-content: center; */
     align-content: center;
+    display: none;
   }
 `;
 
@@ -137,42 +111,39 @@ export const CardHeader = styled.div`
   }
 `;
 
-
-
 export const CardBody = styled.section`
-  /* position: flex;
+  position: flex;
   flex-direction: column;
-  justify-content:center ;
-  justify-items:center ;
-  align-items:center ;
-  align-content:center ;
-  align-items: center ; */
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  align-items: center;
   /* padding: 10px 15px; */
   /* margin-bottom: 10px; */
-  
+
   width: 100%;
   height: 650px;
   z-index: 1;
-  text-align:center ;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   /* background-color: tomato; */
 `;
 
 export const ProjectBlurb = styled.section`
-position: relative;
-display: block ;
+  position: relative;
+  display: block;
   font-family: "body";
   letter-spacing: 0.5px;
   font-size: 1rem;
   color: white;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 5px 0px;
-  width: 80%;
+  width: 75%;
+  text-align: left;
   /* background-color:purple ; */
-  
- 
 `;
 
 export const CardFooter = styled.section`
@@ -184,8 +155,7 @@ export const CardFooter = styled.section`
   color: white;
   background-color: rgba(255, 25, 255, 0.02);
   padding-bottom: 15px;
-  margin:0;
-
+  margin: 0;
 
   @media screen and (max-width: 1200px) {
     text-align: center;

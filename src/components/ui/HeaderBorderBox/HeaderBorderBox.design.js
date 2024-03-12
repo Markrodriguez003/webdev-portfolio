@@ -3,26 +3,24 @@ import styled, { css, keyframes } from "styled-components";
 export const HeaderContainer = styled.div`
   position: relative;
   display: block;
-  margin-right: 20px;
-  margin-left: 20px;
+
   height: 220px;
-  width: 100%;
-  padding-top: 25px;
+
+  /* padding-top: 25px; */
   /* background-color: pink; */
   @media (max-width: 1200px) {
-    
-    padding-left:12.5%;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:50px;
+    padding-left: 12.5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
   }
 `;
 
 export const BorderCenter = styled.div`
   display: flex;
   position: relative;
-  justify-content: center;
-  align-content: center;
+  justify-content: start;
+  align-content: start;
   @media (max-width: 1200px) {
     border-left: none;
     padding: 0px;
@@ -67,6 +65,6 @@ export const BorderFrame = styled.div`
 
     @media (max-width: 1200px) {
       font-size: 2.5rem;
-  }
+    }
   }
 `;

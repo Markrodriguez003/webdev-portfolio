@@ -7,9 +7,7 @@ export const projects = [
     you! Saseo offers users the ability to be suggested books by
     subject or at random! Users will also have the ability to search
     for more information on their favorite authors, as well as find
-    books via ISBN. In addition, users will be able to create their
-    own accounts and suggest reading lists to your friends and
-    families.`,
+    books via ISBN. `,
     technologies: ["ReactJS", "MongoDB", "Axios", "OpenLibrary", "Express"],
     techniques: [
       "Form Validation & submission",

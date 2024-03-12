@@ -17,6 +17,7 @@ function BackgroundScenery() {
     );
   }, [starDirection]);
 
+
   // SLOWS THE RATE OF VIDEO.
   // let videoPlaybackSpeed = useRef();
   // useEffect(() => {

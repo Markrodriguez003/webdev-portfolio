@@ -25,7 +25,7 @@ from {
 function starAnimationChange(props) {
   const { currentIndex, previousIndex } = props;
 
-  console.log(`inside css: `, currentIndex, previousIndex);
+  // console.log(`inside css: `, currentIndex, previousIndex);
   if (currentIndex > previousIndex) {
     return "reverse";
   } else {

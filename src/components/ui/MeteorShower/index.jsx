@@ -1,20 +1,45 @@
-import "./style.css";
+import { useState, useEffect, useId } from "react";
 
+// STYLED COMPONENTS
+import { MeteorContainer } from "./MeteorShower.design";
 function MeteorShower() {
+  const [meteorPing, setMeteorPing] = useState(0);
+  // let randomKey;
+
+  // ? https://www.codementor.io/@damianpereira/how-to-use-clearinterval-inside-react-s-useeffect-and-why-it-is-important-1si7mztjlk
+
+  useEffect(() => {
+    const looper = setInterval(() => {
+      let randomMeteor = Math.floor(Math.random() * 10);
+
+      if (randomMeteor % 2) {
+        setMeteorPing(()=>randomMeteor);
+        console.log("Ping! " + "Starchart: " + meteorPing);
+      }
+
+      looper;
+    }, 4500);
+
+    return () => {
+      clearInterval(looper);
+    };
+  });
+
   return (
     <>
-      <section className="meteor-section">
-        <span className="meteor-span"></span>
-        <span className="meteor-span"></span>
-        <span className="meteor-span"></span>
-        <span className="meteor-span"></span>
-        <span className="meteor-span"></span>
-        <span className="meteor-span"></span>
-        <span className="meteor-span"></span>
-        <span className="meteor-span"></span>
-        <span className="meteor-span"></span>
-        <span className="meteor-span"></span>
-      </section>
+      {/* <MeteorContainer meteortrigger={meteorPing} > */}
+      <MeteorContainer meteorTrigger={meteorPing} key={ meteorPing}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </MeteorContainer>
     </>
   );
 }
