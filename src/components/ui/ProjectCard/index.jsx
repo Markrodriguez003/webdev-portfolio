@@ -4,6 +4,10 @@
   /* // ! https://stackoverflow.com/questions/73653819/pause-other-videos-when-slide-is-changed-swiper-js-react-player */
 }
 
+// ? https://css-tricks.com/aspect-ratio-boxes/
+// ? https://stackoverflow.com/questions/55642502/how-to-stop-react-player-from-playing-when-close-modal
+// ? https://github.com/cookpete/react-player/issues/1152
+
 // STYLED COMPONENTS
 import {
   Card,
@@ -16,7 +20,7 @@ import {
 } from "./FullProjectCard.design";
 
 // REACT
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // NPM LIBRARIES
 
@@ -41,6 +45,9 @@ import { BsGithub, BsGlobe } from "react-icons/bs";
 import { FaUserAstronaut } from "react-icons/fa";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 
+// CSS
+import "./ProjectCard.styles.css";
+
 // IMAGES
 import saseoA from "../../../assets/images/site-screenshots/Portfolio.png";
 import saseoB from "../../../assets/images/site-screenshots/Saseo-2.png";
@@ -51,7 +58,6 @@ function FullProjectCard({ props }) {
     title,
     subHeader,
     content,
-    youtube,
     github,
     website,
     technologies,
@@ -60,6 +66,9 @@ function FullProjectCard({ props }) {
     video,
   } = props;
 
+  // VIDEO REF
+  const videoRef = useRef();
+
   // HANDLES TOGGLE DATA OF ADDITIONAL PROJECT SITE PANELS
   const [technologyToggle, setTechnologyToggle] = useState(false);
   const [techniqueToggle, setTechniqueToggle] = useState(false);
@@ -67,16 +76,17 @@ function FullProjectCard({ props }) {
   // HANDLES IMAGE LIGHTBOX
   const [open, setOpen] = useState(false);
 
-  //
-
-  const [width, setWidth] = useState(120);
-  const [height, setHeight] = useState(80);
-  const [border, setBorder] = useState(1);
-  const [borderRadius, setBorderRadius] = useState(4);
-  const [padding, setPadding] = useState(4);
-  const [gap, setGap] = useState(16);
-  const [preload, setPreload] = useState(2);
+  // LIGHTBOX SETTINGS
   const [showToggle, setShowToggle] = useState(false);
+  const [playVideo, setPlayVideo] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // HANDLES PLAY FUNCTIONALITY OF VIDEO PLAYER
+  useEffect(() => {
+    if (currentSlide != images.length) {
+      setPlayVideo(() => false);
+    }
+  }, [currentSlide, setCurrentSlide, images, setPlayVideo, playVideo]);
 
   // TOGGLES TECNHOLOGY INFO PANEL FOR INDIVIDUAL PROJECT SITE
   function TechnologiesInfoClick(event) {
@@ -90,25 +100,21 @@ function FullProjectCard({ props }) {
     setTechnologyToggle((prev) => false);
   }
 
-  function check(){
-    console.log('you clicked on image!')
-  }
-
   return (
     <>
       <Lightbox
         open={open}
         close={() => setOpen(false)}
-        slides={[{ src: { saseoA } }, { src: { saseoB } }, { src: { saseoC } }]}
+        slides={[{ src: saseoA }, { src: saseoB }, { src: saseoC }]}
         plugins={[Thumbnails]}
         thumbnails={{
           position: "bottom",
-          width,
-          height,
-          border,
-          borderRadius,
-          padding,
-          gap,
+          width: 120,
+          height: 80,
+          border: 1,
+          borderRadius: 4,
+          padding: 4,
+          gap: 16,
           showToggle,
         }}
       />
@@ -133,23 +139,39 @@ function FullProjectCard({ props }) {
               showIndicators={true}
               showArrows={true}
               swipeable={true}
+              emulateTouch={true}
               dynamicHeight={true}
+              showStatus={false}
+              onChange={(props) => {
+                setCurrentSlide(parseInt(props));
+              }}
+              onClickItem={(props) => {
+                console.log(`Clicked on image: `, props, ` Opening lightbox!`);
+                setOpen(true);
+              }}
             >
               {images.map((item, count) => {
                 return (
                   <img
                     src={item}
                     key={title + "-image-" + count}
-                    // className={"project-card-site-image"}
                     alt={"image-" + count}
-                    // onClick={() => setOpen(true)}
-                    onClick={() => console.log('fhuc')}
                   />
                 );
               })}
 
               <ProjectVideo>
-                <ReactPlayer url={video} controls={true} />
+                <ReactPlayer
+                  key={`youtube-video:` + title + video}
+                  url={video}
+                  controls={true}
+                  playing={playVideo}
+                  onPlay={() => setPlayVideo(true)}
+                  onPause={() => setPlayVideo(false)}
+                  ref={videoRef}
+                  width="100%"
+                  height="100%"
+                />
               </ProjectVideo>
             </CarouselContainer>
 

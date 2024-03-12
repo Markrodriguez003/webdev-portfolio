@@ -16,9 +16,12 @@ const fadeInUpdate = keyframes`
 // VIDEO
 
 export const ProjectVideo = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
   & * {
-    width: 800px !important;
-    height: 430px !important;
+    /* width: 1000px !important; */
+    /* height: 100% !important; */
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -27,19 +30,33 @@ export const ProjectVideo = styled.div`
 export const CarouselContainer = styled(Carousel)`
   /* display: flex; */
   width: 72%;
-
-  /* background-color: red; */
-
   margin-left: auto;
   margin-right: auto;
 
+  /* // 4K Monitors
+  @media (min-width: 2200px) {
+    width: 78%;
+  } */
+
+  /* // 1440 Monitors
+  @media (min-width: 1440px) {
+    width: 87%;
+
+    & img {
+      height: 500px;
+    }
+  } */
+
   & img {
-    object-fit: contain;
-    height: 430px !important;
+    object-fit: fill;
+    /* height: 68vh !important; */
+    /* width: 100% !important; */
+    margin-left: auto;
+    margin-right: auto;
     /* background-color: red; */
   }
 
-  @media screen and (max-width: 1200px) {
+  /* @media screen and (max-width: 1200px) {
     width: 80%;
   }
 
@@ -49,7 +66,7 @@ export const CarouselContainer = styled(Carousel)`
 
   @media screen and (min-width: 1600px) {
     width: 80%;
-  }
+  } */
 
   & .control-arrow {
     /* background-color: grey !important; */
@@ -141,8 +158,9 @@ export const ProjectBlurb = styled.section`
   color: white;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
   padding: 5px 0px;
-  width: 75%;
+  width: 72%;
   text-align: left;
   /* background-color:purple ; */
 `;
