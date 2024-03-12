@@ -71,7 +71,7 @@ function WebsiteSlidePanels() {
       <scrollContext.Provider value={scrollDirection}>
         {/* <PaginationTag>{sectionType}</PaginationTag> */}
         <BackgroundScenery />
-{/* 
+
         <FullView>
           <StyledSwiper
             direction={"vertical"}
@@ -108,7 +108,7 @@ function WebsiteSlidePanels() {
           <AboutSection />
           <ProjectsSection />
           <ContactSection />
-        </MiniView> */}
+        </MiniView>
       </scrollContext.Provider>
     </>
   );

@@ -35,7 +35,8 @@ export const CarouselContainer = styled(Carousel)`
 
   & img {
     object-fit: contain;
-    height: 650px !important;
+    height: 430px !important;
+    /* background-color: red; */
   }
 
   @media screen and (max-width: 1200px) {
