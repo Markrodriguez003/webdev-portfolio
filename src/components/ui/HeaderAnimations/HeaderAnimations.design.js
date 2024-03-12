@@ -268,7 +268,7 @@ export const CubeBox = styled.div`
 // ***************************************
 
 export const PlanetContainer = styled.div`
-  padding-left: 20px;
+  /* padding-left: 20px; */
   transform: translate(0px, -15px);
 `;
 export const PlanetFlex = styled.div`

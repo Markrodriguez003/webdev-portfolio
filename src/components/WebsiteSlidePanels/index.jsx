@@ -6,6 +6,9 @@
 // https://codepad.co/snippet/retro-wave-animation
 // https://codepen.io/WilliamStaudenmeier/pen/eYQyRXz
 // https://www.youtube.com/watch?v=5f5wwQb22tE&ab_channel=RedStapler
+
+// ! loading page animation
+// ? https://stackoverflow.com/questions/60847095/how-to-load-all-images-before-showing-the-page-in-react
 import {
   StyledSwiper,
   FullView,
@@ -26,6 +29,7 @@ import Home from "../Sections/Home";
 import PaginationTag from "../ui/PaginationTag/index.jsx";
 import { sections } from "../../../data/sectionNames";
 import { useState, createContext, useEffect, useContext, useRef } from "react";
+import LoadingScreen from "../ui/LoadingScreen/index.jsx";
 
 export const scrollContext = createContext();
 
@@ -70,8 +74,8 @@ function WebsiteSlidePanels() {
     <>
       <scrollContext.Provider value={scrollDirection}>
         {/* <PaginationTag>{sectionType}</PaginationTag> */}
+        {/* <LoadingScreen /> */}
         <BackgroundScenery />
-
         <FullView>
           <StyledSwiper
             direction={"vertical"}

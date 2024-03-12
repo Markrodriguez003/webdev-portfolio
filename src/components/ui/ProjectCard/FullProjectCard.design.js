@@ -17,8 +17,8 @@ const fadeInUpdate = keyframes`
 
 export const ProjectVideo = styled.div`
   & * {
-    width: 1000px !important;
-    height: 575px !important;
+    width: 800px !important;
+    height: 430px !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
