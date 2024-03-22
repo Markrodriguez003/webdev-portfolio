@@ -83,8 +83,7 @@ export const PlanetBackground = styled.div`
   background: radial-gradient(circle at 100px 100px, #5cabff, #000);
   background-blend-mode: darken;
   filter: grayscale(5%);
-  /* filter: grayscale(5%) saturate(100%); */
-  /* filter:hue-rotate(5deg); */
+
   background-image: url(${homePlanet});
   background-repeat: no-repeat;
   background-size: cover;
@@ -93,8 +92,8 @@ export const PlanetBackground = styled.div`
   padding: 0;
   /* top: 100px; */
   width: 585px;
-  overflow: hidden;
   height: 585px;
+  overflow: hidden;
   border-radius: 50%;
   /* margin-left: auto;
   margin-right: auto; */
@@ -102,12 +101,25 @@ export const PlanetBackground = styled.div`
   box-shadow: inset 0 0 60px #131312;
   z-index: 1;
   @media screen and (max-width: 480px) {
-    /* transform: scale(80%); */
-    /* display: none; */
     top: -175px;
     width: 355px;
     height: 355px;
   }
+  // TABLET
+  @media screen and (max-width: 768px) {
+    top: -175px;
+    width: 375px;
+    height: 375px;
+  }
+
+
+  // 2K/4K MONITORS
+  @media screen and (min-width: 1740px) {
+    width: 685px;
+    height: 685px;
+  }
+
+  
 `;
 
 export const Satellite = styled.div`
@@ -162,7 +174,7 @@ export const AstronautHome = styled.div`
   height: 285px;
   margin-left: auto;
   margin-right: auto;
-  animation: ${floatA} 10s ease-in-out  infinite;
+  animation: ${floatA} 10s ease-in-out infinite;
 
   z-index: 1;
 

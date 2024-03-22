@@ -39,6 +39,7 @@ import Accordion from "../Accordion";
 import SiteButton from "../SiteButton";
 import TechnologiesPanel from "../TechnologiesPanel";
 import TechniquesPanel from "../TechniquesPanel";
+
 // ICONS
 import { IoLogoYoutube } from "react-icons/io5";
 import { BsGithub, BsGlobe } from "react-icons/bs";
@@ -66,6 +67,7 @@ function FullProjectCard({ props }) {
     video,
   } = props;
 
+  // console.log(`RETRIEVED PROJECT!`, props);
   // VIDEO REF
   const videoRef = useRef();
 
@@ -128,6 +130,7 @@ function FullProjectCard({ props }) {
         <Card>
           <CardHeader>
             <h2>{title}</h2>
+            {/* <AnimatedHeaderB>{title}</AnimatedHeaderB> */}
             <small> {subHeader}</small>
           </CardHeader>
           <CardBody>

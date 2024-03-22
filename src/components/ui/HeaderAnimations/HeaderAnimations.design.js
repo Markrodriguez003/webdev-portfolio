@@ -66,7 +66,7 @@ export const WavesContainer = styled.div`
   transform: translate(30px, -15px);
 
   @media (max-width: 1200px) {
-    transform: translate(35px, -18px);
+    transform: translate(0px, -14px);
   }
 `;
 export const WavesAnimation = styled.div`
@@ -157,9 +157,10 @@ export const BoxContainer = styled.div`
   /* margin-right: auto; */
   text-align: center;
   transform: scale(1.25) translate(80px, 70px);
-  
+
   @media (max-width: 1200px) {
-    transform: translate(-40px, 40px);
+    
+    transform: scale(1.15) translate(-5px, 70px);
   }
 `;
 export const BoxFlex = styled.div`
@@ -357,7 +358,7 @@ export const SolarPanelContainer = styled.div`
   transform: translate(42px, 10px) scale(0.9);
 
   @media screen and (max-width: 1200px) {
-    transform: translate(46px, -12px) scale(0.85);
+    transform: translate(0px, 7px) scale(0.85);
   }
 
   &:before {

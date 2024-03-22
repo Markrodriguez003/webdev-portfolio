@@ -6,11 +6,12 @@ import {
 import { IoLogoCss3 } from "react-icons/io";
 import { IoLogoJavascript, IoLogoHtml5 } from "react-icons/io5";
 import { SiReact } from "react-icons/si";
-import { TbBrandMongodb, TbBrandNextjs, TbBrandMysql } from "react-icons/tb";
+import { TbBrandMongodb, TbBrandNextjs, TbBrandMysql, TbBrandDjango } from "react-icons/tb";
 import { LiaGit } from "react-icons/lia";
 import { DiJqueryLogo } from "react-icons/di";
 import { SiNeutralinojs, SiTypescript, SiJest } from "react-icons/si";
 import { AiFillRobot } from "react-icons/ai";
+import { FaPython } from "react-icons/fa";
 export function TechnologiesSkillsBar() {
   return (
     <>
@@ -79,6 +80,14 @@ export function FutureTechSkillsBar() {
         <div>
           <SiTypescript id={"flex-icon"} />
           <h3>TYPESCRIPT</h3>
+        </div>
+        <div>
+          <FaPython id={"flex-icon"} />
+          <h3>PYTHON</h3>
+        </div>
+        <div>
+          <TbBrandDjango id={"flex-icon"} />
+          <h3>DJANGO</h3>
         </div>
       </BarContainer>
     </>

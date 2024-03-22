@@ -47,7 +47,7 @@ export const SpaceBackground = styled.div`
   transition: transform 2s ease-in-out;
 
   @media screen and (max-width: 1200px) {
-    height: 785vh;
+    height: 985vh;
   }
 
 

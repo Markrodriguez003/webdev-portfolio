@@ -3,16 +3,14 @@ import styled, { css, keyframes } from "styled-components";
 export const HeaderContainer = styled.div`
   position: relative;
   display: block;
-
   height: 220px;
+  width: 100%;
 
-  /* padding-top: 25px; */
-  /* background-color: pink; */
   @media (max-width: 1200px) {
-    padding-left: 12.5%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    text-align: center;
+    margin-top: 30px;
   }
 `;
 
@@ -21,10 +19,13 @@ export const BorderCenter = styled.div`
   position: relative;
   justify-content: start;
   align-content: start;
+
   @media (max-width: 1200px) {
     border-left: none;
     padding: 0px;
     flex-direction: column;
+    /* background-color: purple; */
+    align-items: center;
   }
 `;
 
@@ -34,18 +35,16 @@ export const BorderFrame = styled.div`
   grid-template-columns: max-content auto;
   grid-template-rows: auto max-content;
   background-size: cover;
-  margin-left: auto;
-  margin-right: auto;
   color: white;
   width: 240px;
   height: 190px;
-
   &:before,
   &:after {
     content: "";
     display: block;
     width: 100%;
     height: 100%;
+
     border: 2px solid white;
   }
   &:before {
@@ -62,9 +61,9 @@ export const BorderFrame = styled.div`
     font-family: sans-serif;
     font-size: 2rem;
     max-width: 100%;
-
+    
     @media (max-width: 1200px) {
-      font-size: 2.5rem;
+      font-size: 2.7rem;
     }
   }
 `;

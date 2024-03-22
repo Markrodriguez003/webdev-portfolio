@@ -1,9 +1,15 @@
-import { ProjectsUL, ProjectItem } from "./ProjectsSection.design";
+import {
+  ProjectsUL,
+  ProjectItem,
+  MaxProjectView,
+  MinProjectView,
+} from "./ProjectsSection.design";
 
 import {
   SectionContainer,
   LeftHeaderColumn,
   RightColumnPanel,
+  HeaderDetailsPanel,
 } from "../Sections.design";
 
 // animation design ideas
@@ -69,24 +75,40 @@ function ProjectsSection() {
       <SectionContainer>
         <LeftHeaderColumn>
           <HeaderBorderBox props={{ type: "boxes", title: "PROJECTS" }} />
-          <p>
-            Here are some of my projects. I have others in the chamber as well
-            so check back to see any updates!
-          </p>
-          <br />
-          <br />
-          <br />
+          <HeaderDetailsPanel>
+            <p>
+              Here are some of my projects. I have others in the chamber as well
+              so check back to see any updates!
+            </p>
+            <br />
+            <br />
+            <br />
 
-          <nav>
-            <ProjectsUL>{listOfProjects}</ProjectsUL>
-          </nav>
+            <nav>
+              <ProjectsUL>{listOfProjects}</ProjectsUL>
+            </nav>
+          </HeaderDetailsPanel>
         </LeftHeaderColumn>
         <RightColumnPanel>
-          <ProjectCard
-            key={(`Project: `, SlideProject)}
-            props={projects[SlideProject]}
-            toggle={revealFade}
-          />
+          <MaxProjectView>
+            <ProjectCard
+              key={(`Project: `, SlideProject)}
+              props={projects[SlideProject]}
+              toggle={revealFade}
+            />
+          </MaxProjectView>
+          <MinProjectView>
+            {projects.map((project, count) => {
+              // console.log(`Project-`, count, ` `, project);
+              return (
+                <ProjectCard
+                  key={(`Project-mini: `, project.title)}
+                  props={project}
+                  toggle={revealFade}
+                />
+              );
+            })}
+          </MinProjectView>
         </RightColumnPanel>
       </SectionContainer>
     </>

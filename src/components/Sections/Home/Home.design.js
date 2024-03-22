@@ -8,6 +8,11 @@ export const IntroductionContainer = styled.div`
   font-family: "body";
   top: -50px;
 
+  // 2K/4K MONITORS
+  @media screen and (min-width: 1740px) {
+    top: 20px;
+  }
+
   @media (max-width: 1200px) {
     display: flex;
     flex-direction: column;
@@ -22,29 +27,34 @@ export const IntroductionContainer = styled.div`
 `;
 
 export const ScrollToExplore = styled.div`
-display: block;
-  color:grey;
-  font-family:"body";
+  display: block;
+  color: grey;
+  font-family: "body";
   font-size: 12px;
-  text-align:center ;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 85px;
- 
-  
 
-    @media (max-width: 1200px) {
-   
-      margin-top: -50px;
-    margin-bottom: 140px;
-    }
-    @media (max-width: 600px) {
-   
-      margin-top: 20px;
-    margin-bottom: 140px;
-    }
+  // 2K/4K MONITORS
+  @media screen and (min-width: 1740px) {
+    margin-top: 125px;
+  }
 
-`
+  @media screen and (max-width: 1024px) {
+    margin-top: -80px;
+  }
+
+  @media (max-width: 1200px) {
+    margin-top: -70px;
+    margin-bottom: 140px;
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 20px;
+    margin-bottom: 140px;
+  }
+`;
 
 export const WelcomeContainer = styled.div`
   display: inline;
@@ -58,6 +68,7 @@ export const WelcomeContainer = styled.div`
   @media (max-width: 1200px) {
     border-left: none;
     padding: 0px;
+    margin-top: -65px;
   }
 
   & p {
@@ -120,7 +131,7 @@ export const NavContainer = styled.nav`
   align-content: start;
   padding-right: 12px;
   padding-top: 12px;
-  
+
   @media (max-width: 1200px) {
     order: 1;
     flex-direction: row;
@@ -157,7 +168,6 @@ export const NavContainer = styled.nav`
     text-decoration: none;
     /* padding: 2px; */
     transition: linear 0.2s;
-    
   }
   & ul li a:link {
   }
@@ -166,7 +176,7 @@ export const NavContainer = styled.nav`
   & ul li a:hover {
     font-size: 3.4em;
     padding: 10px;
-    cursor: pointer ;
+    cursor: pointer;
     /* background<div>
       <small style={{color:"white"}}>{data[0]}</small>
     </div>-color: rgba(232, 236, 241, 0.2); */

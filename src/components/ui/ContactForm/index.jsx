@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+
+// STYLED COMPONENTS
 import {
   FormContainer,
   SatellightContainer,
@@ -6,11 +8,20 @@ import {
   Satellite,
   QRCode,
 } from "./ContactForm.design";
-import SiteButton from "../ui/SiteButton";
-import { FaRegEnvelope } from "react-icons/fa";
 
+// COMPONENT
+import SiteButton from "../../ui/SiteButton";
+
+// SCRIPTS
+import { contactUsEmail } from "../../../scripts/emailSubmission";
+
+// ICONS
+import { FaRegEnvelope } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
+
+// DATA
 // Country JSON list
-import countries from "../../../data/countries.json";
+import countries from "../../../../data/countries.json";
 
 export default function Multiple() {
   const [formData, setFormData] = useState({
@@ -21,19 +32,21 @@ export default function Multiple() {
     message: "",
   });
 
+  // HANDLES GRABBING DATA FROM FORM
   const handleChange = (event) => {
     const { name, value } = event.target;
-    console.log(`Form event:`, event, `form name:`, name, `form value:`, value);
+    // console.log(`Form event:`, event, `form name:`, name, `form value:`, value);
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-
-
   };
 
+  // HANDLE FORM SUBMISSION + EMAILJS
   const handleSubmit = (event) => {
     event.preventDefault();
     alert(
       `Name: ${formData.name}, Company: ${formData.company},Country: ${formData.country}, Email: ${formData.email}, Message: ${formData.message}`
     );
+
+    contactUsEmail(formData);
   };
 
   return (
@@ -41,7 +54,7 @@ export default function Multiple() {
       style={{
         display: "flex",
         flexDirection: "row",
-        border: "rgba(255, 255, 255, 0.1) 0.5px solid",
+        // border: "rgba(255, 255, 255, 0.1) 0.5px solid",
       }}
     >
       <FormContainer
@@ -102,6 +115,7 @@ export default function Multiple() {
           onChange={handleChange}
           autoComplete="off"
           role="presentation"
+          required
         />
 
         <label htmlFor="message">Message:</label>
@@ -110,18 +124,28 @@ export default function Multiple() {
           name="message"
           value={formData.message}
           onChange={handleChange}
+          required
+          maxLength={250}
         />
 
-        <SiteButton
-          type="submit"
-          icon={<FaRegEnvelope />}
-          title="Submit"
-        ></SiteButton>
+        <div>
+          <SiteButton
+            type="submit"
+            icon={<FaRegEnvelope />}
+            title="Submit"
+          ></SiteButton>
+          <SiteButton
+            type="button"
+            icon={<FaTrashAlt />}
+            title="Clear Form"
+            styling="youtube"
+          ></SiteButton>
+        </div>
       </FormContainer>
       <SatellightContainer>
         <Satellite />
         <AstronautContact />
-        <QRCode></QRCode>
+        {/* <QRCode></QRCode> */}
       </SatellightContainer>
     </div>
   );

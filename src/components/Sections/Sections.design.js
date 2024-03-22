@@ -6,6 +6,7 @@ export const SectionContainer = styled.div`
   flex-direction: row;
   overflow: hidden;
   height: 100%;
+  width: 100%;
   transition: none;
 
   @media (max-width: 1200px) {
@@ -18,38 +19,51 @@ export const SectionContainer = styled.div`
 // LEFT COLUMN
 export const LeftHeaderColumn = styled.div`
   display: flex;
+  width: 22%;
+  /* background-color: cadetblue; */
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  /* background-color: GREEN; */
-  padding: 25px 0px 0px 15px;
+  padding: 25px 0px 0px 20px;
 
   @media (max-width: 1200px) {
-    justify-content: center;
-    align-content: center;
+    padding: 0px;
+    width: 100%;
     align-items: center;
-    align-self: center;
-    justify-self: center;
-    justify-items: center;
+    justify-content: center;
   }
+
+  /* & p {
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  } */
 
   & p #resume-about {
     @media (max-width: 380px) {
       font-size: 0.2em;
-      /* color: pink; */
     }
   }
+
+  // 2k/4k Monitors
+  /* @media screen and (min-width: 1740px) {
+    margin-right: 100px;
+  } */
 
   & p {
     font-family: "body";
     color: white;
     font-size: 1.2em;
-    /* padding-left: 28px; */
+
     width: 280px;
     text-align: left;
 
     @media (max-width: 1200px) {
       text-align: center;
       padding-left: 0px;
+    }
+
+    // 2k/4k Monitors
+    @media screen and (min-width: 2000px) {
+      font-size: 1.5rem;
     }
   }
 `;
@@ -65,9 +79,9 @@ export const RightColumnPanel = styled.div`
   word-wrap: break-word;
   padding-top: 25px;
   width: 100%;
-  margin-left:40px;
-  margin-left:40px;
-  /* background-color: tomato; */
+  margin-left: 0px;
+  margin-right: 5%;
+
   @media (max-width: 380px) {
     width: 85%;
   }
@@ -126,5 +140,11 @@ export const RightColumnPanel = styled.div`
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+  }
+`;
+
+export const HeaderDetailsPanel = styled.div`
+  @media (max-width: 1200px) {
+    display: none;
   }
 `;

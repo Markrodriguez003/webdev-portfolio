@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
-import satellite from "../../assets/images/satellite-1.png";
-import astronautContact from "../../assets/images/astronaut-3.png";
-import qrcode from "../../assets/images/qr-example.png";
+import satellite from "../../../assets/images/satellite-1.png";
+import astronautContact from "../../../assets/images/astronaut-3.png";
+import qrcode from "../../../assets/images/qr-example.png";
 
 export const FormContainer = styled.form`
   display: inline-flex;
@@ -11,16 +11,15 @@ export const FormContainer = styled.form`
   flex-direction: column;
   flex-wrap: wrap-reverse;
   font-family: "body";
-  gap: 15px;
-  padding: 18px;
+  gap: 12px;
+  padding: 15px;
   color: white;
-  /* background-color: rgba(215, 215, 215, 0.2); */
-  /* border: rgba(255, 255, 255, 0.1) 0.5px solid; */
-  /* border-radius: 5%;s */
   padding-top: 10px;
   width: 100%;
-  padding-right: 25px;
-  /* margin-top: 150px; */
+  border: rgba(255, 255, 255, 0.1) 1px solid;
+  height: 91vh;
+
+  margin-right: 38px;
 
   @media screen and (max-width: 1115px) {
     justify-content: center;
@@ -67,13 +66,17 @@ export const FormContainer = styled.form`
   }
   & textarea {
     width: 30vw;
-    height: 25vh;
+    height: 16vh;
     font-size: 25px;
     background-color: rgba(191, 191, 191, 0.12);
     color: white;
     resize: none;
     @media screen and (max-width: 1115px) {
       width: 45vw;
+    }
+
+    @media screen and (min-width: 1540px) {
+      height: 30vh;
     }
 
     @media screen and (max-width: 675px) {
@@ -90,7 +93,6 @@ export const SatellightContainer = styled.div`
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  /* border: pink 2px solid; */
   z-index: 1;
   @media screen and (max-width: 1115px) {
     display: none;

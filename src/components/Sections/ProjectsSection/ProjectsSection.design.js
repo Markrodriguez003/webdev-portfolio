@@ -22,7 +22,7 @@ export const SateliteContainer = styled.div`
   overflow: hidden;
   height: 100%;
   transition: none;
-  border: pink 2px solid;
+  /* border: pink 2px solid; */
 `;
 
 export const RightColumnPanel = styled.div`
@@ -84,7 +84,7 @@ export const ProjectItem = styled.li`
   text-transform: uppercase;
   font-size: 28px;
   margin-bottom: 10px;
-  /* width: 350px; */
+
   color: ${(props) => (props.selected === true ? "black" : "aliceblue")};
   background-color: ${(props) =>
     props.selected === true ? "aliceblue" : "transparent"};
@@ -92,14 +92,7 @@ export const ProjectItem = styled.li`
     props.selected === true ? "wght 582" : "wght 311"};
   letter-spacing: ${(props) => (props.selected === true ? "-3px" : "0.1px")};
   transition: 0.2s linear;
-  /* &:not(:nth-child(5)){
-    color:red;
-  }; */
-
-  /* &:hover {
-    background-color: rgba(0, 0, 255, 0.05);
-  } */
-`;
+s`;
 export const ProjectsUL = styled.ul`
   position: absolute;
   text-decoration: none;
@@ -108,9 +101,9 @@ export const ProjectsUL = styled.ul`
   font-weight: bold;
   padding: 0px;
   text-align: start;
-  @media (max-width: 1200px) {
+  /* @media (max-width: 1200px) {
     display: none;
-  }
+  } */
 `;
 
 export const LeftHeaderColumn = styled.div`
@@ -129,6 +122,23 @@ export const LeftHeaderColumn = styled.div`
     padding: 0px;
 
     text-align: left;
+  }
+`;
+
+export const MaxProjectView = styled.div`
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;
+
+export const MinProjectView = styled.div`
+  @media (min-width: 1200px) {
+    display: none;
+  }
+  @media (max-width: 1200px) {
+    /* background-color:pink; */
+    width:100%;
+    display: block;
   }
 `;
 

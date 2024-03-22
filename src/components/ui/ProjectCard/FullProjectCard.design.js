@@ -28,32 +28,43 @@ export const ProjectVideo = styled.div`
 `;
 
 export const CarouselContainer = styled(Carousel)`
-  /* display: flex; */
+  display: flex;
   width: 72%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 15px;
 
-  /* // 4K Monitors
+  // 4K Monitors
   @media (min-width: 2200px) {
     width: 78%;
-  } */
+  }
 
-  /* // 1440 Monitors
-  @media (min-width: 1440px) {
-    width: 87%;
+  // 1440 Monitors
+  /* @media (min-width: 1440px) {
+    width: 78%;
 
     & img {
-      height: 500px;
+    
     }
   } */
+  @media (max-width: 1440px) {
+    width: 86%;
+
+    & img {
+      /* height: 600px; */
+    }
+  }
+
+  @media (min-width: 1650px) {
+    width: 79%;
+
+    & img {
+      /* height: 600px; */
+    }
+  }
 
   & img {
     object-fit: fill;
-    /* height: 68vh !important; */
-    /* width: 100% !important; */
-    margin-left: auto;
-    margin-right: auto;
-    /* background-color: red; */
   }
 
   /* @media screen and (max-width: 1200px) {
@@ -84,6 +95,7 @@ export const Card = styled.div`
   height: 92vh;
   width: 100%;
   margin-right: 40px;
+  padding-bottom:15px;
   z-index: 1;
 
   animation: ${(props) =>
@@ -98,7 +110,7 @@ export const Card = styled.div`
   @media screen and (max-width: 1200px) {
     margin: 0px;
     align-content: center;
-    display: none;
+    /* display: none; */
   }
 `;
 
@@ -146,6 +158,7 @@ export const CardBody = styled.section`
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 12x;
   /* background-color: tomato; */
 `;
 
@@ -174,6 +187,7 @@ export const CardFooter = styled.section`
   color: white;
   background-color: rgba(255, 25, 255, 0.02);
   padding-bottom: 15px;
+
   margin: 0;
 
   @media screen and (max-width: 1200px) {
