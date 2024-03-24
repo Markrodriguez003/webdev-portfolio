@@ -35,9 +35,6 @@ import spaceship from "../../../assets/gifs/spaceship.gif";
 import countries from "../../../../data/countries.json";
 
 export default function ContactForm() {
-  // EMAIL FORM SUBMISSION SUCCESS OR FAILURE PANEL
-  const [emailSuccess, setEmailSuccess] = useState(null);
-
   // GOOGLE CAPTCHA REF
   const recaptcha = useRef();
 
@@ -58,51 +55,21 @@ export default function ContactForm() {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  // LISTENS TO SEE RESULT OF FORM / EMAIL SUBMISSION
+  // CAPTURE OF CAPTCHA
 
-  useEffect(() => {
-    if (emailSuccess === null) {
-    } else if (emailSuccess === false) {
-      SAlert.fire({
-        confirmButtonColor: "black",
-        customClass: {
-          validationMessage: "my-validation-message",
-        },
-        title: "Form submissions unsuccessful!",
-        text: "Houston..transmission was unsuccessful! We are working on it!",
-        width: 600,
-        padding: "3em",
-        color: "#ffffff",
-        // background: `url(${alien}) rgba(0, 0, 0, 0.8)`,
-        background: `rgba(0, 0, 0, 0.8)`,
-        imageWidth: 400,
-        imageHeight: 500,
-        imageAlt: "Successful message",
-      });
-    } else {
-      SAlert.fire({
-        confirmButtonColor: "black",
-        customClass: {
-          validationMessage: "my-validation-message",
-        },
-        title: "Form submissions successful!",
-        text: "Houston..transmission successful!",
-        width: 600,
-        padding: "3em",
-        color: "#ffffff",
-        // background: `url(${alien}) rgba(0, 0, 0, 0.8)`,
-        background: `rgba(0, 0, 0, 0.8)`,
-        imageWidth: 400,
-        imageHeight: 500,
-        imageAlt: "Successful message",
-      });
-    }
-  }, [emailSuccess, setEmailSuccess]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setCount((count) => count + 1);
+  //   }, 1000);
+  // });
+
+  // ! https://github.com/james-wallis/wallisconsultancy/blob/master/components/messageForm.js
 
   // HANDLE FORM SUBMISSION + EMAILJS
   const handleSubmit = async (event) => {
     event.preventDefault();
     const captchaValue = recaptcha.current.getValue();
+    // console.log("FORM SUBMISSION PENDING!", captchaValue);
 
     if (!captchaValue) {
       SAlert.fire({
@@ -122,8 +89,61 @@ export default function ContactForm() {
         // imageAlt: "Successful message",
       });
     } else {
-      setEmailSuccess(await contactUsEmail(formData, captchaValue));
+      const res = await fetch("http://localhost:8888/verify", {
+        method: "POST",
+        body: JSON.stringify({ captchaValue }),
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+      const data = await res.json();
+      console.log(`GOOGLE CAPTCHA DATA!`, data);
+
+      if (data.success) {
+        SAlert.fire({
+          confirmButtonColor: "black",
+          customClass: {
+            validationMessage: "my-validation-message",
+          },
+          title: "Form submissions successful!",
+          text: "Houston..transmission successful!",
+          width: 600,
+          padding: "3em",
+          color: "#ffffff",
+          // background: `url(${alien}) rgba(0, 0, 0, 0.8)`,
+          background: `rgba(0, 0, 0, 0.8)`,
+          imageWidth: 400,
+          imageHeight: 500,
+          imageAlt: "Successful message",
+        });
+        // setFormData((prevFormData) => ({
+        //   ...prevFormData,
+        //   "g-recaptcha-response": captchaValue,
+        // }));
+        console.log(`Payload:`, formData);
+        contactUsEmail(formData, captchaValue);
+      } else {
+        SAlert.fire({
+          confirmButtonColor: "black",
+          customClass: {
+            validationMessage: "my-validation-message",
+          },
+          title: "reCAPTCHA validation failed!",
+          text: "Houston..Something went wrong...",
+          width: 600,
+          padding: "3em",
+          color: "#ffffff",
+          background: " rgba(0, 0, 0, 0.8)",
+          // background: `url(${alien}) rgba(0, 0, 0, 0.8)`,
+          // imageUrl: ,
+          imageWidth: 400,
+          imageHeight: 900,
+          imageAlt: "Message failure image",
+        });
+      }
     }
+
+    //EOF
   };
 
   return (

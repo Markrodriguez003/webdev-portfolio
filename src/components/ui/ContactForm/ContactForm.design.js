@@ -72,15 +72,15 @@ export const FormContainer = styled.form`
     color: white;
     resize: none;
     @media screen and (max-width: 1115px) {
-      width: 45vw;
+      width: 35vw;
     }
 
     @media screen and (min-width: 1540px) {
-      height: 30vh;
+      height: 20vh;
     }
 
     @media screen and (max-width: 675px) {
-      width: 65vw;
+      width: 55vw;
     }
   }
 `;

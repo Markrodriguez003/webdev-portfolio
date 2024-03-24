@@ -79,7 +79,7 @@ export const RightColumnPanel = styled.div`
   word-wrap: break-word;
   padding-top: 25px;
   width: 100%;
-  margin-left: 0px;
+  margin-left: 55px;
   margin-right: 5%;
 
   @media (max-width: 380px) {

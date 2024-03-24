@@ -1,0 +1,39 @@
+/* .my-validation-message::before {
+    display: none;
+  }
+  
+  .my-validation-message i {
+    margin: 0 0.4em;
+    color: #f27474;
+    font-size: 4.4em;
+  }
+   */
+
+.swal2-popup.swal2-modal.swal2-show {
+    border: white 3px solid !important;
+}
+
+.swal2-confirm.swal2-styled.swal2-default-outline {
+    /* font-size: 5.3rem !important; */
+    border: white 3px solid !important;
+    font-family: "header" !important;
+
+}
+
+.swal2-confirm.swal2-styled.swal2-default-outline:hover {
+    background-color: aliceblue !important;
+    color: black !important;
+    transition: 0.3s linear;
+    font-family: "header" !important;
+
+}
+
+.swal2-title {
+    font-family: "header" !important;
+
+}
+
+body.swal2-shown>[aria-hidden='true'] {
+    transition: 0.1s filter;
+    filter: blur(3px);
+}
