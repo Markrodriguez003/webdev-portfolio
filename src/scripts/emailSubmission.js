@@ -1,13 +1,19 @@
 // LIBRARIES
 import emailjs from "@emailjs/browser";
+import DOMPurify from "dompurify";
 
 // todo: newsletter that recommends a new, generated book every 3 months to whoever signs up to newsletter
 
 export async function contactUsEmail(data, captcha) {
 
-  // TAKES SUBMITTED FORM DATA + G-CAPTCHA TOKEN AND PASSES IT TO EMAILJS SERVICE
+  // TAKES SUBMITTED FORM DATA + G-CAPTCHA TOKEN AND PASSES IT TO EMAILJS SERVICE 
+  // DOM PURIFIED EACH FORM DATA VALUE AS A PRECAUTION FOR SECURITY REASONS 
   const params = {
-    ...data,
+    name: DOMPurify.sanitize(data.name),
+    email: DOMPurify.sanitize(data.email),
+    company: DOMPurify.sanitize(data.company),
+    country: DOMPurify.sanitize(data.country),
+    message: DOMPurify.sanitize(data.message),
     "g-recaptcha-response": captcha
   }
 

@@ -15,6 +15,7 @@ import SiteButton from "../../ui/SiteButton";
 // LIBRARY
 import ReCAPTCHA from "react-google-recaptcha";
 import SAlert from "sweetalert2";
+// import DOMPurify from "dompurify";
 
 // SCRIPTS
 import { contactUsEmail } from "../../../scripts/emailSubmission";
@@ -55,7 +56,10 @@ export default function ContactForm() {
   const handleChange = (event) => {
     const { name, value } = event.target;
     // console.log(`Form event:`, event, `form name:`, name, `form value:`, value);
-    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
 
   // LISTENS TO SEE RESULT OF FORM / EMAIL SUBMISSION
