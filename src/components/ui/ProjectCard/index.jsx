@@ -125,6 +125,7 @@ function FullProjectCard({ props }) {
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
+          overflow: "hidden",
         }}
       >
         <Card>
@@ -134,8 +135,8 @@ function FullProjectCard({ props }) {
             <small> {subHeader}</small>
           </CardHeader>
           <CardBody>
-            <TechnologiesPanel togglePanel={technologyToggle} />
-            <TechniquesPanel togglePanel={techniqueToggle} />
+            {/* <TechnologiesPanel togglePanel={technologyToggle} />
+            <TechniquesPanel togglePanel={techniqueToggle} /> */}
 
             <CarouselContainer
               showThumbs={false}
@@ -149,7 +150,6 @@ function FullProjectCard({ props }) {
                 setCurrentSlide(parseInt(props));
               }}
               onClickItem={(props) => {
-                console.log(`Clicked on image: `, props, ` Opening lightbox!`);
                 setOpen(true);
               }}
             >
@@ -183,9 +183,18 @@ function FullProjectCard({ props }) {
                 <p>{content}</p>
               </section>
               <br />
+              <section>
+                <p>
+                  <strong>Technologies used:</strong>{" "}
+                  {technologies.map((tech) => {
+                    return `${tech} | `;
+                  })}
+                </p>
+              </section>
+              <br />
             </ProjectBlurb>
             <CardFooter>
-              <span onClick={(event) => TechnologiesInfoClick(event)}>
+              {/* <span onClick={(event) => TechnologiesInfoClick(event)}>
                 <SiteButton
                   type="button"
                   title="Technologies"
@@ -199,7 +208,7 @@ function FullProjectCard({ props }) {
                   icon={<HiOutlineWrenchScrewdriver />}
                 />
               </span>
-              <span style={{ fontSize: "30px", padding: "0px 8px" }}>|</span>
+              <span style={{ fontSize: "30px", padding: "0px 8px" }}>|</span> */}
               <SiteButton
                 type="anchor"
                 url="https://www.github.com"
@@ -223,8 +232,6 @@ function FullProjectCard({ props }) {
               />
             </CardFooter>
           </CardBody>
-
-          {/* <Accordion props={props} /> */}
         </Card>
       </div>
     </>

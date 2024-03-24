@@ -8,7 +8,7 @@ export const projects = [
     subject or at random! Users will also have the ability to search
     for more information on their favorite authors, as well as find
     books via ISBN. `,
-    technologies: ["ReactJS", "MongoDB", "Axios", "OpenLibrary", "Express"],
+    technologies: ["ReactJS", "Axios", "OpenLibraryAPI", "EmailJS", "ChakraUI", "Formik", "Canvas-Confetti", "Aos"],
     techniques: [
       "Form Validation & submission",
       "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios",
@@ -33,7 +33,7 @@ export const projects = [
     subHeader: "Faux Aquarium & Museum Business Site",
     content: `An imitation of a fake aquarium & museum located in Key Biscayne, Florida. 
     This website is static and only serves to show the frontend design and implementation.`,
-    technologies: ["ReactJS", "MongoDB", "Axios", "Google Drive", "Express"],
+    technologies: ["ReactJS", "Styled-Components", "Swiper", "AnimateCSS"],
     techniques: [
       "Form Validation & submission",
       "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios, ",
@@ -58,7 +58,7 @@ export const projects = [
     content: `Owadi-Owiwi means "study owl" in the Yoruba language. This site is a simple to use study 
     tool users can use to create, edit, load & organize flash cards. In addition user's can save
     notes in th same fashion. User's can save their flash cards to their google drive as well.`,
-    technologies: ["ReactJS", "MongoDB", "Axios", "Google Drive", "Express"],
+    technologies: ["ReactJS", "MongoDB", "Axios", "Node", "Express", "Grommet", "React-Draggble", "React-Scripts"],
     techniques: [
       "Form Validation & submission",
       "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios, ",
@@ -83,7 +83,7 @@ export const projects = [
     subHeader: "A desktop webapp that facilitates creating load files.",
     content: `This simple to use webapp is meant to help with lawfirms, who use specific document 
     repo applications, create load files for large productions that need to be digested into repo.`,
-    technologies: ["Javascript", "Neutrino", "Jquery"],
+    technologies: ["Javascript", "Neutrino", "Jquery", "Node"],
     techniques: [
       "Form Validation & submission",
       "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios, ",
@@ -139,9 +139,15 @@ export const projects = [
     technologies: [
       "Javascript",
       "React",
-      "SwiperJS",
+      "SweetAlert2",
+      "domPurify",
+      "react-player",
+      "Yet-Another-React-Lightbox",
       "EmailJs",
       "Styled-Components",
+      "react-google-recaptcha",
+      "React Icons",
+      "React-Responsive-Carousel"
     ],
     techniques: [
       "Designed website layout",

@@ -3,6 +3,45 @@ import satellite from "../../../assets/images/satellite-1.png";
 import astronautContact from "../../../assets/images/astronaut-3.png";
 import qrcode from "../../../assets/images/qr-example.png";
 
+
+const floatA = keyframes`
+  0% {
+    transform: translate(0, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(0, 28px) rotate(-3deg);
+  }
+  50% {
+    transform: translate(0, -7px) rotate(0deg);
+  }
+  75% {
+    transform: translate(0, 28px) rotate(4deg);
+  }
+  100% {
+    transform: translate(0, -0px);
+    }
+`;
+
+
+const floatB = keyframes`
+  0% {
+    transform: translate(0, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(0, 31px) rotate(-8deg);
+  }
+  50% {
+    transform: translate(0, -7px) rotate(0deg);
+  }
+  75% {
+    transform: translate(0, 38px) rotate(6deg);
+  }
+  100% {
+    transform: translate(0, -0px);
+    }
+`;
+
+
 export const FormContainer = styled.form`
   display: inline-flex;
   position: relative;
@@ -112,6 +151,7 @@ export const Satellite = styled.div`
   height: 255px;
   margin-left: auto;
   margin-right: auto;
+  animation: ${floatB} 18s ease-in-out infinite;
   /* animation: spin 115s linear infinite; */
   /* box-shadow: inset 0 0 60px #131312; */
   z-index: 1;
@@ -132,6 +172,7 @@ export const AstronautContact = styled.div`
   margin-left: auto;
   margin-right: auto;
   z-index: 1;
+  animation: ${floatA} 10s ease-in-out infinite;
 `;
 
 export const QRCode = styled.div`

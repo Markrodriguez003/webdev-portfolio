@@ -7,6 +7,7 @@ export const SectionContainer = styled.div`
   overflow: hidden;
   height: 100%;
   transition: none;
+   
 
   @media (max-width: 1200px) {
     flex-direction: column;
@@ -37,7 +38,7 @@ export const RightColumnPanel = styled.div`
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-
+  overflow: hidden ;
   @media (max-width: 1200px) {
     width: 90%;
   }

@@ -33,7 +33,7 @@ export const CarouselContainer = styled(Carousel)`
   margin-left: auto;
   margin-right: auto;
   margin-top: 15px;
-
+  
   // 4K Monitors
   @media (min-width: 2200px) {
     width: 78%;
@@ -65,6 +65,7 @@ export const CarouselContainer = styled(Carousel)`
 
   & img {
     object-fit: fill;
+ 
   }
 
   /* @media screen and (max-width: 1200px) {
@@ -95,7 +96,6 @@ export const Card = styled.div`
   height: 92vh;
   width: 100%;
   margin-right: 40px;
-  padding-bottom:15px;
   z-index: 1;
 
   animation: ${(props) =>
@@ -153,13 +153,13 @@ export const CardBody = styled.section`
   /* margin-bottom: 10px; */
 
   width: 100%;
-  height: 650px;
+  /* height: 650px; */
   z-index: 1;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 12x;
-  /* background-color: tomato; */
+ 
 `;
 
 export const ProjectBlurb = styled.section`
@@ -175,12 +175,14 @@ export const ProjectBlurb = styled.section`
   padding: 5px 0px;
   width: 72%;
   text-align: left;
-  /* background-color:purple ; */
+ 
 `;
 
 export const CardFooter = styled.section`
-  display: block;
+  display: flex;
+  flex-wrap:wrap ;
   /* position: absolute; */
+  justify-content:center;
   width: 100%;
   bottom: 0;
   font-family: "body";
