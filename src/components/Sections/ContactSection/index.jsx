@@ -12,21 +12,7 @@ import {
 
 import { ModalOuterContainer } from "./ContactSection.Design";
 
-// LIBRARIES
-import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
-
-// PDF STYLE
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: "row",
-    backgroundColor: "#E4E4E4",
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
-  },
-});
+import SiteButton from "../../ui/SiteButton";
 
 // ICONS
 import { LuMenuSquare } from "react-icons/lu";
@@ -44,24 +30,34 @@ import resume from "../../../../public/download/Mark Rodriguez - Resume.pdf";
 // PDF VIEWER
 function PDFViewer() {
   return (
-    <div style={{backgroundColor:"green"}}>
-      {/* <embed src={resume} width="100%" height="500px" /> */}
+    <div style={{ backgroundColor: "green", width: "80%", height: "90%" }}>
+      <iframe src={resume} width="100%" height="100%" />
     </div>
   );
 }
 
-// function PDFModal(){
-//   return(
-
-//   )
-// }
-
 function ContactSection() {
+  const [pdfModal, setPdfModal] = useState(false);
+
+  function pdfModalClick(event) {
+    // event.preventDefault();
+    setPdfModal(true);
+  }
+
   return (
     <>
-      <ModalOuterContainer>
-        <PDFViewer />
-      </ModalOuterContainer>
+      {pdfModal === true ? (
+        <ModalOuterContainer>
+          <PDFViewer />
+          <SiteButton
+            type="none"
+            title={"Exit"}
+            onClick={console.log("CLOSE MODAL!")}
+          ></SiteButton>
+        </ModalOuterContainer>
+      ) : (
+        <></>
+      )}
       <SectionContainer>
         <LeftHeaderColumn>
           <HeaderBorderBox props={{ type: "solar", title: "CONTACT" }} />
@@ -93,7 +89,11 @@ function ContactSection() {
               <LuMenuSquare
                 style={{ verticalAlign: "center", paddingRight: "5px" }}
               />
-              Resume: <a href="#">View</a> |{" "}
+              Resume:{" "}
+              <a href="#" onClick={(event) => pdfModalClick(event)}>
+                View
+              </a>{" "}
+              |{" "}
               <a href={resume} download={resume}>
                 Download
               </a>
