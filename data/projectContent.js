@@ -8,7 +8,16 @@ export const projects = [
     subject or at random! Users will also have the ability to search
     for more information on their favorite authors, as well as find
     books via ISBN. `,
-    technologies: ["ReactJS", "Axios", "OpenLibraryAPI", "EmailJS", "ChakraUI", "Formik", "Canvas-Confetti", "Aos"],
+    technologies: [
+      "ReactJS",
+      "Axios",
+      "OpenLibraryAPI",
+      "EmailJS",
+      "ChakraUI",
+      "Formik",
+      "Canvas-Confetti",
+      "Aos",
+    ],
     techniques: [
       "Form Validation & submission",
       "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios",
@@ -25,12 +34,12 @@ export const projects = [
       "https://drive.google.com/thumbnail?id=1o7usE8eQjimmfjXOYwj-QVJ5uMoVuSzZ&sz=w1000",
       "https://drive.google.com/thumbnail?id=1TNvh9dlyCfNO2FEkUuhEyyS2jsGlrCI_&sz=w1000",
     ],
-    video: "https://www.youtube.com/watch?v=LXb3EKWsInQ"
+    video: "https://www.youtube.com/watch?v=LXb3EKWsInQ",
   },
   {
     key: 1,
     title: "Neptune's Cove",
-    subHeader: "Faux Aquarium & Museum Business Site",
+    subHeader: "Aquarium & Museum Mockup Site",
     content: `An imitation of a fake aquarium & museum located in Key Biscayne, Florida. 
     This website is static and only serves to show the frontend design and implementation.`,
     technologies: ["ReactJS", "Styled-Components", "Swiper", "AnimateCSS"],
@@ -49,7 +58,7 @@ export const projects = [
       " https://drive.google.com/thumbnail?id=1o7usE8eQjimmfjXOYwj-QVJ5uMoVuSzZ&sz=w1000",
       " https://drive.google.com/thumbnail?id=1TNvh9dlyCfNO2FEkUuhEyyS2jsGlrCI_&sz=w1000",
     ],
-    video: "https://www.youtube.com/watch?v=z9vCWXuIw00"
+    video: "https://www.youtube.com/watch?v=z9vCWXuIw00",
   },
   {
     key: 2,
@@ -58,7 +67,16 @@ export const projects = [
     content: `Owadi-Owiwi means "study owl" in the Yoruba language. This site is a simple to use study 
     tool users can use to create, edit, load & organize flash cards. In addition user's can save
     notes in th same fashion. User's can save their flash cards to their google drive as well.`,
-    technologies: ["ReactJS", "MongoDB", "Axios", "Node", "Express", "Grommet", "React-Draggble", "React-Scripts"],
+    technologies: [
+      "ReactJS",
+      "MongoDB",
+      "Axios",
+      "Node",
+      "Express",
+      "Grommet",
+      "React-Draggble",
+      "React-Scripts",
+    ],
     techniques: [
       "Form Validation & submission",
       "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios, ",
@@ -75,12 +93,12 @@ export const projects = [
       "https://drive.google.com/thumbnail?id=1o7usE8eQjimmfjXOYwj-QVJ5uMoVuSzZ&sz=w1000",
       "https://drive.google.com/thumbnail?id=1TNvh9dlyCfNO2FEkUuhEyyS2jsGlrCI_&sz=w1000",
     ],
-    video: "https://www.youtube.com/watch?v=znNllvBt_Jg"
+    video: "https://www.youtube.com/watch?v=znNllvBt_Jg",
   },
   {
     key: 3,
     title: "OnLoad",
-    subHeader: "A desktop webapp that facilitates creating load files.",
+    subHeader: "Load file generator.",
     content: `This simple to use webapp is meant to help with lawfirms, who use specific document 
     repo applications, create load files for large productions that need to be digested into repo.`,
     technologies: ["Javascript", "Neutrino", "Jquery", "Node"],
@@ -100,12 +118,12 @@ export const projects = [
       "https://drive.google.com/thumbnail?id=1o7usE8eQjimmfjXOYwj-QVJ5uMoVuSzZ&sz=w1000",
       "https://drive.google.com/thumbnail?id=1TNvh9dlyCfNO2FEkUuhEyyS2jsGlrCI_&sz=w1000",
     ],
-    video: "https://www.youtube.com/watch?v=F5E711639lM"
+    video: "https://www.youtube.com/watch?v=F5E711639lM",
   },
   {
     key: 4,
     title: "Waagword",
-    subHeader: "Desktop webapp that helps generates specific passwords.",
+    subHeader: "Password generator.",
     content: `While password generators might seem simple, this specific password generators 
     offers more robust password generation by adding advance features such as prefix, 
     postfix and key word insertion. In addition the user has access to create SSH keys.`,
@@ -126,7 +144,7 @@ export const projects = [
       "https://drive.google.com/thumbnail?id=177M8XZnOvwjc95Cwzd2KcWxQaiuCQE9K&sz=w1000",
       "https://drive.google.com/thumbnail?id=14CAFZouY58-u8Ad3YoeiFOUCp-5PIqk2&sz=w1000",
     ],
-    video: "https://www.youtube.com/watch?v=Ot5VUi-pp0g"
+    video: "https://www.youtube.com/watch?v=Ot5VUi-pp0g",
   },
   {
     key: 5,
@@ -147,7 +165,7 @@ export const projects = [
       "Styled-Components",
       "react-google-recaptcha",
       "React Icons",
-      "React-Responsive-Carousel"
+      "React-Responsive-Carousel",
     ],
     techniques: [
       "Designed website layout",
@@ -164,6 +182,6 @@ export const projects = [
       "https://drive.google.com/thumbnail?id=1o7usE8eQjimmfjXOYwj-QVJ5uMoVuSzZ&sz=w1000",
       "https://drive.google.com/thumbnail?id=1TNvh9dlyCfNO2FEkUuhEyyS2jsGlrCI_&sz=w1000",
     ],
-    video: "https://www.youtube.com/watch?v=AP5SRgDnJQ4"
+    video: "https://www.youtube.com/watch?v=AP5SRgDnJQ4",
   },
 ];

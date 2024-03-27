@@ -125,6 +125,13 @@ export const CardHeader = styled.div`
   font-family: "body";
   border-bottom: grey 1px solid;
 
+  & #project-button-container * {
+    display: inline;
+
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+  }
   & h2 {
     text-align: start;
     color: white;
@@ -177,7 +184,7 @@ export const ProjectBlurb = styled.section`
 `;
 
 export const CardFooter = styled.section`
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   /* position: absolute; */
   justify-content: center;
@@ -194,5 +201,6 @@ export const CardFooter = styled.section`
     text-align: center;
     justify-content: center;
     align-content: center;
+    display: flex;
   }
 `;

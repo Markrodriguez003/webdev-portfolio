@@ -141,7 +141,7 @@ function FullProjectCard({ props }) {
                 <AnimatedHeader title={subHeader} />
               </small>
             </div>
-            <div>
+            <div id="project-button-container">
               <SiteButton
                 type="anchor"
                 url="https://www.github.com"
@@ -225,6 +225,31 @@ function FullProjectCard({ props }) {
               <br />
             </ProjectBlurb>
           </CardBody>
+          <CardFooter>
+            <div>
+              <SiteButton
+                type="anchor"
+                url="https://www.github.com"
+                styling="github"
+                title="Github"
+                icon={<BsGithub />}
+              />
+              <SiteButton
+                type="anchor"
+                url="https://www.nhl.com"
+                styling="website"
+                title="Website"
+                icon={<BsGlobe />}
+              />
+              <SiteButton
+                type="anchor"
+                url="https://www.youtube.com"
+                styling="youtube"
+                title="Youtube"
+                icon={<IoLogoYoutube />}
+              />
+            </div>
+          </CardFooter>
         </Card>
       </div>
     </>

@@ -66,6 +66,7 @@ export default function ContactForm() {
 
   useEffect(() => {
     if (emailSuccess === null) {
+      <></>;
     } else if (emailSuccess === false) {
       SAlert.fire({
         confirmButtonColor: "black",

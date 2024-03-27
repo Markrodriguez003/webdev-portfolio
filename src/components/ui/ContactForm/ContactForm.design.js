@@ -3,7 +3,6 @@ import satellite from "../../../assets/images/satellite-1.png";
 import astronautContact from "../../../assets/images/astronaut-3.png";
 import qrcode from "../../../assets/images/qr-example.png";
 
-
 const floatA = keyframes`
   0% {
     transform: translate(0, 0px) rotate(0deg);
@@ -22,7 +21,6 @@ const floatA = keyframes`
     }
 `;
 
-
 const floatB = keyframes`
   0% {
     transform: translate(0, 0px) rotate(0deg);
@@ -40,7 +38,6 @@ const floatB = keyframes`
     transform: translate(0, -0px);
     }
 `;
-
 
 export const FormContainer = styled.form`
   display: inline-flex;
@@ -63,6 +60,8 @@ export const FormContainer = styled.form`
   @media screen and (max-width: 1115px) {
     justify-content: center;
     align-items: center;
+
+    margin-right: 0px;
   }
 
   & label {
@@ -165,7 +164,7 @@ export const AstronautContact = styled.div`
   background-size: contain;
   position: absolute;
   transform: scaleX(-1) rotate(-15deg);
-  right: -55px;
+  right: -145px;
   top: 300px;
   width: 325px;
   height: 325px;

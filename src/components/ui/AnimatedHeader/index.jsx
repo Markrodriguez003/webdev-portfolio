@@ -4,21 +4,6 @@ import baffle from "baffle";
 import { useEffect } from "react";
 
 function AnimatedHeader({ title }) {
-  let randomCharacters = [
-    "░",
-    "█",
-    "▓",
-    "≡",
-    "/",
-    ">",
-    "@",
-    "#",
-    "▲",
-    "►",
-    "◊",
-    "▼",
-  ];
-
   useEffect(() => {
     const target = baffle(".obfuscated");
     target.set({
@@ -26,7 +11,12 @@ function AnimatedHeader({ title }) {
       speed: 100,
     });
     target.start();
-    target.reveal(1000);
+    target.reveal(800);
+    return () => {
+      target.stop();
+      target.reveal();
+      title;
+    };
   });
 
   return (
