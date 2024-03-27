@@ -2,7 +2,7 @@ export const projects = [
   {
     key: 0,
     title: "Saseo",
-    subHeader: "Book suggestion & Organization site",
+    subHeader: "Book suggestion site",
     content: `Are you having a hard time finding a book? Well Saseo can help
     you! Saseo offers users the ability to be suggested books by
     subject or at random! Users will also have the ability to search

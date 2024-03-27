@@ -102,11 +102,16 @@ export const RightColumnPanel = styled.div`
     @media (max-width: 1200px) {
       font-size: 2em;
     }
+
+    & * {
+      color: black !important;
+    }
   }
   & h2 {
     font-size: 1.5em;
     display: inline-block;
     padding: 5px;
+    /* color: black !important; */
 
     & h2 #normal-header {
       text-align: left;
@@ -114,7 +119,7 @@ export const RightColumnPanel = styled.div`
 
     & h2 #inverted-header {
       background-color: aliceblue;
-      color: black;
+      color: black !important;
       padding-right: 50px;
       text-align: right;
     }
@@ -125,6 +130,9 @@ export const RightColumnPanel = styled.div`
       padding-right: 50px;
       text-align: right;
 
+      & * {
+        color: black !important;
+      }
       @media (max-width: 1200px) {
         text-align: center;
         padding-right: 0px;

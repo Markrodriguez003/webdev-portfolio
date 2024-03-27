@@ -10,12 +10,11 @@ import {
   HeaderDetailsPanel,
 } from "../Sections.design";
 
-import { ModalOuterContainer } from "./ContactSection.Design";
-
-import SiteButton from "../../ui/SiteButton";
+import { ModalOuterContainer, ModalExitBtn } from "./ContactSection.Design";
 
 // ICONS
 import { LuMenuSquare } from "react-icons/lu";
+import { PiKeyReturnBold } from "react-icons/pi";
 // ? NOTES
 // ? https://www.mamboleoo.be/articles/create-your-own-sphere-in-css
 // ? https://codepen.io/iamlark/pen/jYzYJg
@@ -41,7 +40,7 @@ function ContactSection() {
 
   function pdfModalClick(event) {
     // event.preventDefault();
-    setPdfModal(true);
+    setPdfModal(!pdfModal);
   }
 
   return (
@@ -49,11 +48,9 @@ function ContactSection() {
       {pdfModal === true ? (
         <ModalOuterContainer>
           <PDFViewer />
-          <SiteButton
-            type="none"
-            title={"Exit"}
-            onClick={console.log("CLOSE MODAL!")}
-          ></SiteButton>
+          <ModalExitBtn onClick={(event) => pdfModalClick(event)}>
+            <PiKeyReturnBold style={{ verticalAlign: "middle" }} /> Return
+          </ModalExitBtn>
         </ModalOuterContainer>
       ) : (
         <></>

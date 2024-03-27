@@ -1,4 +1,5 @@
 import HeaderBorderBox from "../../ui/HeaderBorderBox";
+import AnimatedHeader from "../../ui/AnimatedHeader";
 import { TechnologiesSkillsBar, FutureTechSkillsBar } from "../../ui/SkillBars";
 import { FaRegEnvelope } from "react-icons/fa";
 import { LuMenuSquare } from "react-icons/lu";
@@ -50,7 +51,9 @@ function AboutSection() {
         </LeftHeaderColumn>
         <RightColumnPanel>
           <AboutDetailsPanel>
-            <h1 id="inverted-header">>_Coding and beyond..</h1>
+            <h1 id="inverted-header">
+              <AnimatedHeader title={"Coding and beyond.."} />
+            </h1>
             <p>
               I have been studying web development coding for 3 years and my
               interest has only grown in the field! I want to continue to expand
@@ -64,10 +67,10 @@ function AboutSection() {
               />
             </p>{" "}
             <br />
-            <h2 id="normal-header">Technological skills I have acquired: </h2>
+            <h2 id="normal-header">Technological skills I have acquired:</h2>
             <TechnologiesSkillsBar />
             <br />
-            <h2 id="normal-header">Technologies currently being unpacked: </h2>
+            <h2 id="normal-header">Technologies currently being unpacked:</h2>
             <FutureTechSkillsBar />
             <br />
             <h2 id="inverted-header">Besides coding...</h2>

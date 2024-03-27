@@ -33,7 +33,7 @@ export const CarouselContainer = styled(Carousel)`
   margin-left: auto;
   margin-right: auto;
   margin-top: 15px;
-  
+
   // 4K Monitors
   @media (min-width: 2200px) {
     width: 78%;
@@ -65,7 +65,6 @@ export const CarouselContainer = styled(Carousel)`
 
   & img {
     object-fit: fill;
- 
   }
 
   /* @media screen and (max-width: 1200px) {
@@ -117,10 +116,10 @@ export const Card = styled.div`
 export const CardHeader = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 10px 15px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
   letter-spacing: 1.2px;
   text-transform: uppercase;
   font-family: "body";
@@ -129,9 +128,10 @@ export const CardHeader = styled.div`
   & h2 {
     text-align: start;
     color: white;
-    font-size: 2em;
-    padding: 2px;
+    font-size: 1.8em;
+    padding: 1.2px;
     margin-bottom: 10px;
+    justify-self: start;
   }
 
   & small {
@@ -159,7 +159,6 @@ export const CardBody = styled.section`
   margin-left: auto;
   margin-right: auto;
   margin-top: 12x;
- 
 `;
 
 export const ProjectBlurb = styled.section`
@@ -175,14 +174,13 @@ export const ProjectBlurb = styled.section`
   padding: 5px 0px;
   width: 72%;
   text-align: left;
- 
 `;
 
 export const CardFooter = styled.section`
   display: flex;
-  flex-wrap:wrap ;
+  flex-wrap: wrap;
   /* position: absolute; */
-  justify-content:center;
+  justify-content: center;
   width: 100%;
   bottom: 0;
   font-family: "body";

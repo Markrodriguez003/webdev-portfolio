@@ -13,8 +13,8 @@ export const CustomAnchorBtn = styled.a`
     border-radius: 6px;
     font-size: 1em;
     font-weight: bold;
-    margin: 4px;
-    padding: 6px 15px;
+    margin: 6px;
+    padding: 6px 8px;
     color: white;
     transition: 0.25s ease-in-out;
     cursor: pointer;

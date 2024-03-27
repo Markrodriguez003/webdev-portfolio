@@ -39,6 +39,7 @@ import Accordion from "../Accordion";
 import SiteButton from "../SiteButton";
 import TechnologiesPanel from "../TechnologiesPanel";
 import TechniquesPanel from "../TechniquesPanel";
+import AnimatedHeader from "../AnimatedHeader";
 
 // ICONS
 import { IoLogoYoutube } from "react-icons/io5";
@@ -130,9 +131,39 @@ function FullProjectCard({ props }) {
       >
         <Card>
           <CardHeader>
-            <h2>{title}</h2>
-            {/* <AnimatedHeaderB>{title}</AnimatedHeaderB> */}
-            <small> {subHeader}</small>
+            <div>
+              <h2>
+                <AnimatedHeader title={title} />
+              </h2>
+              <br />
+              <small>
+                {" "}
+                <AnimatedHeader title={subHeader} />
+              </small>
+            </div>
+            <div>
+              <SiteButton
+                type="anchor"
+                url="https://www.github.com"
+                styling="github"
+                title="Github"
+                icon={<BsGithub />}
+              />
+              <SiteButton
+                type="anchor"
+                url="https://www.nhl.com"
+                styling="website"
+                title="Website"
+                icon={<BsGlobe />}
+              />
+              <SiteButton
+                type="anchor"
+                url="https://www.youtube.com"
+                styling="youtube"
+                title="Youtube"
+                icon={<IoLogoYoutube />}
+              />
+            </div>
           </CardHeader>
           <CardBody>
             {/* <TechnologiesPanel togglePanel={technologyToggle} />
@@ -193,44 +224,6 @@ function FullProjectCard({ props }) {
               </section>
               <br />
             </ProjectBlurb>
-            <CardFooter>
-              {/* <span onClick={(event) => TechnologiesInfoClick(event)}>
-                <SiteButton
-                  type="button"
-                  title="Technologies"
-                  icon={<FaUserAstronaut />}
-                />
-              </span>
-              <span onClick={(event) => TechniquesInfoClick(event)}>
-                <SiteButton
-                  type="button"
-                  title="Techniques"
-                  icon={<HiOutlineWrenchScrewdriver />}
-                />
-              </span>
-              <span style={{ fontSize: "30px", padding: "0px 8px" }}>|</span> */}
-              <SiteButton
-                type="anchor"
-                url="https://www.github.com"
-                styling="github"
-                title="Github"
-                icon={<BsGithub />}
-              />
-              <SiteButton
-                type="anchor"
-                url="https://www.nhl.com"
-                styling="website"
-                title="Website"
-                icon={<BsGlobe />}
-              />
-              <SiteButton
-                type="anchor"
-                url="https://www.youtube.com"
-                styling="youtube"
-                title="Youtube"
-                icon={<IoLogoYoutube />}
-              />
-            </CardFooter>
           </CardBody>
         </Card>
       </div>

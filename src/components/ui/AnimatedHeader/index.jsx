@@ -1,11 +1,38 @@
 /* eslint-disable react/prop-types */
-import "./AnimatedHeader.css";
 
-function AnimatedHeader(props) {
+import baffle from "baffle";
+import { useEffect } from "react";
+
+function AnimatedHeader({ title }) {
+  let randomCharacters = [
+    "░",
+    "█",
+    "▓",
+    "≡",
+    "/",
+    ">",
+    "@",
+    "#",
+    "▲",
+    "►",
+    "◊",
+    "▼",
+  ];
+
+  useEffect(() => {
+    const target = baffle(".obfuscated");
+    target.set({
+      characters: "█▓█ ▒░/▒░ █░▒▓/ █▒▒ ▓▒▓/█<░▒ ▓/░>",
+      speed: 100,
+    });
+    target.start();
+    target.reveal(1000);
+  });
+
   return (
     <>
-      <div className="container">
-        <h1 className="header1">{props.children}</h1>
+      <div className="col obfuscated" style={{ color: "white" }}>
+        {title}
       </div>
     </>
   );

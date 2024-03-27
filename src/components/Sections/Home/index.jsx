@@ -4,6 +4,8 @@ import {
   NavContainer,
   ScrollToExplore,
 } from "../Home/Home.design.js";
+
+import AnimatedHeader from "../../ui/AnimatedHeader/index.jsx";
 import PlanetHeroScene from "../../ui/PlanetHeroScene/index.jsx";
 import githubIcon from "../../../assets/icons/github-icon-w.png";
 import SoundMeter from "../../ui/HeaderAnimations/SoundMeter.jsx";
@@ -29,38 +31,20 @@ function Home() {
           </ul>
         </NavContainer>
         <WelcomeContainer>
-          <h1>WELCOME</h1>
+          <h1>
+            <AnimatedHeader title={"WELCOME"} />
+          </h1>
 
           <p>
             My name is Mark Rodriguez 👋 & I am a full stack developer. Take a
             look at my projects & please do not hesistate to contact me!
           </p>
-          {/* <p>
-            <img
-              src={githubIcon}
-              width={"20px"}
-              height={"20px"}
-              style={{ paddingRight: "10px" }}
-            />
-            Github: <a> Github.com/markrodriguez003</a>
-          </p>
-          <p>
-            <img
-              src={githubIcon}
-              width={"20px"}
-              height={"20px"}
-              style={{ paddingRight: "10px" }}
-            />
-            Resume: <a href="#"> View</a> | <a href="#"> Download</a>
-          </p> */}
         </WelcomeContainer>
       </IntroductionContainer>
 
-      {/* <SoundMeter /> */}
       <br />
       <ScrollToExplore>
         <SoundMeter />
-        <br/>
         <span>SCROLL TO EXPLORE</span>
       </ScrollToExplore>
     </>

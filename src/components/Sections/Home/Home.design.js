@@ -28,13 +28,17 @@ export const IntroductionContainer = styled.div`
 
 export const ScrollToExplore = styled.div`
   display: block;
+  position: relative;
   color: grey;
   font-family: "body";
   font-size: 12px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 85px;
+  /* margin-top: 85px; */
+  * {
+    margin-top: -8px;
+  }
 
   // 2K/4K MONITORS
   @media screen and (min-width: 1740px) {
