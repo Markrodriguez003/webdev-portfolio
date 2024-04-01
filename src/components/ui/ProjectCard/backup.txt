@@ -16,7 +16,7 @@ import {
   CardFooter,
   ProjectBlurb,
   ProjectVideo,
-  CardProjectImage,
+  CarouselContainer,
 } from "./FullProjectCard.design";
 
 // REACT
@@ -28,18 +28,18 @@ import ReactPlayer from "react-player";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Carousel } from "react-responsive-carousel";
 
 // CSS
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "./ProjectCard.styles.css";
 
 //COMPONENTS
 import Accordion from "../Accordion";
 import SiteButton from "../SiteButton";
+import TechnologiesPanel from "../TechnologiesPanel";
+import TechniquesPanel from "../TechniquesPanel";
 import AnimatedHeader from "../AnimatedHeader";
-import { Pagination, Navigation } from "swiper/modules";
 
 // ICONS
 import { IoLogoYoutube } from "react-icons/io5";
@@ -49,16 +49,13 @@ import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 
 // CSS
 import "./ProjectCard.styles.css";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 // IMAGES
 import saseoA from "../../../assets/images/site-screenshots/Portfolio.png";
 import saseoB from "../../../assets/images/site-screenshots/Saseo-2.png";
 import saseoC from "../../../assets/images/site-screenshots/Saseo-3.png";
 
-export function FullProjectCard({ props }) {
+function FullProjectCard({ props }) {
   const {
     title,
     subHeader,
@@ -94,6 +91,18 @@ export function FullProjectCard({ props }) {
     }
   }, [currentSlide, setCurrentSlide, images, setPlayVideo, playVideo]);
 
+  // TOGGLES TECNHOLOGY INFO PANEL FOR INDIVIDUAL PROJECT SITE
+  function TechnologiesInfoClick(event) {
+    setTechnologyToggle((prev) => !technologyToggle);
+    setTechniqueToggle((prev) => false);
+  }
+
+  // TOGGLES TECHIQUES INFO PANEL FOR INDIVIDUAL PROJECT SITE
+  function TechniquesInfoClick(event) {
+    setTechniqueToggle((prev) => !techniqueToggle);
+    setTechnologyToggle((prev) => false);
+  }
+
   return (
     <>
       <Lightbox
@@ -157,36 +166,35 @@ export function FullProjectCard({ props }) {
             </div>
           </CardHeader>
           <CardBody>
-            <Swiper
-              slidesPerView={1}
-              pagination={{
-                type: "fraction",
+            {/* <TechnologiesPanel togglePanel={technologyToggle} />
+            <TechniquesPanel togglePanel={techniqueToggle} /> */}
+
+            <CarouselContainer
+              showThumbs={false}
+              showIndicators={true}
+              showArrows={true}
+              swipeable={true}
+              emulateTouch={true}
+              dynamicHeight={true}
+              showStatus={false}
+              onChange={(props) => {
+                setCurrentSlide(parseInt(props));
               }}
-              navigation={true}
-              modules={[Pagination, Navigation]}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
-              style={{
-                width: "60vw",
-                height: "auto",
+              onClickItem={(props) => {
+                setOpen(true);
               }}
             >
               {images.map((item, count) => {
                 return (
-                  <SwiperSlide key={("swiper-slide+", count)}>
-                    <CardProjectImage
-                      src={item}
-                      key={title + "-image-" + count}
-                      alt={"image-" + count}
-                      onClick={(props) => {
-                        setOpen(true);
-                      }}
-                    />{" "}
-                  </SwiperSlide>
+                  <img
+                    src={item}
+                    key={title + "-image-" + count}
+                    alt={"image-" + count}
+                  />
                 );
               })}
-              <SwiperSlide>
-                {/* <ProjectVideo> */}
+
+              <ProjectVideo>
                 <ReactPlayer
                   key={`youtube-video:` + title + video}
                   url={video}
@@ -198,9 +206,9 @@ export function FullProjectCard({ props }) {
                   width="100%"
                   height="100%"
                 />
-                {/* </ProjectVideo>{" "} */}
-              </SwiperSlide>
-            </Swiper>
+              </ProjectVideo>
+            </CarouselContainer>
+
             <ProjectBlurb>
               <section>
                 <p>{content}</p>
@@ -248,168 +256,4 @@ export function FullProjectCard({ props }) {
   );
 }
 
-export function MiniProjectCard({ props }) {
-  const {
-    title,
-    subHeader,
-    content,
-    github,
-    website,
-    technologies,
-    techniques,
-    images,
-    video,
-  } = props;
-
-  // console.log(`RETRIEVED PROJECT!`, props);
-  // VIDEO REF
-  const videoRef = useRef();
-
-  // HANDLES IMAGE LIGHTBOX
-  const [open, setOpen] = useState(false);
-
-  // LIGHTBOX SETTINGS
-  const [showToggle, setShowToggle] = useState(false);
-  const [playVideo, setPlayVideo] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  // HANDLES PLAY FUNCTIONALITY OF VIDEO PLAYER
-  useEffect(() => {
-    if (currentSlide != images.length) {
-      setPlayVideo(() => false);
-    }
-  }, [currentSlide, setCurrentSlide, images, setPlayVideo, playVideo]);
-
-  return (
-    <>
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        slides={[{ src: saseoA }, { src: saseoB }, { src: saseoC }]}
-        plugins={[Thumbnails]}
-        thumbnails={{
-          position: "bottom",
-          width: 120,
-          height: 80,
-          border: 1,
-          borderRadius: 4,
-          padding: 4,
-          gap: 16,
-          showToggle,
-        }}
-      />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          overflow: "hidden",
-        }}
-      >
-        <Card>
-          <CardHeader>
-            <div>
-              <h2>
-                <AnimatedHeader title={title} />
-              </h2>
-              <br />
-              <small>
-                {" "}
-                <AnimatedHeader title={subHeader} />
-              </small>
-            </div>
-            <div id="project-button-container">
-              <SiteButton
-                type="anchor"
-                url="https://www.github.com"
-                styling="github"
-                title="Github"
-                icon={<BsGithub />}
-              />
-              <SiteButton
-                type="anchor"
-                url="https://www.nhl.com"
-                styling="website"
-                title="Website"
-                icon={<BsGlobe />}
-              />
-              <SiteButton
-                type="anchor"
-                url="https://www.youtube.com"
-                styling="youtube"
-                title="Youtube"
-                icon={<IoLogoYoutube />}
-              />
-            </div>
-          </CardHeader>
-          <CardBody>
-            <CardProjectImage
-              src={images[0]}
-              key={title + "-image-" + images[0]}
-              alt={"image-" + images[0]}
-              onClick={(props) => {
-                setOpen(true);
-              }}
-            />
-
-            {/* <ProjectVideo>
-                <ReactPlayer
-                  key={`youtube-video:` + title + video}
-                  url={video}
-                  controls={true}
-                  playing={playVideo}
-                  onPlay={() => setPlayVideo(true)}
-                  onPause={() => setPlayVideo(false)}
-                  ref={videoRef}
-                  width="100%"
-                  height="100%"
-                />
-                </ProjectVideo>{" "} */}
-            <ProjectBlurb>
-              <section>
-                <p>{content}</p>
-              </section>
-              <br />
-              <section>
-                <p>
-                  <strong>Technologies used:</strong>{" "}
-                  {technologies.map((tech) => {
-                    return `${tech} | `;
-                  })}
-                </p>
-              </section>
-              <br />
-            </ProjectBlurb>
-          </CardBody>
-          <CardFooter>
-            <div>
-              <SiteButton
-                type="anchor"
-                url="https://www.github.com"
-                styling="github"
-                title="Github"
-                icon={<BsGithub />}
-              />
-              <SiteButton
-                type="anchor"
-                url="https://www.nhl.com"
-                styling="website"
-                title="Website"
-                icon={<BsGlobe />}
-              />
-              <SiteButton
-                type="anchor"
-                url="https://www.youtube.com"
-                styling="youtube"
-                title="Youtube"
-                icon={<IoLogoYoutube />}
-              />
-            </div>
-          </CardFooter>
-        </Card>
-      </div>
-    </>
-  );
-}
-
-// export default FullProjectCard;
+export default FullProjectCard;

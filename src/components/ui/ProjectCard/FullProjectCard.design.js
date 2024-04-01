@@ -27,62 +27,6 @@ export const ProjectVideo = styled.div`
   }
 `;
 
-export const CarouselContainer = styled(Carousel)`
-  display: flex;
-  width: 72%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
-
-  // 4K Monitors
-  @media (min-width: 2200px) {
-    width: 78%;
-  }
-
-  // 1440 Monitors
-  /* @media (min-width: 1440px) {
-    width: 78%;
-
-    & img {
-    
-    }
-  } */
-  @media (max-width: 1440px) {
-    width: 86%;
-
-    & img {
-      /* height: 600px; */
-    }
-  }
-
-  @media (min-width: 1650px) {
-    width: 79%;
-
-    & img {
-      /* height: 600px; */
-    }
-  }
-
-  & img {
-    object-fit: fill;
-  }
-
-  /* @media screen and (max-width: 1200px) {
-    width: 80%;
-  }
-
-  @media screen and (max-width: 1440px) {
-    width: 92%;
-  }
-
-  @media screen and (min-width: 1600px) {
-    width: 80%;
-  } */
-
-  & .control-arrow {
-    /* background-color: grey !important; */
-  }
-`;
 // PROJECT CARD
 export const Card = styled.div`
   position: relative;
@@ -92,7 +36,7 @@ export const Card = styled.div`
   align-content: center;
   /* background-color: pink; */
   border: rgba(255, 255, 255, 0.1) 1px solid;
-  height: 92vh;
+  height: 100%;
   width: 100%;
   margin-right: 40px;
   z-index: 1;
@@ -105,7 +49,9 @@ export const Card = styled.div`
       : css`
           ${fadeInUpdate} 0.3s ease-in-out
         `};
-
+  @media screen and (max-width: 875px) {
+    width: 100%;
+  }
   @media screen and (max-width: 1200px) {
     margin: 0px;
     align-content: center;
@@ -121,6 +67,7 @@ export const CardHeader = styled.div`
   align-items: center;
   padding: 10px 5px;
   letter-spacing: 1.2px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   font-family: "body";
   border-bottom: grey 1px solid;
@@ -156,16 +103,24 @@ export const CardBody = styled.section`
   align-items: center;
   align-content: center;
   align-items: center;
-  /* padding: 10px 15px; */
-  /* margin-bottom: 10px; */
-
   width: 100%;
-  /* height: 650px; */
   z-index: 1;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 12x;
+
+  /* padding-bottom: 20px; */
+`;
+
+export const CardProjectImage = styled.img`
+  width: 95%;
+  height: 100%;
+  object-fit: cover;
+
+  @media screen and (max-width: 875px) {
+   height: 40vh;
+  }
+
 `;
 
 export const ProjectBlurb = styled.section`
@@ -177,10 +132,14 @@ export const ProjectBlurb = styled.section`
   color: white;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
+  margin-top: 0px;
   padding: 5px 0px;
   width: 72%;
   text-align: left;
+
+  @media screen and (max-width: 875px) {
+    width: 88%;
+  }
 `;
 
 export const CardFooter = styled.section`

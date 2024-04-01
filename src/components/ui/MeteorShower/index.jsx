@@ -13,7 +13,7 @@ function MeteorShower() {
       let randomMeteor = Math.floor(Math.random() * 10);
 
       if (randomMeteor % 2) {
-        setMeteorPing(()=>randomMeteor);
+        setMeteorPing(() => randomMeteor);
         // console.log("Ping! " + "Starchart: " + meteorPing);
       }
 
@@ -28,7 +28,7 @@ function MeteorShower() {
   return (
     <>
       {/* <MeteorContainer meteortrigger={meteorPing} > */}
-      <MeteorContainer meteorTrigger={meteorPing} key={ meteorPing}>
+      <MeteorContainer meteorTrigger={meteorPing} key={meteorPing}>
         <span></span>
         <span></span>
         <span></span>

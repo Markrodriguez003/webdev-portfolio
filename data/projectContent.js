@@ -159,6 +159,7 @@ export const projects = [
       "React",
       "SweetAlert2",
       "domPurify",
+      "Use-Scramble",
       "react-player",
       "Yet-Another-React-Lightbox",
       "EmailJs",
@@ -166,6 +167,39 @@ export const projects = [
       "react-google-recaptcha",
       "React Icons",
       "React-Responsive-Carousel",
+    ],
+    techniques: [
+      "Designed website layout",
+      "Maintained a responsive design of various compute and mobile screen sizes",
+      "Utilized EmailJS to provide form submission",
+      "Used React as a frontend springboard",
+    ],
+    youtube: "https://www.youtube.com/",
+    github: "https://www.github.com",
+    site: "https://www.nhl.com",
+    images: [
+      "https://drive.google.com/thumbnail?id=1ndR_XDwCWW60lf1pM6zqJRnEjBWwwzmC&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1hNTPGCInSHEuNIsKFYYmm-vyp1D0fg_6&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1o7usE8eQjimmfjXOYwj-QVJ5uMoVuSzZ&sz=w1000",
+      "https://drive.google.com/thumbnail?id=1TNvh9dlyCfNO2FEkUuhEyyS2jsGlrCI_&sz=w1000",
+    ],
+    video: "https://www.youtube.com/watch?v=AP5SRgDnJQ4",
+  },
+  {
+    key: 6,
+    title: "Gallo-Ocho",
+    subHeader: "Business Prototype Site",
+    content: `This site was built as a prototype for a sculpture business based in Miami, FL. Simple stand up site 
+    that acts as a portfolio for Gallo ocho sculptures."   
+  `,
+    technologies: [
+      "Javascript",
+      "React",
+      "Bootstrap",
+      "Simple-React-Lightbox",
+      "Styled Components",
+      "Yet-Another-React-Lightbox",
+      "Google-Model-Viewer",
     ],
     techniques: [
       "Designed website layout",

@@ -82,9 +82,15 @@ export const RightColumnPanel = styled.div`
   margin-left: 55px;
   margin-right: 5%;
 
-  @media (max-width: 380px) {
-    width: 85%;
+  @media screen and (max-width: 875px) {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
+
+  /* @media (max-width: 380px) {
+    width: 85%;
+  } */
 
   & p {
     @media (max-width: 380px) {

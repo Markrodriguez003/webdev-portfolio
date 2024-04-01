@@ -1,37 +1,11 @@
-ul.control-dots {
-  width: 200px !important;
-  background-color: rgba(0, 0, 0, 0.4) !important;
-
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  bottom: -10px !important;
+.swiper-slide .swiper-button-next {
+  background-color: rgba(0,0,0,0.6) !important;
+  margin-right:20px;
+  transform: scale(0.7);
 }
 
-.control-arrow {
-  position: absolute !important;
-  overflow: visible !important;
-  padding-right: 0px !important;
-
-  background-color: rgba(0, 0, 0, 0.6) !important;
-  /* background-color: red !important; */
-}
-
-.control-arrow:hover {
-  /* right: 0 !important; */
-}
-
-.control-arrow.control-next {
-  right: -13px !important;
-}
-.control-arrow.control-next:hover {
-  right: -4px !important;
-  padding-right: 12px !important;
-}
-
-.control-arrow.control-prev {
-  left: -18px !important;
-}
-.control-arrow.control-prev:hover {
-  left: -4px !important;
-  padding-left: 12px !important;
+.swiper-slide .swiper-button-prev {
+  background-color: rgba(0,0,0,0.6) !important;
+  margin-left:20px;
+  transform: scale(0.7);
 }

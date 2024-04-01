@@ -9,7 +9,7 @@ const meteorColor = [
   "pink",
   "brown",
   "white",
-  "aqua"
+  "aqua",
 ];
 function changeupMeteor(id) {
   const meteorColor = [
@@ -23,7 +23,6 @@ function changeupMeteor(id) {
     "brown",
   ];
   let randomColor = Math.floor(Math.random() * 8);
-  // let chosenMeteorColor = meteorColor[id];
   let chosenMeteorColor = meteorColor[randomColor];
 
   return chosenMeteorColor;
@@ -48,15 +47,14 @@ export const MeteorContainer = styled.section`
   .meteor-section {
     z-index: -1;
     position: absolute;
-    top: -50px;
+    top: -250px;
     left: 0;
     width: 100%;
     height: 120vh;
     background-color: transparent;
     background-position-x: center;
     background-size: cover;
-    /* background-color: purple; */
-    /* animation: animateBg 50s linear infinite; */
+    background-color: purple;
   }
 
   & span {
@@ -93,16 +91,16 @@ export const MeteorContainer = styled.section`
     &:nth-child(1) {
       /* display: none; */
       display: ${(props) => (props.meteortrigger === 1 ? `inline` : "none")};
-      top: 0;
-      right: 0;
+      top: -10px;
+      right: 80px;
       left: initial;
-      animation-delay: 0;
-      animation-duration: 1s;
+      animation-delay: 0.1s;
+      animation-duration: 2s;
     }
 
     &:nth-child(2) {
       display: ${(props) => (props.meteorTrigger === 2 ? `inline` : "none")};
-      top: 0;
+      top: -10px;
       right: 80px;
       left: initial;
       animation-delay: 0.2s;
@@ -112,7 +110,7 @@ export const MeteorContainer = styled.section`
     &:nth-child(3) {
       display: ${(props) => (props.meteorTrigger === 3 ? `inline` : "none")};
       top: 80px;
-      right: 0px;
+      right: -15px;
       left: initial;
       animation-delay: 0.4s;
       animation-duration: 2s;
@@ -129,7 +127,7 @@ export const MeteorContainer = styled.section`
 
     &:nth-child(5) {
       display: ${(props) => (props.meteorTrigger === 5 ? `inline` : "none")};
-      top: 0;
+      top: -10px;
       right: 400px;
       left: initial;
       animation-delay: 0.8s;
@@ -138,7 +136,7 @@ export const MeteorContainer = styled.section`
 
     &:nth-child(6) {
       display: ${(props) => (props.meteorTrigger === 6 ? `inline` : "none")};
-      top: 0;
+      top: -10px;
       right: 600px;
       left: initial;
       animation-delay: 1s;
@@ -147,7 +145,7 @@ export const MeteorContainer = styled.section`
     &:nth-child(7) {
       display: ${(props) => (props.meteorTrigger === 7 ? `inline` : "none")};
       top: 300px;
-      right: 0px;
+      right: -15px;
       left: initial;
       animation-delay: 1s;
       animation-duration: 1.75s;
@@ -155,7 +153,7 @@ export const MeteorContainer = styled.section`
 
     &:nth-child(8) {
       display: ${(props) => (props.meteorTrigger === 8 ? `inline` : "none")};
-      top: 0px;
+      top: -10px;
       right: 700px;
       left: initial;
       animation-delay: 1.4s;
@@ -164,8 +162,8 @@ export const MeteorContainer = styled.section`
 
     &:nth-child(9) {
       display: ${(props) => (props.meteorTrigger === 9 ? `inline` : "none")};
-      top: 0px;
-      right: 1000px;
+      top: -10px;
+      right: 700px;
       left: initial;
       animation-delay: 0.75s;
       animation-duration: 2.25s;
@@ -173,9 +171,10 @@ export const MeteorContainer = styled.section`
 
     &:nth-child(10) {
       display: ${(props) => (props.meteorTrigger === 10 ? `inline` : "none")};
-      top: 0px;
+      top: -10px;
       right: 1000px;
       left: initial;
+
       animation-delay: 2.75s;
       animation-duration: 2.25s;
     }

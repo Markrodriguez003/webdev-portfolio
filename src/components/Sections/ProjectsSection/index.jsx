@@ -19,9 +19,9 @@ import {
 // https://www.youtube.com/watch?v=Il_GKGFggWY&ab_channel=RobotBobby
 
 import { useState, useRef, useEffect } from "react";
-import AnimatedHeader from "../../ui/AnimatedHeader";
+
 import HeaderBorderBox from "../../ui/HeaderBorderBox";
-import ProjectCard from "../../ui/ProjectCard";
+import { FullProjectCard, MiniProjectCard } from "../../ui/ProjectCard";
 import { projects } from "../../../../data/projectContent";
 
 function ProjectsSection() {
@@ -49,10 +49,6 @@ function ProjectsSection() {
     setSlideProject(() => key);
     setProjectSelect(() => updatedArr);
   }
-
-  useEffect(() => {
-    console.log("Arry:", projectSelect);
-  }, [update]);
 
   // Creates list of Projects List Items
   const listOfProjects = projects.map((project) => {
@@ -91,7 +87,7 @@ function ProjectsSection() {
         </LeftHeaderColumn>
         <RightColumnPanel>
           <MaxProjectView>
-            <ProjectCard
+            <FullProjectCard
               key={(`Project: `, SlideProject)}
               props={projects[SlideProject]}
               toggle={revealFade}
@@ -101,11 +97,15 @@ function ProjectsSection() {
             {projects.map((project, count) => {
               // console.log(`Project-`, count, ` `, project);
               return (
-                <ProjectCard
-                  key={(`Project-mini: `, project.title)}
-                  props={project}
-                  toggle={revealFade}
-                />
+                <>
+                  <MiniProjectCard
+                    key={(`Project-mini: `, project.title)}
+                    props={project}
+                    toggle={revealFade}
+                  />
+                  <br />
+                  <br />
+                </>
               );
             })}
           </MinProjectView>

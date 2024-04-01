@@ -22,16 +22,7 @@ from {
 
 `;
 
-function starAnimationChange(props) {
-  const { currentIndex, previousIndex } = props;
-
-  // console.log(`inside css: `, currentIndex, previousIndex);
-  if (currentIndex > previousIndex) {
-    return "reverse";
-  } else {
-    return "normal";
-  }
-}
+ 
 export const SpaceBackground = styled.div`
   z-index: -999;
   top: 0;
@@ -77,7 +68,7 @@ export const SpaceBackground = styled.div`
     transition: transform 2s ease-in-out;
     animation: ${animatedStars} 50s linear infinite;
     /* animation-fill-mode: both; */
-    /* animation-direction: ${(props) => starAnimationChange(props.$starChange)}; */
+
     &:after {
       content: " ";
       position: absolute;
@@ -123,7 +114,7 @@ export const SpaceBackground = styled.div`
     transition: transform 2s ease-in-out;
     animation: ${animatedStars} 100s linear infinite;
     /* animation-fill-mode: both; */
-    /* animation-direction: ${(props) => starAnimationChange(props.$starChange)}; */
+
     &:after {
       content: " ";
       position: absolute;
@@ -153,7 +144,7 @@ export const SpaceBackground = styled.div`
     transition: transform 2s ease-in-out;
     animation: ${animatedStars} 150s linear infinite;
     /* animation-fill-mode: both; */
-    /* animation-direction: ${(props) => starAnimationChange(props.$starChange)}; */
+
     &:after {
       content: " ";
       position: absolute;
@@ -179,7 +170,7 @@ export const SpaceBackground = styled.div`
     transition: transform 2s ease-in-out;
     animation: ${animatedStars} 150s linear infinite;
     /* animation-fill-mode: both; */
-    /* animation-direction: ${(props) => starAnimationChange(props.$starChange)}; */
+ 
     &:after {
       content: " ";
       position: absolute;

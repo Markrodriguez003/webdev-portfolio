@@ -17,21 +17,19 @@ import {
 import "./style.css";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
 import BackgroundScenery from "../ui/BackgroundScenery/index.jsx";
 import AboutSection from "../Sections/AboutSection/index.jsx";
 import ProjectsSection from "../Sections/ProjectsSection/index.jsx";
-import SiteInfo from "../Sections/SiteInfo/index.jsx";
-import MeteorShower from "../ui/MeteorShower/index.jsx";
 import ContactSection from "../Sections/ContactSection/index.jsx";
-import Home from "../Sections/Home";
+import Home from "../Sections/Home/index.jsx";
 import PaginationTag from "../ui/PaginationTag/index.jsx";
-import { sections } from "../../../data/sectionNames";
+import { sections } from "../../../data/sectionNames.js";
 import { useState, createContext, useEffect, useContext, useRef } from "react";
 import LoadingScreen from "../ui/LoadingScreen/index.jsx";
 
-export const scrollContext = createContext();
+export const navContext = createContext();
 
 function WebsiteSlidePanels() {
   const [windowHeightSize, setWindowHeightSize] = useState("auto");
@@ -69,18 +67,23 @@ function WebsiteSlidePanels() {
       previousIndex: event.previousIndex,
     });
   }
+  const [siteSlide, setSiteSlide] = useState(0);
 
+  const [swiper, setSwiper] = useState(null);
+  function goToSlide(slide) {
+    swiper.slideTo(slide);
+  }
   return (
     <>
-      <scrollContext.Provider value={scrollDirection}>
+      <navContext.Provider value={{ goToSlide }}>
         {/* <PaginationTag>{sectionType}</PaginationTag> */}
         {/* <LoadingScreen /> */}
+        {/* <button onClick={goToSecondPage}>PRESS ME</button> */}
         <BackgroundScenery />
         <FullView>
           <StyledSwiper
             direction={"vertical"}
             slidesPerView={1}
-            // spaceBetween={30}
             mousewheel={true}
             simulateTouch={true}
             speed={"985"}
@@ -88,9 +91,9 @@ function WebsiteSlidePanels() {
               clickable: true,
             }}
             modules={[Mousewheel, Pagination]}
-            // className="mySwiper"
             onActiveIndexChange={(event) => onScrollBehavior(event)}
             windowheight={windowHeightSize}
+            onSwiper={setSwiper}
           >
             <SwiperSlide>
               <Home />
@@ -108,12 +111,12 @@ function WebsiteSlidePanels() {
         </FullView>
 
         <MiniView>
-          <Home />
-          <AboutSection />
-          <ProjectsSection />
-          <ContactSection />
+          <Home id="home"/>
+          <AboutSection id="about" />
+          <ProjectsSection id="projects"/>
+          <ContactSection id="contact"/>
         </MiniView>
-      </scrollContext.Provider>
+      </navContext.Provider>
     </>
   );
 }

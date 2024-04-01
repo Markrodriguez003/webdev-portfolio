@@ -1,29 +1,20 @@
-/* eslint-disable react/prop-types */
+import { useScramble } from "use-scramble";
+// import { useEffect, useRef } from "react";
 
-import baffle from "baffle";
-import { useEffect } from "react";
-
+// eslint-disable-next-line react/prop-types
 function AnimatedHeader({ title }) {
-  useEffect(() => {
-    const target = baffle(".obfuscated");
-    target.set({
-      characters: "█▓█ ▒░/▒░ █░▒▓/ █▒▒ ▓▒▓/█<░▒ ▓/░>",
-      speed: 100,
-    });
-    target.start();
-    target.reveal(800);
-    return () => {
-      target.stop();
-      target.reveal();
-      title;
-    };
+  const { ref } = useScramble({
+    text: title,
+    speed: 0.7,
+    tick: 1,
+    overflow: true,
+    seed: 7,
+    range: [45, 46, 95],
   });
 
   return (
     <>
-      <div className="col obfuscated" style={{ color: "white" }}>
-        {title}
-      </div>
+      <div ref={ref} />
     </>
   );
 }
