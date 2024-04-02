@@ -3,6 +3,8 @@ import ContactForm from "../../ui/ContactForm";
 import { FaRegEnvelope, FaLinkedin } from "react-icons/fa";
 import { MdOutlineContactMail } from "react-icons/md";
 import githubIcon from "../../../assets/icons/github-icon-w.png";
+import fileSaver from "file-saver";
+
 import {
   LeftHeaderColumn,
   RightColumnPanel,
@@ -23,7 +25,7 @@ import { PiKeyReturnBold } from "react-icons/pi";
 import { useState } from "react";
 
 // DOWNLOAD ASSETS
-// import vCard from "../../../../public/download/vcard.vcf";
+// import vCard from "../../../../public/download/Mark-Rodriguez.vcf";
 import resume from "../../../../public/download/Mark Rodriguez - Resume.pdf";
 
 // PDF VIEWER
@@ -41,6 +43,14 @@ function ContactSection() {
   function pdfModalClick(event) {
     // event.preventDefault();
     setPdfModal(!pdfModal);
+  }
+
+  function vCardDownload() {
+    fileSaver.saveAs(
+      import.meta.env.REACT_APP_CLIENT_URL +
+        "../src/assets/download/Mark-Rodriguez.vcf",
+      "Mark-Rodriguez.vcf"
+    );
   }
 
   return (
@@ -76,7 +86,7 @@ function ContactSection() {
                 style={{ verticalAlign: "center", paddingRight: "5px" }}
               />
               Contact Card:{" "}
-              <a href="#" download rel="external" target="_blank">
+              <a href="#" onClick={() => vCardDownload()}>
                 {" "}
                 Download
               </a>
@@ -86,11 +96,7 @@ function ContactSection() {
               <LuMenuSquare
                 style={{ verticalAlign: "center", paddingRight: "5px" }}
               />
-              Resume:{" "}
-              <a href="#" onClick={(event) => pdfModalClick(event)}>
-                View
-              </a>{" "}
-              |{" "}
+              Resume: <a onClick={(event) => pdfModalClick(event)}>View</a> |{" "}
               <a href={resume} download={resume}>
                 Download
               </a>

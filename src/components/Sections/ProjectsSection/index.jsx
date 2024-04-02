@@ -95,7 +95,6 @@ function ProjectsSection() {
           </MaxProjectView>
           <MinProjectView>
             {projects.map((project, count) => {
-              // console.log(`Project-`, count, ` `, project);
               return (
                 <>
                   <MiniProjectCard

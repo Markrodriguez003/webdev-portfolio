@@ -19,9 +19,9 @@ export const ProjectVideo = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  /* background-color:yellow;  */
+  /* margin-top:200px; */
   & * {
-    /* width: 1000px !important; */
-    /* height: 100% !important; */
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -82,7 +82,7 @@ export const CardHeader = styled.div`
   & h2 {
     text-align: start;
     color: white;
-    font-size: 1.8em;
+    font-size: 1.35em;
     padding: 1.2px;
     margin-bottom: 10px;
     justify-self: start;
@@ -90,7 +90,7 @@ export const CardHeader = styled.div`
 
   & small {
     color: grey;
-    font-size: 15px;
+    font-size: 12px;
     text-align: left;
   }
 `;
@@ -118,9 +118,8 @@ export const CardProjectImage = styled.img`
   object-fit: cover;
 
   @media screen and (max-width: 875px) {
-   height: 40vh;
+    height: 40vh;
   }
-
 `;
 
 export const ProjectBlurb = styled.section`

@@ -186,19 +186,19 @@ export function FullProjectCard({ props }) {
                 );
               })}
               <SwiperSlide>
-                {/* <ProjectVideo> */}
-                <ReactPlayer
-                  key={`youtube-video:` + title + video}
-                  url={video}
-                  controls={true}
-                  playing={playVideo}
-                  onPlay={() => setPlayVideo(true)}
-                  onPause={() => setPlayVideo(false)}
-                  ref={videoRef}
-                  width="100%"
-                  height="100%"
-                />
-                {/* </ProjectVideo>{" "} */}
+                <ProjectVideo>
+                  <ReactPlayer
+                    key={`youtube-video:` + title + video}
+                    url={video}
+                    controls={true}
+                    playing={playVideo}
+                    onPlay={() => setPlayVideo(true)}
+                    onPause={() => setPlayVideo(false)}
+                    ref={videoRef}
+                    height="435px"
+                    width="875px"
+                  />
+                </ProjectVideo>{" "}
               </SwiperSlide>
             </Swiper>
             <ProjectBlurb>
