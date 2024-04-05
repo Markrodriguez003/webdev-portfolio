@@ -15,7 +15,8 @@ export const LoadingScreenContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: rgba(0, 0, 0, 1); */
+  background-color: transparent;
   width: 100vw;
   height: 100vh;
   z-index: 9999;
