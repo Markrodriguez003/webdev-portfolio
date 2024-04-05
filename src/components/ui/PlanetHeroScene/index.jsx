@@ -10,10 +10,11 @@ function PlanetHeroScene() {
   return (
     <>
       <PlanetContainer>
-        <PlanetBackground> </PlanetBackground>
-        <Satellite>
+        <PlanetBackground />
+        {/* <Satellite>
           <ShinyLight />
-        </Satellite>
+        </Satellite> */}
+
         <AstronautHome />
       </PlanetContainer>
     </>

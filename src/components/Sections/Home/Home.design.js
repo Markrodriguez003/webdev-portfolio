@@ -1,4 +1,23 @@
 import styled, { css, keyframes } from "styled-components";
+import astronautH from "../../../assets/images/astronaut-2.png";
+
+const floatA = keyframes`
+  0% {
+    transform: translate(0, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(0, 28px) rotate(-3deg);
+  }
+  50% {
+    transform: translate(0, -7px) rotate(0deg);
+  }
+  75% {
+    transform: translate(0, 28px) rotate(4deg);
+  }
+  100% {
+    transform: translate(0, -0px);
+    }
+`;
 
 export const IntroductionContainer = styled.div`
   display: inline-flex;
@@ -56,7 +75,7 @@ export const ScrollToExplore = styled.div`
 
   @media (max-width: 600px) {
     margin-top: 20px;
-    margin-bottom: 140px;
+    margin-bottom: 80px;
   }
 `;
 
@@ -135,11 +154,14 @@ export const NavContainer = styled.nav`
   align-content: start;
   padding-right: 12px;
   padding-top: 12px;
+  
 
   @media (max-width: 1200px) {
-    order: 1;
+    /* order: 1;
     flex-direction: row;
     padding-right: 0px;
+    margin-bottom: 60px; */
+    display: none;
   }
 
   & ul {
@@ -186,5 +208,30 @@ export const NavContainer = styled.nav`
     </div>-color: rgba(232, 236, 241, 0.2); */
   }
   & ul li a:active {
+  }
+`;
+
+export const AstronautMini = styled.div`
+  background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+  filter: brightness(1.5) saturate(100%);
+  display: none;
+  background-image: url(${astronautH});
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  animation: ${floatA} 10s ease-in-out infinite;
+
+  z-index: 1;
+
+  @media screen and (max-width: 510px) {
+    width: 135px;
+    height: 135px;
+    bottom: 55px;
+    overflow: hidden;
+    left: 37%;
   }
 `;

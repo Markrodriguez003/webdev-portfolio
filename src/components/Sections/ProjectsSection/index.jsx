@@ -1,3 +1,4 @@
+// STYLING / STYLED COMPONENTS
 import {
   ProjectsUL,
   ProjectItem,
@@ -18,13 +19,15 @@ import {
 // https://codepen.io/indrekpaas/pen/xEmRVd
 // https://www.youtube.com/watch?v=Il_GKGFggWY&ab_channel=RobotBobby
 
-import { useState, useRef, useEffect } from "react";
+//REACT
+import { useState, useRef, useEffect, forwardRef } from "react";
 
+// COMPONENTS
 import HeaderBorderBox from "../../ui/HeaderBorderBox";
 import { FullProjectCard, MiniProjectCard } from "../../ui/ProjectCard";
 import { projects } from "../../../../data/projectContent";
 
-function ProjectsSection() {
+function ProjectsSectionComp({ props }, ref) {
   const [SlideProject, setSlideProject] = useState(0);
   const [click, setClick] = useState(false);
   const [update, setUpdate] = useState(false);
@@ -37,6 +40,7 @@ function ProjectsSection() {
     false, // WAAGWORD
   ]);
 
+  // handles project click
   function onClickSelect(key, event) {
     setClick(() => !click);
     setRevealFade(!revealFade);
@@ -67,8 +71,8 @@ function ProjectsSection() {
   });
 
   return (
-    <>
-      <SectionContainer>
+    <div ref={ref}>
+      <SectionContainer id="#projects">
         <LeftHeaderColumn>
           <HeaderBorderBox props={{ type: "boxes", title: "PROJECTS" }} />
           <HeaderDetailsPanel>
@@ -110,8 +114,8 @@ function ProjectsSection() {
           </MinProjectView>
         </RightColumnPanel>
       </SectionContainer>
-    </>
+    </div>
   );
 }
 
-export default ProjectsSection;
+export const ProjectsSection = forwardRef(ProjectsSectionComp);

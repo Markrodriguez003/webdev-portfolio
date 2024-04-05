@@ -41,6 +41,10 @@ export const SpaceBackground = styled.div`
     height: 985vh;
   }
 
+  @media screen and (max-width: 600px) {
+    height: 1285vh;
+  }
+
 
   & div.stars {
     width: 1px;

@@ -1,10 +1,21 @@
+// REACT
+import { useState, forwardRef } from "react";
+
+// COMPONENTS
 import HeaderBorderBox from "../../ui/HeaderBorderBox";
 import ContactForm from "../../ui/ContactForm";
-import { FaRegEnvelope, FaLinkedin } from "react-icons/fa";
-import { MdOutlineContactMail } from "react-icons/md";
+
+// ICONS
 import githubIcon from "../../../assets/icons/github-icon-w.png";
+import { MdOutlineContactMail } from "react-icons/md";
+import { FaRegEnvelope, FaLinkedin } from "react-icons/fa";
+import { LuMenuSquare } from "react-icons/lu";
+import { PiKeyReturnBold } from "react-icons/pi";
+
+// COMPONENTS
 import fileSaver from "file-saver";
 
+// STYLES / STYLED COMPONENTS
 import {
   LeftHeaderColumn,
   RightColumnPanel,
@@ -14,21 +25,17 @@ import {
 
 import { ModalOuterContainer, ModalExitBtn } from "./ContactSection.Design";
 
-// ICONS
-import { LuMenuSquare } from "react-icons/lu";
-import { PiKeyReturnBold } from "react-icons/pi";
 // ? NOTES
 // ? https://www.mamboleoo.be/articles/create-your-own-sphere-in-css
 // ? https://codepen.io/iamlark/pen/jYzYJg
 // ? https://codepen.io/donovanh/pen/kQgMmE
-
-import { useState } from "react";
 
 // DOWNLOAD ASSETS
 // import vCard from "../../../../public/download/Mark-Rodriguez.vcf";
 import resume from "../../../../public/download/Mark Rodriguez - Resume.pdf";
 
 // PDF VIEWER
+// ! MOVE TO SCRIPTS ?
 function PDFViewer() {
   return (
     <div style={{ backgroundColor: "green", width: "80%", height: "90%" }}>
@@ -37,7 +44,7 @@ function PDFViewer() {
   );
 }
 
-function ContactSection() {
+function ContactSectionComp({ props }, ref) {
   const [pdfModal, setPdfModal] = useState(false);
 
   function pdfModalClick(event) {
@@ -54,9 +61,9 @@ function ContactSection() {
   }
 
   return (
-    <>
+    <div ref={ref}>
       {pdfModal === true ? (
-        <ModalOuterContainer>
+        <ModalOuterContainer id="#contact">
           <PDFViewer />
           <ModalExitBtn onClick={(event) => pdfModalClick(event)}>
             <PiKeyReturnBold style={{ verticalAlign: "middle" }} /> Return
@@ -138,8 +145,8 @@ function ContactSection() {
       </small> */}
         </RightColumnPanel>
       </SectionContainer>
-    </>
+    </div>
   );
 }
 
-export default ContactSection;
+export const ContactSection = forwardRef(ContactSectionComp);

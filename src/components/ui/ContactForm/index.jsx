@@ -221,11 +221,11 @@ export default function ContactForm() {
             title="Clear Form"
             styling="youtube"
           ></SiteButton>
+          <ReCAPTCHA
+            ref={recaptcha}
+            sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
+          />
         </div>
-        <ReCAPTCHA
-          ref={recaptcha}
-          sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
-        />
       </FormContainer>
       <SatellightContainer>
         <Satellite />

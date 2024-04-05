@@ -8,6 +8,7 @@ export const SectionContainer = styled.div`
   height: 100%;
   width: 100%;
   transition: none;
+  
 
   @media (max-width: 1200px) {
     border-left: none;
@@ -81,7 +82,7 @@ export const RightColumnPanel = styled.div`
   width: 100%;
   margin-left: 55px;
   margin-right: 5%;
-
+  height: 100%;
   @media screen and (max-width: 875px) {
     width: 100%;
     margin: 0;

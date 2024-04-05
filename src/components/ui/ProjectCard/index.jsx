@@ -186,7 +186,7 @@ export function FullProjectCard({ props }) {
                 );
               })}
               <SwiperSlide>
-                <ProjectVideo>
+                {/* <ProjectVideo>
                   <ReactPlayer
                     key={`youtube-video:` + title + video}
                     url={video}
@@ -195,10 +195,10 @@ export function FullProjectCard({ props }) {
                     onPlay={() => setPlayVideo(true)}
                     onPause={() => setPlayVideo(false)}
                     ref={videoRef}
-                    height="435px"
-                    width="875px"
+                    height="425px"
+                    width="675px"
                   />
-                </ProjectVideo>{" "}
+                </ProjectVideo>{" "} */}
               </SwiperSlide>
             </Swiper>
             <ProjectBlurb>

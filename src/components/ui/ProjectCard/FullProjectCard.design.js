@@ -64,7 +64,7 @@ export const CardHeader = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   padding: 10px 5px;
   letter-spacing: 1.2px;
   margin-bottom: 10px;
@@ -98,12 +98,13 @@ export const CardHeader = styled.div`
 export const CardBody = styled.section`
   position: flex;
   flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
   width: 100%;
+  height: 80vh;
   z-index: 1;
   text-align: center;
   margin-left: auto;
@@ -113,11 +114,18 @@ export const CardBody = styled.section`
 `;
 
 export const CardProjectImage = styled.img`
-  width: 95%;
-  height: 100%;
+  width: 75%;
+  /* height: 100%; */
+  height: 420px;
+
   object-fit: cover;
 
+  /* @media screen and (max-width: 1000px) {
+    width: 85%;
+    height: 525px;
+  } */
   @media screen and (max-width: 875px) {
+    width: 90%;
     height: 40vh;
   }
 `;

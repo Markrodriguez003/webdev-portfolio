@@ -106,20 +106,17 @@ export const PlanetBackground = styled.div`
     height: 355px;
   }
   // TABLET
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     top: -175px;
     width: 375px;
     height: 375px;
   }
-
 
   // 2K/4K MONITORS
   @media screen and (min-width: 1740px) {
     width: 685px;
     height: 685px;
   }
-
-  
 `;
 
 export const Satellite = styled.div`
@@ -179,7 +176,46 @@ export const AstronautHome = styled.div`
   z-index: 1;
 
   @media screen and (max-width: 800px) {
-    /* transform: scale(80%); */
+    width: 185px;
+    height: 185px;
+    bottom: 98px;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 185px;
+    height: 185px;
+    bottom: 98px;
+  }
+
+  @media screen and (max-width: 950px) and (max-height: 700px) {
+    width: 185px;
+    height: 185px;
+    bottom: -258px;
+    left: 48px;
+  }
+
+  @media screen and (max-width: 950px) and (max-height: 1338px) {
+    width: 185px;
+    height: 185px;
+    bottom: 520px;
+    left: 48px;
+  }
+
+  @media screen and (max-width: 912px) and (max-height: 1368px) {
+    width: 185px;
+    height: 185px;
+    bottom: 520px;
+    left: 48px;
+  }
+
+  @media screen and (max-width: 540px) and (max-height: 720px) {
+    width: 145px;
+    height: 145px;
+    bottom: 120px;
+    left: 8px;
+  }
+
+  @media screen and (max-width: 510px) {
     display: none;
   }
 `;

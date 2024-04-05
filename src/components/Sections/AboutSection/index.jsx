@@ -1,27 +1,36 @@
-import HeaderBorderBox from "../../ui/HeaderBorderBox";
-import AnimatedHeader from "../../ui/AnimatedHeader";
-import { TechnologiesSkillsBar, FutureTechSkillsBar } from "../../ui/SkillBars";
-import { FaRegEnvelope } from "react-icons/fa";
-import { LuMenuSquare } from "react-icons/lu";
-import PaginationTag from "../../ui/PaginationTag";
-import githubIcon from "../../../assets/icons/github-icon-w.png";
-// ? Notes:
-// ? https://www.youtube.com/watch?v=h4227nm08G8
-// ? https://codepen.io/yomateo/pen/ypbNrJ
-// STYLES
+// REACT
+import { forwardRef } from "react";
+
+// STYLING / STYLED COMPONENTS
 import {
   SectionContainer,
   LeftHeaderColumn,
   RightColumnPanel,
   HeaderDetailsPanel,
 } from "../Sections.design";
-
 import { AboutDetailsPanel } from "./AboutSection.design";
 
+// ICONS
+import { FaRegEnvelope } from "react-icons/fa";
+import { LuMenuSquare } from "react-icons/lu";
 import { BiSolidInvader } from "react-icons/bi";
-function AboutSection() {
+
+// COMPONENTS
+import PaginationTag from "../../ui/PaginationTag";
+import { TechnologiesSkillsBar, FutureTechSkillsBar } from "../../ui/SkillBars";
+import HeaderBorderBox from "../../ui/HeaderBorderBox";
+import AnimatedHeader from "../../ui/AnimatedHeader";
+
+// ASSETS
+import githubIcon from "../../../assets/icons/github-icon-w.png";
+
+// ? NOTES
+// ? https://www.youtube.com/watch?v=h4227nm08G8
+// ? https://codepen.io/yomateo/pen/ypbNrJ
+
+function AboutSectionComp({ props }, ref) {
   return (
-    <>
+    <div ref={ref}>
       <SectionContainer>
         {/* // todo: move this to another component */}
         <LeftHeaderColumn>
@@ -82,8 +91,8 @@ function AboutSection() {
           </AboutDetailsPanel>
         </RightColumnPanel>
       </SectionContainer>
-    </>
+    </div>
   );
 }
 
-export default AboutSection;
+export const AboutSection = forwardRef(AboutSectionComp);

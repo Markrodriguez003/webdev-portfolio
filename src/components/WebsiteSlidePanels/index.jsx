@@ -7,28 +7,35 @@
 // https://codepen.io/WilliamStaudenmeier/pen/eYQyRXz
 // https://www.youtube.com/watch?v=5f5wwQb22tE&ab_channel=RedStapler
 
+// ? NOTES
 // ! loading page animation
 // ? https://stackoverflow.com/questions/60847095/how-to-load-all-images-before-showing-the-page-in-react
+
+// STYLES / STYLED COMPONENTS
 import {
   StyledSwiper,
   FullView,
   MiniView,
+  MiniNavContainer,
 } from "./WebsiteSlidePanels.design.js";
 import "./style.css";
 import "swiper/css";
 import "swiper/css/pagination";
+
+// COMPONENTS
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
 import BackgroundScenery from "../ui/BackgroundScenery/index.jsx";
-import AboutSection from "../Sections/AboutSection/index.jsx";
-import ProjectsSection from "../Sections/ProjectsSection/index.jsx";
-import ContactSection from "../Sections/ContactSection/index.jsx";
+import { AboutSection } from "../Sections/AboutSection/index.jsx";
+import { ProjectsSection } from "../Sections/ProjectsSection/index.jsx";
+import { ContactSection } from "../Sections/ContactSection/index.jsx";
 import Home from "../Sections/Home/index.jsx";
 import PaginationTag from "../ui/PaginationTag/index.jsx";
 import { sections } from "../../../data/sectionNames.js";
-import { useState, createContext, useEffect, useContext, useRef } from "react";
 import LoadingScreen from "../ui/LoadingScreen/index.jsx";
 
+//REACT
+import { useState, createContext, useEffect, useContext, useRef } from "react";
 export const navContext = createContext();
 
 function WebsiteSlidePanels() {
@@ -73,6 +80,24 @@ function WebsiteSlidePanels() {
   function goToSlide(slide) {
     swiper.slideTo(slide);
   }
+
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const [siteNavRef, setSiteNavRef] = useState(null);
+
+  useEffect(() => {
+    function handleMiniNavigationClick() {
+      siteNavRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+
+    if (siteNavRef !== null) {
+      handleMiniNavigationClick();
+      console.log(`This is the ref:`, siteNavRef);
+    }
+  }, [siteNavRef]);
+
   return (
     <>
       <navContext.Provider value={{ goToSlide }}>
@@ -111,10 +136,40 @@ function WebsiteSlidePanels() {
         </FullView>
 
         <MiniView>
-          <Home id="home"/>
-          <AboutSection id="about" />
-          <ProjectsSection id="projects"/>
-          <ContactSection id="contact"/>
+          <Home>
+            <>
+              <MiniNavContainer>
+                <ul>
+                  <li>
+                    {/* <a href="#about"  onClick={() => document.getElementById('first')?.scrollIntoView()}> */}
+                    <a href="#about" onClick={() => setSiteNavRef(aboutRef)}>
+                      ABOUT
+                    </a>
+                  </li>
+                  <li ref={projectsRef}>
+                    <a
+                      href="#projects"
+                      onClick={() => setSiteNavRef(projectsRef)}
+                    >
+                      PROJECTS
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#contact"
+                      onClick={() => setSiteNavRef(contactRef)}
+                    >
+                      CONTACT
+                    </a>
+                  </li>
+                </ul>
+              </MiniNavContainer>
+            </>
+          </Home>
+
+          <AboutSection ref={aboutRef} id="about" />
+          <ProjectsSection ref={projectsRef} id="projects" />
+          <ContactSection ref={contactRef} id="contact" />
         </MiniView>
       </navContext.Provider>
     </>
