@@ -5,7 +5,7 @@ import { useScramble } from "use-scramble";
 function AnimatedHeader({ title }) {
   const { ref } = useScramble({
     text: title,
-    speed: 0.7,
+    speed: 0.65,
     tick: 1,
     overflow: true,
     seed: 7,

@@ -12,6 +12,8 @@ import AnimatedHeader from "../../ui/AnimatedHeader/index.jsx";
 import PlanetHeroScene from "../../ui/PlanetHeroScene/index.jsx";
 import SoundMeter from "../../ui/HeaderAnimations/SoundMeter.jsx";
 import { navContext } from "../../WebsiteSlidePanels/index.jsx";
+import SpeechBubble from "../../ui/SpeechBubble/index.jsx";
+// import PaginationTag from "../../ui/PaginationTag";
 
 // ASSETS
 import githubIcon from "../../../assets/icons/github-icon-w.png";
@@ -20,11 +22,50 @@ import githubIcon from "../../../assets/icons/github-icon-w.png";
 import { FaUserAstronaut } from "react-icons/fa6";
 
 // REACT
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
-// import PaginationTag from "../../ui/PaginationTag";
 function Home({ children }) {
   const siteNav = useContext(navContext);
+
+
+  // Astronaut dialogue options
+  const dialogues = [
+    "..Uh.. Houston... we have a visitor..",
+    "..well...uh..this is new for me..",
+    "..oh.. first contact..",
+    "GREETINGS INTERSTELLAR VISITOR!",
+    "...what now?",
+    "uhh..",
+  ]
+
+  // Handles / cycles through home speech bubble dialogue
+  const [dialogueStop, setDialogueStop] = useState(true);
+  const [dialogueCount, setDialogueCount] = useState(0);
+  // useEffect(() => {
+  //   let count = 0;
+  //   const dialogueTimer = setInterval(
+  //     () => {
+  //       if (dialogueCount !== 5) {
+  //         setDialogueCount((prevCount) => prevCount + 1);
+  //         console.log("dialogueCount is " + dialogueCount);
+  //       } else {
+
+  //         setDialogueCount(0);
+  //       }
+
+  //     }, 3000);
+
+
+  //   if (!dialogueStop) {
+  //     clearTimeout(dialogueTimer);
+  //   } else {
+  //     dialogueTimer;
+
+  //   }
+  //   // return (() => {
+  //   //   clearTimeout(dialogueTimer);
+  //   // })
+  // }, [dialogueStop, setDialogueStop])
 
   return (
     <div>
@@ -39,15 +80,15 @@ function Home({ children }) {
           <ul>
             <li>
               {/* <a href="#about"  onClick={() => document.getElementById('first')?.scrollIntoView()}> */}
-              <a onClick={() => siteNav.goToSlide(1)}>ABOUT</a>
+              <a onClick={() => { setDialogueStop(false), siteNav.goToSlide(1) }}>ABOUT</a>
             </li>
             <li>
-              <a href="#projects" onClick={() => siteNav.goToSlide(2)}>
+              <a href="#projects" onClick={() => { setDialogueStop(false), siteNav.goToSlide(2) }}>
                 PROJECTS
               </a>
             </li>
             <li>
-              <a href="#contact" onClick={() => siteNav.goToSlide(3)}>
+              <a href="#contact" onClick={() => { setDialogueStop(false), siteNav.goToSlide(1) }}>
                 CONTACT
               </a>
             </li>
@@ -67,6 +108,13 @@ function Home({ children }) {
 
       <ScrollToExplore>
         <SoundMeter />
+        <div style={{ position: "relative", display: "inline-block", width: "100%", height: "auto", background: "red" }}>
+          <div style={{ position: "absolute", direction: "column", bottom: "195px", left: "135px", height: "100px", width: "200px" }}>
+            <SpeechBubble direction="bottom-left">  {dialogues[dialogueCount]}</SpeechBubble>
+          </div>
+
+          <AstronautMini />
+        </div>
         <AstronautMini />
         <span>SCROLL TO EXPLORE</span>
       </ScrollToExplore>

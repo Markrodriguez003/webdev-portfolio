@@ -122,8 +122,6 @@ function WebsiteSlidePanels() {
         <BackgroundScenery >
           <navContext.Provider value={{ goToSlide }}>
             {/* <PaginationTag>{sectionType}</PaginationTag> */}
-
-            {/* <button onClick={goToSecondPage}>PRESS ME</button> */}
             <FullView  >
               <StyledSwiper
                 direction={"vertical"}
