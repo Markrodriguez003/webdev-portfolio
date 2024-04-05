@@ -22,29 +22,27 @@ from {
 
 `;
 
- 
 export const SpaceBackground = styled.div`
   z-index: -999;
   top: 0;
   bottom: 0;
   height: 100%;
-  /* min-height: 100vh; */
+  min-height: 100%;
   width: 100%;
   position: absolute;
   margin: 0;
   padding: 0;
   background: radial-gradient(ellipse at bottom, #0b0e12 0%, #090a0f 100%);
-  overflow: hidden;
+  overflow: auto;
   transition: transform 2s ease-in-out;
 
-  @media screen and (max-width: 1200px) {
-    height: 985vh;
+  /* @media screen and (max-width: 1500px) {
+    height: 1085vh;
   }
 
   @media screen and (max-width: 600px) {
     height: 1285vh;
-  }
-
+  } */
 
   & div.stars {
     width: 1px;
@@ -168,13 +166,12 @@ export const SpaceBackground = styled.div`
     border-radius: 400px;
     background: transparent;
     box-shadow: 251px 304px #fff, 1586px 228px #fff, 764px 592px #fff,
-      942px 1920px #fff, 458px 1285px #fff, 511px 1001px #fff,
-      1111px 763px #fff, 911px 414px #fff, 107px 731px #fff,
-      880px 429px #fff;
+      942px 1920px #fff, 458px 1285px #fff, 511px 1001px #fff, 1111px 763px #fff,
+      911px 414px #fff, 107px 731px #fff, 880px 429px #fff;
     transition: transform 2s ease-in-out;
     animation: ${animatedStars} 150s linear infinite;
     /* animation-fill-mode: both; */
- 
+
     &:after {
       content: " ";
       position: absolute;
@@ -183,9 +180,8 @@ export const SpaceBackground = styled.div`
       height: 3px;
       background: transparent;
       box-shadow: 251px 304px #fff, 1586px 228px #fff, 764px 592px #fff,
-      942px 1920px #fff, 458px 1285px #fff, 511px 1001px #fff,
-      1111px 763px #fff, 911px 414px #fff, 1107px 731px #fff,
-      880px 429px #fff;
+        942px 1920px #fff, 458px 1285px #fff, 511px 1001px #fff,
+        1111px 763px #fff, 911px 414px #fff, 1107px 731px #fff, 880px 429px #fff;
     }
   }
 `;

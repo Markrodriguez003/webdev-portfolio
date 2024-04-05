@@ -8,7 +8,7 @@ import nebulaVideo from "../../../assets/video/nebula-1.mp4";
 import "./BackgroundScene.design.css";
 
 import { useContext, useEffect, useRef } from "react";
-function BackgroundScenery() {
+function BackgroundScenery({ children }) {
   return (
     <>
       <SpaceBackground>
@@ -18,7 +18,7 @@ function BackgroundScenery() {
             loop
             muted
             id="background-video"
-            // ref={videoPlaybackSpeed}
+          // ref={videoPlaybackSpeed}
           >
             <source src={nebulaVideo}></source>
           </video>
@@ -28,7 +28,9 @@ function BackgroundScenery() {
         <div className="stars2"></div>
         <div className="stars3"></div>
         <div className="stars4"></div>
+        {children}
       </SpaceBackground>
+
     </>
   );
 }

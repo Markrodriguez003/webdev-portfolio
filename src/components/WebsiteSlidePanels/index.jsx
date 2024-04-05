@@ -100,78 +100,81 @@ function WebsiteSlidePanels() {
 
   return (
     <>
-      <navContext.Provider value={{ goToSlide }}>
-        {/* <PaginationTag>{sectionType}</PaginationTag> */}
-        {/* <LoadingScreen /> */}
-        {/* <button onClick={goToSecondPage}>PRESS ME</button> */}
-        <BackgroundScenery />
-        <FullView>
-          <StyledSwiper
-            direction={"vertical"}
-            slidesPerView={1}
-            mousewheel={true}
-            simulateTouch={true}
-            speed={"985"}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Mousewheel, Pagination]}
-            onActiveIndexChange={(event) => onScrollBehavior(event)}
-            windowheight={windowHeightSize}
-            onSwiper={setSwiper}
-          >
-            <SwiperSlide>
-              <Home />
-            </SwiperSlide>
-            <SwiperSlide>
-              <AboutSection />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProjectsSection />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ContactSection />
-            </SwiperSlide>
-          </StyledSwiper>
-        </FullView>
 
-        <MiniView>
-          <Home>
-            <>
-              <MiniNavContainer>
-                <ul>
-                  <li>
-                    {/* <a href="#about"  onClick={() => document.getElementById('first')?.scrollIntoView()}> */}
-                    <a href="#about" onClick={() => setSiteNavRef(aboutRef)}>
-                      ABOUT
-                    </a>
-                  </li>
-                  <li ref={projectsRef}>
-                    <a
-                      href="#projects"
-                      onClick={() => setSiteNavRef(projectsRef)}
-                    >
-                      PROJECTS
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#contact"
-                      onClick={() => setSiteNavRef(contactRef)}
-                    >
-                      CONTACT
-                    </a>
-                  </li>
-                </ul>
-              </MiniNavContainer>
-            </>
-          </Home>
+      <BackgroundScenery >
 
-          <AboutSection ref={aboutRef} id="about" />
-          <ProjectsSection ref={projectsRef} id="projects" />
-          <ContactSection ref={contactRef} id="contact" />
-        </MiniView>
-      </navContext.Provider>
+        <navContext.Provider value={{ goToSlide }}>
+          {/* <PaginationTag>{sectionType}</PaginationTag> */}
+          {/* <LoadingScreen /> */}
+          {/* <button onClick={goToSecondPage}>PRESS ME</button> */}
+          <FullView>
+            <StyledSwiper
+              direction={"vertical"}
+              slidesPerView={1}
+              mousewheel={true}
+              simulateTouch={true}
+              speed={"985"}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Mousewheel, Pagination]}
+              onActiveIndexChange={(event) => onScrollBehavior(event)}
+              windowheight={windowHeightSize}
+              onSwiper={setSwiper}
+            >
+              <SwiperSlide>
+                <Home />
+              </SwiperSlide>
+              <SwiperSlide>
+                <AboutSection />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectsSection />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ContactSection />
+              </SwiperSlide>
+            </StyledSwiper>
+          </FullView>
+
+          <MiniView>
+            <Home>
+              <>
+                <MiniNavContainer>
+                  <ul>
+                    <li>
+                      {/* <a href="#about"  onClick={() => document.getElementById('first')?.scrollIntoView()}> */}
+                      <a href="#about" onClick={() => setSiteNavRef(aboutRef)}>
+                        ABOUT
+                      </a>
+                    </li>
+                    <li ref={projectsRef}>
+                      <a
+                        href="#projects"
+                        onClick={() => setSiteNavRef(projectsRef)}
+                      >
+                        PROJECTS
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#contact"
+                        onClick={() => setSiteNavRef(contactRef)}
+                      >
+                        CONTACT
+                      </a>
+                    </li>
+                  </ul>
+                </MiniNavContainer>
+              </>
+            </Home>
+            <AboutSection ref={aboutRef} id="about" />
+            <ProjectsSection ref={projectsRef} id="projects" />
+            <ContactSection ref={contactRef} id="contact" />
+          </MiniView>
+        </navContext.Provider>
+      </BackgroundScenery >
+
     </>
   );
 }
