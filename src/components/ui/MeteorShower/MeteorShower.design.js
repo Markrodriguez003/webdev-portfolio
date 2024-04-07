@@ -50,6 +50,7 @@ export const MeteorContainer = styled.section`
     top: -250px;
     left: 0;
     width: 100%;
+    overflow:  hidden;
     height: 120vh;
     background-color: transparent;
     background-position-x: center;
@@ -79,11 +80,11 @@ export const MeteorContainer = styled.section`
       /* background: linear-gradient(90deg, yellow, transparent); */
       /* background: linear-gradient(90deg, ${changeupMeteor()}, transparent); */
       background: ${(props) =>
-        props.meteorTrigger
-          ? `linear-gradient(90deg, 
+    props.meteorTrigger
+      ? `linear-gradient(90deg, 
             ${meteorColor[props.meteorTrigger]}
         , transparent)`
-          : `linear-gradient(90deg, 
+      : `linear-gradient(90deg, 
           ${meteorColor[props.meteorTrigger]}
         , transparent)`};
     }

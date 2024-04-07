@@ -39,6 +39,15 @@ const floatB = keyframes`
     }
 `;
 
+export const ContactUsOuterContainer = styled.div`
+position:relative ;
+display:flex ;
+flex-direction: row ;
+border: rgba(255, 255, 255, 0.1) 1px solid;
+width: 100% ;
+background-color:transparent;
+`
+
 export const FormContainer = styled.form`
   display: inline-flex;
   position: relative;
@@ -52,7 +61,6 @@ export const FormContainer = styled.form`
   color: white;
   padding-top: 10px;
   width: 100%;
-  border: rgba(255, 255, 255, 0.1) 1px solid;
   height: 91vh;
 
   margin-right: 38px;

@@ -7,6 +7,7 @@ import {
   AstronautContact,
   Satellite,
   QRCode,
+  ContactUsOuterContainer,
 } from "./ContactForm.design";
 
 // COMPONENT
@@ -132,12 +133,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-      }}
-    >
+    <ContactUsOuterContainer>
       <FormContainer
         onSubmit={handleSubmit}
         autoComplete="off"
@@ -227,11 +223,25 @@ export default function ContactForm() {
           />
         </div>
       </FormContainer>
-      <SatellightContainer>
+      {/* <h1
+        style={{
+          display: "inline",
+          color: "white",
+          backgroundColor: "red",
+          fontSize: "50px",
+        }}
+      >
+        hello
+      </h1> */}
+
+      {/* <SatellightContainer>
         <Satellite />
         <AstronautContact />
-        {/* <QRCode></QRCode> */}
-      </SatellightContainer>
-    </div>
+      </SatellightContainer> */}
+    </ContactUsOuterContainer>
   );
+}
+
+{
+  /* <QRCode></QRCode> */
 }

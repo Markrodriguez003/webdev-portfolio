@@ -2,7 +2,7 @@ import styled, { css, keyframes } from "styled-components";
 
 const dialoguePop = keyframes`
     20%, 80% {transform: scale(1.2);}
-    100% {transform: scale(0);}
+    100% {transform: scale(0); display:"none"}
     /* 20%  {transform: scale(1.2);} */
     /* 100%  {transform: scale(0);} */
 

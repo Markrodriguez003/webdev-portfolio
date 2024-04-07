@@ -158,7 +158,7 @@ export const CardFooter = styled.section`
   bottom: 0;
   font-family: "body";
   color: white;
-  background-color: rgba(255, 25, 255, 0.02);
+  background-color: transparent;
   padding-bottom: 15px;
 
   margin: 0;

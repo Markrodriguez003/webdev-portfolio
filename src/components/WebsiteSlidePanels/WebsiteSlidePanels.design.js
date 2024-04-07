@@ -13,7 +13,7 @@ export const FullView = styled.div`
   display: block;
   width: 100%;
   height:100%;
-
+  background-color: transparent;
   cursor: url(${customCursor}) -52 -52, auto;
   @media (max-width: 1200px) {
     display: none;

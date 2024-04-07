@@ -22,24 +22,65 @@ from {
 
 `;
 
+
+
+export const VideoContainer = styled.div`
+   z-index: -9999;
+   display:inline-block ;
+   position: absolute;
+   filter: opacity(0.09) hue-rotate(2240deg) saturate(1.3);
+   
+   object-fit: contain;
+   min-width:auto;
+   height: 100%;
+   overflow: hidden;
+   padding: 100px;
+
+    & * {
+      overflow: hidden;
+      width: 100% ;
+      height: 100%;
+      /* transform: scale(1.2); */
+    }
+
+`
+
+
+export const OuterBackgroundContainer = styled.div`
+position:relative ;
+width:100%;
+height:100%;
+background: radial-gradient(ellipse at bottom, #0b0e12 0%, #090a0f 100%);
+z-index: 9999;
+`
+
 export const SpaceBackground = styled.div`
-  z-index: -999;
-  top: 0;
-  bottom: 0;
+
+  z-index: -1;
+  /* top: 0;
+  bottom: 0; */
+  left: 50%;
+    transform: translate(-50%, 0);
   height: 100%;
   min-height: 100%;
-  width: 100%;
-  position: absolute;
+  min-width: 100%;
+  position: fixed;
   margin: 0;
   padding: 0;
   background: radial-gradient(ellipse at bottom, #0b0e12 0%, #090a0f 100%);
-  overflow: auto;
+  /* background: pink; */
+  overflow: hidden;
   transition: transform 2s ease-in-out;
+  
 
-  /* @media screen and (max-width: 1500px) {
-    height: 1085vh;
+   @media screen and (max-width: 1200px) {
+    overflow: auto;
+    min-height: 100%;
+    max-height: 100%;
+    position: fixed;
+ 
   }
-
+ /*
   @media screen and (max-width: 600px) {
     height: 1285vh;
   } */
@@ -176,8 +217,8 @@ export const SpaceBackground = styled.div`
       content: " ";
       position: absolute;
       top: 2000px;
-      width: 3px;
-      height: 3px;
+      width: 2px;
+      height: 2px;
       background: transparent;
       box-shadow: 251px 304px #fff, 1586px 228px #fff, 764px 592px #fff,
         942px 1920px #fff, 458px 1285px #fff, 511px 1001px #fff,
@@ -185,3 +226,7 @@ export const SpaceBackground = styled.div`
     }
   }
 `;
+
+export const WinkingSpaceBackground = styled.div`
+
+`
