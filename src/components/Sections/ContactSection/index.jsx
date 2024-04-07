@@ -12,6 +12,11 @@ import { FaRegEnvelope, FaLinkedin } from "react-icons/fa";
 import { LuMenuSquare } from "react-icons/lu";
 import { PiKeyReturnBold } from "react-icons/pi";
 
+// ASSETS
+// IMAGES / GIFS
+import alien from "../../../assets/gifs/alien.gif";
+import spaceship from "../../../assets/gifs/spaceship.gif";
+
 // COMPONENTS
 import fileSaver from "file-saver";
 
@@ -22,6 +27,16 @@ import {
   SectionContainer,
   HeaderDetailsPanel,
 } from "../Sections.design";
+
+import {
+  ContactUsOuterContainer,
+  Satellite,
+  AstronautContact,
+  SatellightContainer,
+  FullContactView,
+  MiniContactView,
+  MidContactView,
+} from "../ContactSection/ContactSection.Design";
 
 import { ModalOuterContainer, ModalExitBtn } from "./ContactSection.Design";
 
@@ -61,7 +76,7 @@ function ContactSectionComp({ props }, ref) {
   }
 
   return (
-    <div ref={ref}>
+    <div>
       {pdfModal === true ? (
         <ModalOuterContainer id="#contact">
           <PDFViewer />
@@ -72,7 +87,7 @@ function ContactSectionComp({ props }, ref) {
       ) : (
         <></>
       )}
-      <SectionContainer>
+      <SectionContainer ref={ref}>
         <LeftHeaderColumn>
           <HeaderBorderBox props={{ type: "solar", title: "CONTACT" }} />
           <HeaderDetailsPanel>
@@ -129,20 +144,34 @@ function ContactSectionComp({ props }, ref) {
         </LeftHeaderColumn>
 
         <RightColumnPanel>
-          <ContactForm />
+          <FullContactView>
+            <ContactUsOuterContainer>
+              <ContactForm />
+              <SatellightContainer>
+                <Satellite />
+                <AstronautContact />
+              </SatellightContainer>
+            </ContactUsOuterContainer>
+          </FullContactView>
 
-          {/* <small
-        style={{
-          color: "rgba(255,255,255,0.2)",
-          textAlign: "center",
-          fontFamily: "body",
-          position: "absolute",
-          bottom: "0",
-          paddingBottom: "8px",
-        }}
-      >
-        Mark Rodriguez @2023{" "}
-      </small> */}
+          {/* <MidContactView>
+            <ContactUsOuterContainer>
+              <div>
+                <Satellite />
+              </div>
+
+              <ContactForm />
+              <div>
+                <AstronautContact />
+              </div>
+            </ContactUsOuterContainer>
+          </MidContactView> */}
+
+          <MiniContactView>
+            <ContactUsOuterContainer>
+              <ContactForm />
+            </ContactUsOuterContainer>
+          </MiniContactView>
         </RightColumnPanel>
       </SectionContainer>
     </div>
@@ -150,3 +179,18 @@ function ContactSectionComp({ props }, ref) {
 }
 
 export const ContactSection = forwardRef(ContactSectionComp);
+
+{
+  /* <small
+style={{
+color: "rgba(255,255,255,0.2)",
+textAlign: "center",
+fontFamily: "body",
+position: "absolute",
+bottom: "0",
+paddingBottom: "8px",
+}}
+>
+Mark Rodriguez @2023{" "}
+</small> */
+}

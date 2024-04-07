@@ -111,7 +111,7 @@ function Home({ children }) {
               speech={{ dialogues }}
               loop={true}
             /> */}
-        <AstronautMini />
+        {/* <AstronautMini /> */}
 
         <span>SCROLL TO EXPLORE</span>
       </ScrollToExplore>

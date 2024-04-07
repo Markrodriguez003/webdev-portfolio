@@ -1,14 +1,7 @@
 import { useState, useRef, useEffect, createRef } from "react";
 
 // STYLED COMPONENTS
-import {
-  FormContainer,
-  SatellightContainer,
-  AstronautContact,
-  Satellite,
-  QRCode,
-  ContactUsOuterContainer,
-} from "./ContactForm.design";
+import { FormContainer } from "./ContactForm.design";
 
 // COMPONENT
 import SiteButton from "../../ui/SiteButton";
@@ -27,10 +20,6 @@ import { FaTrashAlt } from "react-icons/fa";
 
 //CSS
 import "./customSweetAlertStyles.css";
-
-// IMAGES / GIFS
-import alien from "../../../assets/gifs/alien.gif";
-import spaceship from "../../../assets/gifs/spaceship.gif";
 
 // DATA
 // Country JSON list
@@ -133,112 +122,95 @@ export default function ContactForm() {
   };
 
   return (
-    <ContactUsOuterContainer>
-      <FormContainer
-        onSubmit={handleSubmit}
+    <FormContainer
+      onSubmit={handleSubmit}
+      autoComplete="off"
+      role="presentation"
+      method="post"
+      action=""
+    >
+      <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
         autoComplete="off"
         role="presentation"
-        method="post"
-        action=""
+        required
+      />
+
+      <label htmlFor="email">
+        Company <small>(Optional)</small>:
+      </label>
+      <input
+        type="text"
+        id="company"
+        name="company"
+        value={formData.company}
+        onChange={handleChange}
+        autoComplete="off"
+        role="presentation"
+      />
+      <label htmlFor="country">
+        Country <small>(Optional)</small>:
+      </label>
+      <select
+        name="country"
+        id="country"
+        value={formData.country}
+        onChange={handleChange}
       >
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          autoComplete="off"
-          role="presentation"
-          required
+        {countries.map((country) => {
+          return (
+            <option key={(`option_`, country.name)} value={country.name}>
+              {country.name}
+            </option>
+          );
+        })}
+      </select>
+
+      <label htmlFor="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        autoComplete="off"
+        role="presentation"
+        required
+      />
+
+      <label htmlFor="message">Message:</label>
+      <textarea
+        id="message"
+        name="message"
+        value={formData.message}
+        onChange={handleChange}
+        required
+        maxLength={150}
+      />
+
+      <div>
+        <SiteButton
+          type="submit"
+          icon={<FaRegEnvelope />}
+          title="Submit"
+        ></SiteButton>
+        <SiteButton
+          type="button"
+          icon={<FaTrashAlt />}
+          title="Clear Form"
+          styling="youtube"
+        ></SiteButton>
+        <ReCAPTCHA
+          ref={recaptcha}
+          sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
         />
-
-        <label htmlFor="email">
-          Company <small>(Optional)</small>:
-        </label>
-        <input
-          type="text"
-          id="company"
-          name="company"
-          value={formData.company}
-          onChange={handleChange}
-          autoComplete="off"
-          role="presentation"
-        />
-        <label htmlFor="country">
-          Country <small>(Optional)</small>:
-        </label>
-        <select
-          name="country"
-          id="country"
-          value={formData.country}
-          onChange={handleChange}
-        >
-          {countries.map((country) => {
-            return (
-              <option key={(`option_`, country.name)} value={country.name}>
-                {country.name}
-              </option>
-            );
-          })}
-        </select>
-
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          autoComplete="off"
-          role="presentation"
-          required
-        />
-
-        <label htmlFor="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          maxLength={150}
-        />
-
-        <div>
-          <SiteButton
-            type="submit"
-            icon={<FaRegEnvelope />}
-            title="Submit"
-          ></SiteButton>
-          <SiteButton
-            type="button"
-            icon={<FaTrashAlt />}
-            title="Clear Form"
-            styling="youtube"
-          ></SiteButton>
-          <ReCAPTCHA
-            ref={recaptcha}
-            sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
-          />
-        </div>
-      </FormContainer>
-      {/* <h1
-        style={{
-          display: "inline",
-          color: "white",
-          backgroundColor: "red",
-          fontSize: "50px",
-        }}
-      >
-        hello
-      </h1> */}
-
-      {/* <SatellightContainer>
-        <Satellite />
-        <AstronautContact />
-      </SatellightContainer> */}
-    </ContactUsOuterContainer>
+      </div>
+    </FormContainer>
   );
 }
 
