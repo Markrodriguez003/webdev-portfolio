@@ -15,7 +15,6 @@ function SpeechBubble({ children, speech, direction, loop = false }) {
   // Handles / cycles through home speech bubble dialogue
   // const [dialogueStop, setDialogueStop] = useState(true);
   // const [dialogueCount, setDialogueCount] = useState(0);
-  const [dialogueYield, setDialogueYield] = useState("");
 
   /* 
       USEEFFECT (TRUE / FALSE)
@@ -24,25 +23,8 @@ function SpeechBubble({ children, speech, direction, loop = false }) {
 
   */
 
-  // useEffect(() => {
-  //   let dialogues = speech.dialogues;
+  useEffect(() => {});
 
-  //   function DialogueBox(dialogue) {
-  //     console.log("DUIALGOE: ", dialogue);
-  //     return <AnimatedHeader title={dialogue.toString()} />;
-  //   }
-
-  //   // TIMEOUT LOOP
-  //   function SpeechRepeater(dialogues) {
-  //     dialogues.map((dialogue) => {
-  //       setDialogueYield(setTimeout(DialogueBox(dialogue), 54000));
-  //     });
-  //   }
-
-  //   if (loop) {
-  //     SpeechRepeater(dialogues);
-  //   }
-  // }, [loop]);
   // useEffect(() => {
   //   let count = 0;
   //   const dialogueTimer = setInterval(() => {
@@ -64,17 +46,26 @@ function SpeechBubble({ children, speech, direction, loop = false }) {
   //   // })
   // }, [dialogueStop, setDialogueStop]);
 
+  
+
   // DIRECTIONS:
   // top-right - top-left - bottom-left - bottom-right
 
-  return (
-    <>
+  function SpeechEmitter(words) {
+    return (
       <SpeechBubbleContainer className={direction}>
-        {/* <AnimatedHeader title={dialogue} />; */}
-        {dialogueYield}
+        <AnimatedHeader title={"Hello Earthlings!"} />
       </SpeechBubbleContainer>
-    </>
-  );
+    );
+  }
+
+  function SpeechRepeater() {
+    speech.dialogues.map((words, count) => {
+      return setTimeout(SpeechEmitter(words), 5000);
+    });
+  }
+
+  return <>{SpeechRepeater}</>;
 }
 
 export default SpeechBubble;

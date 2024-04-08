@@ -9,10 +9,10 @@ const dialoguePop = keyframes`
 `;
 
 export const SpeechBubbleContainer = styled.div`
-  width: 150px;
+  width: auto;
   margin: 50px auto;
   background: transparent;
-  border: 3px solid aliceblue;
+  border: 2px solid aliceblue;
   padding: 20px;
   text-align: center;
   transform: scale(0);
@@ -58,7 +58,7 @@ export const SpeechBubbleContainer = styled.div`
     border-top: 10px solid aliceblue;
     border-bottom: 10px solid transparent;
     left: 19px;
-    bottom: -20px;
+    bottom: -22px;
   }
 
   &.bottom-right:before {

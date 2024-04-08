@@ -212,7 +212,27 @@ export const NavContainer = styled.nav`
 `;
 
 export const AstronautMini = styled.div`
-  background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+position:relative;
+display:flex;
+flex-direction:column ;
+ 
+& img {
+  position: absolute ;
+  width: 200px;
+  left:0;
+  top:-100px;
+  height:auto;
+    animation: ${floatA} 10s ease-in-out infinite;
+}
+& .speech-bubble {
+  position: absolute ;
+  width: 200px;
+  left:100px;
+  top:-240px;
+  height:auto;
+    animation: ${floatA} 10s ease-in-out infinite;
+}
+  /* background: radial-gradient(circle at 100px 100px, #5cabff, #000);
   filter: brightness(1.5) saturate(100%);
   display: none;
   background-image: url(${astronautH});
@@ -233,5 +253,5 @@ export const AstronautMini = styled.div`
     bottom: 55px;
     overflow: hidden;
     left: 37%;
-  }
+  } */
 `;

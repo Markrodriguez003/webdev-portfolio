@@ -17,6 +17,7 @@ import SpeechBubble from "../../ui/SpeechBubble/index.jsx";
 
 // ASSETS
 import githubIcon from "../../../assets/icons/github-icon-w.png";
+import astronautH from "../../../assets/images/astronaut-2.png";
 
 // ICONS
 import { FaUserAstronaut } from "react-icons/fa6";
@@ -94,26 +95,18 @@ function Home({ children }) {
 
       <ScrollToExplore>
         <SoundMeter />
-
-        {/* <div
-            style={{
-              position: "absolute",
-              direction: "column",
-              bottom: "5px",
-              left: "135px",
-              height: "100px",
-              width: "200px",
-            }}
-          > */}
         {/* insert speech bubble here */}
-        {/* <SpeechBubble
+        <span>SCROLL TO EXPLORE</span>
+        <AstronautMini>
+          <div className="speech-bubble">
+            <SpeechBubble
               direction="bottom-left"
               speech={{ dialogues }}
               loop={true}
-            /> */}
-        {/* <AstronautMini /> */}
-
-        <span>SCROLL TO EXPLORE</span>
+            />{" "}
+          </div>
+          <img src={astronautH}></img>
+        </AstronautMini>
       </ScrollToExplore>
     </div>
   );
