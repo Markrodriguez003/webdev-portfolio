@@ -215,22 +215,23 @@ export const AstronautMini = styled.div`
 position:relative;
 display:flex;
 flex-direction:column ;
- 
+
 & img {
   position: absolute ;
-  width: 200px;
+  width: 210px;
   left:0;
-  top:-100px;
+  bottom:-200px;
+  margin-top:30px;
   height:auto;
     animation: ${floatA} 10s ease-in-out infinite;
 }
 & .speech-bubble {
   position: absolute ;
   width: 200px;
-  left:100px;
-  top:-240px;
+  left:135px;
+  top:-165px;
   height:auto;
-    animation: ${floatA} 10s ease-in-out infinite;
+    /* animation: ${floatA} 10s ease-in-out infinite; */
 }
   /* background: radial-gradient(circle at 100px 100px, #5cabff, #000);
   filter: brightness(1.5) saturate(100%);

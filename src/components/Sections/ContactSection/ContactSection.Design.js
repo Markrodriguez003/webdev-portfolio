@@ -15,7 +15,7 @@ const floatA = keyframes`
     transform: translate(0, -7px) rotate(0deg) scaleX(-1);
   }
   75% {
-    transform: translate(0, 28px) rotate(4deg scaleX(-1));
+    transform: translate(0, 28px) rotate(4deg) scaleX(-1);
   }
   100% {
     transform: translate(0, -0px) scaleX(-1);
@@ -101,6 +101,26 @@ z-index: 1;
 @media screen and (max-width: 1115px) {
   display: none;
 }
+
+& .contact-speechbubble{
+    position:absolute ;
+    bottom:245px;
+    right:465px;
+    /* width:1000px; */
+    /* height:auto; */
+ 
+    
+  }
+& .contact-satellite{
+    position:absolute ;
+    top:160px;
+    right:150px;
+    /* width:1000px; */
+    /* height:auto; */
+ 
+    
+  }
+
 `;
 
 export const Satellite = styled.div`
@@ -116,7 +136,7 @@ transform: scaleX(-1) rotate(-7deg);
 width: 255px;
 height: 255px;
 margin-left: auto;
-margin-right: auto;
+margin-right: 100px;
 
  
 animation: ${floatB} 18s ease-in-out infinite;
@@ -133,14 +153,18 @@ background-size: contain;
 position: relative;
  
 /* transform: scaleX(-1) rotate(-65deg); */
- 
-width: auto;
+width: 325px;
 height: 325px;
 margin-top: 100px;
+margin-left:100px;
+/* padding-left:300px; */
+/* background-color:blue; */
 /* margin-left: auto; */
 /* margin-right: auto; */
 z-index: 1;
 animation: ${floatA} 10s ease-in-out infinite;
+ 
+
 `;
 
 

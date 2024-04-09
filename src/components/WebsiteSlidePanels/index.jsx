@@ -12,7 +12,15 @@
 // ? https://stackoverflow.com/questions/60847095/how-to-load-all-images-before-showing-the-page-in-react
 
 //REACT
-import { useState, createContext, useEffect, useContext, lazy, useRef, Suspense } from "react";
+import {
+  useState,
+  createContext,
+  useEffect,
+  useContext,
+  lazy,
+  useRef,
+  Suspense,
+} from "react";
 export const navContext = createContext();
 
 // STYLES / STYLED COMPONENTS
@@ -30,14 +38,22 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
 
-
-
-
 // const AboutSection = lazy(() => import("../Sections/AboutSection/index.jsx"));
-const AboutSection = lazy(() => import('../Sections/AboutSection/index.jsx').then((module) => ({ default: module.AboutSection })))
-const ProjectsSection = lazy(() => import('../Sections/ProjectsSection').then((module) => ({ default: module.ProjectsSection })))
-const ContactSection = lazy(() => import('../Sections/ContactSection').then((module) => ({ default: module.ContactSection })))
-
+const AboutSection = lazy(() =>
+  import("../Sections/AboutSection/index.jsx").then((module) => ({
+    default: module.AboutSection,
+  }))
+);
+const ProjectsSection = lazy(() =>
+  import("../Sections/ProjectsSection").then((module) => ({
+    default: module.ProjectsSection,
+  }))
+);
+const ContactSection = lazy(() =>
+  import("../Sections/ContactSection").then((module) => ({
+    default: module.ContactSection,
+  }))
+);
 
 import BackgroundScenery from "../ui/BackgroundScenery/index.jsx";
 // import { ProjectsSection } from "../Sections/ProjectsSection/index.jsx";
@@ -46,8 +62,6 @@ import Home from "../Sections/Home/index.jsx";
 import PaginationTag from "../ui/PaginationTag/index.jsx";
 import { sections } from "../../../data/sectionNames.js";
 import LoadingScreen from "../ui/LoadingScreen/index.jsx";
-
-
 
 function WebsiteSlidePanels() {
   const [windowHeightSize, setWindowHeightSize] = useState("auto");
@@ -88,10 +102,10 @@ function WebsiteSlidePanels() {
   const [siteSlide, setSiteSlide] = useState(0);
 
   const [swiper, setSwiper] = useState(null);
-  function goToSlide(slide) {
+  function goToSlide(slide, loop) {
+    // ! check to see if swiper is out of range
     swiper.slideTo(slide);
   }
-
 
   // NAVIGATIONAL REFS
   const aboutRef = useRef(null);
@@ -113,16 +127,20 @@ function WebsiteSlidePanels() {
     }
   }, [siteNavRef]);
 
-
-
   return (
     <>
       {/* Loads loading screen for slower connections with slight delay for faster networks */}
-      <Suspense fallback={<BackgroundScenery><LoadingScreen></LoadingScreen></BackgroundScenery>}>
-        <BackgroundScenery >
+      <Suspense
+        fallback={
+          <BackgroundScenery>
+            <LoadingScreen></LoadingScreen>
+          </BackgroundScenery>
+        }
+      >
+        <BackgroundScenery>
           <navContext.Provider value={{ goToSlide }}>
             {/* <PaginationTag>{sectionType}</PaginationTag> */}
-            <FullView  >
+            <FullView>
               <StyledSwiper
                 direction={"vertical"}
                 slidesPerView={1}
@@ -155,11 +173,14 @@ function WebsiteSlidePanels() {
             <MiniView>
               <Home>
                 <>
-                  <MiniNavContainer  >
+                  <MiniNavContainer>
                     <ul>
                       <li>
                         {/* <a href="#about"  onClick={() => document.getElementById('first')?.scrollIntoView()}> */}
-                        <a href="#about" onClick={() => setSiteNavRef(aboutRef)}>
+                        <a
+                          href="#about"
+                          onClick={() => setSiteNavRef(aboutRef)}
+                        >
                           ABOUT
                         </a>
                       </li>
@@ -188,7 +209,7 @@ function WebsiteSlidePanels() {
               <ContactSection ref={contactRef} id="contact" />
             </MiniView>
           </navContext.Provider>
-        </BackgroundScenery >
+        </BackgroundScenery>
       </Suspense>
     </>
   );

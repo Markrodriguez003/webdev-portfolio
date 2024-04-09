@@ -9,63 +9,59 @@ import { SpeechBubbleContainer } from "./SpeechBubble.design";
 // COMPONENTS
 import AnimatedHeader from "../AnimatedHeader";
 
-function SpeechBubble({ children, speech, direction, loop = false }) {
-  // let innerText = children.toString();
+function SpeechBubble(props) {
+ 
+  const [dialogueSentence, setDialogueSentence] = useState("...?!");
 
-  // Handles / cycles through home speech bubble dialogue
-  // const [dialogueStop, setDialogueStop] = useState(true);
-  // const [dialogueCount, setDialogueCount] = useState(0);
+  useEffect(() => {
+    // SETS NEW SENTENCE TO DIALOGUESENTENCE USESTATE
+    function speechSetter(dialogue) {
+      // console.log("setting this dialogue piece:: ", dialogue);
+      setDialogueSentence(dialogue);
+    }
 
-  /* 
-      USEEFFECT (TRUE / FALSE)
-      +++ DIALOGUES-MAP(DIALOGUE)
-      ++++++ SETIMEOUT(SPEECHBUBBLE(DIALOGUE))
+    // DELAY FUNCTION
+    function delay(ms) {
+      return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+      });
+    }
 
-  */
+    // TIMEOUT LOOP
+    async function SpeechRepeater() {
+      if (props.loop) {
+        while (props.loop) {
+          for (let x = 1; x < props.speech.length; x++) {
+            await delay(props.msTime);
+            speechSetter(props.speech[x]);
+          }
+        }
+      } else {
+        console.log("HUH?");
+      }
+    }
 
-  useEffect(() => {});
-
-  // useEffect(() => {
-  //   let count = 0;
-  //   const dialogueTimer = setInterval(() => {
-  //     if (dialogueCount !== 5) {
-  //       setDialogueCount((prevCount) => prevCount + 1);
-  //       console.log("dialogueCount is " + dialogueCount);
-  //     } else {
-  //       setDialogueCount(0);
-  //     }
-  //   }, 3000);
-
-  //   if (!dialogueStop) {
-  //     clearTimeout(dialogueTimer);
-  //   } else {
-  //     dialogueTimer;
-  //   }
-  //   // return (() => {
-  //   //   clearTimeout(dialogueTimer);
-  //   // })
-  // }, [dialogueStop, setDialogueStop]);
-
-  
+    SpeechRepeater();
+    return () => {
+      // props.loop = false;
+    };
+  }, [props.loop]);
 
   // DIRECTIONS:
   // top-right - top-left - bottom-left - bottom-right
 
-  function SpeechEmitter(words) {
-    return (
-      <SpeechBubbleContainer className={direction}>
-        <AnimatedHeader title={"Hello Earthlings!"} />
+  return (
+    <>
+      <SpeechBubbleContainer
+        className={props.direction}
+        key={dialogueSentence}
+        solidBorder={props.solidBorder}
+        italics={props.italics}
+      >
+        <AnimatedHeader title={dialogueSentence} />
       </SpeechBubbleContainer>
-    );
-  }
-
-  function SpeechRepeater() {
-    speech.dialogues.map((words, count) => {
-      return setTimeout(SpeechEmitter(words), 5000);
-    });
-  }
-
-  return <>{SpeechRepeater}</>;
+    </>
+  );
 }
 
 export default SpeechBubble;

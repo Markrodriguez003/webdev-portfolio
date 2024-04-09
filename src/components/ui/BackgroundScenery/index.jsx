@@ -17,12 +17,12 @@ function BackgroundScenery({ children }) {
     <>
       <OuterBackgroundContainer>
         <SpaceBackground>
-        {/* <VideoContainer>
+        <VideoContainer>
           <video autoPlay loop muted>
           <source width={"100%"} src={nebulaVideo}></source>
           </video>
-        </VideoContainer> */}
-        {/* <MeteorShower /> */}
+        </VideoContainer>
+        <MeteorShower />
 
         <div className="stars"></div>
         <div className="stars2"></div>

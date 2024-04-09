@@ -30,12 +30,14 @@ function Home({ children }) {
 
   // Astronaut dialogue options
   const dialogues = [
+    "...",
     "..Uh.. Houston... we have a visitor..",
     "..well...uh..this is new for me..",
-    "..oh.. first contact..",
+    "..first contact..gotta follow protocols..",
     "GREETINGS INTERSTELLAR VISITOR!",
-    "...what now?",
-    "uhh.. *Clears throat",
+    "..No, that doesn't sound right...",
+    "so...what now?",
+    "uhh.. *Clears throat*",
   ];
 
   return (
@@ -95,14 +97,16 @@ function Home({ children }) {
 
       <ScrollToExplore>
         <SoundMeter />
-        {/* insert speech bubble here */}
         <span>SCROLL TO EXPLORE</span>
         <AstronautMini>
           <div className="speech-bubble">
             <SpeechBubble
               direction="bottom-left"
-              speech={{ dialogues }}
+              speech={dialogues}
               loop={true}
+              solidBorder={true}
+              msTime={5000}
+              italics={false}
             />{" "}
           </div>
           <img src={astronautH}></img>

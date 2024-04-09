@@ -19,6 +19,7 @@ import spaceship from "../../../assets/gifs/spaceship.gif";
 
 // COMPONENTS
 import fileSaver from "file-saver";
+import SpeechBubble from "../../ui/SpeechBubble";
 
 // STYLES / STYLED COMPONENTS
 import {
@@ -48,6 +49,40 @@ import { ModalOuterContainer, ModalExitBtn } from "./ContactSection.Design";
 // DOWNLOAD ASSETS
 // import vCard from "../../../../public/download/Mark-Rodriguez.vcf";
 import resume from "../../../../public/download/Mark Rodriguez - Resume.pdf";
+
+// ICONS
+import { RiSignalTowerFill } from "react-icons/ri";
+import { FaWifi, FaCompass } from "react-icons/fa";
+import { IoLocationSharp } from "react-icons/io5";
+
+// DATA
+
+// Astronaut dialogue options
+const dialogues = [
+  "...",
+  "..Uh.. Houston... did you receive our message?",
+  "..ah! I forgot to fill the form!",
+  "..Sending transmission..",
+  "...",
+  "..Well that was easy...",
+  "I hope to hear from you soon!",
+  "so...what now?",
+  "uhh.. *Clears throat*",
+];
+const dialoguesSatellite = [
+  "...",
+  "*00110001*",
+  "...",
+  "TRANSMITTING DATA",
+  "...",
+  "*00110010*",
+  "...",
+  "RECEIVING DATA",
+  "...",
+  "*00110011*",
+  "...",
+  "<3",
+];
 
 // PDF VIEWER
 // ! MOVE TO SCRIPTS ?
@@ -148,8 +183,28 @@ function ContactSectionComp({ props }, ref) {
             <ContactUsOuterContainer>
               <ContactForm />
               <SatellightContainer>
+                <div className="contact-satellite">
+                  <SpeechBubble
+                    speech={dialoguesSatellite}
+                    direction={"none"}
+                    loop={true}
+                    solidBorder={false}
+                    msTime={8000}
+                    italics={true}
+                  />
+                </div>
                 <Satellite />
                 <AstronautContact />
+                <div className="contact-speechbubble">
+                  <SpeechBubble
+                    speech={dialogues}
+                    direction={"top-right"}
+                    loop={true}
+                    solidBorder={true}
+                    msTime={5000}
+                    italics={false}
+                  />
+                </div>
               </SatellightContainer>
             </ContactUsOuterContainer>
           </FullContactView>
