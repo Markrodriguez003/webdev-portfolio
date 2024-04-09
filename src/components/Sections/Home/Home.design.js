@@ -223,7 +223,7 @@ justify-self: start ;
 align-self: start ;
 align-items: start ;
 align-content: start ;
-transform: translate(1%, -100px) ;
+transform: translate(1.5%, -135px) ;
 & img {
   position: relative ;
   width: 210px;
@@ -237,8 +237,9 @@ transform: translate(1%, -100px) ;
   position: absolute ;
   width: 200px; 
   height:auto; 
-  left:145px;
+  left:155px;
   top:-85px;
+  animation: ${floatA} 10s ease-in-out infinite;
      
 }
    

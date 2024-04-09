@@ -37,6 +37,10 @@ import {
   FullContactView,
   MiniContactView,
   MidContactView,
+  WifiSignalContainer,
+  WifiSignalSymbol
+
+
 } from "../ContactSection/ContactSection.Design";
 
 import { ModalOuterContainer, ModalExitBtn } from "./ContactSection.Design";
@@ -105,7 +109,7 @@ function ContactSectionComp({ props }, ref) {
   function vCardDownload() {
     fileSaver.saveAs(
       import.meta.env.REACT_APP_CLIENT_URL +
-        "../src/assets/download/Mark-Rodriguez.vcf",
+      "../src/assets/download/Mark-Rodriguez.vcf",
       "Mark-Rodriguez.vcf"
     );
   }
@@ -184,6 +188,12 @@ function ContactSectionComp({ props }, ref) {
               <ContactForm />
               <SatellightContainer>
                 <div className="contact-satellite">
+                  <WifiSignalContainer>
+                    <WifiSignalSymbol className="first" />
+                    <WifiSignalSymbol className="second" />
+                    <WifiSignalSymbol className="third" />
+                    <WifiSignalSymbol className="fourth" />
+                  </WifiSignalContainer>
                   <SpeechBubble
                     speech={dialoguesSatellite}
                     direction={"none"}

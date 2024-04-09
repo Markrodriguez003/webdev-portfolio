@@ -10,7 +10,7 @@ import { SpeechBubbleContainer } from "./SpeechBubble.design";
 import AnimatedHeader from "../AnimatedHeader";
 
 function SpeechBubble(props) {
- 
+
   const [dialogueSentence, setDialogueSentence] = useState("...?!");
 
   useEffect(() => {
@@ -45,7 +45,7 @@ function SpeechBubble(props) {
     return () => {
       // props.loop = false;
     };
-  }, [props.loop]);
+  }, [props.loop, props.msTime, props.speech]);
 
   // DIRECTIONS:
   // top-right - top-left - bottom-left - bottom-right

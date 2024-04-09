@@ -21,6 +21,23 @@ const floatA = keyframes`
     transform: translate(0, -0px) scaleX(-1);
     }
 `;
+const floatsBubble = keyframes`
+  0% {
+    transform: translate(0, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(0, 28px) rotate(-3deg);
+  }
+  50% {
+    transform: translate(0, -7px) rotate(0deg) ;
+  }
+  75% {
+    transform: translate(0, 28px) rotate(4deg);
+  }
+  100% {
+    transform: translate(0, -0px) ;
+    }
+`;
 
 const floatB = keyframes`
   0% {
@@ -40,18 +57,46 @@ const floatB = keyframes`
     }
 `;
 
+const WifiFloat = keyframes`
+  /* transform: rotate(45deg) translate(-100px) scale(0.2); */
 
+
+  0% {
+    transform: translate(0, 0px) rotate(5deg) scale(0.2) ;
+  }
+  25% {
+    transform: translate(0, 31px) rotate(5deg) scale(0.2);
+  }
+  50% {
+    transform: translate(0, -7px) rotate(5deg) scale(0.2);
+  }
+  75% {
+    transform: translate(0, 38px) rotate(5deg) scale(0.2);
+  }
+  100% {
+    transform: translate(0, -0px) rotate(5deg) scale(0.2);
+    }
+`;
+
+const wifiSignal = keyframes`
+  0% { opacity: 0.4 }
+  5% { opacity: 1 }
+  6% { opacity: 0.1 }
+  100% { opacity: 0.1; }
+
+
+`;
 
 export const ContactUsOuterContainer = styled.div`
-position:relative ;
-display:flex ;
-flex-direction: row ;
- justify-content: center ;
- align-items: center ;
-border: rgba(255, 255, 255, 0.1) 1px solid;
-width: 100% ;
-background-color:transparent;
-`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: rgba(255, 255, 255, 0.1) 1px solid;
+  width: 100%;
+  background-color: transparent;
+`;
 
 export const ModalOuterContainer = styled.div`
   position: absolute;
@@ -62,7 +107,7 @@ export const ModalOuterContainer = styled.div`
 
   width: 100%;
   height: 100%;
- 
+
   background-color: rgba(0, 0, 0, 0.4);
   filter: blur(50%);
   z-index: 9999;
@@ -90,133 +135,185 @@ export const ModalExitBtn = styled.button`
 `;
 
 export const SatellightContainer = styled.div`
-background-repeat: no-repeat;
-background-size: contain;
-position: block;
-/* background-color: red; */
-width: auto;
-margin-left: auto;
-margin-right: 225px;
-z-index: 1;
-@media screen and (max-width: 1115px) {
-  display: none;
-}
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: block;
+  /* background-color: red; */
+  width: auto;
+  margin-left: auto;
+  margin-right: 225px;
+  z-index: 1;
+  transform: scale();
+  /* overflow:hidden; */
 
-& .contact-speechbubble{
-    position:absolute ;
-    bottom:245px;
-    right:465px;
-    /* width:1000px; */
-    /* height:auto; */
- 
-    
-  }
-& .contact-satellite{
-    position:absolute ;
-    top:160px;
-    right:150px;
-    /* width:1000px; */
-    /* height:auto; */
- 
-    
+  @media screen and (max-width: 1115px) {
+    display: none;
   }
 
+  & .contact-speechbubble {
+    position: absolute;
+    bottom: 175px;
+    right: 465px;
+    animation: ${floatsBubble} 10s ease-in-out infinite;
+  }
+  & .contact-satellite {
+    position: absolute;
+    top: 160px;
+    right: 150px;
+    /* width:1000px; */
+    /* height:auto; */
+  }
 `;
 
 export const Satellite = styled.div`
-filter: brightness(0.95);
-background-image: url(${satellite});
-background-repeat: no-repeat;
-background-size: contain;
-/* position: absolute; */
-position: relative;
-transform: scaleX(-1) rotate(-7deg);
-/* right: -255px; */
-/* top: 25px; */
-width: 255px;
-height: 255px;
-margin-left: auto;
-margin-right: 100px;
+  filter: brightness(0.95);
+  background-image: url(${satellite});
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* position: absolute; */
+  position: relative;
+  transform: scaleX(-1) rotate(-7deg);
+  /* right: -255px; */
+  /* top: 25px; */
+  width: 255px;
+  height: 255px;
+  margin-left: auto;
+  margin-right: 100px;
 
- 
-animation: ${floatB} 18s ease-in-out infinite;
-/* animation: spin 115s linear infinite; */
-/* box-shadow: inset 0 0 60px #131312; */
-z-index: 1;
+  animation: ${floatB} 18s ease-in-out infinite;
+  /* animation: spin 115s linear infinite; */
+  /* box-shadow: inset 0 0 60px #131312; */
+  z-index: 1;
 `;
 
 export const AstronautContact = styled.div`
-background-blend-mode: darken;
-background-image: url(${astronautContact});
-background-repeat: no-repeat;
-background-size: contain;
-position: relative;
- 
-/* transform: scaleX(-1) rotate(-65deg); */
-width: 325px;
-height: 325px;
-margin-top: 100px;
-margin-left:100px;
-/* padding-left:300px; */
-/* background-color:blue; */
-/* margin-left: auto; */
-/* margin-right: auto; */
-z-index: 1;
-animation: ${floatA} 10s ease-in-out infinite;
- 
-
+  background-blend-mode: darken;
+  background-image: url(${astronautContact});
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transform: scaleX(-1);
+  /* transform: scaleX(-1) rotate(-65deg); */
+  width: 325px;
+  height: 325px;
+  margin-top: 100px;
+  margin-left: 100px;
+  /* padding-left:300px; */
+  /* background-color:blue; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  z-index: 1;
+  animation: ${floatA} 10s ease-in-out infinite;
 `;
-
 
 export const FullContactView = styled.div`
-display: relative ;
+  display: relative;
 
-@media screen and (max-width: 1200px) {
-  display: none;
-}
-
-
-`
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+`;
 export const MidContactView = styled.div`
- 
- display: none;
- 
+  display: none;
 
-@media (max-width: 1200px  ) and (min-width: 801px)  {
-  display: block; 
- 
-}
-
-
-`
+  @media (max-width: 1200px) and (min-width: 801px) {
+    display: block;
+  }
+`;
 export const MiniContactView = styled.div`
- 
- display: none;
- 
+  display: none;
 
-@media (max-width: 1200px) {
-  display: block;
-  /* background-color:pink; */
- 
-}
-
-
-`
-
-export const QRCode = styled.div`
-background-blend-mode: darken;
-
-background-image: url(${qrcode});
-background-repeat: no-repeat;
-background-size: contain;
-position: absolute;
-
-left: -405px;
-top: 590px;
-width: 185px;
-height: 185px;
-margin-left: auto;
-margin-right: auto;
-z-index: 1;
+  @media (max-width: 1200px) {
+    display: block;
+    /* background-color:pink; */
+  }
 `;
 
+export const QRCode = styled.div`
+  background-blend-mode: darken;
+
+  background-image: url(${qrcode});
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+
+  left: -405px;
+  top: 590px;
+  width: 185px;
+  height: 185px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+`;
+
+export const WifiSignalContainer = styled.div`
+  display: block;
+  position: absolute;
+  top: 75px;
+  left: -140px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin-top: -187.5px;
+  /* transform: scale(0.1); */
+  -ms-transform: rotate(45deg) translate(-100px) scale(0.2);
+  -moz-transform: rotate(45deg) translate(-100px) scale(0.2);
+  -o-transform: rotate(45deg) translate(-100px) scale(0.2);
+  -webkit-transform: rotate(45deg) translate(-100px) scale(0.2);
+  transform: rotate(45deg) translate(-100px) scale(0.2);
+  animation: ${WifiFloat} 18s ease-in-out infinite;
+`;
+
+export const WifiSignalSymbol = styled.div`
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 21.4285714286px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-color: #ffffcc;
+  border-style: solid;
+  border-width: 1em 1em 0 0;
+  -webkit-border-radius: 0 100% 0 0;
+  border-radius: 0 100% 0 0;
+  opacity: 0;
+  -o-animation: ${wifiSignal} 3s infinite;
+  -moz-animation: ${wifiSignal} 3s infinite;
+  -webkit-animation: ${wifiSignal} 3s infinite;
+  animation: ${wifiSignal} 3s infinite;
+
+  &.first {
+    -o-animation-delay: 800ms;
+    -moz-animation-delay: 800ms;
+    -webkit-animation-delay: 800ms;
+    animation-delay: 800ms;
+  }
+
+  &.second {
+    width: 5em;
+    height: 5em;
+    -o-animation-delay: 400ms;
+    -moz-animation-delay: 400ms;
+    -webkit-animation-delay: 400ms;
+    animation-delay: 400ms;
+  }
+
+  &.third {
+    width: 3em;
+    height: 3em;
+  }
+
+  &.fourth {
+    width: 1em;
+    height: 1em;
+    opacity: 1;
+    background-color: #ffffcc;
+    -o-animation: none;
+    -moz-animation: none;
+    -webkit-animation: none;
+    animation: none;
+  }
+`;
