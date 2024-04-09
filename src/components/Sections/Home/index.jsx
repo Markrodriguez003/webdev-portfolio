@@ -97,17 +97,20 @@ function Home({ children }) {
 
       <ScrollToExplore>
         <SoundMeter />
+
         <span>SCROLL TO EXPLORE</span>
         <AstronautMini>
-          <div className="speech-bubble">
-            <SpeechBubble
-              direction="bottom-left"
-              speech={dialogues}
-              loop={true}
-              solidBorder={true}
-              msTime={5000}
-              italics={false}
-            />{" "}
+          <div>
+            <div className="speech-bubble">
+              <SpeechBubble
+                direction="bottom-left"
+                speech={dialogues}
+                loop={true}
+                solidBorder={true}
+                msTime={5000}
+                italics={false}
+              />{" "}
+            </div>
           </div>
           <img src={astronautH}></img>
         </AstronautMini>

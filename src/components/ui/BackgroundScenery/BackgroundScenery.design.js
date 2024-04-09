@@ -11,6 +11,12 @@ const spaceBackground = keyframes`
     }
 
 `;
+
+
+const FadeInBg = keyframes`
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+`
 const animatedStars = keyframes`
 from {
       transform: translateY(0px);
@@ -28,10 +34,9 @@ export const VideoContainer = styled.div`
    z-index: -9999;
    display:inline-block ;
    position: absolute;
-   filter: opacity(0.09) hue-rotate(2240deg) saturate(1.3);
+   filter: opacity(0.08) hue-rotate(2240deg) saturate(1.3);
    margin:0;
    padding:0;
- 
    min-width:100%;
    height: 100%;
    overflow: hidden;
@@ -41,23 +46,26 @@ export const VideoContainer = styled.div`
       padding:0;
       width:100%;
       height:100%;
-        object-fit: cover;
-
-      background-color:pink;
+      object-fit: cover;
+      animation: ${FadeInBg} 5s ;
+      animation-fill-mode: forwards;
+      animation-iteration-count:1;
+  transform: scale(1.8);
     }
     & video source {
       margin:0;
       padding:0;
       width:100%;
       height:100%;
-      background-color:green;
+     
+ 
     }
 
     & * {
       overflow: hidden;
       width: 100% ;
       height: 100%;
-      /* transform: scale(1.2); */
+   
     }
 
 `

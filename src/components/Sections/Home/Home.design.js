@@ -213,46 +213,33 @@ export const NavContainer = styled.nav`
 
 export const AstronautMini = styled.div`
 position:relative;
+display:inline;
 display:flex;
 flex-direction:column ;
-
+/* background-color: pink ; */
+justify-content: start ;
+justify-items: start ;
+justify-self: start ;
+align-self: start ;
+align-items: start ;
+align-content: start ;
+transform: translate(1%, -100px) ;
 & img {
-  position: absolute ;
+  position: relative ;
   width: 210px;
-  left:0;
-  bottom:-200px;
-  margin-top:30px;
   height:auto;
-    animation: ${floatA} 10s ease-in-out infinite;
+  /* left:0;
+  bottom:-200px;
+  margin-top:30px; */
+  animation: ${floatA} 10s ease-in-out infinite;
 }
 & .speech-bubble {
   position: absolute ;
-  width: 200px;
-  left:135px;
-  top:-165px;
-  height:auto;
-    /* animation: ${floatA} 10s ease-in-out infinite; */
+  width: 200px; 
+  height:auto; 
+  left:145px;
+  top:-85px;
+     
 }
-  /* background: radial-gradient(circle at 100px 100px, #5cabff, #000);
-  filter: brightness(1.5) saturate(100%);
-  display: none;
-  background-image: url(${astronautH});
-
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: inline-block;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  animation: ${floatA} 10s ease-in-out infinite;
-
-  z-index: 1;
-
-  @media screen and (max-width: 510px) {
-    width: 135px;
-    height: 135px;
-    bottom: 55px;
-    overflow: hidden;
-    left: 37%;
-  } */
+   
 `;
