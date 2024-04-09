@@ -164,8 +164,8 @@ export function FullProjectCard({ props }) {
               }}
               navigation={true}
               modules={[Pagination, Navigation]}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
+              // onSlideChange={() => console.log("slide change")}
+              // onSwiper={(swiper) => console.log(swiper)}
               style={{
                 width: "60vw",
                 height: "auto",

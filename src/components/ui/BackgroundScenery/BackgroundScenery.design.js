@@ -29,12 +29,29 @@ export const VideoContainer = styled.div`
    display:inline-block ;
    position: absolute;
    filter: opacity(0.09) hue-rotate(2240deg) saturate(1.3);
-   
-   object-fit: contain;
-   min-width:auto;
+   margin:0;
+   padding:0;
+ 
+   min-width:100%;
    height: 100%;
    overflow: hidden;
-   padding: 100px;
+ 
+    & video {
+      margin:0;
+      padding:0;
+      width:100%;
+      height:100%;
+        object-fit: cover;
+
+      background-color:pink;
+    }
+    & video source {
+      margin:0;
+      padding:0;
+      width:100%;
+      height:100%;
+      background-color:green;
+    }
 
     & * {
       overflow: hidden;
