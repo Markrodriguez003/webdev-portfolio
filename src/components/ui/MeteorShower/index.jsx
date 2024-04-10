@@ -4,9 +4,6 @@ import { useState, useEffect, useId } from "react";
 import { MeteorContainer } from "./MeteorShower.design";
 function MeteorShower() {
   const [meteorPing, setMeteorPing] = useState(0);
-  // let randomKey;
-
-  // ? https://www.codementor.io/@damianpereira/how-to-use-clearinterval-inside-react-s-useeffect-and-why-it-is-important-1si7mztjlk
 
   useEffect(() => {
     const looper = setInterval(() => {
@@ -14,7 +11,7 @@ function MeteorShower() {
 
       if (randomMeteor % 2) {
         setMeteorPing(() => randomMeteor);
-        // console.log("Ping! " + "Starchart: " + meteorPing);
+        console.log("Ping! " + "Starchart: " + meteorPing);
       }
 
       looper;
@@ -27,7 +24,7 @@ function MeteorShower() {
 
   return (
     <>
-      {/* <MeteorContainer meteortrigger={meteorPing} > */}
+
       <MeteorContainer meteorTrigger={meteorPing} key={meteorPing}>
         <span></span>
         <span></span>

@@ -9,24 +9,21 @@ const dialoguePop = keyframes`
 `;
 
 export const SpeechBubbleContainer = styled.div`
-  width: 115px;
-  margin: 50px auto;
+  position: relative;
+  width: 80px;
   background: transparent;
-
-  /* border: 2px solid aliceblue; */
   border: ${(props) =>
     props.solidBorder ? "2px solid aliceblue" : "2px dotted aliceblue;"};
   font-style: ${(props) => (props.italics ? "italic" : "normal")};
   /* font-family: 'arial, Courier New', Courier, monospace; */
   font-family: arial;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   transform: scale(0);
   /* font-weight: ; */
   color: #fff;
   position: relative;
   animation: ${dialoguePop} 3s both;
-  
   /* border-radius:50%; */
 
   & * {

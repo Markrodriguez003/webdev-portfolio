@@ -52,7 +52,6 @@ function Home({ children }) {
         <NavContainer>
           <ul>
             <li>
-              {/* <a href="#about"  onClick={() => document.getElementById('first')?.scrollIntoView()}> */}
               <a
                 onClick={() => {
                   siteNav.goToSlide(1);
@@ -100,17 +99,15 @@ function Home({ children }) {
 
         <span>SCROLL TO EXPLORE</span>
         <AstronautMini>
-          <div>
-            <div className="speech-bubble">
-              <SpeechBubble
-                direction="bottom-left"
-                speech={dialogues}
-                loop={true}
-                solidBorder={true}
-                msTime={5000}
-                italics={false}
-              />{" "}
-            </div>
+          <div className="speech-bubble">
+            <SpeechBubble
+              direction="bottom-left"
+              speech={dialogues}
+              loop={true}
+              solidBorder={true}
+              msTime={5000}
+              italics={false}
+            />{" "}
           </div>
           <img src={astronautH}></img>
         </AstronautMini>

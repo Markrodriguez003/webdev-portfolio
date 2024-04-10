@@ -154,7 +154,6 @@ export const NavContainer = styled.nav`
   align-content: start;
   padding-right: 12px;
   padding-top: 12px;
-  
 
   @media (max-width: 1200px) {
     /* order: 1;
@@ -212,35 +211,69 @@ export const NavContainer = styled.nav`
 `;
 
 export const AstronautMini = styled.div`
-position:relative;
-display:inline;
-display:flex;
-flex-direction:column ;
-/* background-color: pink ; */
-justify-content: start ;
-justify-items: start ;
-justify-self: start ;
-align-self: start ;
-align-items: start ;
-align-content: start ;
-transform: translate(1.5%, -135px) ;
-& img {
-  position: relative ;
-  width: 210px;
-  height:auto;
-  /* left:0;
-  bottom:-200px;
-  margin-top:30px; */
-  animation: ${floatA} 10s ease-in-out infinite;
-}
-& .speech-bubble {
-  position: absolute ;
-  width: 200px; 
-  height:auto; 
-  left:155px;
-  top:-85px;
-  animation: ${floatA} 10s ease-in-out infinite;
-     
-}
-   
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
+  justify-content: start;
+  justify-items: start;
+  justify-self: start;
+  align-self: start;
+  align-items: start;
+  align-content: start;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+
+  & img {
+    position: fixed;
+    width: 210px;
+    height: auto;
+    top: calc(100% - 355px);
+    /* background-color: red; */
+    /* background-color: red; */
+    animation: ${floatA} 10s ease-in-out infinite;
+
+    /* /* @media (max-width: 1200px) {
+      width: 300px;
+    } */
+
+    /* @media (max-width: 845px) {
+      width: 100px;
+    } */
+  }
+  & .speech-bubble {
+    position: fixed;
+    width: 200px;
+    height: auto;
+    top: calc(100% - 385px);
+    right: calc(100% - 375px);
+    animation: ${floatA} 10s ease-in-out infinite;
+    /* background-color: pink; */
+
+    @media (max-width: 1425px) {
+      width: 180px;
+      right: calc(100% - 265px);
+      top: calc(100% - 445px);
+    }
+
+    /* @media (max-width: 1540px) {
+      width: 180px;
+      left: 55px;
+      top: -95px;
+    }
+
+    @media (max-width: 1325px) {
+      width: 180px;
+      left: 255px;
+      top: 85px;
+    }
+
+    @media (max-width: 1200px) {
+      width: 200px;
+      left: 155px;
+      top: -85px;
+    } */
+  }
 `;

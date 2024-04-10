@@ -153,6 +153,7 @@ function WebsiteSlidePanels() {
                 modules={[Mousewheel, Pagination]}
                 onActiveIndexChange={(event) => onScrollBehavior(event)}
                 windowheight={windowHeightSize}
+
                 onSwiper={setSwiper}
               >
                 <SwiperSlide>

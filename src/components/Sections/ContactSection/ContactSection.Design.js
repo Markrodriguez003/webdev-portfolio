@@ -4,6 +4,7 @@ import satellite from "../../../assets/images/satellite-1.png";
 import astronautContact from "../../../assets/images/astronaut-3.png";
 import qrcode from "../../../assets/images/qr-example.png";
 
+// ANIMATIONS
 const floatA = keyframes`
   0% {
     transform: translate(0, 0px) rotate(0deg) scaleX(-1);
@@ -58,9 +59,6 @@ const floatB = keyframes`
 `;
 
 const WifiFloat = keyframes`
-  /* transform: rotate(45deg) translate(-100px) scale(0.2); */
-
-
   0% {
     transform: translate(0, 0px) rotate(5deg) scale(0.2) ;
   }
@@ -83,8 +81,6 @@ const wifiSignal = keyframes`
   5% { opacity: 1 }
   6% { opacity: 0.1 }
   100% { opacity: 0.1; }
-
-
 `;
 
 export const ContactUsOuterContainer = styled.div`

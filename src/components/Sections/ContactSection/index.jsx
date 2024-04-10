@@ -188,12 +188,12 @@ function ContactSectionComp({ props }, ref) {
               <ContactForm />
               <SatellightContainer>
                 <div className="contact-satellite">
-                  <WifiSignalContainer>
+                  {/* <WifiSignalContainer>
                     <WifiSignalSymbol className="first" />
                     <WifiSignalSymbol className="second" />
                     <WifiSignalSymbol className="third" />
                     <WifiSignalSymbol className="fourth" />
-                  </WifiSignalContainer>
+                  </WifiSignalContainer> */}
                   <SpeechBubble
                     speech={dialoguesSatellite}
                     direction={"none"}
@@ -202,10 +202,10 @@ function ContactSectionComp({ props }, ref) {
                     msTime={8000}
                     italics={true}
                   />
+                  <Satellite />
                 </div>
-                <Satellite />
-                <AstronautContact />
                 <div className="contact-speechbubble">
+                  <AstronautContact />
                   <SpeechBubble
                     speech={dialogues}
                     direction={"top-right"}
