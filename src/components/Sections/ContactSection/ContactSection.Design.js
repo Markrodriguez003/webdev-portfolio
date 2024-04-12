@@ -1,5 +1,4 @@
 import styled, { css, keyframes } from "styled-components";
-
 import satellite from "../../../assets/images/satellite-1.png";
 import astronautContact from "../../../assets/images/astronaut-3.png";
 import qrcode from "../../../assets/images/qr-example.png";
@@ -54,7 +53,7 @@ const floatB = keyframes`
     transform: translate(0, 38px) rotate(6deg);
   }
   100% {
-    transform: translate(0, -0px);
+    transform: translate(0, -0px) ;
     }
 `;
 
@@ -63,13 +62,13 @@ const WifiFloat = keyframes`
     transform: translate(0, 0px) rotate(5deg) scale(0.2) ;
   }
   25% {
-    transform: translate(0, 31px) rotate(5deg) scale(0.2);
+    transform: translate(0, 25px) rotate(5deg) scale(0.2);
   }
   50% {
     transform: translate(0, -7px) rotate(5deg) scale(0.2);
   }
   75% {
-    transform: translate(0, 38px) rotate(5deg) scale(0.2);
+    transform: translate(0, 28px) rotate(5deg) scale(0.2);
   }
   100% {
     transform: translate(0, -0px) rotate(5deg) scale(0.2);
@@ -131,31 +130,31 @@ export const ModalExitBtn = styled.button`
 `;
 
 export const SatellightContainer = styled.div`
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: block;
-  /* background-color: red; */
-  width: auto;
+  position: relative;
+  display: inline-block;
+  width: 40vw;
+  height: 92vh;
   margin-left: auto;
-  margin-right: 225px;
+  margin-right: 5%;
+  padding-right: 18%;
   z-index: 1;
-  transform: scale();
   /* overflow:hidden; */
 
   @media screen and (max-width: 1115px) {
     display: none;
   }
 
-  & .contact-speechbubble {
+  & .contact-astronaut {
     position: absolute;
-    bottom: 175px;
-    right: 465px;
-    animation: ${floatsBubble} 10s ease-in-out infinite;
+    display: block;
+    bottom: 70px;
+    right: 30px;
+    /* animation: ${floatsBubble} 10s ease-in-out infinite; */
   }
   & .contact-satellite {
     position: absolute;
-    top: 160px;
-    right: 150px;
+    top: 0;
+    left: 0;
     /* width:1000px; */
     /* height:auto; */
   }
@@ -166,19 +165,13 @@ export const Satellite = styled.div`
   background-image: url(${satellite});
   background-repeat: no-repeat;
   background-size: contain;
-  /* position: absolute; */
   position: relative;
   transform: scaleX(-1) rotate(-7deg);
-  /* right: -255px; */
-  /* top: 25px; */
   width: 255px;
   height: 255px;
+  margin-top: 10px;
   margin-left: auto;
-  margin-right: 100px;
-
   animation: ${floatB} 18s ease-in-out infinite;
-  /* animation: spin 115s linear infinite; */
-  /* box-shadow: inset 0 0 60px #131312; */
   z-index: 1;
 `;
 
@@ -188,18 +181,22 @@ export const AstronautContact = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
-  transform: scaleX(-1);
-  /* transform: scaleX(-1) rotate(-65deg); */
-  width: 325px;
+  overflow: hidden;
+  width: 425px;
   height: 325px;
   margin-top: 100px;
   margin-left: 100px;
-  /* padding-left:300px; */
-  /* background-color:blue; */
-  /* margin-left: auto; */
-  /* margin-right: auto; */
   z-index: 1;
   animation: ${floatA} 10s ease-in-out infinite;
+  /* background-color: purple; */
+`;
+
+export const SpeechAstronautBubble = styled.div`
+  position: absolute;
+  top: 80px;
+  right: 70px;
+  transform: scaleX(-1);
+  display: inline-block;
 `;
 
 export const FullContactView = styled.div`
@@ -243,10 +240,9 @@ export const QRCode = styled.div`
 `;
 
 export const WifiSignalContainer = styled.div`
-  display: block;
   position: absolute;
-  top: 75px;
-  left: -140px;
+  bottom: 140px;
+  left: 138px;
   display: inline-block;
   width: 150px;
   height: 150px;
@@ -258,6 +254,14 @@ export const WifiSignalContainer = styled.div`
   -webkit-transform: rotate(45deg) translate(-100px) scale(0.2);
   transform: rotate(45deg) translate(-100px) scale(0.2);
   animation: ${WifiFloat} 18s ease-in-out infinite;
+`;
+
+export const SpeechContactBubble = styled.div`
+  position: absolute;
+  /* background-color: pink; */
+  bottom: 140px;
+  left: 280px;
+  display: inline-block;
 `;
 
 export const WifiSignalSymbol = styled.div`

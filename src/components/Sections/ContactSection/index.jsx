@@ -38,7 +38,9 @@ import {
   MiniContactView,
   MidContactView,
   WifiSignalContainer,
-  WifiSignalSymbol
+  WifiSignalSymbol,
+  SpeechContactBubble,
+  SpeechAstronautBubble
 
 
 } from "../ContactSection/ContactSection.Design";
@@ -77,7 +79,7 @@ const dialoguesSatellite = [
   "...",
   "*00110001*",
   "...",
-  "TRANSMITTING DATA",
+  "SENDING DATA",
   "...",
   "*00110010*",
   "...",
@@ -188,32 +190,42 @@ function ContactSectionComp({ props }, ref) {
               <ContactForm />
               <SatellightContainer>
                 <div className="contact-satellite">
-                  {/* <WifiSignalContainer>
-                    <WifiSignalSymbol className="first" />
-                    <WifiSignalSymbol className="second" />
-                    <WifiSignalSymbol className="third" />
-                    <WifiSignalSymbol className="fourth" />
-                  </WifiSignalContainer> */}
-                  <SpeechBubble
-                    speech={dialoguesSatellite}
-                    direction={"none"}
-                    loop={true}
-                    solidBorder={false}
-                    msTime={8000}
-                    italics={true}
-                  />
-                  <Satellite />
+                  <Satellite >
+                    <SpeechContactBubble>
+                      <SpeechBubble
+                        speech={dialoguesSatellite}
+                        direction={"none"}
+                        loop={true}
+                        solidBorder={false}
+                        msTime={8000}
+                        italics={true}
+                        className="speechbubble-contact"
+                      />
+                    </SpeechContactBubble>
+                    <WifiSignalContainer>
+                      <WifiSignalSymbol className="first" />
+                      <WifiSignalSymbol className="second" />
+                      <WifiSignalSymbol className="third" />
+                      <WifiSignalSymbol className="fourth" />
+                    </WifiSignalContainer>
+                  </Satellite >
                 </div>
-                <div className="contact-speechbubble">
-                  <AstronautContact />
-                  <SpeechBubble
-                    speech={dialogues}
-                    direction={"top-right"}
-                    loop={true}
-                    solidBorder={true}
-                    msTime={5000}
-                    italics={false}
-                  />
+
+
+
+                <div className="contact-astronaut">
+                  <AstronautContact >
+                    <SpeechAstronautBubble>
+                      <SpeechBubble
+                        speech={dialogues}
+                        direction={"top-right"}
+                        loop={true}
+                        solidBorder={true}
+                        msTime={5000}
+                        italics={false}
+                      />
+                    </SpeechAstronautBubble>
+                  </AstronautContact >
                 </div>
               </SatellightContainer>
             </ContactUsOuterContainer>
@@ -238,8 +250,8 @@ function ContactSectionComp({ props }, ref) {
             </ContactUsOuterContainer>
           </MiniContactView>
         </RightColumnPanel>
-      </SectionContainer>
-    </div>
+      </SectionContainer >
+    </div >
   );
 }
 
