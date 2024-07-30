@@ -32,13 +32,13 @@ export async function contactUsEmail(data) {
     .then(
       (result) => {
         console.log(`Email sent!`);
-        console.log(result.text);
+        // console.log(result.text);
 
         return true;
       },
       (error) => {
         console.log(`Email was not sent!`);
-        console.log(error.text);
+        // console.log(error.text);
         return false;
       }
     );

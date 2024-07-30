@@ -62,8 +62,9 @@ export function FullProjectCard({ props }) {
     subHeader,
     content,
     github,
-    website,
+    site,
     technologies,
+    youtube,
     techniques,
     images,
     video,
@@ -130,7 +131,7 @@ export function FullProjectCard({ props }) {
                 <AnimatedHeader title={subHeader} />
               </small>
             </div>
-            <div id="project-button-container">
+            <div id="project-button-container" style={{ marginTop: "20px" }}>
               <SiteButton
                 type="anchor"
                 url={github}
@@ -138,20 +139,30 @@ export function FullProjectCard({ props }) {
                 title="Github"
                 icon={<BsGithub />}
               />
-              <SiteButton
-                type="anchor"
-                url="https://www.nhl.com"
-                styling="website"
-                title="Website"
-                icon={<BsGlobe />}
-              />
-              <SiteButton
-                type="anchor"
-                url="https://www.youtube.com"
-                styling="youtube"
-                title="Youtube"
-                icon={<IoLogoYoutube />}
-              />
+
+              {site !== "#" ? (
+                <SiteButton
+                  type="anchor"
+                  url={site}
+                  styling="website"
+                  title="Website"
+                  icon={<BsGlobe />}
+                />
+              ) : (
+                <></>
+              )}
+
+              {youtube !== "#" ? (
+                <SiteButton
+                  type="anchor"
+                  url={youtube}
+                  styling="youtube"
+                  title="Youtube"
+                  icon={<IoLogoYoutube />}
+                />
+              ) : (
+                <></>
+              )}
             </div>
           </CardHeader>
           <CardBody>
@@ -183,21 +194,26 @@ export function FullProjectCard({ props }) {
                   </SwiperSlide>
                 );
               })}
-              {/*<SwiperSlide>
-                 <ProjectVideo>
-                  <ReactPlayer
-                    key={`youtube-video:` + title + video}
-                    url={video}
-                    controls={true}
-                    playing={playVideo}
-                    onPlay={() => setPlayVideo(true)}
-                    onPause={() => setPlayVideo(false)}
-                    ref={videoRef}
-                    height="425px"
-                    width="675px"
-                  />
-                </ProjectVideo>{" "}  
-              </SwiperSlide>*/}
+
+              {/* {youtube !== "#" ? (
+                <SwiperSlide>
+                  <ProjectVideo>
+                    <ReactPlayer
+                      key={`youtube-video:` + title + video}
+                      url={video}
+                      controls={true}
+                      playing={playVideo}
+                      onPlay={() => setPlayVideo(true)}
+                      onPause={() => setPlayVideo(false)}
+                      ref={videoRef}
+                      height="525px"
+                      width="775px"
+                    />
+                  </ProjectVideo>{" "}
+                </SwiperSlide>
+              ) : (
+                <></>
+              )} */}
             </Swiper>
             <ProjectBlurb>
               <section>

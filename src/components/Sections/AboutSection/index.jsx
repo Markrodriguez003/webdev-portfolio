@@ -63,7 +63,7 @@ function AboutSectionComp({ props }, ref) {
             <h1 id="inverted-header">
               <AnimatedHeader title={"Coding and beyond.."} />
             </h1>
-            <p>
+            <p id="main-about">
               {" "}
               I am a growth-oriented full-stack web developer with 4 years of
               experience building websites and web apps that include designing,
@@ -83,8 +83,8 @@ function AboutSectionComp({ props }, ref) {
             <FutureTechSkillsBar />
             <br />
             <h2 id="inverted-header">Besides coding...</h2>
-            <p>
-              While I am am passionate about web development, I love all things
+            <p id="about-secondary">
+              While I am passionate about web development, I love all things
               art! I am a musician who likes to spend his time writing and
               performing music of various genres. In addition to music I also
               moonlight as an writer of sci-fi and fantasy novels. One of my

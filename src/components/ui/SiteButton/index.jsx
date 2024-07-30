@@ -17,11 +17,10 @@ export default function SiteButton(props) {
           styling={styling}
           href={url !== undefined ? url : ""}
           target="_blank"
+          className={styling}
         >
-          <button className={styling}>
             <span style={{ verticalAlign: "bottom" }}>{icon}</span>
             {title}
-          </button>
         </CustomAnchorBtn>
       ) : (
         // <CustomBtn styling={styling} onClick={(event) => buttonInfo(event)}>

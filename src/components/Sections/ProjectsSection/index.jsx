@@ -77,7 +77,7 @@ function ProjectsSectionComp({ props }, ref) {
           <HeaderBorderBox props={{ type: "boxes", title: "PROJECTS" }} />
           <HeaderDetailsPanel>
             <p>
-              Here are some of my projects. I have others in the chamber as well
+              Here are some of my projects. I have others in loading dock as well
               so check back to see any updates!
             </p>
             <br />

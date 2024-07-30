@@ -3,11 +3,9 @@ import styled, { css, keyframes } from "styled-components";
 
 export const CustomAnchorBtn = styled.a`
   cursor: pointer;
-  background-color: transparent;
+  
   text-decoration: none;
-
-  & button {
-    background-color: transparent;
+  background-color: transparent;
     border: ${(props) =>
     props.styling !== undefined ? "white 2px solid" : "white 2px solid"};
     border-radius: 6px;
@@ -18,14 +16,24 @@ export const CustomAnchorBtn = styled.a`
     color: white;
     transition: 0.25s ease-in-out;
     cursor: pointer;
+ 
+  
+      
+  @media screen and (max-width: 445px) {
+     float:left; 
+    clear:left; 
+    
+ 
+    
+  }
 
     &:hover {
       background-color: white;
       color: black;
     }
-  }
+ 
 
-  & button:active {
+  & .active {
     background-color: yellow;
   }
   & span * {
@@ -33,7 +41,7 @@ export const CustomAnchorBtn = styled.a`
     padding-right: 4px;
   }
 
-  & button.inverted {
+  & .inverted {
     background-color: aliceblue;
     color: black;
     &:hover {
@@ -42,21 +50,21 @@ export const CustomAnchorBtn = styled.a`
       color:aliceblue;
     }
   }
-  & button.youtube {
+  & .youtube {
     border: red 2px solid;
     &:hover {
       background-color: red;
       color: aliceblue;
     }
   }
-  & button.github {
+  & .github {
     border: green 2px solid;
     &:hover {
       background-color: green;
       color: aliceblue;
     }
   }
-  & button.website {
+  & .website {
     border: blue 2px solid;
     &:hover {
       background-color: blue;

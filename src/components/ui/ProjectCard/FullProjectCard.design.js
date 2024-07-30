@@ -69,13 +69,13 @@ export const CardHeader = styled.div`
   letter-spacing: 1.2px;
   margin-bottom: 5px;
   text-transform: uppercase;
-  font-family: "body";
+  font-family: "body";;
   border-bottom: grey 1px solid;
   
 
   & #project-button-container * {
     display: inline;
-
+    
     @media screen and (max-width: 1200px) {
       display: none;
     }
@@ -104,7 +104,7 @@ export const CardBody = styled.section`
   align-items: flex-start;
   align-content: flex-start;
   align-items: flex-start;
-  width: 100%;
+  width: 94%;
   height: auto;
   z-index: 1;
   text-align: center;
@@ -168,5 +168,9 @@ export const CardFooter = styled.section`
     justify-content: center;
     align-content: center;
     display: flex;
+    
+    
+ 
+    
   }
 `;

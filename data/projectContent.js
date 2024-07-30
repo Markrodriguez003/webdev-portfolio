@@ -4,9 +4,8 @@ export const projects = [
     key: 0,
     title: "Gallo-Ocho",
     subHeader: "Business Prototype Site",
-    content: `This site was built as a prototype for a art / sculpture business called Gallo Ocho based in Miami, FL. Simple stand up site prototype 
-    that acts as a portfolio for Gallo Ocho sculptures. Still a work in progress."   
-  `,
+    content: `This site was built as a prototype front page for a art / sculpture business called Gallo Ocho based out of  Miami, FL. 
+     `,
     technologies: [
       "Javascript",
       "React",
@@ -23,23 +22,23 @@ export const projects = [
       "Used React as a frontend springboard",
       "Implemented model viewer to be responsive and not load bearing to site speed."
     ],
-    youtube: "https://www.youtube.com/",
+    youtube: "#",
     github: "https://github.com/Markrodriguez003/galloocho",
-    site: "https://www.nhl.com",
+    site: "https://galloocho.fly.dev/",
     images: [
       "galloocho-1.png",
       "galloocho-2.png",
       "galloocho-3.png",
       "galloocho-4.png",
     ],
-    video: "https://www.youtube.com/watch?v=AP5SRgDnJQ4",
+    video: "#",
   },
 
   {
     key: 1,
     title: "HBJO LAW ",
     subHeader: "Law firm website",
-    content: `Official website for the law firm Homer Bonner Jacobs Ortiz, P.A. Managed by using Wordpress CMS.`,
+    content: `Official website for the law firm Homer Bonner Jacobs Ortiz P.A. Managed by using Wordpress CMS.`,
     technologies: [
       "Wordpress",
       "HTML",
@@ -53,7 +52,7 @@ export const projects = [
       "Storing & retrieving site cookies",
       "User account creation & loading",
     ],
-    youtube: "https://www.youtube.com/",
+    youtube: "#",
     github: "#",
     site: "https://www.homerbonner.com/",
     images: [
@@ -65,14 +64,13 @@ export const projects = [
       "hbjo-6.png",
       "hbjo-7.png",
     ],
-    video: "https://www.youtube.com/watch?v=znNllvBt_Jg",
+    video: "#",
   },
   {
     key: 2,
     title: "Simple-Load",
     subHeader: "Load file generator.",
-    content: `This simple to use webapp is meant to help with lawfirms, who use specific document 
-    repo applications, create load files for large productions that need to be digested into repo.`,
+    content: `This simple to use web application is meant to help law firms create load files for large productions that need to be digested into any legal document platform.`,
     technologies: ["Javascript", "Neutrino", "Jquery", "Node"],
     techniques: [
       "Form Validation & submission",
@@ -81,22 +79,23 @@ export const projects = [
       "Storing & retrieving site cookies",
       "User account creation & loading",
     ],
-    youtube: "https://www.youtube.com/",
-    github: "https://www.https://github.com/Markrodriguez003/SimpleLoad",
-    site: "https://www.nhl.com",
+    youtube: "https://www.youtube.com/watch?v=s_bkEsBZ3xw",
+    github: "https://www.github.com/Markrodriguez003/SimpleLoad",
+    site: "#",
     images: [
       "simpleload-1.png",
 
 
 
     ],
-    video: "https://www.youtube.com/watch?v=F5E711639lM",
+    video: "https://www.youtube.com/watch?v=s_bkEsBZ3xw",
   },
+
   {
     key: 3,
     title: "Waagword",
     subHeader: "Password generator.",
-    content: `While password generators might seem simple, this specific password generators 
+    content: `While password generators might seem simple, this specific password generator 
     offers more robust password generation by adding advance features such as prefix, 
     postfix and key word insertion. In addition the user has access to create SSH keys.`,
     technologies: ["Javascript", "Electron", "Jquery", "Crypto.js"],
@@ -107,9 +106,9 @@ export const projects = [
       "Storing & retrieving site cookies",
       "User account creation & loading",
     ],
-    youtube: "https://www.youtube.com/",
+    youtube: "https://www.youtube.com/watch?v=uf1MTdctiEI",
     github: "https://github.com/Markrodriguez003/wagwoord",
-    site: "https://www.nhl.com",
+    site: "#",
     images: [
       "wagwoord-1.png",
       "wagwoord-2.png",
@@ -117,15 +116,14 @@ export const projects = [
       "wagwoord-4.png",
 
     ],
-    video: "https://www.youtube.com/watch?v=Ot5VUi-pp0g",
+    video: "https://www.youtube.com/watch?v=uf1MTdctiEI",
   },
   {
     key: 4,
     title: "Portfolio",
     subHeader: "My web developer portfolio",
     content: `What better way to show off my skills by providing information on my developer portfolio? I designed 
-    and produced this site to be interesting to the eye and allows to user to explore my skills and traits 
-    smoothly. 
+    and produced this site to be interesting to the eye and allows to user to explore my skills and traits with ease. 
   `,
     technologies: [
       "Javascript",
@@ -148,16 +146,16 @@ export const projects = [
       "Utilized EmailJS to provide form submission",
       "Used React as a frontend springboard",
     ],
-    youtube: "https://www.youtube.com/",
+    youtube: "#",
     github: "https://github.com/Markrodriguez003/webdev-portfolio",
-    site: "https://www.nhl.com",
+    site: "https://webdev-portfolio.fly.dev/",
     images: [
       "portfolio-1.png",
       "portfolio-2.png",
       "portfolio-3.png",
       "portfolio-4.png",
     ],
-    video: "https://www.youtube.com/watch?v=AP5SRgDnJQ4",
+    video: "#",
   },
   {
     key: 5,
@@ -185,15 +183,15 @@ export const projects = [
       "Storing & retrieving site cookies",
       "User account creation, verification & loading",
     ],
-    youtube: "https://www.youtube.com/",
+    youtube: "https://www.youtube.com/watch?v=7ZzW1qRW-k8",
     github: "https://github.com/Markrodriguez003/saseo",
-    site: "https://www.nhl.com",
+    site: "https://saseo.fly.dev/",
     images: [
       "saseo.png",
       "saseo-1.png",
       "saseo-2.png",
       "saseo-3.png",
     ],
-    video: "https://www.youtube.com/watch?v=LXb3EKWsInQ",
+    video: "https://www.youtube.com/watch?v=7ZzW1qRW-k8",
   },
 ];

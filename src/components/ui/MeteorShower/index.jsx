@@ -11,7 +11,7 @@ function MeteorShower() {
 
       if (randomMeteor % 2) {
         setMeteorPing(() => randomMeteor);
-        console.log("Ping! " + "Starchart: " + meteorPing);
+        // console.log("Ping! " + "Starchart: " + meteorPing);
       }
 
       looper;
