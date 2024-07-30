@@ -39,7 +39,7 @@ export default function ContactForm() {
     country: "",
     email: "",
     message: "",
-    "g-recaptcha-response": "",
+    // "g-recaptcha-response": "",
   });
 
   // HANDLES GRABBING DATA FROM FORM
@@ -96,29 +96,35 @@ export default function ContactForm() {
 
   // HANDLE FORM SUBMISSION + EMAILJS
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    const captchaValue = recaptcha.current.getValue();
 
-    if (!captchaValue) {
-      SAlert.fire({
-        confirmButtonColor: "black",
-        customClass: {
-          validationMessage: "my-validation-message",
-        },
-        title: "Please verify you are not a robot!",
-        text: "Houston is advising to verify you're not a robot by clicking the captcha below!",
-        width: 600,
-        padding: "3em",
-        color: "#ffffff",
-        // background: `url(${alien}) rgba(0, 0, 0, 0.8)`,
-        background: `rgba(0, 0, 0, 0.8)`,
-        // imageWidth: 400,
-        // imageHeight: 500,
-        // imageAlt: "Successful message",
-      });
-    } else {
-      setEmailSuccess(await contactUsEmail(formData, captchaValue));
-    }
+    
+    event.preventDefault();
+    // ! 
+    // console.log(JSON.stringify(formData));
+    setEmailSuccess(await contactUsEmail(formData));
+    // const captchaValue = recaptcha.current.getValue();
+
+    // if (!captchaValue) {
+    //   SAlert.fire({
+    //     confirmButtonColor: "black",
+    //     customClass: {
+    //       validationMessage: "my-validation-message",
+    //     },
+    //     title: "Please verify you are not a robot!",
+    //     text: "Houston is advising to verify you're not a robot by clicking the captcha below!",
+    //     width: 600,
+    //     padding: "3em",
+    //     color: "#ffffff",
+    //     // background: `url(${alien}) rgba(0, 0, 0, 0.8)`,
+    //     background: `rgba(0, 0, 0, 0.8)`,
+    //     // imageWidth: 400,
+    //     // imageHeight: 500,
+    //     // imageAlt: "Successful message",
+    //   });
+    // } else {
+    //   // setEmailSuccess(await contactUsEmail(formData, captchaValue));
+    //   setEmailSuccess(await contactUsEmail(formData));
+    // }
   };
 
   return (
@@ -199,16 +205,18 @@ export default function ContactForm() {
           icon={<FaRegEnvelope />}
           title="Submit"
         ></SiteButton>
-        <SiteButton
+        {/* <SiteButton
           type="button"
           icon={<FaTrashAlt />}
           title="Clear Form"
           styling="youtube"
-        ></SiteButton>
-        <ReCAPTCHA
+        ></SiteButton> */}
+          <br />
+          <br />
+        {/* <ReCAPTCHA
           ref={recaptcha}
           sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
-        />
+        /> */}
       </div>
     </FormContainer>
   );

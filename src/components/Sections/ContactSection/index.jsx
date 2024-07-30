@@ -165,13 +165,13 @@ function ContactSectionComp({ props }, ref) {
               </a>
             </p>
             <br />
-            <p>
+            {/* <p>
               <FaLinkedin
                 style={{ verticalAlign: "center", paddingRight: "5px" }}
               />
               LinkedIn: linkedIn.com/MarkRodriguez003
-            </p>
-            <br />
+            </p> */}
+            {/* <br /> */}
             <p>
               <img
                 src={githubIcon}

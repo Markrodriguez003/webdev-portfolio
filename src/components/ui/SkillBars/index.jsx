@@ -11,7 +11,7 @@ import { LiaGit } from "react-icons/lia";
 import { DiJqueryLogo } from "react-icons/di";
 import { SiNeutralinojs, SiTypescript, SiJest } from "react-icons/si";
 import { AiFillRobot } from "react-icons/ai";
-import { FaPython } from "react-icons/fa";
+import { FaPython, FaWordpress, FaPhp } from "react-icons/fa";
 export function TechnologiesSkillsBar() {
   return (
     <>
@@ -23,6 +23,10 @@ export function TechnologiesSkillsBar() {
         <div>
           <IoLogoJavascript id={"flex-icon"} />
           <h3>JAVASCRIPT</h3>
+        </div>
+        <div>
+          <FaWordpress id={"flex-icon"} />
+          <h3>WORDPRESS</h3>
         </div>
         <div>
           <SiReact id={"flex-icon"} />
@@ -88,6 +92,10 @@ export function FutureTechSkillsBar() {
         <div>
           <TbBrandDjango id={"flex-icon"} />
           <h3>DJANGO</h3>
+        </div>
+        <div>
+          <FaPhp id={"flex-icon"} />
+          <h3>PHP</h3>
         </div>
       </BarContainer>
     </>

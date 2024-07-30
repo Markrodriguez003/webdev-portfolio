@@ -39,7 +39,7 @@ export const Card = styled.div`
   height: 100%;
   width: 100%;
   margin-right: 40px;
-  z-index: 1;
+  z-index: 1; 
 
   animation: ${(props) =>
     props.toggle
@@ -65,12 +65,13 @@ export const CardHeader = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
-  padding: 10px 5px;
+  /* padding: 5px 5px; */
   letter-spacing: 1.2px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-transform: uppercase;
   font-family: "body";
   border-bottom: grey 1px solid;
+  
 
   & #project-button-container * {
     display: inline;
@@ -82,15 +83,15 @@ export const CardHeader = styled.div`
   & h2 {
     text-align: start;
     color: white;
-    font-size: 1.35em;
-    padding: 1.2px;
+    font-size: 1.55em;
+    /* padding: 1.2px; */
     margin-bottom: 10px;
     justify-self: start;
   }
 
   & small {
     color: grey;
-    font-size: 12px;
+    font-size: 10px;
     text-align: left;
   }
 `;
@@ -104,7 +105,7 @@ export const CardBody = styled.section`
   align-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  height: 80vh;
+  height: auto;
   z-index: 1;
   text-align: center;
   margin-left: auto;
@@ -114,10 +115,9 @@ export const CardBody = styled.section`
 `;
 
 export const CardProjectImage = styled.img`
-  width: 75%;
-  /* height: 100%; */
-  height: 420px;
-
+  width: 90%;
+  height: auto;
+  
   object-fit: cover;
 
   /* @media screen and (max-width: 1000px) {
@@ -127,6 +127,7 @@ export const CardProjectImage = styled.img`
   @media screen and (max-width: 875px) {
     width: 90%;
     height: 40vh;
+    object-fit: cover;
   }
 `;
 
@@ -141,7 +142,7 @@ export const ProjectBlurb = styled.section`
   margin-right: auto;
   margin-top: 0px;
   padding: 5px 0px;
-  width: 72%;
+  width: 80%;
   text-align: left;
 
   @media screen and (max-width: 875px) {
@@ -160,7 +161,6 @@ export const CardFooter = styled.section`
   color: white;
   background-color: transparent;
   padding-bottom: 15px;
-
   margin: 0;
 
   @media screen and (max-width: 1200px) {

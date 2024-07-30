@@ -17,7 +17,7 @@ export const FormContainer = styled.form`
   width: 100%;
   height: 91vh;
  
-  @media screen and (max-width: 1115px) {
+  @media screen and (max-width: 1200px) {
     justify-content: center;
     align-items: center;
 

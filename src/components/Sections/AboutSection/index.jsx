@@ -11,7 +11,7 @@ import {
 import { AboutDetailsPanel } from "./AboutSection.design";
 
 // ICONS
-import { FaRegEnvelope } from "react-icons/fa";
+import { FaRegEnvelope, FaSatellite } from "react-icons/fa";
 import { LuMenuSquare } from "react-icons/lu";
 import { BiSolidInvader } from "react-icons/bi";
 
@@ -37,15 +37,15 @@ function AboutSectionComp({ props }, ref) {
           <HeaderBorderBox props={{ type: "waves", title: "ABOUT" }} />
           <HeaderDetailsPanel>
             <p>
-              Here is some information about me. I hope you find it interesting!
+              Here is some information about me. I hope you find it interesting!  
             </p>
             <br />
-            <p id="resume-about">
+            {/* <p id="resume-about">
               <LuMenuSquare
                 style={{ verticalAlign: "center", paddingRight: "5px" }}
               />
               Resume: <a href="#">View</a> | <a href="#">Download</a>
-            </p>
+            </p> */}
             <br />
             <p id="github-about">
               <img
@@ -64,16 +64,16 @@ function AboutSectionComp({ props }, ref) {
               <AnimatedHeader title={"Coding and beyond.."} />
             </h1>
             <p>
-              I have been studying web development coding for 3 years and my
-              interest has only grown in the field! I want to continue to expand
-              on my knowledge by learning more about AI, back end development
-              and managing databases. I love to research and continue to learn
-              new concepts. One of my dream goals would be to code my own game
-              and release it!{" "}
-              <BiSolidInvader
-                size={"1.2em"}
-                style={{ verticalAlign: "bottom" }}
-              />
+              {" "}
+              I am a growth-oriented full-stack web developer with 4 years of
+              experience building websites and web apps that include designing,
+              testing, maintaining, and implementing backend-to-frontend
+              integration. Web development is a complex field in which I strive
+              to deliver quality solutions to any technical problem and aim to
+              be a team-oriented asset that can be depended on in any situation.
+              I would love to have the opportunity to help and grow with a team
+              that cares deeply about their work.
+              <FaSatellite size={"1.2em"} style={{ verticalAlign: "bottom" }} />
             </p>{" "}
             <br />
             <h2 id="normal-header">Technological skills I have acquired:</h2>
@@ -84,9 +84,15 @@ function AboutSectionComp({ props }, ref) {
             <br />
             <h2 id="inverted-header">Besides coding...</h2>
             <p>
-              I love all things art! I am a musician who likes to spend his time
-              writing and producing music of various genres. In addition to
-              music I also moonlight as an writer of sci-fi and fantasy novels.
+              While I am am passionate about web development, I love all things
+              art! I am a musician who likes to spend his time writing and
+              performing music of various genres. In addition to music I also
+              moonlight as an writer of sci-fi and fantasy novels. One of my
+              dream goals would be to code my own game and release it!{" "}
+              <BiSolidInvader
+                size={"1.2em"}
+                style={{ verticalAlign: "bottom" }}
+              />
             </p>
           </AboutDetailsPanel>
         </RightColumnPanel>

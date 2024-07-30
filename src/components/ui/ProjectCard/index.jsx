@@ -53,10 +53,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// IMAGES
-import saseoA from "../../../assets/images/site-screenshots/Portfolio.png";
-import saseoB from "../../../assets/images/site-screenshots/Saseo-2.png";
-import saseoC from "../../../assets/images/site-screenshots/Saseo-3.png";
+// UTILS
+import { getImageURL, getImageURLArray } from "../../../ultils/images-util";
 
 export function FullProjectCard({ props }) {
   const {
@@ -99,7 +97,7 @@ export function FullProjectCard({ props }) {
       <Lightbox
         open={open}
         close={() => setOpen(false)}
-        slides={[{ src: saseoA }, { src: saseoB }, { src: saseoC }]}
+        slides={getImageURLArray(images)}
         plugins={[Thumbnails]}
         thumbnails={{
           position: "bottom",
@@ -135,7 +133,7 @@ export function FullProjectCard({ props }) {
             <div id="project-button-container">
               <SiteButton
                 type="anchor"
-                url="https://www.github.com"
+                url={github}
                 styling="github"
                 title="Github"
                 icon={<BsGithub />}
@@ -167,7 +165,7 @@ export function FullProjectCard({ props }) {
               // onSlideChange={() => console.log("slide change")}
               // onSwiper={(swiper) => console.log(swiper)}
               style={{
-                width: "60vw",
+                width: "62.5vw",
                 height: "auto",
               }}
             >
@@ -175,7 +173,7 @@ export function FullProjectCard({ props }) {
                 return (
                   <SwiperSlide key={("swiper-slide+", count)}>
                     <CardProjectImage
-                      src={item}
+                      src={getImageURL(item)}
                       key={title + "-image-" + count}
                       alt={"image-" + count}
                       onClick={(props) => {
@@ -185,8 +183,8 @@ export function FullProjectCard({ props }) {
                   </SwiperSlide>
                 );
               })}
-              <SwiperSlide>
-                {/* <ProjectVideo>
+              {/*<SwiperSlide>
+                 <ProjectVideo>
                   <ReactPlayer
                     key={`youtube-video:` + title + video}
                     url={video}
@@ -198,8 +196,8 @@ export function FullProjectCard({ props }) {
                     height="425px"
                     width="675px"
                   />
-                </ProjectVideo>{" "} */}
-              </SwiperSlide>
+                </ProjectVideo>{" "}  
+              </SwiperSlide>*/}
             </Swiper>
             <ProjectBlurb>
               <section>
@@ -285,7 +283,7 @@ export function MiniProjectCard({ props }) {
       <Lightbox
         open={open}
         close={() => setOpen(false)}
-        slides={[{ src: saseoA }, { src: saseoB }, { src: saseoC }]}
+        slides={getImageURLArray(images)}
         plugins={[Thumbnails]}
         thumbnails={{
           position: "bottom",
@@ -344,7 +342,7 @@ export function MiniProjectCard({ props }) {
           </CardHeader>
           <CardBody>
             <CardProjectImage
-              src={images[0]}
+              src={getImageURL(images[0])}
               key={title + "-image-" + images[0]}
               alt={"image-" + images[0]}
               onClick={(props) => {

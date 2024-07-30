@@ -33,7 +33,7 @@ export const BarContainer = styled.div`
   & div #flex-icon {
     background-color: goldenrod;
     color: white;
-    font-size: 30px;
+    font-size: 28px;
   }
 `;
 

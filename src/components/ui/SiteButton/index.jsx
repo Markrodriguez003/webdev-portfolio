@@ -17,7 +17,6 @@ export default function SiteButton(props) {
           styling={styling}
           href={url !== undefined ? url : ""}
           target="_blank"
-          rel="noreferrer noopener"
         >
           <button className={styling}>
             <span style={{ verticalAlign: "bottom" }}>{icon}</span>

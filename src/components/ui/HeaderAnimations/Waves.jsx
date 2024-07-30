@@ -14,13 +14,13 @@ function Waves() {
           <span></span>
           <span></span>
           <span></span>
+          {/* <span></span>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
-          <span></span>
-          <span></span>
+          <span></span> */}
         </WavesAnimation>
       </WavesContainer>
     </>
