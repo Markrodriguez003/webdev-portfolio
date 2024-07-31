@@ -163,6 +163,16 @@ function AboutSectionComp({ props }, ref) {
                 </a>
               </p>
               <br />
+              <p id="resume-about">
+                <LuMenuSquare
+                  style={{ verticalAlign: "center", paddingRight: "5px" }}
+                />
+                Resume: <a onClick={(event) => pdfModalClick(event)}>View</a> |{" "}
+                <a href={resume} download={resume}>
+                  Download
+                </a>
+              </p>
+              <br />
             </MiniAboutInfoPanel>
           </AboutDetailsPanel>
         </RightColumnPanel>
