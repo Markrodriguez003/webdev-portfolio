@@ -81,12 +81,12 @@ function AboutSectionComp({ props }, ref) {
               Here is some information about me. I hope you find it interesting!
             </p>
             <br />
-            {/* <p id="resume-about">
+            <p id="resume-about">
               <LuMenuSquare
                 style={{ verticalAlign: "center", paddingRight: "5px" }}
               />
               Resume: <a href="#">View</a> | <a href="#">Download</a>
-            </p> */}
+            </p>
             <br />
             <p id="github-about">
               <img
