@@ -83,13 +83,15 @@ function AboutSectionComp({ props }, ref) {
 
             <br />
             <p id="github-about">
-              <img
-                src={githubIcon}
-                width={"20px"}
-                height={"20px"}
-                style={{ paddingRight: "10px" }}
-              />
-              Github: github.com/MarkRodriguez003
+              <a href="https://github.com/Markrodriguez003" target="_blank">
+                <img
+                  src={githubIcon}
+                  width={"20px"}
+                  height={"20px"}
+                  style={{ paddingRight: "10px" }}
+                />
+                Github: github.com/MarkRodriguez003
+              </a>
             </p>
             <br />
             <p id="resume-about">
