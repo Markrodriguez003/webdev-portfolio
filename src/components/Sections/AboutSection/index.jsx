@@ -80,13 +80,7 @@ function AboutSectionComp({ props }, ref) {
             <p>
               Here is some information about me. I hope you find it interesting!
             </p>
-            <br />
-            <p id="resume-about">
-              <LuMenuSquare
-                style={{ verticalAlign: "center", paddingRight: "5px" }}
-              />
-              Resume: <a href="#">View</a> | <a href="#">Download</a>
-            </p>
+
             <br />
             <p id="github-about">
               <img
@@ -148,17 +142,7 @@ function AboutSectionComp({ props }, ref) {
             {/* // ! RESUME & GITHUB HERE */}
             <MiniAboutInfoPanel>
               <br />
-              <hr /> <br />
-              <p id="resume-about">
-                <LuMenuSquare
-                  style={{ verticalAlign: "center", paddingRight: "5px" }}
-                />
-                Resume:{" "}
-                <a href={resume} download={resume}>
-                  Download
-                </a>
-              </p>
-              <br />
+
               <p id="github-about">
                 <img
                   src={githubIcon}

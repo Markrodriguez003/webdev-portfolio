@@ -4,7 +4,7 @@ export const projects = [
     key: 0,
     title: "Gallo-Ocho",
     subHeader: "Business Prototype Site",
-    content: `This site was built as a prototype front page for an art / sculpture business called Gallo Ocho based out of  Miami, FL. 
+    content: `This site was built as a prototype front page for an art / sculpture business called Gallo Ocho based out of Miami, FL. 
      `,
     technologies: [
       "Javascript",

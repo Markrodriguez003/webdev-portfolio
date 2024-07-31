@@ -277,7 +277,9 @@ function ContactSectionComp({ props }, ref) {
                   style={{ verticalAlign: "center", paddingRight: "5px" }}
                 />
                 <span style={{ fontSize: "16px" }}>
-                  Email: MarkRodriguez003@gmail.com
+                  <a href="mailto:markrodriguez003@gmail.com">
+                    Email: MarkRodriguez003@gmail.com
+                  </a>
                 </span>
               </p>
               <br />
