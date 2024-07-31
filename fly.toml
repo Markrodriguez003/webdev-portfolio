@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for mrodriguez-webdev-portfolio on 2024-07-29T23:05:21-04:00
+# fly.toml app configuration file generated for webdev-portfolio on 2024-07-30T08:11:43-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'mrodriguez-webdev-portfolio'
+app = 'webdev-portfolio'
 primary_region = 'atl'
 
 [build]

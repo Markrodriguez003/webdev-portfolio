@@ -1,7 +1,7 @@
 // LIBRARIES
 import emailjs from "@emailjs/browser";
 import DOMPurify from "dompurify";
-import { Data } from "grommet";
+
 
 // todo: newsletter that recommends a new, generated book every 3 months to whoever signs up to newsletter
 

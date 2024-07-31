@@ -24,7 +24,7 @@ export const projects = [
     ],
     youtube: "#",
     github: "https://github.com/Markrodriguez003/galloocho",
-    site: "https://galloocho.fly.dev/",
+    site: "https://galloocho.onrender.com",
     images: [
       "galloocho-1.png",
       "galloocho-2.png",
@@ -68,6 +68,43 @@ export const projects = [
   },
   {
     key: 2,
+    title: "Saseo (WIP)",
+    subHeader: "Book suggestion site",
+    content: `Are you having a hard time finding a book? Well Saseo can help
+    you! Saseo offers users the ability to be suggested books by
+    subject or at random! Users will also have the ability to search
+    for more information on their favorite authors, as well as find
+    books via ISBN.`,
+    technologies: [
+      "ReactJS",
+      "Axios",
+      "OpenLibrary API",
+      "EmailJS",
+      "ChakraUI",
+      "Formik",
+      "Canvas-Confetti",
+      "Aos",
+    ],
+    techniques: [
+      "Form Validation & submission",
+      "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios",
+      "Use of ReactJS hooks such as:  useMemo, useContext, useState, useReducer & useCallback",
+      "Storing & retrieving site cookies",
+      "User account creation, verification & loading",
+    ],
+    youtube: "https://www.youtube.com/watch?v=7ZzW1qRW-k8",
+    github: "https://github.com/Markrodriguez003/saseo",
+    site: "https://saseo.onrender.com",
+    images: [
+      "saseo.png",
+      "saseo-1.png",
+      "saseo-2.png",
+      "saseo-3.png",
+    ],
+    video: "https://www.youtube.com/watch?v=7ZzW1qRW-k8",
+  },
+  {
+    key: 3,
     title: "Simple-Load",
     subHeader: "Load file generator.",
     content: `This simple to use web application is meant to help law firms create load files for large productions that need to be digested into any legal document platform.`,
@@ -90,9 +127,8 @@ export const projects = [
     ],
     video: "https://www.youtube.com/watch?v=s_bkEsBZ3xw",
   },
-
   {
-    key: 3,
+    key: 4,
     title: "Waagword",
     subHeader: "Password generator.",
     content: `While password generators might seem simple, this specific password generator 
@@ -119,7 +155,7 @@ export const projects = [
     video: "https://www.youtube.com/watch?v=uf1MTdctiEI",
   },
   {
-    key: 4,
+    key: 5,
     title: "Portfolio",
     subHeader: "My web developer portfolio",
     content: `What better way to show off my skills by providing information on my developer portfolio? I designed 
@@ -157,41 +193,5 @@ export const projects = [
     ],
     video: "#",
   },
-  {
-    key: 5,
-    title: "Saseo (WIP)",
-    subHeader: "Book suggestion site",
-    content: `Are you having a hard time finding a book? Well Saseo can help
-    you! Saseo offers users the ability to be suggested books by
-    subject or at random! Users will also have the ability to search
-    for more information on their favorite authors, as well as find
-    books via ISBN.`,
-    technologies: [
-      "ReactJS",
-      "Axios",
-      "OpenLibrary API",
-      "EmailJS",
-      "ChakraUI",
-      "Formik",
-      "Canvas-Confetti",
-      "Aos",
-    ],
-    techniques: [
-      "Form Validation & submission",
-      "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios",
-      "Use of ReactJS hooks such as:  useMemo, useContext, useState, useReducer & useCallback",
-      "Storing & retrieving site cookies",
-      "User account creation, verification & loading",
-    ],
-    youtube: "https://www.youtube.com/watch?v=7ZzW1qRW-k8",
-    github: "https://github.com/Markrodriguez003/saseo",
-    site: "https://saseo.fly.dev/",
-    images: [
-      "saseo.png",
-      "saseo-1.png",
-      "saseo-2.png",
-      "saseo-3.png",
-    ],
-    video: "https://www.youtube.com/watch?v=7ZzW1qRW-k8",
-  },
+
 ];
