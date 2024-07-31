@@ -132,13 +132,17 @@ export function FullProjectCard({ props }) {
               </small>
             </div>
             <div id="project-button-container" style={{ marginTop: "20px" }}>
-              <SiteButton
-                type="anchor"
-                url={github}
-                styling="github"
-                title="Github"
-                icon={<BsGithub />}
-              />
+              {github !== "#" ? (
+                <SiteButton
+                  type="anchor"
+                  url={github}
+                  styling="github"
+                  title="Github"
+                  icon={<BsGithub />}
+                />
+              ) : (
+                <></>
+              )}
 
               {site !== "#" ? (
                 <SiteButton
@@ -268,8 +272,9 @@ export function MiniProjectCard({ props }) {
     subHeader,
     content,
     github,
-    website,
+    site,
     technologies,
+    youtube,
     techniques,
     images,
     video,
@@ -333,27 +338,40 @@ export function MiniProjectCard({ props }) {
               </small>
             </div>
             <div id="project-button-container">
-              <SiteButton
-                type="anchor"
-                url="https://www.github.com"
-                styling="github"
-                title="Github"
-                icon={<BsGithub />}
-              />
-              <SiteButton
-                type="anchor"
-                url="https://www.nhl.com"
-                styling="website"
-                title="Website"
-                icon={<BsGlobe />}
-              />
-              <SiteButton
-                type="anchor"
-                url="https://www.youtube.com"
-                styling="youtube"
-                title="Youtube"
-                icon={<IoLogoYoutube />}
-              />
+              {github !== "#" ? (
+                <SiteButton
+                  type="anchor"
+                  url={github}
+                  styling="github"
+                  title="Github"
+                  icon={<BsGithub />}
+                />
+              ) : (
+                <></>
+              )}
+
+              {site !== "#" ? (
+                <SiteButton
+                  type="anchor"
+                  url={site}
+                  styling="website"
+                  title="Website"
+                  icon={<BsGlobe />}
+                />
+              ) : (
+                <></>
+              )}
+              {youtube !== "#" ? (
+                <SiteButton
+                  type="anchor"
+                  url={youtube}
+                  styling="youtube"
+                  title="Youtube"
+                  icon={<IoLogoYoutube />}
+                />
+              ) : (
+                <></>
+              )}
             </div>
           </CardHeader>
           <CardBody>
@@ -397,27 +415,40 @@ export function MiniProjectCard({ props }) {
           </CardBody>
           <CardFooter>
             <div>
-              <SiteButton
-                type="anchor"
-                url="https://www.github.com"
-                styling="github"
-                title="Github"
-                icon={<BsGithub />}
-              />
-              <SiteButton
-                type="anchor"
-                url="https://www.nhl.com"
-                styling="website"
-                title="Website"
-                icon={<BsGlobe />}
-              />
-              <SiteButton
-                type="anchor"
-                url="https://www.youtube.com"
-                styling="youtube"
-                title="Youtube"
-                icon={<IoLogoYoutube />}
-              />
+              {github !== "#" ? (
+                <SiteButton
+                  type="anchor"
+                  url={github}
+                  styling="github"
+                  title="Github"
+                  icon={<BsGithub />}
+                />
+              ) : (
+                <></>
+              )}
+
+              {site !== "#" ? (
+                <SiteButton
+                  type="anchor"
+                  url={site}
+                  styling="website"
+                  title="Website"
+                  icon={<BsGlobe />}
+                />
+              ) : (
+                <></>
+              )}
+              {youtube !== "#" ? (
+                <SiteButton
+                  type="anchor"
+                  url={youtube}
+                  styling="youtube"
+                  title="Youtube"
+                  icon={<IoLogoYoutube />}
+                />
+              ) : (
+                <></>
+              )}
             </div>
           </CardFooter>
         </Card>

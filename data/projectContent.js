@@ -22,7 +22,7 @@ export const projects = [
       "Used React as a frontend springboard",
       "Implemented model viewer to be responsive and not load bearing to site speed."
     ],
-    youtube: "#",
+    youtube: "https://www.youtube.com/watch?v=Hx0522u5nak",
     github: "https://github.com/Markrodriguez003/galloocho",
     site: "https://galloocho.onrender.com",
     images: [
@@ -31,14 +31,52 @@ export const projects = [
       "galloocho-3.png",
       "galloocho-4.png",
     ],
-    video: "#",
+    video: "https://www.youtube.com/watch?v=Hx0522u5nak",
   },
 
   {
     key: 1,
+    title: "Saseo (WIP)",
+    subHeader: "Book suggestion site",
+    content: `Are you having a hard time finding a book? Well Saseo can help
+    you! Saseo offers users the ability to be suggested books by
+    subject or at random! Users will also have the ability to search
+    for more information on their favorite authors, as well as find
+    books via ISBN.`,
+    technologies: [
+      "ReactJS",
+      "Axios",
+      "OpenLibrary API",
+      "EmailJS",
+      "ChakraUI",
+      "Formik",
+      "Canvas-Confetti",
+      "Aos",
+    ],
+    techniques: [
+      "Form Validation & submission",
+      "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios",
+      "Use of ReactJS hooks such as:  useMemo, useContext, useState, useReducer & useCallback",
+      "Storing & retrieving site cookies",
+      "User account creation, verification & loading",
+    ],
+    youtube: "https://www.youtube.com/watch?v=Kgltbbmhn6c",
+    github: "https://github.com/Markrodriguez003/saseo",
+    site: "https://saseo.onrender.com",
+    images: [
+      "saseo.png",
+      "saseo-1.png",
+      "saseo-2.png",
+      "saseo-3.png",
+    ],
+    video: "https://www.youtube.com/watch?v=Kgltbbmhn6c",
+  },
+  {
+    key: 2,
     title: "HBJO LAW ",
     subHeader: "Law firm website",
-    content: `Official website for the law firm Homer Bonner Jacobs Ortiz P.A. Managed by using Wordpress CMS.`,
+    content: `Official website for the Homer Bonner Jacobs Ortiz P.A. law firm. Managed by using Wordpress CMS. I assisted by helping modify the overall design of the website, appending new lawyer profiles, 
+    adding new pages with custom CSS styling, handling site inbox messages, troubleshooting and managed plugin integration such as the brochure add-on viewed on the site.`,
     technologies: [
       "Wordpress",
       "HTML",
@@ -67,43 +105,6 @@ export const projects = [
     video: "#",
   },
   {
-    key: 2,
-    title: "Saseo (WIP)",
-    subHeader: "Book suggestion site",
-    content: `Are you having a hard time finding a book? Well Saseo can help
-    you! Saseo offers users the ability to be suggested books by
-    subject or at random! Users will also have the ability to search
-    for more information on their favorite authors, as well as find
-    books via ISBN.`,
-    technologies: [
-      "ReactJS",
-      "Axios",
-      "OpenLibrary API",
-      "EmailJS",
-      "ChakraUI",
-      "Formik",
-      "Canvas-Confetti",
-      "Aos",
-    ],
-    techniques: [
-      "Form Validation & submission",
-      "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios",
-      "Use of ReactJS hooks such as:  useMemo, useContext, useState, useReducer & useCallback",
-      "Storing & retrieving site cookies",
-      "User account creation, verification & loading",
-    ],
-    youtube: "https://www.youtube.com/watch?v=7ZzW1qRW-k8",
-    github: "https://github.com/Markrodriguez003/saseo",
-    site: "https://saseo.onrender.com",
-    images: [
-      "saseo.png",
-      "saseo-1.png",
-      "saseo-2.png",
-      "saseo-3.png",
-    ],
-    video: "https://www.youtube.com/watch?v=7ZzW1qRW-k8",
-  },
-  {
     key: 3,
     title: "Simple-Load",
     subHeader: "Load file generator.",
@@ -116,7 +117,7 @@ export const projects = [
       "Storing & retrieving site cookies",
       "User account creation & loading",
     ],
-    youtube: "https://www.youtube.com/watch?v=s_bkEsBZ3xw",
+    youtube: "https://www.youtube.com/watch?v=AQho4sa6kxc",
     github: "https://www.github.com/Markrodriguez003/SimpleLoad",
     site: "#",
     images: [
@@ -125,7 +126,7 @@ export const projects = [
 
 
     ],
-    video: "https://www.youtube.com/watch?v=s_bkEsBZ3xw",
+    video: "https://www.youtube.com/watch?v=AQho4sa6kxc",
   },
   {
     key: 4,
@@ -142,7 +143,7 @@ export const projects = [
       "Storing & retrieving site cookies",
       "User account creation & loading",
     ],
-    youtube: "https://www.youtube.com/watch?v=uf1MTdctiEI",
+    youtube: "https://www.youtube.com/watch?v=LSeEnGTH4E8",
     github: "https://github.com/Markrodriguez003/wagwoord",
     site: "#",
     images: [
@@ -152,7 +153,7 @@ export const projects = [
       "wagwoord-4.png",
 
     ],
-    video: "https://www.youtube.com/watch?v=uf1MTdctiEI",
+    video: "https://www.youtube.com/watch?v=LSeEnGTH4E8",
   },
   {
     key: 5,
