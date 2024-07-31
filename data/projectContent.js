@@ -4,7 +4,7 @@ export const projects = [
     key: 0,
     title: "Gallo-Ocho",
     subHeader: "Business Prototype Site",
-    content: `This site was built as a prototype front page for a art / sculpture business called Gallo Ocho based out of  Miami, FL. 
+    content: `This site was built as a prototype front page for an art / sculpture business called Gallo Ocho based out of  Miami, FL. 
      `,
     technologies: [
       "Javascript",
@@ -159,8 +159,8 @@ export const projects = [
     key: 5,
     title: "Portfolio",
     subHeader: "My web developer portfolio",
-    content: `What better way to show off my skills by providing information on my developer portfolio? I designed 
-    and produced this site to be interesting to the eye and allows to user to explore my skills and traits with ease. 
+    content: `My own developer portfolio? What better way to show off my skills than by providing my Github repo of this very website! I designed 
+    and produced this site to be interesting to the eyes and informational. Hopefully you like it! 
   `,
     technologies: [
       "Javascript",
