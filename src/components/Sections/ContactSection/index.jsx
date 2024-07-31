@@ -275,14 +275,14 @@ function ContactSectionComp({ props }, ref) {
               </p>
               <br />
               <p>
-                <FaRegEnvelope
-                  style={{ verticalAlign: "center", paddingRight: "5px" }}
-                />
-                <span style={{ fontSize: "16px" }}>
-                  <a href="mailto:markrodriguez003@gmail.com">
+                <a href="mailto:markrodriguez003@gmail.com">
+                  <FaRegEnvelope
+                    style={{ verticalAlign: "center", paddingRight: "5px" }}
+                  />
+                  <span style={{ fontSize: "16px" }}>
                     Email: MarkRodriguez003@gmail.com
-                  </a>
-                </span>
+                  </span>
+                </a>
               </p>
               <br />
             </MiniContactInfoPanel>
