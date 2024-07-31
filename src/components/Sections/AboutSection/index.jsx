@@ -167,7 +167,7 @@ function AboutSectionComp({ props }, ref) {
                 <LuMenuSquare
                   style={{ verticalAlign: "center", paddingRight: "5px" }}
                 />
-                Resume: <a onClick={(event) => pdfModalClick(event)}>View</a> |{" "}
+                Resume:
                 <a href={resume} download={resume}>
                   Download
                 </a>
