@@ -113,6 +113,32 @@ export const ModalOuterContainer = styled.div`
   }
 `;
 
+export const MiniContactInfoPanel = styled.div`
+display:none ;
+color:white;
+text-align: center ;
+
+@media (max-width: 1200px) {
+  display:flex ;
+  flex-direction: column ;
+  text-align: center ;
+  margin-left:auto;
+  margin-right:auto;
+  justify-content: center ;
+  justify-items: center ;
+  align-content: center ;
+  align-items: center ;
+
+  & p a {
+    text-align: center ;
+  margin-left:auto;
+  margin-right:auto;
+  justify-content: center ;
+  align-content: center ;
+  }
+  }
+`
+
 export const ModalExitBtn = styled.button`
   color: white;
   background-color: black;

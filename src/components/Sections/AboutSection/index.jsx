@@ -1,5 +1,5 @@
 // REACT
-import { forwardRef } from "react";
+import { useState, forwardRef } from "react";
 
 // STYLING / STYLED COMPONENTS
 import {
@@ -8,36 +8,77 @@ import {
   RightColumnPanel,
   HeaderDetailsPanel,
 } from "../Sections.design";
-import { AboutDetailsPanel } from "./AboutSection.design";
+import { AboutDetailsPanel, MiniAboutInfoPanel } from "./AboutSection.design";
 
 // ICONS
 import { FaRegEnvelope, FaSatellite } from "react-icons/fa";
 import { LuMenuSquare } from "react-icons/lu";
 import { BiSolidInvader } from "react-icons/bi";
+import { PiKeyReturnBold } from "react-icons/pi";
 
 // COMPONENTS
 import PaginationTag from "../../ui/PaginationTag";
 import { TechnologiesSkillsBar, FutureTechSkillsBar } from "../../ui/SkillBars";
 import HeaderBorderBox from "../../ui/HeaderBorderBox";
 import AnimatedHeader from "../../ui/AnimatedHeader";
+import {
+  ModalOuterContainer,
+  ModalExitBtn,
+} from "../ContactSection/ContactSection.Design";
 
 // ASSETS
 import githubIcon from "../../../assets/icons/github-icon-w.png";
+import resume from "../../../../public/download/Mark Rodriguez - Resume.pdf";
 
 // ? NOTES
 // ? https://www.youtube.com/watch?v=h4227nm08G8
 // ? https://codepen.io/yomateo/pen/ypbNrJ
 
+function PDFViewer() {
+  return (
+    <div
+      style={{
+        backgroundColor: "darkgrey",
+        marginTop: "50px",
+        width: "90%",
+        height: "100%",
+        padding: 0,
+      }}
+    >
+      <iframe src={resume} width="100%" height="100%" />
+    </div>
+  );
+}
+
 function AboutSectionComp({ props }, ref) {
+  const [pdfModal, setPdfModal] = useState(false);
+
+  function pdfModalClick(event) {
+    // event.preventDefault();
+    setPdfModal(!pdfModal);
+  }
+
   return (
     <div ref={ref}>
       <SectionContainer>
+        {pdfModal === true ? (
+          <div style={{ height: "95vh" }}>
+            <ModalOuterContainer id="#contact">
+              <PDFViewer />
+              <ModalExitBtn onClick={(event) => pdfModalClick(event)}>
+                <PiKeyReturnBold style={{ verticalAlign: "middle" }} /> Return
+              </ModalExitBtn>
+            </ModalOuterContainer>
+          </div>
+        ) : (
+          <></>
+        )}
         {/* // todo: move this to another component */}
         <LeftHeaderColumn>
           <HeaderBorderBox props={{ type: "waves", title: "ABOUT" }} />
           <HeaderDetailsPanel>
             <p>
-              Here is some information about me. I hope you find it interesting!  
+              Here is some information about me. I hope you find it interesting!
             </p>
             <br />
             {/* <p id="resume-about">
@@ -55,6 +96,16 @@ function AboutSectionComp({ props }, ref) {
                 style={{ paddingRight: "10px" }}
               />
               Github: github.com/MarkRodriguez003
+            </p>
+            <br />
+            <p id="resume-about">
+              <LuMenuSquare
+                style={{ verticalAlign: "center", paddingRight: "5px" }}
+              />
+              Resume: <a onClick={(event) => pdfModalClick(event)}>View</a> |{" "}
+              <a href={resume} download={resume}>
+                Download
+              </a>
             </p>
           </HeaderDetailsPanel>
         </LeftHeaderColumn>
@@ -94,6 +145,39 @@ function AboutSectionComp({ props }, ref) {
                 style={{ verticalAlign: "bottom" }}
               />
             </p>
+            {/* // ! RESUME & GITHUB HERE */}
+            <MiniAboutInfoPanel>
+              <br />
+              <hr /> <br />
+              <p id="resume-about">
+                <LuMenuSquare
+                  style={{ verticalAlign: "center", paddingRight: "5px" }}
+                />
+                Resume:{" "}
+                <a href={resume} download={resume}>
+                  Download
+                </a>
+              </p>
+              <br />
+              <p id="github-about">
+                <img
+                  src={githubIcon}
+                  width={"20px"}
+                  height={"20px"}
+                  style={{ paddingRight: "10px" }}
+                />
+                <a
+                  href="https://www.github.com/MarkRodriguez003"
+                  target="_blank"
+                >
+                  <span style={{ fontSize: "16px" }}>
+                    {" "}
+                    Github: github.com/MarkRodriguez003
+                  </span>
+                </a>
+              </p>
+              <br />
+            </MiniAboutInfoPanel>
           </AboutDetailsPanel>
         </RightColumnPanel>
       </SectionContainer>

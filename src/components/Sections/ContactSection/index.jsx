@@ -40,9 +40,8 @@ import {
   WifiSignalContainer,
   WifiSignalSymbol,
   SpeechContactBubble,
-  SpeechAstronautBubble
-
-
+  SpeechAstronautBubble,
+  MiniContactInfoPanel,
 } from "../ContactSection/ContactSection.Design";
 
 import { ModalOuterContainer, ModalExitBtn } from "./ContactSection.Design";
@@ -94,7 +93,7 @@ const dialoguesSatellite = [
 // ! MOVE TO SCRIPTS ?
 function PDFViewer() {
   return (
-    <div style={{ backgroundColor: "green", width: "80%", height: "90%" }}>
+    <div style={{ backgroundColor: "darkgrey", width: "80%", height: "90%" }}>
       <iframe src={resume} width="100%" height="100%" />
     </div>
   );
@@ -111,7 +110,7 @@ function ContactSectionComp({ props }, ref) {
   function vCardDownload() {
     fileSaver.saveAs(
       import.meta.env.REACT_APP_CLIENT_URL +
-      "../src/assets/download/Mark-Rodriguez.vcf",
+        "../src/assets/download/Mark-Rodriguez.vcf",
       "Mark-Rodriguez.vcf"
     );
   }
@@ -143,8 +142,8 @@ function ContactSectionComp({ props }, ref) {
               />
               Email: MarkRodriguez003@gmail.com
             </p>
-            <br />
-            <p>
+            {/* <br /> */}
+            {/* <p>
               <MdOutlineContactMail
                 style={{ verticalAlign: "center", paddingRight: "5px" }}
               />
@@ -153,7 +152,7 @@ function ContactSectionComp({ props }, ref) {
                 {" "}
                 Download
               </a>
-            </p>
+            </p> */}
             <br />
             <p id="resume-about">
               <LuMenuSquare
@@ -190,7 +189,7 @@ function ContactSectionComp({ props }, ref) {
               <ContactForm />
               <SatellightContainer>
                 <div className="contact-satellite">
-                  <Satellite >
+                  <Satellite>
                     <SpeechContactBubble>
                       <SpeechBubble
                         speech={dialoguesSatellite}
@@ -208,13 +207,11 @@ function ContactSectionComp({ props }, ref) {
                       <WifiSignalSymbol className="third" />
                       <WifiSignalSymbol className="fourth" />
                     </WifiSignalContainer>
-                  </Satellite >
+                  </Satellite>
                 </div>
 
-
-
                 <div className="contact-astronaut">
-                  <AstronautContact >
+                  <AstronautContact>
                     <SpeechAstronautBubble>
                       <SpeechBubble
                         speech={dialogues}
@@ -225,7 +222,7 @@ function ContactSectionComp({ props }, ref) {
                         italics={false}
                       />
                     </SpeechAstronautBubble>
-                  </AstronautContact >
+                  </AstronautContact>
                 </div>
               </SatellightContainer>
             </ContactUsOuterContainer>
@@ -245,13 +242,53 @@ function ContactSectionComp({ props }, ref) {
           </MidContactView> */}
 
           <MiniContactView>
+            <MiniContactInfoPanel>
+              <hr /> <br />
+              <p id="resume-about">
+                <LuMenuSquare
+                  style={{ verticalAlign: "center", paddingRight: "5px" }}
+                />
+                Resume:{" "}
+                <a href={resume} download={resume}>
+                  Download
+                </a>
+              </p>
+              <br />
+              <p id="github-about">
+                <img
+                  src={githubIcon}
+                  width={"20px"}
+                  height={"20px"}
+                  style={{ paddingRight: "10px" }}
+                />
+                <a
+                  href="https://www.github.com/MarkRodriguez003"
+                  target="_blank"
+                >
+                  <span style={{ fontSize: "16px" }}>
+                    {" "}
+                    Github: github.com/MarkRodriguez003
+                  </span>
+                </a>
+              </p>
+              <br />
+              <p>
+                <FaRegEnvelope
+                  style={{ verticalAlign: "center", paddingRight: "5px" }}
+                />
+                <span style={{ fontSize: "16px" }}>
+                  Email: MarkRodriguez003@gmail.com
+                </span>
+              </p>
+              <br />
+            </MiniContactInfoPanel>
             <ContactUsOuterContainer>
               <ContactForm />
             </ContactUsOuterContainer>
           </MiniContactView>
         </RightColumnPanel>
-      </SectionContainer >
-    </div >
+      </SectionContainer>
+    </div>
   );
 }
 

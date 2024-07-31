@@ -29,6 +29,15 @@ export const ProjectPlanet = styled.div`
 
 
 
+export const MiniAboutInfoPanel = styled.div`
+display:none ;
+color:white;
+@media (max-width: 1200px) {
+  display:block ;
+ 
+  }
+`
+
 export const AboutDetailsPanel = styled.div`
   /* background-color: green; */
   margin-right: 120px;
