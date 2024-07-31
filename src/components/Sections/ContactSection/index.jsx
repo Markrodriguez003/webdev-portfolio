@@ -172,13 +172,15 @@ function ContactSectionComp({ props }, ref) {
             </p> */}
             {/* <br /> */}
             <p>
-              <img
-                src={githubIcon}
-                width={"20px"}
-                height={"20px"}
-                style={{ paddingRight: "10px" }}
-              />
-              Github: github.com/MarkRodriguez003
+              <a href="https://github.com/Markrodriguez003" target="_blank">
+                <img
+                  src={githubIcon}
+                  width={"20px"}
+                  height={"20px"}
+                  style={{ paddingRight: "10px" }}
+                />
+                Github: github.com/MarkRodriguez003
+              </a>
             </p>
           </HeaderDetailsPanel>
         </LeftHeaderColumn>
