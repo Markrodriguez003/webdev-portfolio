@@ -185,7 +185,7 @@ export const projects = [
     ],
     youtube: "#",
     github: "https://github.com/Markrodriguez003/webdev-portfolio",
-    site: "https://webdev-portfolio.fly.dev/",
+    site: "#",
     images: [
       "portfolio-1.png",
       "portfolio-2.png",
