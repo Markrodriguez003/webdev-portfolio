@@ -154,7 +154,7 @@ function AboutSectionComp({ props }, ref) {
                 />
                 <a
                   href="https://www.github.com/MarkRodriguez003"
-                  target="_blank"
+                  target="_blank" rel="noreferrer"
                 >
                   <span style={{ fontSize: "16px" }}>
                     {" "}

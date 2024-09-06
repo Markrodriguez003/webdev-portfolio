@@ -1,5 +1,4 @@
 export const projects = [
-
   {
     key: 0,
     title: "Gallo-Ocho",
@@ -9,6 +8,7 @@ export const projects = [
     technologies: [
       "Javascript",
       "React",
+      "CSS",
       "Bootstrap",
       "Simple-React-Lightbox",
       "Styled Components",
@@ -20,7 +20,7 @@ export const projects = [
       "Maintained a responsive design of various compute and mobile screen sizes",
       "Utilized EmailJS to provide form submission",
       "Used React as a frontend springboard",
-      "Implemented model viewer to be responsive and not load bearing to site speed."
+      "Implemented model viewer to be responsive and not load bearing to site speed.",
     ],
     youtube: "https://www.youtube.com/watch?v=Hx0522u5nak",
     github: "https://github.com/Markrodriguez003/galloocho",
@@ -40,11 +40,13 @@ export const projects = [
     subHeader: "Book suggestion site",
     content: `Are you having a hard time finding a book? Well Saseo can help
     you! Saseo offers users the ability to be suggested books by
-    subject or at random! Users will also have the ability to search
+    subject or at random! You can also search
     for more information on their favorite authors, as well as find
     books via ISBN.`,
     technologies: [
-      "ReactJS",
+      "Javascript",
+      "React",
+      "CSS",
       "Axios",
       "OpenLibrary API",
       "EmailJS",
@@ -63,12 +65,7 @@ export const projects = [
     youtube: "https://www.youtube.com/watch?v=Kgltbbmhn6c",
     github: "https://github.com/Markrodriguez003/saseo",
     site: "https://saseo.onrender.com",
-    images: [
-      "saseo.png",
-      "saseo-1.png",
-      "saseo-2.png",
-      "saseo-3.png",
-    ],
+    images: ["saseo.png", "saseo-1.png", "saseo-2.png", "saseo-3.png"],
     video: "https://www.youtube.com/watch?v=Kgltbbmhn6c",
   },
   {
@@ -76,13 +73,8 @@ export const projects = [
     title: "HBJO LAW ",
     subHeader: "Law firm website",
     content: `Official website for the Homer Bonner Jacobs Ortiz P.A. law firm. Managed by using Wordpress CMS. I assisted by helping modify the overall design of the website, appending new lawyer profiles, 
-    adding new pages with custom CSS styling, handling site inbox messages, troubleshooting and managed plugin integration such as the brochure add-on viewed on the site.`,
-    technologies: [
-      "Wordpress",
-      "HTML",
-      "Javascript",
-      "PHP",
-    ],
+    adding new pages with custom CSS styling, handling site inbox messages, troubleshooting and managed plugin integration.`,
+    technologies: ["Wordpress", "HTML", "Javascript", "PHP"],
     techniques: [
       "Form Validation & submission",
       "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios, ",
@@ -120,12 +112,7 @@ export const projects = [
     youtube: "https://www.youtube.com/watch?v=AQho4sa6kxc",
     github: "https://www.github.com/Markrodriguez003/SimpleLoad",
     site: "#",
-    images: [
-      "simpleload-1.png",
-
-
-
-    ],
+    images: ["simpleload-1.png"],
     video: "https://www.youtube.com/watch?v=AQho4sa6kxc",
   },
   {
@@ -134,8 +121,8 @@ export const projects = [
     subHeader: "Password generator.",
     content: `While password generators might seem simple, this specific password generator 
     offers more robust password generation by adding advance features such as prefix, 
-    postfix and key word insertion. In addition the user has access to create SSH keys.`,
-    technologies: ["Javascript", "Electron", "Jquery", "Crypto.js"],
+    postfix, key word insertion & SSH key generation.`,
+    technologies: ["Javascript", "CSS", "Electron", "Jquery", "Crypto.js"],
     techniques: [
       "Form Validation & submission",
       "Fetching data via multiple APIs (OpenLibrary & NY Times) using Axios, ",
@@ -151,7 +138,6 @@ export const projects = [
       "wagwoord-2.png",
       "wagwoord-3.png",
       "wagwoord-4.png",
-
     ],
     video: "https://www.youtube.com/watch?v=LSeEnGTH4E8",
   },
@@ -159,21 +145,19 @@ export const projects = [
     key: 5,
     title: "Portfolio",
     subHeader: "My web developer portfolio",
-    content: `My own developer portfolio? What better way to show off my skills than by providing my Github repo of this very website! I designed 
-    and produced this site to be interesting to the eyes and informational. Hopefully you like it! 
+    content: `What better way to show off my skills than by providing my own developer portfolio! I designed 
+    and produced this site to showcase my portfolio pieces. I hope you enjoy the site!
   `,
     technologies: [
       "Javascript",
       "React",
+      "CSS",
       "SweetAlert2",
       "DomPurify",
       "Use-Scramble",
-      "React-Player",
       "Yet-Another-React-Lightbox",
       "EmailJs",
       "Styled-Components",
-      "React-Google-Recaptcha",
-      "React Icons",
       "React-Responsive-Carousel",
       "File-Saver",
     ],
@@ -194,5 +178,4 @@ export const projects = [
     ],
     video: "#",
   },
-
 ];

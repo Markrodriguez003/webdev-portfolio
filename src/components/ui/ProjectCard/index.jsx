@@ -170,18 +170,19 @@ export function FullProjectCard({ props }) {
             </div>
           </CardHeader>
           <CardBody>
+            
             <Swiper
               slidesPerView={1}
-              pagination={{
-                type: "fraction",
-              }}
+              // pagination={{
+              //   type: "fraction",
+              // }}
               navigation={true}
               modules={[Pagination, Navigation]}
               // onSlideChange={() => console.log("slide change")}
               // onSwiper={(swiper) => console.log(swiper)}
               style={{
                 width: "62.5vw",
-                height: "auto",
+                height: "65vh",
               }}
             >
               {images.map((item, count) => {

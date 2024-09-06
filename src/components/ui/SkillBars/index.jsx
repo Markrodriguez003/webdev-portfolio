@@ -25,6 +25,10 @@ export function TechnologiesSkillsBar() {
           <h3>JAVASCRIPT</h3>
         </div>
         <div>
+          <FaPhp id={"flex-icon"} />
+          <h3>PHP</h3>
+        </div>
+        <div>
           <FaWordpress id={"flex-icon"} />
           <h3>WORDPRESS</h3>
         </div>
@@ -44,10 +48,10 @@ export function TechnologiesSkillsBar() {
           <DiJqueryLogo id={"flex-icon"} />
           <h3>JQUERY</h3>
         </div>
-        <div>
+        {/* <div>
           <SiNeutralinojs id={"flex-icon"} />
           <h3>NEUTRALINO</h3>
-        </div>
+        </div> */}
         <div>
           <TbBrandMongodb id={"flex-icon"} />
           <h3>MONGODB</h3>
@@ -93,10 +97,7 @@ export function FutureTechSkillsBar() {
           <TbBrandDjango id={"flex-icon"} />
           <h3>DJANGO</h3>
         </div>
-        <div>
-          <FaPhp id={"flex-icon"} />
-          <h3>PHP</h3>
-        </div>
+
       </BarContainer>
     </>
   );
