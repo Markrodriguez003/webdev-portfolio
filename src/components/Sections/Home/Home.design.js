@@ -121,7 +121,7 @@ export const WelcomeContainer = styled.div`
     color: white;
     font-weight: 600;
     margin-bottom: 10px;
-    letter-spacing: 3.2px;
+    /* letter-spacing: 3.2px; */
 
     @media (max-width: 1200px) {
       order: 1;
@@ -186,12 +186,13 @@ export const NavContainer = styled.nav`
   }
   & ul li a {
     color: white;
-    font-size: 3em;
-    font-weight: 300;
+    font-size: 2.5em;
+    font-weight: bold;
     letter-spacing: 1.5px;
     font-family: "body";
     text-decoration: none;
     /* padding: 2px; */
+
     transition: linear 0.2s;
   }
   & ul li a:link {

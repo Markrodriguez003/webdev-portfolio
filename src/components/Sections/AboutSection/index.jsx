@@ -83,7 +83,7 @@ function AboutSectionComp({ props }, ref) {
 
             <br />
             <p id="github-about">
-              <a href="https://github.com/Markrodriguez003" target="_blank">
+              <a href="https://github.com/Markrodriguez003" target="_blank" rel="noreferrer">
                 <img
                   src={githubIcon}
                   width={"20px"}

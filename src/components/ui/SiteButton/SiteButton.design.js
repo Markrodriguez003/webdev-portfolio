@@ -9,7 +9,7 @@ export const CustomAnchorBtn = styled.a`
     border: ${(props) =>
     props.styling !== undefined ? "white 2px solid" : "white 2px solid"};
     border-radius: 6px;
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: bold;
     margin: 6px;
     padding: 6px 8px;

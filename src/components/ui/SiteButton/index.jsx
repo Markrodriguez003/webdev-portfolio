@@ -19,13 +19,13 @@ export default function SiteButton(props) {
           target="_blank"
           className={styling}
         >
-            <span style={{ verticalAlign: "bottom" }}>{icon}</span>
-            {title}
+          <span style={{ verticalAlign: "center" }}>{icon}</span>
+          {title}
         </CustomAnchorBtn>
       ) : (
-        // <CustomBtn styling={styling} onClick={(event) => buttonInfo(event)}>
         <CustomBtn styling={styling}>
-          <span style={{ verticalAlign: "bottom" }}>{icon}</span>
+          {/* <CustomBtn styling={styling}> */}
+          <span style={{ verticalAlign: "center" }}>{icon}</span>
           {title}
         </CustomBtn>
       )}

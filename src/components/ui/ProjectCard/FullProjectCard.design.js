@@ -39,7 +39,7 @@ export const Card = styled.div`
   height: 100%;
   width: 100%;
   margin-right: 40px;
-  z-index: 1; 
+  z-index: 1;
 
   animation: ${(props) =>
     props.toggle
@@ -66,16 +66,15 @@ export const CardHeader = styled.div`
   justify-content: space-between;
   align-items: start;
   /* padding: 5px 5px; */
-  letter-spacing: 1.2px;
+  letter-spacing: 1.15px;
   margin-bottom: 5px;
   text-transform: uppercase;
-  font-family: "body";;
+  font-family: "body";
   border-bottom: grey 1px solid;
-  
 
   & #project-button-container * {
     display: inline;
-    
+
     @media screen and (max-width: 1200px) {
       display: none;
     }
@@ -115,9 +114,9 @@ export const CardBody = styled.section`
 `;
 
 export const CardProjectImage = styled.img`
-  width: 90%;
+  width: 88%;
   height: auto;
-  
+
   object-fit: cover;
 
   /* @media screen and (max-width: 1000px) {
@@ -141,7 +140,7 @@ export const ProjectBlurb = styled.section`
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
-  padding: 5px 0px;
+  padding: 0px 0px;
   width: 80%;
   text-align: left;
 
@@ -168,9 +167,5 @@ export const CardFooter = styled.section`
     justify-content: center;
     align-content: center;
     display: flex;
-    
-    
- 
-    
   }
 `;
