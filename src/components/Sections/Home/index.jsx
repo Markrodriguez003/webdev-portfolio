@@ -7,6 +7,9 @@ import {
   AstronautMini,
 } from "../Home/Home.design.js";
 
+// LIBRARIES
+import { useInView } from "react-intersection-observer";
+
 // COMPONENTS
 import AnimatedHeader from "../../ui/AnimatedHeader/index.jsx";
 import PlanetHeroScene from "../../ui/PlanetHeroScene/index.jsx";
@@ -40,10 +43,17 @@ function Home({ children }) {
     "uhh.. *Clears throat*",
   ];
 
+  // Intersection Observer for astronaut
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+
   return (
     <div>
       <PlanetHeroScene />
       {/* //! https://codesandbox.io/p/sandbox/scroll-component-forked-6rzrq2?file=%2Fsrc%2FForm.js%3A4%2C40&fontsize=14&hidenavigation=1&theme=dark */}
+      {/* //! https://www.linkedin.com/pulse/useeffect-mastery-tips-tricks-avoiding-common-mistakes-novin-noori */}
 
       <br />
       <br />
@@ -98,8 +108,9 @@ function Home({ children }) {
         <SoundMeter />
 
         <span>SCROLL TO EXPLORE</span>
-        <AstronautMini>
-          <div className="speech-bubble">
+        <AstronautMini key={"astro-mini-home"} ref={ref}>
+          {/* {console.log('Astronaut is in view?: ', inView)}; */}
+          <div className="speech-bubble" key={"astro-mini-bubble-home"}>
             <SpeechBubble
               direction="bottom-left"
               speech={dialogues}
@@ -107,6 +118,7 @@ function Home({ children }) {
               solidBorder={true}
               msTime={5000}
               italics={false}
+              visible={inView}
             />{" "}
           </div>
           <img src={astronautH}></img>

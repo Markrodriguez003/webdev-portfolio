@@ -1,57 +1,19 @@
 export const projects = [
   {
     key: 0,
-    title: "Gallo-Ocho",
-    subHeader: "Business Prototype Site",
-    content: `This site was built as a prototype front page for an art / sculpture business called Gallo Ocho based out of Miami, FL. 
-     `,
-    technologies: [
-      "Javascript",
-      "React",
-      "CSS",
-      "Bootstrap",
-      "Simple-React-Lightbox",
-      "Styled Components",
-      "Yet-Another-React-Lightbox",
-      "Google-Model-Viewer",
-    ],
-    techniques: [
-      "Implemented ReactJS for the frontend using React hooks & React-Router",
-      "Designed website layout & provided prototype to business owner",
-      "Used various NPM libraries such as Simple-React-Lightbox & Google-Model Viewer",
-      "Styled website with CSS, Bootstrap & Styled-Components",
-      "Created custom CSS animations, backgrounds, icons & images",
-      "Retrieved project / website data from JSON files",
-      "Maintained a responsive design for various computer & mobile screen sizes",
-      "Implemented model viewer (of rooster) to be responsive & not load bearing to site performance.",
-      "Assisted exporting model & model textures using Unity3D",
-    ],
-    futureUpdates: [
-      "Finalized site pages",
-      "Implement account creation & account dashboard",
-      "Add Shopify store with backend integration with MongoDB",
-    ],
-    youtube: "https://www.youtube.com/watch?v=Hx0522u5nak",
-    github: "https://github.com/Markrodriguez003/galloocho",
-    site: "https://galloocho.onrender.com",
-    images: [
-      "galloocho-1.png",
-      "galloocho-2.png",
-      "galloocho-3.png",
-      "galloocho-4.png",
-    ],
-    video: "https://www.youtube.com/watch?v=Hx0522u5nak",
-  },
-
-  {
-    key: 1,
     title: "Saseo (WIP)",
     subHeader: "Book suggestion site",
-    content: `Are you having a hard time finding a book? Well Saseo can help
+    content: [
+      `Are you having a hard time finding a book? Well Saseo can help
     you! Saseo offers users the ability to be suggested books by
-    subject or at random! You can also search
+    subject or at random!`,
+      `In addition to receiving suggested books, users can also search
     for more information on their favorite authors, as well as find
     books via ISBN.`,
+      `When developing this website I intially utilized Google Books API, but decided to go with OpenLibrary API as it was more robust in terms of book choices & book data.`,
+      "There are future plans to add magazines, shows, movies & account creation with interactive dashboard.",
+    ],
+
     technologies: [
       "Javascript",
       "React",
@@ -72,14 +34,14 @@ export const projects = [
       "Maintained a responsive design of various computer & mobile screen sizes",
       "Utilized NPM libraries such as Canvas-Confetti & AOS",
       "Stored & retrieved site cookies using React-Cookie library",
-      "Form Validation & submission using EmailJS & Formik",
+      "Form validation & submission using EmailJS & Formik",
     ],
     futureUpdates: [
-      "Implement account creation",
+      "Implement account creation & user dashboard",
       "Customizable art assets (bookmarks, account avatar, ect)",
       "Add AI assistance for book search suggestions",
-      "Expand search options to include magazines & audiobooks",
-      "Add account dashboard with book suggestion & books read",
+      "Expand search options to include magazines, movies, shows & audiobooks",
+      "Add account dashboard with book suggestion, wishlists & books read",
     ],
     youtube: "https://www.youtube.com/watch?v=Kgltbbmhn6c",
     github: "https://github.com/Markrodriguez003/saseo",
@@ -88,11 +50,63 @@ export const projects = [
     video: "https://www.youtube.com/watch?v=Kgltbbmhn6c",
   },
   {
+    key: 1,
+    title: "Gallo-Ocho",
+    subHeader: "Business Prototype Site",
+    content: [
+      "Grab a little piece of Miami! This site was built as a prototype site for an art / sculpture business called Gallo Ocho based out of Miami, FL.",
+      "The business owner wanted to create an art site that he could sell his custom made sculptures, merchandise & have a site for artists to participate.",
+      "There are plans to expand website by adding a Shopify store, account creation, artist portal, contact email & an inventory backend with MongoDB.",
+      "Base rooster model was provided by business owner as a prototype. I edited textures via Unity 3D.",
+    ],
+    technologies: [
+      "Javascript",
+      "React",
+      "CSS",
+      "Bootstrap",
+      "Simple-React-Lightbox",
+      "Styled Components",
+      "Yet-Another-React-Lightbox",
+      "Google-Model-Viewer",
+    ],
+    techniques: [
+      "Implemented ReactJS for the frontend using React hooks & React-Router",
+      "Designed website layout & provided prototype to business owner",
+      "Utilized NPM libraries such as Simple-React-Lightbox & Google-Model Viewer",
+      "Styled website with CSS, Bootstrap & Styled-Components",
+      "Created custom CSS animations, backgrounds, icons & images",
+      "Maintained a responsive design for various computer & mobile screen sizes",
+      "Retrieved project / website data from JSON files",
+      "Implemented model viewer (of rooster) to be responsive & not load bearing to site performance.",
+      "Assisted exporting model & model textures using Unity3D",
+    ],
+    futureUpdates: [
+      "Finalized site pages",
+      "Implement account creation & account dashboard",
+      "Add Shopify store with backend integration with MongoDB",
+    ],
+    youtube: "https://www.youtube.com/watch?v=Hx0522u5nak",
+    github: "https://github.com/Markrodriguez003/galloocho",
+    site: "https://galloocho.onrender.com",
+    images: [
+      "galloocho-1.png",
+      "galloocho-2.png",
+      "galloocho-3.png",
+      "galloocho-4.png",
+    ],
+    video: "https://www.youtube.com/watch?v=Hx0522u5nak",
+  },
+  {
     key: 2,
     title: "HBJO LAW ",
     subHeader: "Law firm website",
-    content: `Official website for the Homer Bonner Jacobs Ortiz P.A. law firm. Managed by using Wordpress CMS. I assisted by helping modify the overall design of the website, appending new lawyer profiles, 
-    adding new pages with custom CSS styling, handling site inbox messages, troubleshooting and managed plugin integration.`,
+    content: [
+      `Official website for the Homer Bonner Jacobs Ortiz P.A. law firm. Managed by using Wordpress CMS.`,
+      `I assisted by helping modify the overall design of the website, appending new lawyer profiles, & 
+    adding new pages with custom CSS styling.`,
+      `In addition I handled site inbox messages, troubleshooting and managed plugin integration.`,
+      `Future updates include adding a linkable repository of case victories, awards & accolades.`,
+    ],
     technologies: ["Wordpress", "HTML", "CSS", "Javascript", "PHP"],
     techniques: [
       "Assisted modifying site elements, such as inserting new reports, pages, & attorney profiles",
@@ -125,7 +139,12 @@ export const projects = [
     key: 3,
     title: "Simple-Load",
     subHeader: "Load file generator.",
-    content: `This simple to use web application is meant to help law firms create load files for large productions that need to be digested into any legal document platform.`,
+    content: [
+      `This simple to use stand alone web application is meant to help law firms create load files for large productions that need to be digested into any legal document platform.`,
+      `Most legal document platforms handled large productions that can be tens of thousands of pages. To facilitate this they usually have load files that contain all of the files metadata which is used to load in the files into their repositories.`,
+      `I wanted to create a simple solution for a complex problem so I utilized Neutrino to package this as a standalone application. `,
+      ``,
+    ],
     technologies: ["Javascript", "CSS", "Neutrino", "Jquery", "Node"],
     techniques: [
       "Designed application as a solution to a complex workplace problem (creating load file for massive document productions for legal software platforms such as CSDisco & NetDocuments) ",
@@ -151,9 +170,12 @@ export const projects = [
     key: 4,
     title: "Waagword",
     subHeader: "Password generator.",
-    content: `While password generators might seem simple, this specific password generator 
-    offers more robust password generation by adding advance features such as prefix, 
-    postfix, key word insertion & SSH key generation.`,
+    content: [
+      `While password generators might seem simple, this specific password generator offers more robust & secure password generation`,
+      `The application has advance features such as prefix, postfix, key word insertion & SSH key generation for complex password.`,
+      `I included prefix & postfix options because certain legal production require it when creating passwords. `,
+      `Future updates include having a password bank, password complexity checker & ASCII art password generation.`,
+    ],
     technologies: [
       "Javascript",
       "CSS",
@@ -190,15 +212,20 @@ export const projects = [
     key: 5,
     title: "Portfolio",
     subHeader: "My web developer portfolio",
-    content: `What better way to show off my skills than by providing my own developer portfolio! I designed 
-    and produced this site to showcase my portfolio pieces. 
-  `,
+
+    content: [
+      `What better way to show off my skills than by providing my own developer portfolio!`,
+      `I designed and produced this site to showcase my portfolio pieces, skills & resume.`,
+      `Initially I wanted to create a kaleidoscope styled art website but it became way too distracting so I kept it simple.`,
+      `There are many projects waiting in the wings so I will be updating this site often!`,
+    ],
     technologies: [
       "Javascript",
       "React",
       "CSS",
       "SweetAlert2",
       "DomPurify",
+      "react-intersection-observer",
       "Use-Scramble",
       "React-Lightbox",
       "EmailJs",
@@ -211,7 +238,7 @@ export const projects = [
       "Designed website layout with custom animations, using Styled-Components, CSS & NPM libraries such as Use-Scramble",
       "Maintained a responsive design of various computer & mobile screen sizes",
       "Integrated NPM libraries such as SweetAlert2, File-Saver & React-Lightbox",
-      "Provided form field verification, field data purification using DomPurify, & form submission using EmailJS to send completed forms to web master ",
+      "Provided form field verification, field data purification using DomPurify, & form submission using EmailJS to send completed forms to web master",
       "Retrieved project / website data from JSON files",
     ],
     futureUpdates: [

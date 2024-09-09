@@ -257,11 +257,7 @@ export function FullProjectCard({ props }) {
               onBeforeInit={(swiper) => {
                 cubeRef.current = swiper;
               }}
-
-
-
             >
-
               <SwiperSlide>
                 <Swiper
                   slidesPerView={1}
@@ -275,8 +271,6 @@ export function FullProjectCard({ props }) {
                     height: "auto",
                   }}
                 >
-
-
                   {images.map((item, count) => {
                     return (
                       <SwiperSlide key={("swiper-slide+", count)}>
@@ -290,12 +284,11 @@ export function FullProjectCard({ props }) {
                         />{" "}
                         <ProjectBlurb>
                           <section>
-                            <p>{content}</p>
+                            <p>{content[count]}</p>
                           </section>
-                          <br />
+                          <br />  
                           <section>
                             <p>
-
                               <strong>Technologies Used:</strong>{" "}
                               {technologies.map((tech) => {
                                 return `${tech} | `;
@@ -307,8 +300,6 @@ export function FullProjectCard({ props }) {
                       </SwiperSlide>
                     );
                   })}
-
-
                   {/*  // ? YOUTUBE VIDEO  */}
                   {/*  // ! FIX  */}
                   {/* {youtube !== "#" ? (
@@ -353,9 +344,7 @@ export function FullProjectCard({ props }) {
                   })}
                 </ul>
               </SwiperSlide>
-
             </Swiper>
-
           </CardBody>
           <CardFooter>
             <div>

@@ -15,6 +15,7 @@ function SpeechBubble(props) {
 
   useEffect(() => {
     // SETS NEW SENTENCE TO DIALOGUESENTENCE USESTATE
+    let unMount = true;
     function speechSetter(dialogue) {
       // console.log("setting this dialogue piece:: ", dialogue);
       setDialogueSentence(dialogue);
@@ -29,20 +30,30 @@ function SpeechBubble(props) {
 
     // TIMEOUT LOOP
     async function SpeechRepeater() {
-      if (props.loop) {
-        while (props.loop) {
+      if (props.visible) {
+        while (props.visible) {
           for (let x = 1; x < props.speech.length; x++) {
             await delay(props.msTime);
             speechSetter(props.speech[x]);
           }
         }
       } else {
-        console.log("HUH?");
+        clearTimeout(delay)
+        console.log('Done looping!')
       }
     }
 
-    SpeechRepeater();
+    // Stops message from speeding up and repeating over array chaotically
+    if (props.visible) {
+      SpeechRepeater();
+      console.log("Astronaut is looping!");
+    } else {
+      clearTimeout(delay);
+      console.log("");
+    }
     return () => {
+      console.log("Astronaut is NOT looping!");
+      clearTimeout(delay);
       // props.loop = false;
     };
   }, [props.loop, props.msTime, props.speech]);

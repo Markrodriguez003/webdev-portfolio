@@ -34,7 +34,7 @@ export const VideoContainer = styled.div`
    z-index: -9999;
    display:inline-block ;
    position: absolute;
-   filter: opacity(0.08) hue-rotate(2240deg) saturate(1.3);
+   filter: opacity(0.1) hue-rotate(2240deg) saturate(1.3);
    margin:0;
    padding:0;
    min-width:100%;
