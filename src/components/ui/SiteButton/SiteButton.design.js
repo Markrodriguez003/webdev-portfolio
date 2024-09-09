@@ -1,37 +1,32 @@
 import styled, { css, keyframes } from "styled-components";
 
-
 export const CustomAnchorBtn = styled.a`
   cursor: pointer;
-  
+
   text-decoration: none;
   background-color: transparent;
-    border: ${(props) =>
+  border: ${(props) =>
     props.styling !== undefined ? "white 2px solid" : "white 2px solid"};
-    border-radius: 6px;
-    font-size: 0.8em;
-    font-weight: bold;
-    margin: 6px;
-    padding: 6px 8px;
-    color: white;
-    transition: 0.25s ease-in-out;
-    cursor: pointer;
- 
-  
-      
-  @media screen and (max-width: 445px) {
-     float:left; 
-    clear:left; 
-    
- 
-    
-  }
+  border-radius: 6px;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin: 6px;
+  padding: 6px 8px;
+  color: white;
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
 
-    &:hover {
-      background-color: white;
-      color: black;
-    }
- 
+  @media screen and (max-width: 445px) {
+    float: left;
+    clear: left;
+  }
+  @media (max-height: 725px) {
+    font-size: 0.65em;
+  }
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 
   & .active {
     background-color: yellow;
@@ -47,7 +42,7 @@ export const CustomAnchorBtn = styled.a`
     &:hover {
       background-color: transparent;
       border: aliceblue 2px solid;
-      color:aliceblue;
+      color: aliceblue;
     }
   }
   & .youtube {
@@ -77,24 +72,24 @@ export const CustomBtn = styled.button`
   cursor: pointer;
   text-decoration: none;
 
- 
-    background-color: aliceblue;
-    border: ${(props) =>
+  background-color: aliceblue;
+  border: ${(props) =>
     props.styling !== undefined ? "white 2px solid" : "white 2px solid"};
-    border-radius: 6px;
-    font-size: 1em;
-    font-weight: bold;
-    margin: 4px;
-    padding: 6px 15px;
-    color: black;
-    transition: 0.25s ease-in-out;
-    cursor: pointer;
-
-    &:hover {
-      background-color: transparent;
-      color: aliceblue;
-    }
-  
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 4px;
+  padding: 6px 15px;
+  color: black;
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
+  @media (max-height: 725px) {
+    font-size: 0.75em;
+  }
+  &:hover {
+    background-color: transparent;
+    color: aliceblue;
+  }
 
   & button:active {
     /* background-color: yellow; */
@@ -110,8 +105,7 @@ export const CustomBtn = styled.button`
     &:hover {
       background-color: black;
       border: aliceblue 2px solid;
-      color:aliceblue;
+      color: aliceblue;
     }
   }
-  
 `;

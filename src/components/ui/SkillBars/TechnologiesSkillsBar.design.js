@@ -54,6 +54,11 @@ export const BarContainer = styled.div`
     @media (max-width: 1199px) {
       margin-bottom: 0px;
     }
+
+    @media (max-height: 725px) {
+      font-size: 0.75em;
+
+      }
   }
 
   & div #flex-icon {
@@ -61,6 +66,10 @@ export const BarContainer = styled.div`
     background-color:  rgba(215,60,0,1);
     color: white;
     font-size: 30px;
+
+    @media (max-height: 725px) {
+      font-size: 24px;
+      }
   }
 `;
 

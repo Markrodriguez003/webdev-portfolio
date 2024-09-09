@@ -46,13 +46,13 @@ function SpeechBubble(props) {
     // Stops message from speeding up and repeating over array chaotically
     if (props.visible) {
       SpeechRepeater();
-      console.log("Astronaut is looping!");
+      // console.log("Astronaut is looping!");
     } else {
       clearTimeout(delay);
       console.log("");
     }
     return () => {
-      console.log("Astronaut is NOT looping!");
+      // console.log("Astronaut is NOT looping!");
       clearTimeout(delay);
       // props.loop = false;
     };

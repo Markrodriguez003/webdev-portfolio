@@ -20,7 +20,7 @@ export const SectionContainer = styled.div`
 export const LeftHeaderColumn = styled.div`
   display: flex;
   width: 22%;
-  /* background-color: cadetblue; */
+
   flex-direction: column;
   padding: 25px 0px 0px 20px;
 
@@ -35,6 +35,10 @@ export const LeftHeaderColumn = styled.div`
     @media (max-width: 380px) {
       font-size: 0.2em;
     }
+  }
+
+  & p a span{
+    font-size: 1em !important;
   }
 
   // 2k/4k Monitors
@@ -121,7 +125,10 @@ export const RightColumnPanel = styled.div`
     padding: 5px;
     /* color: black !important; */
     @media (max-height: 725px) {
-      font-size: 1.2em;
+      font-size: 1em;
+      float: "left";
+      text-align: left;
+      padding: 0px;
     }
     & h2 #normal-header {
       text-align: left;
@@ -132,6 +139,11 @@ export const RightColumnPanel = styled.div`
       color: black !important;
       padding-right: 50px;
       text-align: right;
+
+      @media (max-height: 725px) {
+        padding-right: 0px;
+        text-align: left;
+      }
     }
 
     &:nth-child(odd) {
@@ -139,7 +151,11 @@ export const RightColumnPanel = styled.div`
       color: black;
       padding-right: 50px;
       text-align: right;
-
+      @media (max-height: 725px) {
+        padding-right: 0px;
+        text-align: left;
+        font-size: 1em;
+      }
       & * {
         color: black !important;
       }

@@ -1,5 +1,5 @@
 // REACT
-import { useState, forwardRef } from "react";
+import { useState, forwardRef, useRef } from "react";
 
 // COMPONENTS
 import HeaderBorderBox from "../../ui/HeaderBorderBox";
@@ -12,6 +12,8 @@ import { FaRegEnvelope, FaLinkedin } from "react-icons/fa";
 import { LuMenuSquare } from "react-icons/lu";
 import { PiKeyReturnBold } from "react-icons/pi";
 
+// LIBRARIES
+import { useInView } from "react-intersection-observer";
 // ASSETS
 // IMAGES / GIFS
 import alien from "../../../assets/gifs/alien.gif";
@@ -99,7 +101,7 @@ function PDFViewer() {
   );
 }
 
-function ContactSectionComp({ props }, ref) {
+function ContactSectionComp({ props }, refPDF) {
   const [pdfModal, setPdfModal] = useState(false);
 
   function pdfModalClick(event) {
@@ -110,11 +112,17 @@ function ContactSectionComp({ props }, ref) {
   function vCardDownload() {
     fileSaver.saveAs(
       import.meta.env.REACT_APP_CLIENT_URL +
-        "../src/assets/download/Mark-Rodriguez.vcf",
+      "../src/assets/download/Mark-Rodriguez.vcf",
       "Mark-Rodriguez.vcf"
     );
   }
 
+
+  // Intersection Observer for astronaut
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+  })
   return (
     <div>
       {pdfModal === true ? (
@@ -127,7 +135,7 @@ function ContactSectionComp({ props }, ref) {
       ) : (
         <></>
       )}
-      <SectionContainer ref={ref}>
+      <SectionContainer ref={refPDF}>
         <LeftHeaderColumn>
           <HeaderBorderBox props={{ type: "solar", title: "CONTACT" }} />
           <HeaderDetailsPanel>
@@ -176,7 +184,7 @@ function ContactSectionComp({ props }, ref) {
             </p> */}
             {/* <br /> */}
             <p>
-              <a href="https://github.com/Markrodriguez003" target="_blank">
+              <a href="https://github.com/Markrodriguez003" target="_blank" rel="noreferrer">
                 <img
                   src={githubIcon}
                   width={"20px"}
@@ -217,7 +225,8 @@ function ContactSectionComp({ props }, ref) {
                 </div>
 
                 <div className="contact-astronaut">
-                  <AstronautContact>
+                  <AstronautContact key={"astro-mini-home"} ref={ref}  >
+                    {console.log("CONTACT ASTRO " + inView)}
                     <SpeechAstronautBubble>
                       <SpeechBubble
                         speech={dialogues}
@@ -226,6 +235,7 @@ function ContactSectionComp({ props }, ref) {
                         solidBorder={true}
                         msTime={5000}
                         italics={false}
+                        visible={true}
                       />
                     </SpeechAstronautBubble>
                   </AstronautContact>
@@ -269,7 +279,7 @@ function ContactSectionComp({ props }, ref) {
                 />
                 <a
                   href="https://www.github.com/MarkRodriguez003"
-                  target="_blank"
+                  target="_blank" rel="noreferrer"
                 >
                   <span style={{ fontSize: "16px" }}>
                     {" "}
@@ -283,7 +293,7 @@ function ContactSectionComp({ props }, ref) {
                   <FaRegEnvelope
                     style={{ verticalAlign: "center", paddingRight: "5px" }}
                   />
-                  <span style={{ fontSize: "16px" }}>
+                  <span >
                     Email: MarkRodriguez003@gmail.com
                   </span>
                 </a>
