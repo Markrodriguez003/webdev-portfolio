@@ -97,6 +97,11 @@ export const RightColumnPanel = styled.div`
     @media (max-width: 380px) {
       text-align: left;
     }
+
+    @media (max-height: 720px) {
+    font-size: 85%;
+      
+    }
   }
 
   & h1 {
@@ -109,6 +114,10 @@ export const RightColumnPanel = styled.div`
     @media (max-width: 1200px) {
       font-size: 2em;
     }
+    @media (max-height: 720px) {
+    font-size: 1.5em;
+      
+    }
 
     & * {
       color: black !important;
@@ -119,6 +128,10 @@ export const RightColumnPanel = styled.div`
     display: inline-block;
     padding: 5px;
     /* color: black !important; */
+    @media (max-height: 720px) {
+    font-size: 1.2em;
+      
+    }
 
     & h2 #normal-header {
       text-align: left;
@@ -157,6 +170,8 @@ export const RightColumnPanel = styled.div`
     margin-right: auto;
   }
 `;
+
+
 
 export const HeaderDetailsPanel = styled.div`
   @media (max-width: 1200px) {
