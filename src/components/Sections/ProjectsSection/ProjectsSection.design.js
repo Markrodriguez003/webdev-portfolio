@@ -93,7 +93,12 @@ export const ProjectItem = styled.li`
     props.selected === true ? "wght 582" : "wght 311"};
   letter-spacing: ${(props) => (props.selected === true ? "-3px" : "0.1px")};
   transition: 0.2s linear;
-s`;
+
+  @media (max-height: 720px) {
+    font-size: 22px;
+}
+`;
+
 export const ProjectsUL = styled.ul`
   position: absolute;
   text-decoration: none;

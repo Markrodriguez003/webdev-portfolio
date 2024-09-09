@@ -8,7 +8,6 @@ export const SectionContainer = styled.div`
   height: 100%;
   width: 100%;
   transition: none;
-  
 
   @media (max-width: 1200px) {
     border-left: none;
@@ -32,12 +31,6 @@ export const LeftHeaderColumn = styled.div`
     justify-content: center;
   }
 
-  /* & p {
-    @media (max-width: 1200px) {
-      display: none;
-    }
-  } */
-
   & p #resume-about {
     @media (max-width: 380px) {
       font-size: 0.2em;
@@ -56,7 +49,9 @@ export const LeftHeaderColumn = styled.div`
 
     width: 280px;
     text-align: left;
-
+    @media (max-height: 725px) {
+      font-size: 1em;
+    }
     @media (max-width: 1200px) {
       text-align: center;
       padding-left: 0px;
@@ -97,10 +92,8 @@ export const RightColumnPanel = styled.div`
     @media (max-width: 380px) {
       text-align: left;
     }
-
-    @media (max-height: 720px) {
-    font-size: 85%;
-      
+    @media (max-height: 725px) {
+      font-size: 0.8em;
     }
   }
 
@@ -114,9 +107,8 @@ export const RightColumnPanel = styled.div`
     @media (max-width: 1200px) {
       font-size: 2em;
     }
-    @media (max-height: 720px) {
-    font-size: 1.5em;
-      
+    @media (max-height: 725px) {
+      font-size: 1.5em;
     }
 
     & * {
@@ -128,11 +120,9 @@ export const RightColumnPanel = styled.div`
     display: inline-block;
     padding: 5px;
     /* color: black !important; */
-    @media (max-height: 720px) {
-    font-size: 1.2em;
-      
+    @media (max-height: 725px) {
+      font-size: 1.2em;
     }
-
     & h2 #normal-header {
       text-align: left;
     }
@@ -170,8 +160,6 @@ export const RightColumnPanel = styled.div`
     margin-right: auto;
   }
 `;
-
-
 
 export const HeaderDetailsPanel = styled.div`
   @media (max-width: 1200px) {
