@@ -44,8 +44,6 @@ export const AboutDetailsPanel = styled.div`
   margin-bottom: 30px;
 
 
-
-
   // 2K/4K MONITORS
   @media screen and (min-width: 2025px) {
     margin-right: 120px;

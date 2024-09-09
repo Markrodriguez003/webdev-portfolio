@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { IoMdArrowDropright } from "react-icons/io";
+import { IoMdArrowDropdown, IoMdArrowDropright, IoMdArrowDropup } from "react-icons/io";
 import { AccordionContainer, AccordionPanel } from "./Accordion.design";
 
 export function AccordionPanels(props) {
@@ -13,25 +13,27 @@ export function AccordionPanels(props) {
   return (
     <AccordionPanel onClick={handleClick} $toggle={togglePanel}>
       <h4>
-        <IoMdArrowDropright style={{ verticalAlign: "bottom" }} />{" "}
         {props.children}
+        {togglePanel ? <IoMdArrowDropup style={{ verticalAlign: "bottom" }} /> : <IoMdArrowDropdown style={{ verticalAlign: "bottom" }} />}
+        {/* <IoMdArrowDropdown style={{ verticalAlign: "bottom" }} />{" "} */}
       </h4>
-      <section>{props.content}</section>
+      <section style={{ background: "transparent" }}>{props.content}</section>
     </AccordionPanel>
   );
 }
 
 function Accordion(props) {
-  const accordionPanelHeaders = ["Technologies used:", "Techniques used:"];
+  // const accordionPanelHeaders = ["Programming Highlights:"];
   return (
     <AccordionContainer>
-      {accordionPanelHeaders.map((item, index) => {
-        return (
-          <AccordionPanels key={`${item} - ${index}`} props={props}>
-            {item}
-          </AccordionPanels>
-        );
-      })}
+      {/* {accordionPanelHeaders.map((item, index) => { */}
+      {/* return ( */}
+      <AccordionPanels key={`${props.header} - ${props.header}`} content={props.children}>
+        {props.header}
+      </AccordionPanels>
+      {/* ); */}
+      {/* })} */}
+
     </AccordionContainer>
   );
 }

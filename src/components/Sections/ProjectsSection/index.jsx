@@ -27,15 +27,16 @@ import HeaderBorderBox from "../../ui/HeaderBorderBox";
 import { FullProjectCard, MiniProjectCard } from "../../ui/ProjectCard";
 import { projects } from "../../../../data/projectContent";
 
+
 function ProjectsSectionComp({ props }, ref) {
   const [SlideProject, setSlideProject] = useState(0);
   const [click, setClick] = useState(false);
   const [update, setUpdate] = useState(false);
   const [revealFade, setRevealFade] = useState(false);
   const [projectSelect, setProjectSelect] = useState([
-    true, // SASEO
-    false, // NEPTUNES COVE
-    false, // OWADI-OWIWI
+    true, // GALLO OCHO
+    false, // SASEO
+    false, // HBJO SITE
     false, // ONLOAD
     false, // WAAGWORD
   ]);

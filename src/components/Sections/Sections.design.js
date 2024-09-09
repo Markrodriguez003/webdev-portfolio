@@ -100,7 +100,7 @@ export const RightColumnPanel = styled.div`
   }
 
   & h1 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     background-color: aliceblue;
     color: black;
     display: inline-block;

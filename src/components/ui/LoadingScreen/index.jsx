@@ -12,7 +12,7 @@ function LoadingScreen() {
 
   // Delays loading function for 4.5 seconds in fast/slow network downloads
   useEffect(() => {
-    const myTimeout = setTimeout(() => { console.log("WHOA!") }, 45000);
+    const myTimeout = setTimeout(() => { console.log("") }, 45000);
     return () => {
       myTimeout;
       clearTimeout(myTimeout);

@@ -112,7 +112,7 @@ function AboutSectionComp({ props }, ref) {
             </h1>
             <p id="main-about">
               {" "}
-              I am a growth-oriented full-stack web developer with 4 years of
+              I am a growth-oriented Front-end web developer with 4 years of
               experience building websites and web apps that include designing,
               testing, maintaining, and implementing backend-to-frontend
               integration. Web development is a complex field in which I strive

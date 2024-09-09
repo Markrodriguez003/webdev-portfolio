@@ -1,17 +1,42 @@
 import styled, { css, keyframes } from "styled-components";
 
+// ANIMATION
+const rainbowFX = keyframes`
+ /* from {background-color: tomato;}
+ to {background-color: darkgoldenrod;} */
+ 0% {
+		background-color:indigo ;
+	}
+	25% {
+		background-color:darkgreen;
+	}
+	50% {
+		background-color: rgba(255,0,195,1);
+	}
+	75% {
+		background-color: rgba(255,100,0,1);
+	}
+	100% {
+		background-color: rgba(205,5,25,1);
+	}
+`;
 export const BarContainer = styled.div`
   display: flex;
   position: relative;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 20px;
   margin-top: 25px;
-
+  background-color: transparent;
   justify-content: space-evenly;
   align-content: center;
   align-items: center;
+  overflow: auto;
   cursor: pointer;
+
+  @media (max-width: 1199px) {
+    flex-wrap: wrap;
+  }
   & div * {
     display: flex;
     position: column;
@@ -19,21 +44,23 @@ export const BarContainer = styled.div`
     justify-content: center;
     align-items: center;
     align-content: center;
-    font-size: 0.9em;
+    font-size: 0.85em;
     margin-left: auto;
     margin-right: auto;
     transition: 2s ease-in-out;
     color: aliceblue;
     margin-bottom: 12px;
+
     @media (max-width: 1199px) {
       margin-bottom: 0px;
     }
   }
 
   & div #flex-icon {
-    background-color: goldenrod;
+    /* animation: ${rainbowFX} 10s infinite alternate ease-in-out; */
+    background-color:  rgba(215,60,0,1);
     color: white;
-    font-size: 28px;
+    font-size: 30px;
   }
 `;
 

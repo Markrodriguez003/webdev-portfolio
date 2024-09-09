@@ -52,6 +52,38 @@ import { FaUserAstronaut, FaSatellite, FaSatelliteDish, FaRocket, FaCube, FaTool
 import { GiMoonOrbit } from "react-icons/gi";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 import { MdSatelliteAlt } from "react-icons/md";
+
+// TECHNIQUE STYLING
+let techIconStyling = {
+  verticalAlign: "bottom",
+  marginRight: "5px",
+  fontWeight: "bold"
+}
+
+// ARRAY OF ICONS FOR TECHNIQUES
+const techIcons = [
+  <BiSolidInvader key="invader" style={techIconStyling} />,
+  <FaUserAstronaut key="astronaut" style={techIconStyling} />,
+  <HiOutlineWrenchScrewdriver key="screwdriver" style={techIconStyling} />,
+  <FaSatellite key="satellite" style={techIconStyling} />,
+  <FaSatelliteDish key="satellite2" style={techIconStyling} />,
+  <FaRocket key="satellite2" style={techIconStyling} />,
+  <FaTools key="satellite2" style={techIconStyling} />,
+  <FaScrewdriver key="satellite2" style={techIconStyling} />,
+  <FaStar key="satellite2" style={techIconStyling} />,
+  <FaCog key="satellite2" style={techIconStyling} />,
+  <FaCube key="satellite2" style={techIconStyling} />,
+  <TbAlienFilled key="satellite2" style={techIconStyling} />,
+  <TbUfo key="satellite2" style={techIconStyling} />,
+  <TbGalaxy key="satellite2" style={techIconStyling} />,
+  <PiMoonStarsFill key="satellite2" style={techIconStyling} />,
+  <SiMoonrepo key="satellite2" style={techIconStyling} />,
+  <GiMoonOrbit key="satellite2" style={techIconStyling} />,
+  <BiSolidPlanet key="satellite2" style={techIconStyling} />,
+  <MdSatelliteAlt key="satellite2" style={techIconStyling} />,
+]
+
+
 // CSS
 import "./ProjectCard.styles.css";
 import "swiper/css";
@@ -72,10 +104,10 @@ export function FullProjectCard({ props }) {
     technologies,
     youtube,
     techniques,
+    futureUpdates,
     images,
     video,
   } = props;
-
 
   // VIDEO REF
   const videoRef = useRef();
@@ -108,37 +140,6 @@ export function FullProjectCard({ props }) {
   }
 
 
-
-
-  // TECHNIQUE STYLING
-  let techIconStyling = {
-    verticalAlign: "bottom",
-    marginRight: "5px",
-    fontWeight: "bold"
-  }
-
-  // ARRAY OF ICONS FOR TECHNIQUES
-  const techIcons = [
-    <BiSolidInvader key="invader" style={techIconStyling} />,
-    <FaUserAstronaut key="astronaut" style={techIconStyling} />,
-    <HiOutlineWrenchScrewdriver key="screwdriver" style={techIconStyling} />,
-    <FaSatellite key="satellite" style={techIconStyling} />,
-    <FaSatelliteDish key="satellite2" style={techIconStyling} />,
-    <FaRocket key="satellite2" style={techIconStyling} />,
-    <FaTools key="satellite2" style={techIconStyling} />,
-    <FaScrewdriver key="satellite2" style={techIconStyling} />,
-    <FaStar key="satellite2" style={techIconStyling} />,
-    <FaCog key="satellite2" style={techIconStyling} />,
-    <FaCube key="satellite2" style={techIconStyling} />,
-    <TbAlienFilled key="satellite2" style={techIconStyling} />,
-    <TbUfo key="satellite2" style={techIconStyling} />,
-    <TbGalaxy key="satellite2" style={techIconStyling} />,
-    <PiMoonStarsFill key="satellite2" style={techIconStyling} />,
-    <SiMoonrepo key="satellite2" style={techIconStyling} />,
-    <GiMoonOrbit key="satellite2" style={techIconStyling} />,
-    <BiSolidPlanet key="satellite2" style={techIconStyling} />,
-    <MdSatelliteAlt key="satellite2" style={techIconStyling} />,
-  ]
 
 
   return (
@@ -221,7 +222,7 @@ export function FullProjectCard({ props }) {
                 <SiteButton
                   type=""
                   styling="youtube"
-                  title="Techniques Used"
+                  title="Project Hightlights"
 
                   icon={<FaUserAstronaut />}
                 />
@@ -295,7 +296,7 @@ export function FullProjectCard({ props }) {
                           <section>
                             <p>
 
-                              <strong>Technologies used:</strong>{" "}
+                              <strong>Technologies Used:</strong>{" "}
                               {technologies.map((tech) => {
                                 return `${tech} | `;
                               })}
@@ -331,14 +332,23 @@ export function FullProjectCard({ props }) {
                          )} */}
                 </Swiper>
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide style={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
                 <br />
-
-                <h1 style={{ verticalAlign: "bottom", }}><FaKeyboard size={40} style={{ paddingRight: "10px", verticalAlign: "bottom" }} />Techniques used:</h1>
-                <ul style={{ textAlign: "left", display: "flex", flexDirection: "column", listStylePosition: "outside", float: "left", listStyle: "none", gap: "10px", justifyContent: "start", alignContent: "start", alignItems: "start", padding: "50px" }}>
+                <p style={{ verticalAlign: "bottom", fontSize: "30px", fontWeight: "bold", }}>Project Hightlights:</p>
+                <ul style={{ textAlign: "left", display: "flex", flexDirection: "column", listStyle: "none", gap: "10px", justifyContent: "start", alignContent: "start", alignItems: "start", paddingTop: "15px" }}>
                   {techniques.map((tech) => {
                     return (
-                      <li key={tech + "list-item"} style={{ listStylePosition: "outside", float: "left" }}>{techIcons[Math.floor(Math.random() * techIcons.length)]} {tech}</li>
+                      <li key={tech + "list-item"} style={{ listStylePosition: "outside" }}>{techIcons[Math.floor(Math.random() * techIcons.length)]} {tech}</li>
+                    );
+                  })}
+                </ul>
+
+                <p style={{ verticalAlign: "bottom", fontSize: "30px", fontWeight: "bold", marginTop: "25px  " }}>Future Updates:</p>
+
+                <ul style={{ display: "flex", flexDirection: "column", listStyle: "none", gap: "10px", justifyContent: "start", alignContent: "start", alignItems: "start", paddingTop: "15px" }}>
+                  {futureUpdates.map((tech) => {
+                    return (
+                      <li key={tech + "list-item"} style={{ listStylePosition: "outside", }}>{techIcons[1]} {tech}</li>
                     );
                   })}
                 </ul>
@@ -373,7 +383,7 @@ export function FullProjectCard({ props }) {
               <SiteButton
                 type=""
                 styling="youtube"
-                title="Techniques Used"
+                title="Project Highlights"
               // icon={<IoLogoYoutube />}
               />
 
@@ -395,6 +405,7 @@ export function MiniProjectCard({ props }) {
     technologies,
     youtube,
     techniques,
+    futureUpdates,
     images,
     video,
   } = props;
@@ -525,16 +536,36 @@ export function MiniProjectCard({ props }) {
               <br />
               <section>
                 <p>
-                  <strong>Technologies used:</strong>{" "}
+                  <strong>Technologies Used:</strong>{" "}
                   {technologies.map((tech) => {
                     return `${tech} | `;
                   })}
                 </p>
               </section>
               <br />
+
+              <Accordion header="Project Highlights:">
+                <ul style={{ textAlign: "left", display: "flex", flexDirection: "column", listStyle: "none", gap: "10px", justifyContent: "start", alignContent: "start", alignItems: "start", padding: "12px 0px" }}>
+                  {techniques.map((tech) => {
+                    return (
+                      <li key={tech + "list-item"} style={{ listStylePosition: "outside", float: "left" }}>{techIcons[Math.floor(Math.random() * techIcons.length)]} {tech}</li>
+                    );
+                  })}
+                </ul>
+              </Accordion>
+              <Accordion header="Future Updates:">
+                <ul style={{ display: "flex", flexDirection: "column", listStyle: "none", gap: "10px", justifyContent: "start", alignContent: "start", alignItems: "start", paddingTop: "15px" }}>
+                  {futureUpdates.map((tech) => {
+                    return (
+                      <li key={tech + "list-item"} style={{ listStylePosition: "outside", }}>{techIcons[1]} {tech}</li>
+                    );
+                  })}
+                </ul>
+              </Accordion>
             </ProjectBlurb>
           </CardBody>
           <CardFooter>
+
             <div>
               {github !== "#" ? (
                 <SiteButton

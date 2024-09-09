@@ -7,26 +7,30 @@ export const AccordionContainer = styled.div`
   justify-content: start;
   align-content: start;
   width: 100%;
+
   height: auto;
+
+  & * {
+  }
 `;
 
 export const AccordionPanel = styled.div`
   font-family: "body";
   color: white;
-  margin-bottom:20px;
+  margin-bottom: 40px;
 
   & h4 {
     cursor: pointer;
-    padding: 5px;
+    padding: 0px;
   }
   & section {
-    transition: 0.3s ease-in-out;
+    transition: 0.4s ease-in-out;
     position: relative;
-    background-color: darkgrey;
+    background-color: transparent;
     padding-left: 25px;
     word-wrap: break-word;
     /* height: 0px; */
-    height: ${(props) => (props.$toggle ? "100px" : "0px")};
+    max-height: ${(props) => (props.$toggle ? "1000px" : "0px")};
     overflow: hidden;
   }
 `;
