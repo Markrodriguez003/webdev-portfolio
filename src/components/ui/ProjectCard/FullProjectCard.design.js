@@ -169,3 +169,33 @@ export const CardFooter = styled.section`
     display: flex;
   }
 `;
+
+export const ProjectUL = styled.ul`
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 10px;
+  justify-content: start;
+  align-content: start;
+  align-items: start;
+  padding-top: 15px;
+`;
+
+export const ProjectULHeader = styled.h3`
+  vertical-align: bottom;
+  font-size: 30px;
+  font-weight: bold;
+  @media screen and (max-height: 725px) {
+    font-size: 22px;
+  }
+
+`;
+
+export const ProjectLI = styled.li`
+  list-style-position: outside;
+  float: left;
+  @media screen and (max-height: 725px) {
+    font-size: 14px;
+  }
+`;

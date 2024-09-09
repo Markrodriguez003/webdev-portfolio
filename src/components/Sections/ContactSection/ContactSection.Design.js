@@ -114,30 +114,30 @@ export const ModalOuterContainer = styled.div`
 `;
 
 export const MiniContactInfoPanel = styled.div`
-display:none ;
-color:white;
-text-align: center ;
+  display: none;
+  color: white;
+  text-align: center;
 
-@media (max-width: 1200px) {
-  display:flex ;
-  flex-direction: column ;
-  text-align: center ;
-  margin-left:auto;
-  margin-right:auto;
-  justify-content: center ;
-  justify-items: center ;
-  align-content: center ;
-  align-items: center ;
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
 
-  & p a {
-    text-align: center ;
-  margin-left:auto;
-  margin-right:auto;
-  justify-content: center ;
-  align-content: center ;
+    & p a {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      align-content: center;
+    }
   }
-  }
-`
+`;
 
 export const ModalExitBtn = styled.button`
   color: white;
@@ -199,6 +199,12 @@ export const Satellite = styled.div`
   margin-left: auto;
   animation: ${floatB} 18s ease-in-out infinite;
   z-index: 1;
+
+  & #satellite-speechbubble {
+    @media (max-height: 725px) {
+      top: 25px;
+    }
+  }
 `;
 
 export const AstronautContact = styled.div`
@@ -223,6 +229,9 @@ export const SpeechAstronautBubble = styled.div`
   right: 70px;
   transform: scaleX(-1);
   display: inline-block;
+  @media (max-height: 725px) {
+    top: 225px;
+  }
 `;
 
 export const FullContactView = styled.div`

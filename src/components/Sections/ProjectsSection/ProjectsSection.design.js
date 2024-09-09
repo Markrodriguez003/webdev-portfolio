@@ -95,7 +95,7 @@ export const ProjectItem = styled.li`
   transition: 0.2s linear;
 
   @media (max-height: 720px) {
-    font-size: 22px;
+    font-size: 18.5px;
 }
 `;
 

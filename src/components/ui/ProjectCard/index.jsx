@@ -16,7 +16,10 @@ import {
   CardFooter,
   ProjectBlurb,
   ProjectVideo,
+  ProjectULHeader,
   CardProjectImage,
+  ProjectUL,
+  ProjectLI,
 } from "./FullProjectCard.design";
 
 // REACT
@@ -139,9 +142,6 @@ export function FullProjectCard({ props }) {
     cubeRef.current?.slideNext();
   }
 
-
-
-
   return (
     <>
       <Lightbox
@@ -230,8 +230,6 @@ export function FullProjectCard({ props }) {
             </div>
           </CardHeader>
           <CardBody>
-
-
             <Swiper
               direction="vertical"
               effect={'cube'}
@@ -286,7 +284,7 @@ export function FullProjectCard({ props }) {
                           <section>
                             <p>{content[count]}</p>
                           </section>
-                          <br />  
+                          <br />
                           <section>
                             <p>
                               <strong>Technologies Used:</strong>{" "}
@@ -325,24 +323,24 @@ export function FullProjectCard({ props }) {
               </SwiperSlide>
               <SwiperSlide style={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
                 <br />
-                <p style={{ verticalAlign: "bottom", fontSize: "30px", fontWeight: "bold", }}>Project Hightlights:</p>
-                <ul style={{ textAlign: "left", display: "flex", flexDirection: "column", listStyle: "none", gap: "10px", justifyContent: "start", alignContent: "start", alignItems: "start", paddingTop: "15px" }}>
+                <ProjectULHeader>Project Hightlights:</ProjectULHeader>
+                <ProjectUL>
                   {techniques.map((tech) => {
                     return (
-                      <li key={tech + "list-item"} style={{ listStylePosition: "outside" }}>{techIcons[Math.floor(Math.random() * techIcons.length)]} {tech}</li>
+                      <ProjectLI key={tech + "list-item"}>{techIcons[Math.floor(Math.random() * techIcons.length)]} {tech}</ProjectLI>
                     );
                   })}
-                </ul>
+                </ProjectUL>
+                <br />
+                <ProjectULHeader>Future Updates:</ProjectULHeader>
 
-                <p style={{ verticalAlign: "bottom", fontSize: "30px", fontWeight: "bold", marginTop: "25px  " }}>Future Updates:</p>
-
-                <ul style={{ display: "flex", flexDirection: "column", listStyle: "none", gap: "10px", justifyContent: "start", alignContent: "start", alignItems: "start", paddingTop: "15px" }}>
+                <ProjectUL >
                   {futureUpdates.map((tech) => {
                     return (
-                      <li key={tech + "list-item"} style={{ listStylePosition: "outside", }}>{techIcons[1]} {tech}</li>
+                      <ProjectLI key={tech + "list-item"}>{techIcons[1]} {tech}</ProjectLI>
                     );
                   })}
-                </ul>
+                </ProjectUL>
               </SwiperSlide>
             </Swiper>
           </CardBody>
@@ -534,22 +532,22 @@ export function MiniProjectCard({ props }) {
               <br />
 
               <Accordion header="Project Highlights:">
-                <ul style={{ textAlign: "left", display: "flex", flexDirection: "column", listStyle: "none", gap: "10px", justifyContent: "start", alignContent: "start", alignItems: "start", padding: "12px 0px" }}>
+                <ProjectUL>
                   {techniques.map((tech) => {
                     return (
-                      <li key={tech + "list-item"} style={{ listStylePosition: "outside", float: "left" }}>{techIcons[Math.floor(Math.random() * techIcons.length)]} {tech}</li>
+                      <ProjectLI key={tech + "list-item"} >{techIcons[Math.floor(Math.random() * techIcons.length)]} {tech}</ProjectLI>
                     );
                   })}
-                </ul>
+                </ProjectUL>
               </Accordion>
               <Accordion header="Future Updates:">
-                <ul style={{ display: "flex", flexDirection: "column", listStyle: "none", gap: "10px", justifyContent: "start", alignContent: "start", alignItems: "start", paddingTop: "15px" }}>
+                <ProjectUL>
                   {futureUpdates.map((tech) => {
                     return (
-                      <li key={tech + "list-item"} style={{ listStylePosition: "outside", }}>{techIcons[1]} {tech}</li>
+                      <ProjectLI key={tech + "list-item"} >{techIcons[1]} {tech}</ProjectLI>
                     );
                   })}
-                </ul>
+                </ProjectUL>
               </Accordion>
             </ProjectBlurb>
           </CardBody>

@@ -204,7 +204,7 @@ function ContactSectionComp({ props }, refPDF) {
               <SatellightContainer>
                 <div className="contact-satellite">
                   <Satellite>
-                    <SpeechContactBubble>
+                    <SpeechContactBubble id="satellite-speechbubble">
                       <SpeechBubble
                         speech={dialoguesSatellite}
                         direction={"none"}
@@ -212,6 +212,7 @@ function ContactSectionComp({ props }, refPDF) {
                         solidBorder={false}
                         msTime={8000}
                         italics={true}
+                        visible={true}
                         className="speechbubble-contact"
                       />
                     </SpeechContactBubble>
