@@ -15,9 +15,16 @@ export async function contactUsEmail(data) {
     company: DOMPurify.sanitize(data.company),
     country: DOMPurify.sanitize(data.country),
     message: DOMPurify.sanitize(data.message),
-    "g-recaptcha-response": data.captcha,
+    "g-recaptcha-response": data.captchaValue,
   };
 
+  console.log("params --> ", params);
+  if (
+    !params["g-recaptcha-response"] ||
+    params["g-recaptcha-response"] === null
+  ) {
+    return false;
+  }
   // EMAILJS EMAIL SUBMISSION
   emailjs
     .send(
@@ -29,13 +36,13 @@ export async function contactUsEmail(data) {
     .then(
       (result) => {
         console.log(`Email sent!`);
-        // console.log(result.text);
+        console.log(result.text);
 
         return true;
       },
       (error) => {
         console.log(`Email was not sent!`);
-        // console.log(error.text);
+        console.log(error.text);
         return false;
       }
     );
