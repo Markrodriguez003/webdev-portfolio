@@ -20,7 +20,7 @@ export async function contactUsEmail(data) {
     "g-recaptcha-response": data.captchaValue,
   };
 
-  console.log("params --> ", params);
+  console.log("params!! --> ", params);
   // if (
   //   !params["g-recaptcha-response"] ||
   //   params["g-recaptcha-response"] === null
