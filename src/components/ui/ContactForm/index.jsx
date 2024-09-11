@@ -73,7 +73,7 @@ export default function ContactForm() {
         background: `rgba(0, 0, 0, 0.8)`,
         imageWidth: 400,
         imageHeight: 500,
-        imageAlt: "Successful message",
+        imageAlt: "unSuccessful message",
       });
     } else {
       SAlert.fire({
@@ -121,8 +121,8 @@ export default function ContactForm() {
         imageAlt: "Successful message",
       });
     } else {
-      setEmailSuccess(await contactUsEmail(formData, captchaValue));
-      // setEmailSuccess(await contactUsEmail(formData));
+      // setEmailSuccess(await contactUsEmail(formData, captchaValue));
+      setEmailSuccess(await contactUsEmail(formData));
     }
   };
 
