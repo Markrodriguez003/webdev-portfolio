@@ -65,7 +65,7 @@ export default function ContactForm() {
           validationMessage: "my-validation-message",
         },
         title: "Form submissions unsuccessful!",
-        text: "Houston..transmission was unsuccessful! We are working on it!",
+        text: "..transmission was unsuccessful! Houston is advising to verify you're not a robot by clicking the captcha below and making sure you fill the form correctly!!",
         width: 600,
         padding: "3em",
         color: "#ffffff",
