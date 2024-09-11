@@ -9,6 +9,7 @@ export async function contactUsEmail(data) {
   // console.log("DATA!" + JSON.stringify(data));
   // TAKES SUBMITTED FORM DATA + G-CAPTCHA TOKEN AND PASSES IT TO EMAILJS SERVICE
   // DOM PURIFIED EACH FORM DATA VALUE AS A PRECAUTION FOR SECURITY REASONS
+  console.log("data --> ", data);
   const params = {
     name: DOMPurify.sanitize(data.name),
     email: DOMPurify.sanitize(data.email),
