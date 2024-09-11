@@ -124,9 +124,16 @@ export const CardProjectImage = styled.img`
     height: 525px;
   } */
   @media screen and (max-width: 875px) {
-    width: 90%;
+    width: 100%;
+    /* height: 40vh; */
+    min-height: 100%;
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
     height: 40vh;
-    object-fit: cover;
+    object-fit: contain;
   }
 `;
 
