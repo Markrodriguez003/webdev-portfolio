@@ -18,12 +18,14 @@ export async function contactUsEmail(data, captcha) {
     "g-recaptcha-response": captcha,
   };
 
-  // if (
-  //   !params["g-recaptcha-response"] ||
-  //   params["g-recaptcha-response"] === null
-  // ) {
-  //   return false;
-  // }
+  // CHECKS CAPTCHA ENTRY
+  if (
+    !params["g-recaptcha-response"] ||
+    params["g-recaptcha-response"] === null ||
+    params["g-recaptcha-response"] === ""
+  ) {
+    return false;
+  }
   // EMAILJS EMAIL SUBMISSION
   emailjs
     .send(
