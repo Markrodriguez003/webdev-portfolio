@@ -39,7 +39,7 @@ function SpeechBubble(props) {
         }
       } else {
         clearTimeout(delay)
-        console.log('Done looping!')
+        // console.log('Done looping!')
       }
     }
 
@@ -49,7 +49,7 @@ function SpeechBubble(props) {
       // console.log("Astronaut is looping!");
     } else {
       clearTimeout(delay);
-      console.log("");
+      // console.log("");
     }
     return () => {
       // console.log("Astronaut is NOT looping!");

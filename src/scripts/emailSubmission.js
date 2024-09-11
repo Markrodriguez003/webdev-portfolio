@@ -33,13 +33,13 @@ export async function contactUsEmail(data, captcha) {
       import.meta.env.VITE_PUBLIC_KEY
     )
     .then(
-      (result) => {
+      await function (result) {
         // console.log(`Email sent!`);
         console.log(result.text);
 
         return true;
       },
-      (error) => {
+      await function (error) {
         // console.log(`Email was not sent!`);
         console.log(error.text);
         return false;
