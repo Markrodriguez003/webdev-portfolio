@@ -117,12 +117,12 @@ export default function ContactForm() {
         // background: `url(${alien}) rgba(0, 0, 0, 0.8)`,
         background: `rgba(0, 0, 0, 0.8)`,
         // imageWidth: 400,
-        // imageHeight: 500,
-        // imageAlt: "Successful message",
+        imageHeight: 500,
+        imageAlt: "Successful message",
       });
     } else {
-      // setEmailSuccess(await contactUsEmail(formData, captchaValue));
-      setEmailSuccess(await contactUsEmail(formData));
+      setEmailSuccess(await contactUsEmail(formData, captchaValue));
+      // setEmailSuccess(await contactUsEmail(formData));
     }
   };
 
