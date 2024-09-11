@@ -20,12 +20,12 @@ export async function contactUsEmail(data) {
   };
 
   console.log("params --> ", params);
-  if (
-    !params["g-recaptcha-response"] ||
-    params["g-recaptcha-response"] === null
-  ) {
-    return false;
-  }
+  // if (
+  //   !params["g-recaptcha-response"] ||
+  //   params["g-recaptcha-response"] === null
+  // ) {
+  //   return false;
+  // }
   // EMAILJS EMAIL SUBMISSION
   emailjs
     .send(
