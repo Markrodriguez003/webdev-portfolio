@@ -152,7 +152,7 @@ export const ProjectBlurb = styled.section`
   text-align: left;
 
   @media screen and (max-width: 875px) {
-    width: 88%;
+    width: 95%;
   }
 `;
 
