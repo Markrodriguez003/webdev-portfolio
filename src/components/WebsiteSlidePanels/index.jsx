@@ -128,7 +128,7 @@ function WebsiteSlidePanels() {
 
     if (siteNavRef !== null) {
       handleMiniNavigationClick();
-      console.log(`This is the ref:`, siteNavRef);
+      // console.log(`This is the ref:`, siteNavRef);
     }
   }, [siteNavRef]);
 

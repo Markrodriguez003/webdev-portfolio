@@ -9,8 +9,6 @@ export async function contactUsEmail(data, captcha) {
   // console.log("DATA!" + JSON.stringify(data));
   // TAKES SUBMITTED FORM DATA + G-CAPTCHA TOKEN AND PASSES IT TO EMAILJS SERVICE
   // DOM PURIFIED EACH FORM DATA VALUE AS A PRECAUTION FOR SECURITY REASONS
-  console.log("data keys --> ", Object.keys(data));
-  console.log("data --> ", data);
   const params = {
     name: DOMPurify.sanitize(data.name),
     email: DOMPurify.sanitize(data.email),
@@ -20,7 +18,6 @@ export async function contactUsEmail(data, captcha) {
     "g-recaptcha-response": captcha,
   };
 
-  console.log("params!! --> ", params);
   // if (
   //   !params["g-recaptcha-response"] ||
   //   params["g-recaptcha-response"] === null
@@ -37,13 +34,13 @@ export async function contactUsEmail(data, captcha) {
     )
     .then(
       (result) => {
-        console.log(`Email sent!`);
+        // console.log(`Email sent!`);
         console.log(result.text);
 
         return true;
       },
       (error) => {
-        console.log(`Email was not sent!`);
+        // console.log(`Email was not sent!`);
         console.log(error.text);
         return false;
       }

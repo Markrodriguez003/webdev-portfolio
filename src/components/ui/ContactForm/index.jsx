@@ -103,7 +103,7 @@ export default function ContactForm() {
     setEmailSuccess(await contactUsEmail(formData));
     const captchaValue = recaptcha.current.getValue();
     if (!captchaValue) {
-      console.log('captucha value failed: ', captchaValue);
+      // console.log('captucha value failed: ', captchaValue);
       SAlert.fire({
         confirmButtonColor: "black",
         customClass: {
@@ -121,7 +121,7 @@ export default function ContactForm() {
         imageAlt: "Successful message",
       });
     } else {
-      console.log('captucha value passed! ', captchaValue);
+      // console.log('captucha value passed! ', captchaValue);
 
       setEmailSuccess(await contactUsEmail(formData, captchaValue));
       // setEmailSuccess(await contactUsEmail(formData));
