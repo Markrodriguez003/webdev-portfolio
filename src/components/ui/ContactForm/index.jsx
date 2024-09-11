@@ -102,7 +102,7 @@ export default function ContactForm() {
     // console.log(JSON.stringify(formData));
     setEmailSuccess(await contactUsEmail(formData));
     const captchaValue = recaptcha.current.getValue();
-
+    console.log('captucha value: ', captchaValue);
     if (!captchaValue) {
       SAlert.fire({
         confirmButtonColor: "black",
@@ -121,8 +121,8 @@ export default function ContactForm() {
         imageAlt: "Successful message",
       });
     } else {
-      // setEmailSuccess(await contactUsEmail(formData, captchaValue));
-      setEmailSuccess(await contactUsEmail(formData));
+      setEmailSuccess(await contactUsEmail(formData, captchaValue));
+      // setEmailSuccess(await contactUsEmail(formData));
     }
   };
 
