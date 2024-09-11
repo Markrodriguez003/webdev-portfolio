@@ -553,44 +553,43 @@ export function MiniProjectCard({ props }) {
           </CardBody>
           <CardFooter>
 
-            <div>
-              {github !== "#" ? (
-                <SiteButton
-                  type="anchor"
-                  url={github}
-                  styling="github"
-                  title="Github"
-                  icon={<BsGithub />}
-                />
-              ) : (
-                <></>
-              )}
 
-              {site !== "#" ? (
-                <SiteButton
-                  type="anchor"
-                  url={site}
-                  styling="website"
-                  title="Website"
-                  icon={<BsGlobe />}
-                />
-              ) : (
-                <></>
-              )}
-              {youtube !== "#" ? (
-                <SiteButton
-                  type="anchor"
-                  url={youtube}
-                  styling="youtube"
-                  title="Youtube"
-                  icon={<IoLogoYoutube />}
-                />
-              ) : (
-                <></>
-              )}
+            {github !== "#" ? (
+              <SiteButton
+                type="anchor"
+                url={github}
+                styling="github"
+                title="Github"
+                icon={<BsGithub />}
+              />
+            ) : (
+              <></>
+            )}
+
+            {site !== "#" ? (
+              <SiteButton
+                type="anchor"
+                url={site}
+                styling="website"
+                title="Website"
+                icon={<BsGlobe />}
+              />
+            ) : (
+              <></>
+            )}
+            {youtube !== "#" ? (
+              <SiteButton
+                type="anchor"
+                url={youtube}
+                styling="youtube"
+                title="Youtube"
+                icon={<IoLogoYoutube />}
+              />
+            ) : (
+              <></>
+            )}
 
 
-            </div>
           </CardFooter>
         </Card>
       </div>

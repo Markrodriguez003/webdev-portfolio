@@ -167,6 +167,9 @@ export const CardFooter = styled.section`
     justify-content: center;
     align-content: center;
     display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    /* background-color: purple; */
   }
 `;
 
@@ -189,7 +192,6 @@ export const ProjectULHeader = styled.h3`
   @media screen and (max-height: 725px) {
     font-size: 22px;
   }
-
 `;
 
 export const ProjectLI = styled.li`

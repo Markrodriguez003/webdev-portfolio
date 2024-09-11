@@ -32,7 +32,6 @@ export const BarContainer = styled.div`
   align-content: center;
   align-items: center;
   overflow: auto;
-  cursor: pointer;
 
   @media (max-width: 1199px) {
     flex-wrap: wrap;
@@ -57,19 +56,18 @@ export const BarContainer = styled.div`
 
     @media (max-height: 725px) {
       font-size: 0.75em;
-
-      }
+    }
   }
 
   & div #flex-icon {
     /* animation: ${rainbowFX} 10s infinite alternate ease-in-out; */
-    background-color:  rgba(215,60,0,1);
+    background-color: rgba(215, 60, 0, 1);
     color: white;
     font-size: 30px;
 
     @media (max-height: 725px) {
       font-size: 24px;
-      }
+    }
   }
 `;
 

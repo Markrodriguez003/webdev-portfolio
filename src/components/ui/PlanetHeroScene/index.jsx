@@ -9,14 +9,17 @@ import {
 function PlanetHeroScene() {
   return (
     <>
-      <PlanetContainer>
-        <PlanetBackground />
-        {/* <Satellite>
-          <ShinyLight />
-        </Satellite> */}
+      <div style={{ position: "relative", overflow: "hidden" }}>
 
-        {/* <AstronautHome /> */}
-      </PlanetContainer>
+        <PlanetContainer>
+          <PlanetBackground />
+          {/* <Satellite>
+          <ShinyLight />
+          </Satellite> */}
+
+          {/* <AstronautHome /> */}
+        </PlanetContainer>
+      </div>
     </>
   );
 }

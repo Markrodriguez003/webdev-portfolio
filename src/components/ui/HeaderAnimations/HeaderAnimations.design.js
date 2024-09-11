@@ -351,14 +351,16 @@ export const SolarPanelContainer = styled.div`
   /* left: 50%;
   top: 50%;
   transform: translate(-50%, -50%); */
-  width: 16vh;
-  height: 16vh;
+  width: 15.5vh;
+  height: 15.5vh;
   border-radius: 50%;
   /* background-color: red; */
-  transform: translate(42px, 10px) scale(0.9);
+  transform: translate(65px, 26px) scale(1.2);
 
   @media screen and (max-width: 1200px) {
-    transform: translate(0px, 7px) scale(0.85);
+    width: 20vh;
+    height: 20vh;
+    transform: translate(0px, 2px) scale(0.85);
   }
 
   &:before {
@@ -372,7 +374,7 @@ export const SolarPanelContainer = styled.div`
     filter: blur(40px);
     animation: ${fadeIn} 0.5s easeIn;
     opacity: 1;
-    transform: scale(1.6);
+    transform: scale(1.8);
   }
 `;
 

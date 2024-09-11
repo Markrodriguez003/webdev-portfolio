@@ -215,7 +215,7 @@ export const AstronautMini = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: pink;
+  background-color: transparent;
   justify-content: start;
   justify-items: start;
   justify-self: start;
@@ -224,7 +224,12 @@ export const AstronautMini = styled.div`
   align-content: start;
 
   @media (max-width: 1200px) {
-    display: none;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    align-content: center;
   }
 
   & img {
@@ -235,6 +240,11 @@ export const AstronautMini = styled.div`
     /* background-color: red; */
     /* background-color: red; */
     animation: ${floatA} 10s ease-in-out infinite;
+
+    @media (max-width: 1200px) {
+      margin-top: 120px;
+      position: relative;
+    }
 
     /* /* @media (max-width: 1200px) {
       width: 300px;
@@ -257,6 +267,10 @@ export const AstronautMini = styled.div`
       width: 180px;
       right: calc(100% - 265px);
       top: calc(100% - 445px);
+    }
+
+    @media (max-width: 1200px) {
+      display: none;
     }
 
     /* @media (max-width: 1540px) {

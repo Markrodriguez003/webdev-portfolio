@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, createRef } from "react";
 
 // STYLED COMPONENTS
-import { FormContainer } from "./ContactForm.design";
+import { FormContainer, ContactFormSmallText } from "./ContactForm.design";
 
 // COMPONENT
 import SiteButton from "../../ui/SiteButton";
@@ -17,6 +17,7 @@ import { contactUsEmail } from "../../../scripts/emailSubmission";
 // ICONS
 import { FaRegEnvelope } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
+import { FaUserAstronaut } from "react-icons/fa";
 
 //CSS
 import "./customSweetAlertStyles.css";
@@ -39,7 +40,7 @@ export default function ContactForm() {
     country: "",
     email: "",
     message: "",
-    // "g-recaptcha-response": "",
+    "g-recaptcha-response": "",
   });
 
   // HANDLES GRABBING DATA FROM FORM
@@ -96,35 +97,33 @@ export default function ContactForm() {
 
   // HANDLE FORM SUBMISSION + EMAILJS
   const handleSubmit = async (event) => {
-
-    
     event.preventDefault();
-    // ! 
+
     // console.log(JSON.stringify(formData));
     setEmailSuccess(await contactUsEmail(formData));
-    // const captchaValue = recaptcha.current.getValue();
+    const captchaValue = recaptcha.current.getValue();
 
-    // if (!captchaValue) {
-    //   SAlert.fire({
-    //     confirmButtonColor: "black",
-    //     customClass: {
-    //       validationMessage: "my-validation-message",
-    //     },
-    //     title: "Please verify you are not a robot!",
-    //     text: "Houston is advising to verify you're not a robot by clicking the captcha below!",
-    //     width: 600,
-    //     padding: "3em",
-    //     color: "#ffffff",
-    //     // background: `url(${alien}) rgba(0, 0, 0, 0.8)`,
-    //     background: `rgba(0, 0, 0, 0.8)`,
-    //     // imageWidth: 400,
-    //     // imageHeight: 500,
-    //     // imageAlt: "Successful message",
-    //   });
-    // } else {
-    //   // setEmailSuccess(await contactUsEmail(formData, captchaValue));
-    //   setEmailSuccess(await contactUsEmail(formData));
-    // }
+    if (!captchaValue) {
+      SAlert.fire({
+        confirmButtonColor: "black",
+        customClass: {
+          validationMessage: "my-validation-message",
+        },
+        title: "Please verify you are not a robot!",
+        text: "Houston is advising to verify you're not a robot by clicking the captcha below!",
+        width: 600,
+        padding: "3em",
+        color: "#ffffff",
+        // background: `url(${alien}) rgba(0, 0, 0, 0.8)`,
+        background: `rgba(0, 0, 0, 0.8)`,
+        // imageWidth: 400,
+        // imageHeight: 500,
+        // imageAlt: "Successful message",
+      });
+    } else {
+      // setEmailSuccess(await contactUsEmail(formData, captchaValue));
+      setEmailSuccess(await contactUsEmail(formData));
+    }
   };
 
   return (
@@ -135,6 +134,19 @@ export default function ContactForm() {
       method="post"
       action=""
     >
+      <ContactFormSmallText>
+        <span>
+          *********************************************
+        </span>
+        <FaUserAstronaut color="white" />
+        <small>
+          Fill out form below to directly message me!
+        </small>
+        <br />
+        <span>
+          *********************************************
+        </span>      </ContactFormSmallText>
+      <br />
       <label htmlFor="name">Name:</label>
       <input
         type="text"
@@ -211,14 +223,14 @@ export default function ContactForm() {
           title="Clear Form"
           styling="youtube"
         ></SiteButton> */}
-          <br />
-          <br />
-        {/* <ReCAPTCHA
+        <br />
+        <br />
+        <ReCAPTCHA
           ref={recaptcha}
           sitekey={import.meta.env.VITE_CAPTCHA_SITE_KEY}
-        /> */}
+        />
       </div>
-    </FormContainer>
+    </FormContainer >
   );
 }
 

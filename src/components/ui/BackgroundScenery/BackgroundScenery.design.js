@@ -12,11 +12,10 @@ const spaceBackground = keyframes`
 
 `;
 
-
 const FadeInBg = keyframes`
   0% { opacity: 0; }
   100% { opacity: 1; }
-`
+`;
 const animatedStars = keyframes`
 from {
       transform: translateY(0px);
@@ -28,64 +27,65 @@ from {
 
 `;
 
-
-
 export const VideoContainer = styled.div`
-   z-index: -9999;
-   display:inline-block ;
-   position: absolute;
-   filter: opacity(0.1) hue-rotate(2240deg) saturate(1.3);
-   margin:0;
-   padding:0;
-   min-width:100%;
-   height: 100%;
-   overflow: hidden;
- 
-    & video {
-      margin:0;
-      padding:0;
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      animation: ${FadeInBg} 5s ;
-      animation-fill-mode: forwards;
-      animation-iteration-count:1;
-  transform: scale(1.8);
-    }
-    & video source {
-      margin:0;
-      padding:0;
-      width:100%;
-      height:100%;
-     
- 
-    }
+  z-index: -9999;
+  display: inline-block;
+  position: absolute;
+  filter: opacity(0.13) hue-rotate(2240deg) saturate(1.3);
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
 
-    & * {
-      overflow: hidden;
-      width: 100% ;
-      height: 100%;
-   
+  & video {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: ${FadeInBg} 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transform: scale(1.8);
+
+    @media screen and (max-width: 1200px) {
+      filter: opacity(0.7) hue-rotate(2240deg) saturate(1.8);
+
+      transform: scale(1.8);
+      min-width: 80%;
+      min-height: auto;
     }
+  }
+  & video source {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-`
-
+  & * {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+`;
 
 export const OuterBackgroundContainer = styled.div`
-position:relative ;
-width:100%;
-height:100%;
-background: radial-gradient(ellipse at bottom, #0b0e12 0%, #090a0f 100%);
-z-index: 9999;
-`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #0b0e12 0%, #090a0f 100%);
+  z-index: 9999;
+`;
 
 export const SpaceBackground = styled.div`
-
   z-index: -1;
   /* top: 0;
   bottom: 0; */
   left: 50%;
-    transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   height: 100%;
   min-height: 100%;
   min-width: 100%;
@@ -96,16 +96,14 @@ export const SpaceBackground = styled.div`
   /* background: pink; */
   overflow: hidden;
   transition: transform 2s ease-in-out;
-  
 
-   @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
     overflow: auto;
     min-height: 100%;
     max-height: 100%;
     position: fixed;
- 
   }
- /*
+  /*
   @media screen and (max-width: 600px) {
     height: 1285vh;
   } */
@@ -252,6 +250,4 @@ export const SpaceBackground = styled.div`
   }
 `;
 
-export const WinkingSpaceBackground = styled.div`
-
-`
+export const WinkingSpaceBackground = styled.div``;

@@ -1,7 +1,25 @@
 import styled, { css, keyframes } from "styled-components";
 
+export const ContactFormSmallText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  font-family: "body";
+  color: grey;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  & small {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 
-
+  @media screen and (min-width: 1200px) {
+    display: none
+  }
+`;
 export const FormContainer = styled.form`
   display: inline-flex;
   position: relative;
@@ -15,8 +33,8 @@ export const FormContainer = styled.form`
   color: white;
   padding-top: 10px;
   width: 100%;
-  height: 91vh;
- 
+  min-height: 100%;
+
   @media screen and (max-width: 1200px) {
     justify-content: center;
     align-items: center;
@@ -82,5 +100,3 @@ export const FormContainer = styled.form`
     }
   }
 `;
-
- 

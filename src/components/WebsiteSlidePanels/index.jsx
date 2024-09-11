@@ -11,6 +11,8 @@
 // ! loading page animation
 // ? https://stackoverflow.com/questions/60847095/how-to-load-all-images-before-showing-the-page-in-react
 
+//! PRE-CACHE IMAGES + BACKGROUND VIDEO
+
 //REACT
 import {
   useState,
@@ -21,6 +23,8 @@ import {
   useRef,
   Suspense,
 } from "react";
+
+
 export const navContext = createContext();
 
 // STYLES / STYLED COMPONENTS
@@ -33,6 +37,7 @@ import {
 import "./style.css";
 import "swiper/css";
 import "swiper/css/pagination";
+import { AstronautContact } from "../Sections/ContactSection/ContactSection.Design.js";
 
 // COMPONENTS
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
@@ -206,6 +211,9 @@ function WebsiteSlidePanels() {
                 </>
               </Home>
               <AboutSection ref={aboutRef} id="about" />
+              <div style={{ display: "flex", justifyContent: "center", alignContent: "center" }}>
+                <AstronautContact id={"miniView"} />
+              </div>
               <ProjectsSection ref={projectsRef} id="projects" />
               <ContactSection ref={contactRef} id="contact" />
             </MiniView>

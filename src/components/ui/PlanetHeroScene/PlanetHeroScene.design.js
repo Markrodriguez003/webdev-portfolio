@@ -88,15 +88,17 @@ export const PlanetBackground = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
+  /* top: -325px; */
   top: -325px;
   padding: 0;
   /* top: 100px; */
   width: 585px;
   height: 585px;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: 50%;
   /* margin-left: auto;
   margin-right: auto; */
+
   animation: ${spin} 115s linear infinite;
   box-shadow: inset 0 0 60px #131312;
   z-index: 1;

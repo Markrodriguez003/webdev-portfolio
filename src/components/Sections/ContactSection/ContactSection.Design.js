@@ -207,6 +207,29 @@ export const Satellite = styled.div`
   }
 `;
 
+ 
+export const MiniSatellite = styled.div`
+  display: none;
+
+  @media (max-width: 1200px) {
+    filter: brightness(0.95);
+    background-image: url(${satellite});
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 85px;
+    margin-top: 30px;
+    transform: scaleX(-1) rotate(-7deg);
+    width: 255px;
+    height: 275px;
+    animation: ${floatB} 18s ease-in-out infinite;
+    z-index: 1;
+  }
+`;
+
 export const AstronautContact = styled.div`
   background-blend-mode: darken;
   background-image: url(${astronautContact});
@@ -220,7 +243,18 @@ export const AstronautContact = styled.div`
   margin-left: 100px;
   z-index: 1;
   animation: ${floatA} 10s ease-in-out infinite;
-  /* background-color: purple; */
+
+  &#miniView {
+    display: block;
+    width: 175px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* @media (max-height: 1200px) {
+    top: 225px;
+  } */
 `;
 
 export const SpeechAstronautBubble = styled.div`

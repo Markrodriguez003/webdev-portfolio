@@ -39,6 +39,7 @@ import {
   FullContactView,
   MiniContactView,
   MidContactView,
+  MiniSatellite,
   WifiSignalContainer,
   WifiSignalSymbol,
   SpeechContactBubble,
@@ -137,6 +138,7 @@ function ContactSectionComp({ props }, refPDF) {
       )}
       <SectionContainer ref={refPDF}>
         <LeftHeaderColumn>
+          <MiniSatellite></MiniSatellite>
           <HeaderBorderBox props={{ type: "solar", title: "CONTACT" }} />
           <HeaderDetailsPanel>
             <p>
@@ -201,6 +203,7 @@ function ContactSectionComp({ props }, refPDF) {
           <FullContactView>
             <ContactUsOuterContainer>
               <ContactForm />
+
               <SatellightContainer>
                 <div className="contact-satellite">
                   <Satellite>
@@ -227,7 +230,6 @@ function ContactSectionComp({ props }, refPDF) {
 
                 <div className="contact-astronaut">
                   <AstronautContact key={"astro-mini-home"} ref={ref}  >
-                    {console.log("CONTACT ASTRO " + inView)}
                     <SpeechAstronautBubble>
                       <SpeechBubble
                         speech={dialogues}

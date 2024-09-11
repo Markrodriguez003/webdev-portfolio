@@ -2,26 +2,23 @@
 import emailjs from "@emailjs/browser";
 import DOMPurify from "dompurify";
 
-
 // todo: newsletter that recommends a new, generated book every 3 months to whoever signs up to newsletter
 
 // export async function contactUsEmail(data, captcha) {
 export async function contactUsEmail(data) {
-
-
-  console.log('DATA!' + JSON.stringify(data));
-  // TAKES SUBMITTED FORM DATA + G-CAPTCHA TOKEN AND PASSES IT TO EMAILJS SERVICE 
-  // DOM PURIFIED EACH FORM DATA VALUE AS A PRECAUTION FOR SECURITY REASONS 
+  // console.log("DATA!" + JSON.stringify(data));
+  // TAKES SUBMITTED FORM DATA + G-CAPTCHA TOKEN AND PASSES IT TO EMAILJS SERVICE
+  // DOM PURIFIED EACH FORM DATA VALUE AS A PRECAUTION FOR SECURITY REASONS
   const params = {
     name: DOMPurify.sanitize(data.name),
     email: DOMPurify.sanitize(data.email),
     company: DOMPurify.sanitize(data.company),
     country: DOMPurify.sanitize(data.country),
     message: DOMPurify.sanitize(data.message),
-    // "g-recaptcha-response": captcha
-  }
+    "g-recaptcha-response": data.captcha,
+  };
 
-  // EMAILJS EMAIL SUBMISSION  
+  // EMAILJS EMAIL SUBMISSION
   emailjs
     .send(
       import.meta.env.VITE_SERVICE_ID,
@@ -42,7 +39,4 @@ export async function contactUsEmail(data) {
         return false;
       }
     );
-
-
-
 }
