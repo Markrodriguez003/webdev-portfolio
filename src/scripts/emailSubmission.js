@@ -16,7 +16,7 @@ export async function contactUsEmail(data) {
     company: DOMPurify.sanitize(data.company),
     country: DOMPurify.sanitize(data.country),
     message: DOMPurify.sanitize(data.message),
-    "g-recaptcha-response": data.captchaValue,
+    "g-recaptcha-response": data["g-recaptcha-response"],
   };
 
   console.log("params --> ", params);
