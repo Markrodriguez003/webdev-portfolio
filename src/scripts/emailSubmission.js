@@ -5,7 +5,7 @@ import DOMPurify from "dompurify";
 // todo: newsletter that recommends a new, generated book every 3 months to whoever signs up to newsletter
 
 // export async function contactUsEmail(data, captcha) {
-export async function contactUsEmail(data) {
+export async function contactUsEmail(data, captcha) {
   // console.log("DATA!" + JSON.stringify(data));
   // TAKES SUBMITTED FORM DATA + G-CAPTCHA TOKEN AND PASSES IT TO EMAILJS SERVICE
   // DOM PURIFIED EACH FORM DATA VALUE AS A PRECAUTION FOR SECURITY REASONS
@@ -17,7 +17,7 @@ export async function contactUsEmail(data) {
     company: DOMPurify.sanitize(data.company),
     country: DOMPurify.sanitize(data.country),
     message: DOMPurify.sanitize(data.message),
-    "g-recaptcha-response": data.captchaValue,
+    "g-recaptcha-response": captcha,
   };
 
   console.log("params!! --> ", params);
