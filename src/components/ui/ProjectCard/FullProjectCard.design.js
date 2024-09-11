@@ -123,17 +123,17 @@ export const CardProjectImage = styled.img`
     width: 85%;
     height: 525px;
   } */
-  @media screen and (max-width: 875px) {
+  /* @media screen and (max-width: 875px) {
     width: 100%;
-    /* height: 40vh; */
     min-height: 100%;
-    object-fit: contain;
-  }
+    object-fit: cover;
+    object-position: top left;
+  } */
 
   @media screen and (max-width: 1200px) {
     width: 100%;
     height: 40vh;
-    object-fit: contain;
+    object-fit: cover;
   }
 `;
 
