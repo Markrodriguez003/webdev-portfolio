@@ -6,12 +6,12 @@ export const projects = [
     content: [
       `Are you having a hard time finding a book? Well Saseo can help
     you! Saseo offers users the ability to be suggested books by
-    subject or at random!`,
+    subject or at random! `,
       `In addition to receiving suggested books, users can also search
     for more information on their favorite authors, as well as find
-    books via ISBN.`,
-      `When developing this website I intially utilized Google Books API, but decided to go with OpenLibrary API as it was more robust in terms of book choices & book data.`,
-      "There are future plans to add magazines, shows, movies & account creation with interactive dashboard.",
+    books via ISBN. `,
+      `When developing this website I intially utilized Google Books API, but decided to go with OpenLibrary API as it was more robust in terms of book choices & book data. `,
+      'There are future plans to add magazines, shows, movies & account creation with interactive dashboard. ',
     ],
 
     technologies: [
@@ -54,10 +54,10 @@ export const projects = [
     title: "Gallo-Ocho",
     subHeader: "Business Prototype Site",
     content: [
-      "Grab a little piece of Miami! This site was built as a prototype site for an art / sculpture business called Gallo Ocho based out of Miami, FL.",
-      "The business owner wanted to create an art site that he could sell his custom made sculptures, merchandise & have a site for artists to participate.",
-      "There are plans to expand website by adding a Shopify store, account creation, artist portal, contact email & an inventory backend with MongoDB.",
-      "Base rooster model was provided by business owner as a prototype. I edited textures via Unity 3D.",
+      'Grab a little piece of Miami! This site was built as a prototype site for an art / sculpture business called Gallo Ocho based out of Miami, FL. ',
+      'The business owner wanted to create an art site that he could sell his custom made sculptures, merchandise & have a site for artists to participate. ',
+      'There are plans to expand the website by adding a Shopify store, account creation, artist portal, contact email & an inventory backend with MongoDB. ',
+      'Base rooster model was provided by business owner as a prototype. I edited textures via Unity 3D. ',
     ],
     technologies: [
       "Javascript",
@@ -101,11 +101,11 @@ export const projects = [
     title: "HBJO LAW ",
     subHeader: "Law firm website",
     content: [
-      `Official website for the Homer Bonner Jacobs Ortiz P.A. law firm. Managed by using Wordpress CMS.`,
+      `Official website for the Homer Bonner Jacobs Ortiz P.A. law firm. Managed by using Wordpress CMS. `,
       `I assisted by helping modify the overall design of the website, appending new lawyer profiles, & 
-    adding new pages with custom CSS styling.`,
-      `In addition I handled site inbox messages, troubleshooting and managed plugin integration.`,
-      `Future updates include adding a linkable repository of case victories, awards & accolades.`,
+    adding new pages with custom CSS styling. `,
+      `In addition I handled site inbox messages, troubleshooting and managed plugin integration. `,
+      `Future updates include adding a linkable repository of case victories, awards & accolades. `,
     ],
     technologies: ["Wordpress", "HTML", "CSS", "Javascript", "PHP"],
     techniques: [
@@ -140,8 +140,8 @@ export const projects = [
     title: "Simple-Load",
     subHeader: "Load file generator.",
     content: [
-      `This simple to use stand alone web application is meant to help law firms create load files for large productions that need to be digested into any legal document platform.`,
-      `Most legal document platforms handled large productions that can be tens of thousands of pages. To facilitate this they usually have load files that contain all of the files metadata which is used to load in the files into their repositories.`,
+      `This simple to use stand alone web application is meant to help law firms create load files for large productions that need to be digested into any legal document platform. `,
+      `Most legal document platforms handled large productions that can be tens of thousands of pages. To facilitate this they usually have load files that contain all of the files metadata which is used to load in the files into their repositories. `,
       `I wanted to create a simple solution for a complex problem so I utilized Neutrino to package this as a standalone application. `,
       ``,
     ],
@@ -171,10 +171,10 @@ export const projects = [
     title: "Waagword",
     subHeader: "Password generator.",
     content: [
-      `While password generators might seem simple, this specific password generator offers more robust & secure password generation`,
-      `The application has advance features such as prefix, postfix, key word insertion & SSH key generation for complex password.`,
+      `While password generators might seem simple, this specific password generator offers more robust & secure password generation. `,
+      `The application has advance features such as prefix, postfix, key word insertion & SSH key generation for complex password. `,
       `I included prefix & postfix options because certain legal production require it when creating passwords. `,
-      `Future updates include having a password bank, password complexity checker & ASCII art password generation.`,
+      `Future updates include having a password bank, password complexity checker & ASCII art password generation. `,
     ],
     technologies: [
       "Javascript",
@@ -214,10 +214,10 @@ export const projects = [
     subHeader: "My web developer portfolio",
 
     content: [
-      `What better way to show off my skills than by providing my own developer portfolio!`,
-      `I designed and produced this site to showcase my portfolio pieces, skills & resume.`,
-      `Initially I wanted to create a kaleidoscope styled art website but it became way too distracting so I kept it simple.`,
-      `There are many projects waiting in the wings so I will be updating this site often!`,
+      `What better way to show off my skills than by providing my own developer portfolio! `,
+      `I designed and produced this site to showcase my portfolio pieces, skills & resume. `,
+      `Initially I wanted to create a kaleidoscope styled art website but it became way too distracting so I kept it simple. `,
+      `There are many projects waiting in the wings so I will be updating this site often! `,
     ],
     technologies: [
       "Javascript",
