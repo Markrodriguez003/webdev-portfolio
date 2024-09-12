@@ -133,7 +133,7 @@ export const CardProjectImage = styled.img`
   @media screen and (max-width: 1200px) {
     width: 100%;
     height: 40vh;
-    object-fit: cover;
+    object-fit: contain;
   }
 `;
 
