@@ -74,7 +74,7 @@ export const PlanetContainer = styled.div`
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 325px;
+  margin-bottom: 340px;
   overflow: hidden;
   z-index: -2;
 `;

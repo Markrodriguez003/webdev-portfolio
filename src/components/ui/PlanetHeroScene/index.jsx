@@ -13,9 +13,9 @@ function PlanetHeroScene() {
 
         <PlanetContainer>
           <PlanetBackground />
-          {/* <Satellite>
-          <ShinyLight />
-          </Satellite> */}
+          {/* <Satellite> */}
+          {/* <ShinyLight /> */}
+          {/* </Satellite> */}
 
           {/* <AstronautHome /> */}
         </PlanetContainer>

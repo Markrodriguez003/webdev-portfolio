@@ -9,6 +9,7 @@ import {
 
 // LIBRARIES
 import { useInView } from "react-intersection-observer";
+import { v4 as uuidv4 } from 'uuid';
 
 // COMPONENTS
 import AnimatedHeader from "../../ui/AnimatedHeader/index.jsx";
@@ -48,6 +49,35 @@ function Home({ children }) {
     /* Optional options */
     threshold: 0,
   });
+
+
+  // Random ID for astronaut key
+  const [astronautID, setAstronautID] = useState("");
+
+  // Function to generate new ID for astronaut
+  function refreshAstronautID() {
+    if (inView) {
+      const newId = uuidv4();
+      return newId;
+
+    }
+    // setAstronautID(newId);
+  }
+
+  // sets new is to astronaut to remount/refresh it
+  // useEffect(() => {
+
+  //   if (inView) {
+  //     console.log('Astronaut InView is true: ', inView)
+  //     console.log('Astronaut id: ', astronautID);
+  //     refreshAstronautID();
+  //   } else {
+  //     console.log('Astronaut Inview is false.', inView);
+  //     console.log('Astronaut id: ', astronautID);
+  //   }
+
+  //   return () => { };
+  // }, [setAstronautID, astronautID, inView]);
 
   return (
     <div>
@@ -108,8 +138,9 @@ function Home({ children }) {
         <SoundMeter />
 
         <span>SCROLL TO EXPLORE</span>
-        <AstronautMini key={"astro-mini-home"} ref={ref}>
-          {/* {console.log('Astronaut is in view?: ', inView)}; */}
+        {/* <AstronautMini key={"astro-mini-home"} ref={ref} > */}
+        {/* <AstronautMini key={inView ? astronautID : astronautID} ref={ref} > */}
+        <AstronautMini key={inView} ref={ref} >
           <div className="speech-bubble" key={"astro-mini-bubble-home"}>
             <SpeechBubble
               direction="bottom-left"
