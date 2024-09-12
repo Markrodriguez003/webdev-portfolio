@@ -116,7 +116,7 @@ export const CardBody = styled.section`
 export const CardProjectImage = styled.img`
   width: 88%;
   height: auto;
-
+  cursor: pointer;
   object-fit: cover;
 
   /* @media screen and (max-width: 1000px) {
