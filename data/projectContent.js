@@ -11,7 +11,7 @@ export const projects = [
     for more information on their favorite authors, as well as find
     books via ISBN. `,
       `When developing this website I intially utilized Google Books API, but decided to go with OpenLibrary API as it was more robust in terms of book choices & book data. `,
-      'There are future plans to add magazines, shows, movies & account creation with interactive dashboard. ',
+      "There are future plans to add magazines, shows, movies & account creation with interactive dashboard. ",
     ],
 
     technologies: [
@@ -54,10 +54,10 @@ export const projects = [
     title: "Gallo-Ocho",
     subHeader: "Business Prototype Site",
     content: [
-      'Grab a little piece of Miami! This site was built as a prototype site for an art / sculpture business called Gallo Ocho based out of Miami, FL. ',
-      'The business owner wanted to create an art site that he could sell his custom made sculptures, merchandise & have a site for artists to participate. ',
-      'There are plans to expand the website by adding a Shopify store, account creation, artist portal, contact email & an inventory backend with MongoDB. ',
-      'Base rooster model was provided by business owner as a prototype. I edited textures via Unity 3D. ',
+      "Grab a little piece of Miami! This site was built as a prototype site for an art / sculpture business called Gallo Ocho based out of Miami, FL. ",
+      "The business owner wanted to create an art site that he could sell his custom made sculptures, merchandise & have a site for artists to participate. ",
+      "There are plans to expand the website by adding a Shopify store, account creation, artist portal, contact email & an inventory backend with MongoDB. ",
+      "Base rooster model was provided by business owner as a prototype. I edited textures via Unity 3D. ",
     ],
     technologies: [
       "Javascript",
@@ -229,6 +229,7 @@ export const projects = [
       "Use-Scramble",
       "React-Lightbox",
       "EmailJs",
+      "react-google-recaptcha",
       "Styled-Components",
       "React-Responsive-Carousel",
       "File-Saver",
@@ -237,8 +238,8 @@ export const projects = [
       "Deployed ReactJS as the frontend library using React hooks",
       "Designed website layout with custom animations, using Styled-Components, CSS & NPM libraries such as Use-Scramble",
       "Maintained a responsive design of various computer & mobile screen sizes",
-      "Integrated NPM libraries such as SweetAlert2, File-Saver & React-Lightbox",
-      "Provided form field verification, field data purification using DomPurify, & form submission using EmailJS to send completed forms to web master",
+      "Integrated NPM libraries such as SweetAlert2, Swiper, File-Saver & React-Lightbox",
+      "Provided form field verification, field data purification using DomPurify, & form submission using EmailJS with Google-Captcha to send forms to webmaster",
       "Retrieved project / website data from JSON files",
     ],
     futureUpdates: [
