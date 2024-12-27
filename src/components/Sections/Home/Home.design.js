@@ -175,6 +175,14 @@ export const NavContainer = styled.nav`
     list-style-type: none;
     padding-bottom: 8px;
     text-align: right;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    font-family: "body";
+    cursor: pointer;
+    transition: linear 0.2s;
+
     @media (max-width: 1200px) {
       text-align: center;
     }
@@ -184,21 +192,21 @@ export const NavContainer = styled.nav`
     }
   }
   & ul li a {
-    color: white;
+    /* color: white;
     font-size: 2.5em;
     font-weight: bold;
     letter-spacing: 1.5px;
     font-family: "body";
-    text-decoration: none;
+    text-decoration: none; */
     /* padding: 2px; */
 
-    transition: linear 0.2s;
+    /* transition: linear 0.2s; */
   }
-  & ul li a:link {
+  & ul li:link {
   }
-  & ul li a:visited {
+  & ul li:visited {
   }
-  & ul li a:hover {
+  & ul li:hover {
     font-size: 3.4em;
     padding: 10px;
     cursor: pointer;
@@ -206,7 +214,7 @@ export const NavContainer = styled.nav`
       <small style={{color:"white"}}>{data[0]}</small>
     </div>-color: rgba(232, 236, 241, 0.2); */
   }
-  & ul li a:active {
+  & ul li:active {
   }
 `;
 

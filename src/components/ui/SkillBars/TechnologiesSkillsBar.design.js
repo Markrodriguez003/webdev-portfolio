@@ -38,9 +38,9 @@ export const BarContainer = styled.div`
   }
 
   @media (max-width: 565px) {
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
   }
   & div * {
     display: flex;

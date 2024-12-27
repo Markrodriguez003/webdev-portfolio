@@ -123,7 +123,15 @@ function WebsiteSlidePanels() {
   // HANDLES NAVIGATIONAL SCROLLING
   useEffect(() => {
     function handleMiniNavigationClick() {
-      siteNavRef.current?.scrollIntoView({ behavior: "smooth" });
+      console.log(`nav--> ${siteNavRef.current}`)
+      // siteNavRef.current?.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({
+        top: siteNavRef.current?.offsetTop,
+        behavior: "auto",
+
+      })
+
+      setSiteNavRef(null);
     }
 
     if (siteNavRef !== null) {
@@ -181,10 +189,10 @@ function WebsiteSlidePanels() {
                 <>
                   <MiniNavContainer>
                     <ul>
-                      <li>
+                      <li ref={aboutRef}>
                         {/* <a href="#about"  onClick={() => document.getElementById('first')?.scrollIntoView()}> */}
                         <a
-                          href="#about"
+                          // href="#about"
                           onClick={() => setSiteNavRef(aboutRef)}
                         >
                           ABOUT
@@ -192,15 +200,15 @@ function WebsiteSlidePanels() {
                       </li>
                       <li ref={projectsRef}>
                         <a
-                          href="#projects"
+                          // href="#projects"
                           onClick={() => setSiteNavRef(projectsRef)}
                         >
                           PROJECTS
                         </a>
                       </li>
-                      <li>
+                      <li ref={contactRef}>
                         <a
-                          href="#contact"
+                          // href="#contact"
                           onClick={() => setSiteNavRef(contactRef)}
                         >
                           CONTACT

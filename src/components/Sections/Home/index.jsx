@@ -51,6 +51,18 @@ function Home({ children }) {
   });
 
 
+  // Ref for individual page sections
+
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  function ScrollSectionHandler(section) {
+    // window.scrollTo({
+    //   top: section.current.offsetTop,
+    //   behavior: "smooth"
+    // })
+  }
 
   return (
     <div>
@@ -64,34 +76,45 @@ function Home({ children }) {
         {children ? <>{children}</> : <></>}
         <NavContainer>
           <ul>
-            <li>
-              <a
-                onClick={() => {
-                  siteNav.goToSlide(1);
-                }}
-              >
-                ABOUT
-              </a>
+            <li onClick={(e) => {
+              // console.log(`site nav context: ${JSON.stringify(siteNav)}`)
+              e.preventDefault();
+              siteNav.goToSlide(1);
+              // window.location.href = '#home';
+              // window.scrollTo({
+              //   top: "#home",
+              //   behavior: "smooth"
+              // })
+            }}>
+
+              ABOUT
+
             </li>
-            <li>
-              <a
-                href="#projects"
-                onClick={() => {
-                  siteNav.goToSlide(2);
-                }}
-              >
-                PROJECTS
-              </a>
+            <li
+              // href="#projects"
+
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                siteNav.goToSlide(2);
+                // window.location.href = '#project';
+              }}
+            >
+              PROJECTS
+
             </li>
-            <li>
-              <a
-                href="#contact"
-                onClick={() => {
-                  siteNav.goToSlide(3);
-                }}
-              >
-                CONTACT
-              </a>
+            <li
+              // href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                siteNav.goToSlide(3);
+                // window.location.href = '#contact';
+              }}
+            >
+              CONTACT
+
             </li>
           </ul>
         </NavContainer>
@@ -125,7 +148,7 @@ function Home({ children }) {
           <img src={astronautH}></img>
         </AstronautMini>
       </ScrollToExplore>
-    </div>
+    </div >
   );
 }
 
