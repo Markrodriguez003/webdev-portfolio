@@ -77,6 +77,7 @@ export const PlanetContainer = styled.div`
   margin-bottom: 340px;
   overflow: hidden;
   z-index: -2;
+  padding-bottom: 20px;
 `;
 
 export const PlanetBackground = styled.div`
@@ -101,7 +102,7 @@ export const PlanetBackground = styled.div`
 
   animation: ${spin} 115s linear infinite;
   box-shadow: inset 0 0 60px #131312;
-  z-index: 1;
+  z-index: 9999;
   @media screen and (max-width: 480px) {
     top: -175px;
     width: 355px;

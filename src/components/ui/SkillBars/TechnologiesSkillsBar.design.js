@@ -36,6 +36,12 @@ export const BarContainer = styled.div`
   @media (max-width: 1199px) {
     flex-wrap: wrap;
   }
+
+  @media (max-width: 565px) {
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
   & div * {
     display: flex;
     position: column;

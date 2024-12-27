@@ -351,11 +351,11 @@ export const SolarPanelContainer = styled.div`
   /* left: 50%;
   top: 50%;
   transform: translate(-50%, -50%); */
-  width: 15.5vh;
-  height: 15.5vh;
+  width: 15vh;
+  height: 15vh;
   border-radius: 50%;
   /* background-color: red; */
-  transform: translate(65px, 26px) scale(1.2);
+  transform: translate(54px, 24px) scale(1.2);
 
   @media screen and (max-width: 1200px) {
     width: 20vh;

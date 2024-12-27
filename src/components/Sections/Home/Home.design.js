@@ -26,7 +26,6 @@ export const IntroductionContainer = styled.div`
 
   font-family: "body";
   top: -50px;
-
   // 2K/4K MONITORS
   @media screen and (min-width: 1740px) {
     top: 20px;

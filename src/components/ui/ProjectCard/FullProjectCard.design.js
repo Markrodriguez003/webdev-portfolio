@@ -102,14 +102,18 @@ export const CardBody = styled.section`
   justify-items: flex-start;
   align-items: flex-start;
   align-content: flex-start;
-  align-items: flex-start;
   width: 94%;
   height: auto;
   z-index: 1;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-
+  @media screen and (max-width: 1200px) {
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+  }
   /* padding-bottom: 20px; */
 `;
 
