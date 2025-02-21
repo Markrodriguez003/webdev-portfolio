@@ -86,7 +86,6 @@ const techIcons = [
   <MdSatelliteAlt key="satellite2" style={techIconStyling} />,
 ]
 
-
 // CSS
 import "./ProjectCard.styles.css";
 import "swiper/css";
@@ -126,15 +125,26 @@ export function FullProjectCard({ props }) {
 
   // LIGHTBOX SETTINGS
   const [showToggle, setShowToggle] = useState(false);
-  const [playVideo, setPlayVideo] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [playVideo, setPlayVideo] = useState(true);
+  // const [currentSlide, setCurrentSlide] = useState(0);
 
-  // HANDLES PLAY FUNCTIONALITY OF VIDEO PLAYER
+  const [videoSlideCheck, setVideoSlideCheck] = useState({
+    currentSlide: 0,
+    totalSlides: 0,
+  })
+
+
   useEffect(() => {
-    if (currentSlide != images.length) {
-      setPlayVideo(() => false);
+    console.log(`ACTIVE INDEX: ${videoSlideCheck.currentSlide}`)
+    console.log(`TOTAL SLIDES: ${videoSlideCheck.totalSlides}`)
+
+    if (videoSlideCheck.currentSlide !== (videoSlideCheck.totalSlides - 1)) {
+      console.log(`STOPPING VIDEO!`)
+      setPlayVideo(false)
     }
-  }, [currentSlide, setCurrentSlide, images, setPlayVideo, playVideo]);
+
+
+  }, [videoSlideCheck])
 
 
   // INNER TECHNIQUES SWIPER CONTROL
@@ -255,6 +265,7 @@ export function FullProjectCard({ props }) {
               onBeforeInit={(swiper) => {
                 cubeRef.current = swiper;
               }}
+            // onSlideChange={handleSlideChange}
             >
               <SwiperSlide>
                 <Swiper
@@ -262,8 +273,15 @@ export function FullProjectCard({ props }) {
                   navigation={true}
                   grabCursor={false}
                   modules={[Pagination, Navigation]}
-                  // onSlideChange={() => console.log("slide change")}
+                  // onSlideChange={(e) => console.log(`slide change` )}
                   // onSwiper={(swiper) => console.log(swiper)}
+                  onSlideChange={(swiper) => {
+
+                    setVideoSlideCheck(() => ({
+                      totalSlides: swiper.slides.length,
+                      currentSlide: swiper.activeIndex
+                    }))
+                  }}
                   style={{
                     width: "62.5vw",
                     height: "auto",
@@ -299,26 +317,25 @@ export function FullProjectCard({ props }) {
                     );
                   })}
                   {/*  // ? YOUTUBE VIDEO  */}
-                  {/*  // ! FIX  */}
-                  {/* {youtube !== "#" ? (
-                      <SwiperSlide>
-                        <ProjectVideo>
-                            <ReactPlayer
-                              key={`youtube-video:` + title + video}
-                              url={video}
-                              controls={true}
-                              playing={playVideo}
-                              onPlay={() => setPlayVideo(true)}
-                              onPause={() => setPlayVideo(false)}
-                              ref={videoRef}
-                              height="525px"
-                              width="775px"
-                         />
-                         </ProjectVideo>{" "}
-                         </SwiperSlide>
-                         ) : (
-                         <></>
-                         )} */}
+                  {youtube !== "#" ? (
+                    <SwiperSlide>
+                      <ProjectVideo>
+                        <ReactPlayer
+                          key={`youtube-video:` + title + video}
+                          url={video}
+                          playing={playVideo}
+                          onPlay={() => setPlayVideo(true)}
+                          onPause={() => setPlayVideo(false)}
+                          controls={true}
+                          ref={videoRef}
+                          height="525px"
+                          width="775px"
+                        />
+                      </ProjectVideo>{" "}
+                    </SwiperSlide>
+                  ) : (
+                    <></>
+                  )}
                 </Swiper>
               </SwiperSlide>
               <SwiperSlide style={{ display: "flex", flexDirection: "column", alignItems: "start" }}>

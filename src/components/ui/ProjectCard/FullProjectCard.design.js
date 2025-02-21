@@ -19,8 +19,7 @@ export const ProjectVideo = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  /* background-color:yellow;  */
-  /* margin-top:200px; */
+
   & * {
     margin-left: auto !important;
     margin-right: auto !important;
