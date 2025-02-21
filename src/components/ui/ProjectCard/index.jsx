@@ -125,30 +125,27 @@ export function FullProjectCard({ props }) {
 
   // LIGHTBOX SETTINGS
   const [showToggle, setShowToggle] = useState(false);
-  const [playVideo, setPlayVideo] = useState(true);
+  const [playVideo, setPlayVideo] = useState(false);
   // const [currentSlide, setCurrentSlide] = useState(0);
 
   const [videoSlideCheck, setVideoSlideCheck] = useState({
     currentSlide: 0,
     totalSlides: 0,
+
   })
 
 
   useEffect(() => {
-    console.log(`ACTIVE INDEX: ${videoSlideCheck.currentSlide}`)
-    console.log(`TOTAL SLIDES: ${videoSlideCheck.totalSlides}`)
-
     if (videoSlideCheck.currentSlide !== (videoSlideCheck.totalSlides - 1)) {
-      console.log(`STOPPING VIDEO!`)
       setPlayVideo(false)
     }
-
 
   }, [videoSlideCheck])
 
 
   // INNER TECHNIQUES SWIPER CONTROL
   function ChangeSlide() {
+    setPlayVideo(false);
     cubeRef.current?.slideNext();
   }
 
@@ -265,7 +262,11 @@ export function FullProjectCard({ props }) {
               onBeforeInit={(swiper) => {
                 cubeRef.current = swiper;
               }}
-            // onSlideChange={handleSlideChange}
+
+              onSlideChange={(swiper) => {
+                setPlayVideo(false)
+              }}
+
             >
               <SwiperSlide>
                 <Swiper
@@ -277,7 +278,7 @@ export function FullProjectCard({ props }) {
                   // onSwiper={(swiper) => console.log(swiper)}
                   onSlideChange={(swiper) => {
 
-                    setVideoSlideCheck(() => ({
+                    setVideoSlideCheck((prev) => ({
                       totalSlides: swiper.slides.length,
                       currentSlide: swiper.activeIndex
                     }))
@@ -519,20 +520,6 @@ export function MiniProjectCard({ props }) {
                 setOpen(true);
               }}
             />
-
-            {/* <ProjectVideo>
-                <ReactPlayer
-                  key={`youtube-video:` + title + video}
-                  url={video}
-                  controls={true}
-                  playing={playVideo}
-                  onPlay={() => setPlayVideo(true)}
-                  onPause={() => setPlayVideo(false)}
-                  ref={videoRef}
-                  width="100%"
-                  height="100%"
-                />
-                </ProjectVideo>{" "} */}
             <ProjectBlurb>
               <section>
                 <p>{content}</p>
@@ -566,6 +553,21 @@ export function MiniProjectCard({ props }) {
                   })}
                 </ProjectUL>
               </Accordion>
+              {video !== "#" ? <Accordion header="Videos:">
+                <ProjectUL>
+                  <ProjectVideo>
+                    <ReactPlayer
+                      key={`youtube-video-mobile:` + title + video}
+                      url={video}
+                      controls={true}
+                      playing={false}
+                      // ref={videoRef}
+                      width="100%"
+                      height="350px"
+                    />
+                  </ProjectVideo>{" "}
+                </ProjectUL>
+              </Accordion> : <></>}
             </ProjectBlurb>
           </CardBody>
           <CardFooter>
