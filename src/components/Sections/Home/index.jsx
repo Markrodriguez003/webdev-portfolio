@@ -105,11 +105,25 @@ function Home({ children }) {
 
             </li>
             <li
+              // href="#projects"
+
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                siteNav.goToSlide(3);
+                // window.location.href = '#project';
+              }}
+            >
+             COMMERCIAL
+
+            </li>
+            <li
               // href="#contact"
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                siteNav.goToSlide(3);
+                siteNav.goToSlide(4);
                 // window.location.href = '#contact';
               }}
             >

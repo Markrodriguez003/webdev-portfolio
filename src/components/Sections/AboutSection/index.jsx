@@ -11,7 +11,7 @@ import {
 import { AboutDetailsPanel, MiniAboutInfoPanel } from "./AboutSection.design";
 
 // ICONS
-import { FaRegEnvelope, FaSatellite } from "react-icons/fa";
+import { FaRegEnvelope, FaYoutube, FaSatellite } from "react-icons/fa";
 import { LuMenuSquare } from "react-icons/lu";
 import { BiSolidInvader } from "react-icons/bi";
 import { PiKeyReturnBold } from "react-icons/pi";
@@ -90,7 +90,7 @@ function AboutSectionComp({ props }, ref) {
                   height={"20px"}
                   style={{ paddingRight: "10px" }}
                 />
-                Github: github.com/MarkRodriguez003
+                Github
               </a>
             </p>
             <br />
@@ -102,6 +102,15 @@ function AboutSectionComp({ props }, ref) {
               <a href={resume} download={resume}>
                 Download
               </a>
+            </p>
+            <br />
+            <p id="resume-about">
+
+              <a href={'https://www.youtube.com/@modulatorstudios'} target="_blank" rel="noreferrer">
+                <FaYoutube
+                  style={{ verticalAlign: "center", paddingRight: "5px" }}
+                />
+                Youtube </a>
             </p>
           </HeaderDetailsPanel>
         </LeftHeaderColumn>

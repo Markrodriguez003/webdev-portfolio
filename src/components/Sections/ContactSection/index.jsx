@@ -62,6 +62,7 @@ import resume from "../../../../public/download/Mark Rodriguez - Resume.pdf";
 import { RiSignalTowerFill } from "react-icons/ri";
 import { FaWifi, FaCompass } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
+import { FaYoutube } from "react-icons/fa";
 
 // DATA
 
@@ -151,13 +152,13 @@ function ContactSectionComp({ props }, refPDF) {
                 <FaRegEnvelope
                   style={{ verticalAlign: "center", paddingRight: "5px" }}
                 />
-                <span style={{ fontSize: "16px" }}>
-                  Email: MarkRodriguez003@gmail.com
-                </span>
+
+                Email
+
               </a>
             </p>
-            {/* <br /> */}
-            {/* <p>
+            <br />
+            <p>
               <MdOutlineContactMail
                 style={{ verticalAlign: "center", paddingRight: "5px" }}
               />
@@ -166,7 +167,7 @@ function ContactSectionComp({ props }, refPDF) {
                 {" "}
                 Download
               </a>
-            </p> */}
+            </p>
             <br />
             <p id="resume-about">
               <LuMenuSquare
@@ -178,13 +179,15 @@ function ContactSectionComp({ props }, refPDF) {
               </a>
             </p>
             <br />
-            {/* <p>
-              <FaLinkedin
-                style={{ verticalAlign: "center", paddingRight: "5px" }}
-              />
-              LinkedIn: linkedIn.com/MarkRodriguez003
-            </p> */}
-            {/* <br /> */}
+            <p>
+              <a href="https://github.com/Markrodriguez003" target="_blank" rel="noreferrer">
+                <FaLinkedin
+                  style={{ verticalAlign: "center", paddingRight: "5px" }}
+                />
+                LinkedIn
+              </a>
+            </p>
+            <br />
             <p>
               <a href="https://github.com/Markrodriguez003" target="_blank" rel="noreferrer">
                 <img
@@ -193,8 +196,17 @@ function ContactSectionComp({ props }, refPDF) {
                   height={"20px"}
                   style={{ paddingRight: "10px" }}
                 />
-                Github: github.com/MarkRodriguez003
+                Github
               </a>
+            </p>
+            <br />
+            <p id="resume-about">
+
+              <a href={'https://www.youtube.com/@modulatorstudios'} target="_blank" rel="noreferrer">
+                <FaYoutube
+                  style={{ verticalAlign: "center", paddingRight: "5px" }}
+                />
+                Youtube </a>
             </p>
           </HeaderDetailsPanel>
         </LeftHeaderColumn>

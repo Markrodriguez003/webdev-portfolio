@@ -8,6 +8,10 @@ import Waves from "../HeaderAnimations/Waves.jsx";
 import RotatingBoxes from "../HeaderAnimations/RotatingBoxes.jsx";
 import RotatingPlanets from "../HeaderAnimations/RotatingPlanets";
 import SolarPanel from "../HeaderAnimations/SolarPanel";
+import EndlessLandscape from "../HeaderAnimations/EndlessLandscape";
+
+import MorphShape from "../HeaderAnimations/MorphShape.jsx";
+import Ocean from "../HeaderAnimations/Ocean.jsx";
 function HeaderBorderBox({ props }) {
   // console.log(`Headerbox Props? `, props);
 
@@ -25,6 +29,15 @@ function HeaderBorderBox({ props }) {
       break;
     case "solar":
       animationType = <SolarPanel />;
+      break;
+    case "endlessLandscape":
+      animationType = <EndlessLandscape />;
+      break;
+    case "morph":
+      animationType = <MorphShape />;
+      break;
+    case "ocean":
+      animationType = <Ocean />;
       break;
     default:
       animationType = <Waves />;

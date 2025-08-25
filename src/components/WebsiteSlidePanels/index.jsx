@@ -54,6 +54,12 @@ const ProjectsSection = lazy(() =>
     default: module.ProjectsSection,
   }))
 );
+
+const CommercialSection = lazy(() =>
+  import("../Sections/CommercialSection").then((module) => ({
+    default: module.CommercialSection,
+  }))
+);
 const ContactSection = lazy(() =>
   import("../Sections/ContactSection").then((module) => ({
     default: module.ContactSection,
@@ -115,6 +121,7 @@ function WebsiteSlidePanels() {
   // NAVIGATIONAL REFS
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
+  const commercialRef = useRef(null);
   const contactRef = useRef(null);
 
   // Ref that handles which page section to scroll to.
@@ -179,6 +186,9 @@ function WebsiteSlidePanels() {
                   <ProjectsSection />
                 </SwiperSlide>
                 <SwiperSlide>
+                  <CommercialSection />
+                </SwiperSlide>
+                <SwiperSlide>
                   <ContactSection />
                 </SwiperSlide>
               </StyledSwiper>
@@ -204,6 +214,14 @@ function WebsiteSlidePanels() {
                           onClick={() => setSiteNavRef(projectsRef)}
                         >
                           PROJECTS
+                        </a>
+                      </li>
+                      <li ref={commercialRef}>
+                        <a
+                          // href="#commercial"
+                          onClick={() => setSiteNavRef(commercialRef)}
+                        >
+                          COMMERCIAL
                         </a>
                       </li>
                       <li ref={contactRef}>

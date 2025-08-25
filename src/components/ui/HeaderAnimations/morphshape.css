@@ -1,0 +1,36 @@
+.morph-shape-svg {
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+.morph-shape-path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 6;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  /* Animate the d attribute */
+  animation: morph-shape-anim 4s linear infinite;
+}
+
+@keyframes morph-shape-anim {
+  0% {
+    d: path("M 100,30 A 70,70 0 1,1 99.9,30 Z"); /* Circle */
+  }
+  20% {
+    d: path("M 40,40 L 160,40 L 160,160 L 40,160 Z"); /* Square */
+  }
+  40% {
+    d: path("M 100,30 L 170,170 L 30,170 Z"); /* Triangle */
+  }
+  60% {
+    d: path("M 40,40 L 160,40 L 160,160 L 40,160 Z"); /* Square */
+  }
+  80% {
+    d: path("M 100,30 A 70,70 0 1,1 99.9,30 Z"); /* Circle */
+  }
+  100% {
+    d: path("M 100,30 A 70,70 0 1,1 99.9,30 Z"); /* Circle */
+  }
+}

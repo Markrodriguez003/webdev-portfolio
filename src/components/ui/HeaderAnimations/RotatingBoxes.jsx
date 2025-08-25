@@ -114,72 +114,80 @@ function RotatingBoxes() {
         </BoxFlex>
       </BoxContainer> */}
       <BoxContainer >
-        <BoxFlex className="flex">
-          <div className="cube">
-            <div className="wall front"></div>
-            <div className="wall back"></div>
-            <div className="wall left"></div>
-            <div className="wall right"></div>
-            <div className="wall top"></div>
-            <div className="wall bottom"></div>
+        <BoxFlex className="flex-cubes">
+          <div className="cube-r">
+            <div className="wall-r front-r-cube"></div>
+            <div className="wall-r back-r-cube"></div>
+            <div className="wall-r left-r-cube"></div>
+            <div className="wall-r right-r-cube"></div>
+            <div className="wall-r top-r-cube"></div>
+            <div className="wall-r bottom-r-cube"></div>
           </div>
-          <div className="cube">
-            <div className="wall front"></div>
-            <div className="wall back"></div>
-            <div className="wall left"></div>
-            <div className="wall right"></div>
-            <div className="wall top"></div>
-            <div className="wall bottom"></div>
+          <div className="cube-r">
+            <div className="wall-r front-r-cube"></div>
+            <div className="wall-r back-r-cube"></div>
+            <div className="wall-r left-r-cube"></div>
+            <div className="wall-r right-r-cube"></div>
+            <div className="wall-r top-r-cube"></div>
+            <div className="wall-r bottom-r-cube"></div>
           </div>
-          <div className="cube">
-            <div className="wall front"></div>
-            <div className="wall back"></div>
-            <div className="wall left"></div>
-            <div className="wall right"></div>
-            <div className="wall top"></div>
-            <div className="wall bottom"></div>
+          <div className="cube-r">
+            <div className="wall-r front-r-cube"></div>
+            <div className="wall-r back-r-cube"></div>
+            <div className="wall-r left-r-cube"></div>
+            <div className="wall-r right-r-cube"></div>
+            <div className="wall-r top-r-cube"></div>
+            <div className="wall-r bottom-r-cube"></div>
           </div>
-          <div className="cube">
-            <div className="wall front"></div>
-            <div className="wall back"></div>
-            <div className="wall left"></div>
-            <div className="wall right"></div>
-            <div className="wall top"></div>
-            <div className="wall bottom"></div>
+          <div className="cube-r">
+            <div className="wall-r front-r-cube"></div>
+            <div className="wall-r back-r-cube"></div>
+            <div className="wall-r left-r-cube"></div>
+            <div className="wall-r right-r-cube"></div>
+            <div className="wall-r top-r-cube"></div>
+            <div className="wall-r bottom-r-cube"></div>
           </div>
         </BoxFlex>
-        <div className="flex">
-          <div className="cube">
-            <div className="wall front"></div>
-            <div className="wall back"></div>
-            <div className="wall left"></div>
-            <div className="wall right"></div>
-            <div className="wall top"></div>
-            <div className="wall bottom"></div>
+        <div className="flex-cubes">
+          <div className="cube-r">
+            <div className="wall-r front-r-cube"></div>
+            <div className="wall-r back-r-cube"></div>
+            <div className="wall-r left-r-cube"></div>
+            <div className="wall-r right-r-cube"></div>
+            <div className="wall-r top-r-cube"></div>
+            <div className="wall-r bottom-r-cube"></div>
           </div>
-          <div className="cube">
-            <div className="wall front"></div>
-            <div className="wall back"></div>
-            <div className="wall left"></div>
-            <div className="wall right"></div>
-            <div className="wall top"></div>
-            <div className="wall bottom"></div>
+          <div className="cube-r">
+            <div className="wall-r front-r-cube"></div>
+            <div className="wall-r back-r-cube"></div>
+            <div className="wall-r left-r-cube"></div>
+            <div className="wall-r right-r-cube"></div>
+            <div className="wall-r top-r-cube"></div>
+            <div className="wall-r bottom-r-cube"></div>
           </div>
-          <div className="cube">
-            <div className="wall front"></div>
-            <div className="wall back"></div>
-            <div className="wall left"></div>
-            <div className="wall right"></div>
-            <div className="wall top"></div>
-            <div className="wall bottom"></div>
+          <div className="cube-r">
+            <div className="wall-r front-r-cube"></div>
+            <div className="wall-r back-r-cube"></div>
+            <div className="wall-r left-r-cube"></div>
+            <div className="wall-r right-r-cube"></div>
+            <div className="wall-r top-r-cube"></div>
+            <div className="wall-r bottom-r-cube"></div>
           </div>
-          <div className="cube">
-            <div className="wall front"></div>
-            <div className="wall back"></div>
-            <div className="wall left"></div>
-            <div className="wall right"></div>
-            <div className="wall top"></div>
-            <div className="wall bottom"></div>
+          <div className="cube-r">
+            <div className="wall-r front-r-cube"></div>
+            <div className="wall-r back-r-cube"></div>
+            <div className="wall-r left-r-cube"></div>
+            <div className="wall-r right-r-cube"></div>
+            <div className="wall-r top-r-cube"></div>
+            <div className="wall-r bottom-r-cube"></div>
+          </div>
+          <div className="cube-r">
+            <div className="wall-r front-r-cube"></div>
+            <div className="wall-r back-r-cube"></div>
+            <div className="wall-r left-r-cube"></div>
+            <div className="wall-r right-r-cube"></div>
+            <div className="wall-r top-r-cube"></div>
+            <div className="wall-r bottom-r-cube"></div>
           </div>
         </div>
       </BoxContainer>

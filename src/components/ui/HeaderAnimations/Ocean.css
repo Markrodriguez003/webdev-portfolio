@@ -1,0 +1,460 @@
+.container-ocean {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  perspective: 1000px;
+  left: 22%;
+  top: 3%;
+  transform-style: preserve-3d;
+  transform: translateY(-50%) translateX(-50%);
+  transform: scale(0.53);
+}
+.perspective-ocean {
+  transform: rotateX(60deg) rotateZ(25deg);
+  transform-style: preserve-3d;
+}
+.cube3D-ocean,
+.cube3D-shadow-ocean {
+  width: 25px;
+  height: 25px;
+  transform-style: preserve-3d;
+  position: absolute;
+}
+.cube3D-ocean {
+  animation: rotation 2s infinite ease-in-out;
+}
+.translate-cube3D-shadow-ocean {
+  transform: translateZ(-40px);
+}
+.cube3D-shadow-ocean {
+  background: transparent;
+  transform: translateZ(-60px);
+  animation: scale 2s infinite ease-in-out;
+}
+.cube3D-ocean div {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background: transparent;
+}
+.cube3D-ocean .right-ocean {
+  background: #eeeeee3c;
+  border: white, 2px, solid;
+  transform: rotateY(90deg) translateZ(12.3px);
+}
+.cube3D-ocean .top-ocean {
+  border: white, 2px, solid;
+  background: rgba(0, 0, 0, 0.8);
+  transform: rotateX(0deg) translateZ(12.3px);
+}
+.cube3D-ocean .left-ocean {
+  border: white, 2px, solid;
+  transform: rotateX(-90deg) translateZ(12.3px);
+}
+@keyframes rotation {
+  0% {
+    transform: translateZ(0px);
+  }
+  50% {
+    transform: translateZ(15px);
+  }
+  100% {
+    transform: translateZ(0px);
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#cube3D-1-ocean,
+#cube3D-shadow-1-ocean {
+  left: 0px;
+  top: 0px;
+  animation-delay: 0.2s;
+}
+#cube3D-2-ocean,
+#cube3D-shadow-2-ocean {
+  left: 35px;
+  top: 0px;
+  animation-delay: 0.4s;
+}
+#cube3D-3-ocean,
+#cube3D-shadow-3-ocean {
+  left: 70px;
+  top: 0px;
+  animation-delay: 0.6s;
+}
+#cube3D-4-ocean,
+#cube3D-shadow-4-ocean {
+  left: 105px;
+  top: 0px;
+  animation-delay: 0.8s;
+}
+#cube3D-5-ocean,
+#cube3D-shadow-5-ocean {
+  left: 140px;
+  top: 0px;
+  animation-delay: 1s;
+}
+#cube3D-6-ocean,
+#cube3D-shadow-6-ocean {
+  left: 175px;
+  top: 0px;
+  animation-delay: 1.2s;
+}
+#cube3D-7-ocean,
+#cube3D-shadow-7-ocean {
+  left: 210px;
+  top: 0px;
+  animation-delay: 1.4s;
+}
+#cube3D-8-ocean,
+#cube3D-shadow-8-ocean {
+  left: 245px;
+  top: 0px;
+  animation-delay: 1.6s;
+}
+#cube3D-9-ocean,
+#cube3D-shadow-9-ocean {
+  left: 0px;
+  top: 35px;
+  animation-delay: 0.4s;
+}
+#cube3D-10-ocean,
+#cube3D-shadow-10-ocean {
+  left: 35px;
+  top: 35px;
+  animation-delay: 0.6s;
+}
+#cube3D-11-ocean,
+#cube3D-shadow-11-ocean {
+  left: 70px;
+  top: 35px;
+  animation-delay: 0.8s;
+}
+#cube3D-12-ocean,
+#cube3D-shadow-12-ocean {
+  left: 105px;
+  top: 35px;
+  animation-delay: 1s;
+}
+#cube3D-13-ocean,
+#cube3D-shadow-13-ocean {
+  left: 140px;
+  top: 35px;
+  animation-delay: 1.2s;
+}
+#cube3D-14-ocean,
+#cube3D-shadow-14-ocean {
+  left: 175px;
+  top: 35px;
+  animation-delay: 1.4s;
+}
+#cube3D-15-ocean,
+#cube3D-shadow-15-ocean {
+  left: 210px;
+  top: 35px;
+  animation-delay: 1.6s;
+}
+#cube3D-16-ocean,
+#cube3D-shadow-16-ocean {
+  left: 245px;
+  top: 35px;
+  animation-delay: 1.8s;
+}
+#cube3D-17-ocean,
+#cube3D-shadow-17-ocean {
+  left: 0px;
+  top: 70px;
+  animation-delay: 0.6s;
+}
+#cube3D-18-ocean,
+#cube3D-shadow-18-ocean {
+  left: 35px;
+  top: 70px;
+  animation-delay: 0.8s;
+}
+#cube3D-19-ocean,
+#cube3D-shadow-19-ocean {
+  left: 70px;
+  top: 70px;
+  animation-delay: 1s;
+}
+#cube3D-20-ocean,
+#cube3D-shadow-20-ocean {
+  left: 105px;
+  top: 70px;
+  animation-delay: 1.2s;
+}
+#cube3D-21-ocean,
+#cube3D-shadow-21-ocean {
+  left: 140px;
+  top: 70px;
+  animation-delay: 1.4s;
+}
+#cube3D-22-ocean,
+#cube3D-shadow-22-ocean {
+  left: 175px;
+  top: 70px;
+  animation-delay: 1.6s;
+}
+#cube3D-23-ocean,
+#cube3D-shadow-23-ocean {
+  left: 210px;
+  top: 70px;
+  animation-delay: 1.8s;
+}
+#cube3D-24-ocean,
+#cube3D-shadow-24-ocean {
+  left: 245px;
+  top: 70px;
+  animation-delay: 2s;
+}
+#cube3D-25-ocean,
+#cube3D-shadow-25-ocean {
+  left: 0px;
+  top: 105px;
+  animation-delay: 0.8s;
+}
+#cube3D-26-ocean,
+#cube3D-shadow-26-ocean {
+  left: 35px;
+  top: 105px;
+  animation-delay: 1s;
+}
+#cube3D-27-ocean,
+#cube3D-shadow-27-ocean {
+  left: 70px;
+  top: 105px;
+  animation-delay: 1.2s;
+}
+#cube3D-28-ocean,
+#cube3D-shadow-28-ocean {
+  left: 105px;
+  top: 105px;
+  animation-delay: 1.4s;
+}
+#cube3D-29-ocean,
+#cube3D-shadow-29-ocean {
+  left: 140px;
+  top: 105px;
+  animation-delay: 1.6s;
+}
+#cube3D-30-ocean,
+#cube3D-shadow-30-ocean {
+  left: 175px;
+  top: 105px;
+  animation-delay: 1.8s;
+}
+#cube3D-31-ocean,
+#cube3D-shadow-31-ocean {
+  left: 210px;
+  top: 105px;
+  animation-delay: 2s;
+}
+#cube3D-32-ocean,
+#cube3D-shadow-32-ocean {
+  left: 245px;
+  top: 105px;
+  animation-delay: 2.2s;
+}
+#cube3D-33-ocean,
+#cube3D-shadow-33-ocean {
+  left: 0px;
+  top: 140px;
+  animation-delay: 1s;
+}
+#cube3D-34-ocean,
+#cube3D-shadow-34-ocean {
+  left: 35px;
+  top: 140px;
+  animation-delay: 1.2s;
+}
+#cube3D-35-ocean,
+#cube3D-shadow-35-ocean {
+  left: 70px;
+  top: 140px;
+  animation-delay: 1.4s;
+}
+#cube3D-36-ocean,
+#cube3D-shadow-36-ocean {
+  left: 105px;
+  top: 140px;
+  animation-delay: 1.6s;
+}
+#cube3D-37-ocean,
+#cube3D-shadow-37-ocean {
+  left: 140px;
+  top: 140px;
+  animation-delay: 1.8s;
+}
+#cube3D-38-ocean,
+#cube3D-shadow-38-ocean {
+  left: 175px;
+  top: 140px;
+  animation-delay: 2s;
+}
+#cube3D-39-ocean,
+#cube3D-shadow-39-ocean {
+  left: 210px;
+  top: 140px;
+  animation-delay: 2.2s;
+}
+#cube3D-40-ocean,
+#cube3D-shadow-40-ocean {
+  left: 245px;
+  top: 140px;
+  animation-delay: 2.4s;
+}
+#cube3D-41-ocean,
+#cube3D-shadow-41-ocean {
+  left: 0px;
+  top: 175px;
+  animation-delay: 1.2s;
+}
+#cube3D-42-ocean,
+#cube3D-shadow-42-ocean {
+  left: 35px;
+  top: 175px;
+  animation-delay: 1.4s;
+}
+#cube3D-43-ocean,
+#cube3D-shadow-43-ocean {
+  left: 70px;
+  top: 175px;
+  animation-delay: 1.6s;
+}
+#cube3D-44-ocean,
+#cube3D-shadow-44-ocean {
+  left: 105px;
+  top: 175px;
+  animation-delay: 1.8s;
+}
+#cube3D-45-ocean,
+#cube3D-shadow-45-ocean {
+  left: 140px;
+  top: 175px;
+  animation-delay: 2s;
+}
+#cube3D-46-ocean,
+#cube3D-shadow-46-ocean {
+  left: 175px;
+  top: 175px;
+  animation-delay: 2.2s;
+}
+#cube3D-47-ocean,
+#cube3D-shadow-47-ocean {
+  left: 210px;
+  top: 175px;
+  animation-delay: 2.4s;
+}
+#cube3D-48-ocean,
+#cube3D-shadow-48-ocean {
+  left: 245px;
+  top: 175px;
+  animation-delay: 2.6s;
+}
+#cube3D-49-ocean,
+#cube3D-shadow-49-ocean {
+  left: 0px;
+  top: 210px;
+  animation-delay: 1.4s;
+}
+#cube3D-50-ocean,
+#cube3D-shadow-50-ocean {
+  left: 35px;
+  top: 210px;
+  animation-delay: 1.6s;
+}
+#cube3D-51-ocean,
+#cube3D-shadow-51-ocean {
+  left: 70px;
+  top: 210px;
+  animation-delay: 1.8s;
+}
+#cube3D-52-ocean,
+#cube3D-shadow-52-ocean {
+  left: 105px;
+  top: 210px;
+  animation-delay: 2s;
+}
+#cube3D-53-ocean,
+#cube3D-shadow-53-ocean {
+  left: 140px;
+  top: 210px;
+  animation-delay: 2.2s;
+}
+#cube3D-54-ocean,
+#cube3D-shadow-54-ocean {
+  left: 175px;
+  top: 210px;
+  animation-delay: 2.4s;
+}
+#cube3D-55-ocean,
+#cube3D-shadow-55-ocean {
+  left: 210px;
+  top: 210px;
+  animation-delay: 2.6s;
+}
+#cube3D-56-ocean,
+#cube3D-shadow-56-ocean {
+  left: 245px;
+  top: 210px;
+  animation-delay: 2.8s;
+}
+#cube3D-57-ocean,
+#cube3D-shadow-57-ocean {
+  left: 0px;
+  top: 245px;
+  animation-delay: 1.6s;
+}
+#cube3D-58-ocean,
+#cube3D-shadow-58-ocean {
+  left: 35px;
+  top: 245px;
+  animation-delay: 1.8s;
+}
+#cube3D-59-ocean,
+#cube3D-shadow-59-ocean {
+  left: 70px;
+  top: 245px;
+  animation-delay: 2s;
+}
+#cube3D-60-ocean,
+#cube3D-shadow-60-ocean {
+  left: 105px;
+  top: 245px;
+  animation-delay: 2.2s;
+}
+#cube3D-61-ocean,
+#cube3D-shadow-61-ocean {
+  left: 140px;
+  top: 245px;
+  animation-delay: 2.4s;
+}
+#cube3D-62-ocean,
+#cube3D-shadow-62-ocean {
+  left: 175px;
+  top: 245px;
+  animation-delay: 2.6s;
+}
+#cube3D-63-ocean,
+#cube3D-shadow-63-ocean {
+  left: 210px;
+  top: 245px;
+  animation-delay: 2.8s;
+}
+#cube3D-64-ocean,
+#cube3D-shadow-64-ocean {
+  left: 245px;
+  top: 245px;
+  animation-delay: 3s;
+}

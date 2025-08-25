@@ -59,7 +59,7 @@ export const BorderFrame = styled.div`
   h2 {
     margin: 1rem 1rem -0.5rem 0;
     font-family: sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     max-width: 100%;
     
     @media (max-width: 1200px) {

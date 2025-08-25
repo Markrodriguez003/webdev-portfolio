@@ -95,6 +95,7 @@ import "swiper/css/navigation";
 
 // UTILS
 import { getImageURL, getImageURLArray } from "../../../ultils/images-util";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 export function FullProjectCard({ props }) {
   const {
@@ -122,6 +123,18 @@ export function FullProjectCard({ props }) {
 
   // HANDLES IMAGE LIGHTBOX
   const [open, setOpen] = useState(false);
+
+  // TOGGLES READY STATE FOR REACT PLAYER; 
+  // 0 NOT LOADED - 1 LOADED
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  function handleVideoLoading() {
+    setVideoLoaded(() => true);
+
+
+  }
+
+
 
   // LIGHTBOX SETTINGS
   const [showToggle, setShowToggle] = useState(false);
@@ -299,6 +312,7 @@ export function FullProjectCard({ props }) {
                             setOpen(true);
                           }}
                         />{" "}
+                      
                         <ProjectBlurb>
                           <section>
                             <p>{content[count]}</p>
@@ -321,10 +335,33 @@ export function FullProjectCard({ props }) {
                   {youtube !== "#" ? (
                     <SwiperSlide>
                       <ProjectVideo>
+
+                        {
+                          videoLoaded
+                            ? <></>
+                            : <div style={{
+                              display: "block",
+                              marginTop: "auto",
+                              marginBottom: "auto",
+                              padding: "150px",
+                            }}>
+                              <div style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignContent: "center",
+                                width: "100%",
+                                height: "auto",
+                              }}>
+                                <LoadingSpinner />
+                              </div>
+                            </div>
+
+                        }
                         <ReactPlayer
                           key={`youtube-video:` + title + video}
                           url={video}
                           playing={playVideo}
+                          onReady={handleVideoLoading}
                           onPlay={() => setPlayVideo(true)}
                           onPause={() => setPlayVideo(false)}
                           controls={true}
@@ -332,6 +369,7 @@ export function FullProjectCard({ props }) {
                           height="525px"
                           width="775px"
                         />
+
                       </ProjectVideo>{" "}
                     </SwiperSlide>
                   ) : (
@@ -394,12 +432,14 @@ export function FullProjectCard({ props }) {
 
             </div>
           </CardFooter>
-        </Card>
+        </Card >
       </div >
     </>
   );
 }
 
+
+// MINI PROJECT CARD FOR MOBILES
 export function MiniProjectCard({ props }) {
   const {
     title,
@@ -415,8 +455,16 @@ export function MiniProjectCard({ props }) {
     video,
   } = props;
 
+  // TOGGLES READY STATE FOR REACT PLAYER; 
+  // 0 NOT LOADED - 1 LOADED
+  const [miniVideoLoaded, setMiniVideoLoaded] = useState(false);
+
+  function handleMiniVideoLoading() {
+    setMiniVideoLoaded(() => true);
+  }
+
   // VIDEO REF
-  const videoRef = useRef();
+  const videoMiniRef = useRef();
 
   // INNER PROJECT TECHNIQUES SWIPER REF
   const techniqueRef = useRef();
@@ -556,12 +604,17 @@ export function MiniProjectCard({ props }) {
               {video !== "#" ? <Accordion header="Videos:">
                 <ProjectUL>
                   <ProjectVideo>
+                    <br />
+                    {
+                      miniVideoLoaded ? <></> : <LoadingSpinner />
+                    }
                     <ReactPlayer
                       key={`youtube-video-mobile:` + title + video}
                       url={video}
                       controls={true}
                       playing={false}
-                      // ref={videoRef}
+                      ref={videoMiniRef}
+                      onReady={handleMiniVideoLoading}
                       width="100%"
                       height="350px"
                     />

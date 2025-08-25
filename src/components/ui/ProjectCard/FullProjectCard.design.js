@@ -149,7 +149,7 @@ export const ProjectBlurb = styled.section`
   color: white;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0px;
+  margin-top: 10px;
   padding: 0px 0px;
   width: 80%;
   text-align: left;
