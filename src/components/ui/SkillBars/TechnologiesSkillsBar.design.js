@@ -20,6 +20,19 @@ const rainbowFX = keyframes`
 		background-color: rgba(205,5,25,1);
 	}
 `;
+
+const pulseBrightness = keyframes`
+  0% {
+    filter: brightness(100%);
+  }
+  50% {
+    filter: brightness(180%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+`
+
 export const BarContainer = styled.div`
   display: flex;
   position: relative;
@@ -70,6 +83,14 @@ export const BarContainer = styled.div`
     background-color: rgba(215, 60, 0, 1);
     color: white;
     font-size: 30px;
+
+     background: linear-gradient(to right, #000000ff, #7e7e7eff, #ccc, #eee, #ccc); /* Silver gradient */
+        -webkit-background-clip: text; /* Clip background to text/icon shape */
+        background-clip: text;
+        -webkit-text-fill-color: transparent; /* Make text transparent to show clipped background */
+        filter: drop-shadow(0 0 5px rgba(219, 219, 219, 0.7)) /* White glow for shine */
+                contrast(1.5) /* Enhance contrast for metallic look */
+                brightness(1.2); /* Brighten for a shinier effect */
 
     @media (max-height: 725px) {
       font-size: 24px;

@@ -73,7 +73,8 @@ function CommercialSectionComp({ props }, ref) {
                     <HeaderBorderBox props={{ type: "ocean", title: "COMMERCIAL" }} />
                     <HeaderDetailsPanel>
                         <p>
-                            I'm actively working on some commercial sites.
+                            Nothing better than working on a project that has a direct impact on some businesses. <br />
+                            Here are a few examples of my recent work:
                         </p>
                         <br />
                         <br />

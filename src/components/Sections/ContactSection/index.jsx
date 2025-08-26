@@ -9,7 +9,7 @@ import ContactForm from "../../ui/ContactForm";
 import githubIcon from "../../../assets/icons/github-icon-w.png";
 import { MdOutlineContactMail } from "react-icons/md";
 import { FaRegEnvelope, FaLinkedin } from "react-icons/fa";
-import { LuMenuSquare } from "react-icons/lu";
+import { CgFileDocument } from "react-icons/cg";
 import { PiKeyReturnBold } from "react-icons/pi";
 
 // LIBRARIES
@@ -170,7 +170,7 @@ function ContactSectionComp({ props }, refPDF) {
             </p>
             <br />
             <p id="resume-about">
-              <LuMenuSquare
+              <CgFileDocument
                 style={{ verticalAlign: "center", paddingRight: "5px" }}
               />
               Resume: <a onClick={(event) => pdfModalClick(event)}>View</a> |{" "}
@@ -276,7 +276,7 @@ function ContactSectionComp({ props }, refPDF) {
             <MiniContactInfoPanel>
               <hr /> <br />
               <p id="resume-about">
-                <LuMenuSquare
+                <CgFileDocument
                   style={{ verticalAlign: "center", paddingRight: "5px" }}
                 />
                 Resume:{" "}

@@ -5,13 +5,22 @@ import {
 } from "./TechnologiesSkillsBar.design";
 import { IoLogoCss3 } from "react-icons/io";
 import { IoLogoJavascript, IoLogoHtml5 } from "react-icons/io5";
-import { SiReact } from "react-icons/si";
-import { TbBrandMongodb, TbBrandNextjs, TbBrandMysql, TbBrandDjango } from "react-icons/tb";
+import {
+  TbBrandMongodb,
+  TbBrandNextjs,
+  TbBrandMysql,
+  TbBrandDjango,
+} from "react-icons/tb";
 import { LiaGit } from "react-icons/lia";
-import { DiJqueryLogo } from "react-icons/di";
-import { SiNeutralinojs, SiTypescript, SiJest } from "react-icons/si";
+import { DiJqueryLogo, DiLinux } from "react-icons/di";
+import { SiNeutralinojs, SiTypescript, SiJest, SiStyledcomponents, SiTailwindcss, SiPostman, SiPrettier, SiBulma } from "react-icons/si";
+import { VscCopilot, VscVscode } from "react-icons/vsc";
 import { AiFillRobot } from "react-icons/ai";
-import { FaPython, FaWordpress, FaPhp } from "react-icons/fa";
+import {RiNpmjsFill } from "react-icons/ri";
+import { GrGraphQl } from "react-icons/gr";
+
+import { FaPython, FaWordpress, FaPhp, FaReact, FaChrome, FaBrain, FaRobot, FaBootstrap  } from "react-icons/fa";
+
 export function TechnologiesSkillsBar() {
   return (
     <>
@@ -25,15 +34,11 @@ export function TechnologiesSkillsBar() {
           <h3>JAVASCRIPT</h3>
         </div>
         <div>
-          <FaPhp id={"flex-icon"} />
-          <h3>PHP</h3>
-        </div>
-        <div>
           <FaWordpress id={"flex-icon"} />
           <h3>WORDPRESS</h3>
         </div>
         <div>
-          <SiReact id={"flex-icon"} />
+          <FaReact id={"flex-icon"} />
           <h3>REACT</h3>
         </div>
         <div>
@@ -48,10 +53,14 @@ export function TechnologiesSkillsBar() {
           <DiJqueryLogo id={"flex-icon"} />
           <h3>JQUERY</h3>
         </div>
-        {/* <div>
+        <div>
+          <SiTypescript id={"flex-icon"} />
+          <h3>TYPESCRIPT</h3>
+        </div>
+        <div>
           <SiNeutralinojs id={"flex-icon"} />
           <h3>NEUTRALINO</h3>
-        </div> */}
+        </div>
         <div>
           <TbBrandMongodb id={"flex-icon"} />
           <h3>MONGODB</h3>
@@ -64,10 +73,70 @@ export function TechnologiesSkillsBar() {
     </>
   );
 }
+export function TechnologiesBar() {
+  return (
+    <>
+      <BarContainer>
+        <div>
+          <VscVscode id={"flex-icon"} />
+          <h3>VSCode</h3>
+        </div>
+        <div>
+          <VscCopilot id={"flex-icon"} />
+          <h3>Copilot AI Agent</h3>
+        </div>
+        <div>
+          <FaRobot  id={"flex-icon"} />
+          <h3>Claude LLM</h3>
+        </div>
+        <div>
+          <FaBrain id={"flex-icon"} />
+          <h3>Chat GPT</h3>
+        </div>
+        <div>
+          <RiNpmjsFill id={"flex-icon"} />
+          <h3>NPM</h3>
+        </div>
+        <div>
+          <FaChrome id={"flex-icon"} />
+          <h3>Chrome Dev-Tools</h3>
+        </div>
+        <div>
+          <SiPostman id={"flex-icon"} />
+          <h3>Postman</h3>
+        </div>
+        <div>
+          <SiPrettier id={"flex-icon"} />
+          <h3>SiPrettier</h3>
+        </div>
+        <div>
+          <SiStyledcomponents id={"flex-icon"} />
+          <h3>Styled Components</h3>
+        </div>
+        <div>
+          <SiTailwindcss id={"flex-icon"} />
+          <h3>Tailwind</h3>
+        </div>
+        <div>
+          <FaBootstrap id={"flex-icon"} />
+          <h3>Bootstrap</h3>
+        </div>
+        <div>
+          <SiBulma id={"flex-icon"} />
+          <h3>Bulma</h3>
+        </div>
+      </BarContainer>
+    </>
+  );
+}
 export function FutureTechSkillsBar() {
   return (
     <>
       <BarContainer>
+        <div>
+          <DiLinux id={"flex-icon"} />
+          <h3>Linux</h3>
+        </div>
         <div>
           <TbBrandNextjs id={"flex-icon"} />
           <h3>NextJS</h3>
@@ -82,12 +151,12 @@ export function FutureTechSkillsBar() {
           <h3>JEST</h3>
         </div>
         <div>
-          <AiFillRobot id={"flex-icon"} />
-          <h3>AI</h3>
+          <GrGraphQl id={"flex-icon"} />
+          <h3>GRAPHQL</h3>
         </div>
         <div>
-          <SiTypescript id={"flex-icon"} />
-          <h3>TYPESCRIPT</h3>
+          <AiFillRobot id={"flex-icon"} />
+          <h3>AI</h3>
         </div>
         <div>
           <FaPython id={"flex-icon"} />
@@ -97,7 +166,6 @@ export function FutureTechSkillsBar() {
           <TbBrandDjango id={"flex-icon"} />
           <h3>DJANGO</h3>
         </div>
-
       </BarContainer>
     </>
   );
