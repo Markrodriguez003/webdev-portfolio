@@ -176,7 +176,7 @@ export const NavContainer = styled.nav`
     padding-bottom: 8px;
     text-align: right;
     color: white;
-    font-size: 2.5em;
+    font-size: 1.8em;
     font-weight: bold;
     letter-spacing: 1.5px;
     font-family: "body";
@@ -207,7 +207,7 @@ export const NavContainer = styled.nav`
   & ul li:visited {
   }
   & ul li:hover {
-    font-size: 3.4em;
+    font-size: 2.4em;
     padding: 10px;
     cursor: pointer;
     /* background<div>

@@ -9,9 +9,15 @@ import {
   HeaderDetailsPanel,
 } from "../Sections.design";
 import { AboutDetailsPanel, MiniAboutInfoPanel } from "./AboutSection.design";
+import "swiper/css";
+import 'swiper/css/effect-cube';
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 // ICONS
-import { FaRegEnvelope, FaYoutube, FaSatellite } from "react-icons/fa";
+import { FaRegEnvelope, FaYoutube, FaSatellite, FaArrowAltCircleRight } from "react-icons/fa";
 import { LuMenuSquare } from "react-icons/lu";
 import { BiSolidInvader } from "react-icons/bi";
 import { PiKeyReturnBold } from "react-icons/pi";
@@ -21,10 +27,15 @@ import PaginationTag from "../../ui/PaginationTag";
 import { TechnologiesSkillsBar, FutureTechSkillsBar } from "../../ui/SkillBars";
 import HeaderBorderBox from "../../ui/HeaderBorderBox";
 import AnimatedHeader from "../../ui/AnimatedHeader";
+import SiteButton from "../../ui/SiteButton";
 import {
   ModalOuterContainer,
   ModalExitBtn,
 } from "../ContactSection/ContactSection.Design";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Pagination, Navigation, EffectCube } from "swiper/modules";
+
+
 
 // ASSETS
 import githubIcon from "../../../assets/icons/github-icon-w.png";
@@ -115,75 +126,119 @@ function AboutSectionComp({ props }, ref) {
           </HeaderDetailsPanel>
         </LeftHeaderColumn>
         <RightColumnPanel>
-          <AboutDetailsPanel>
-            <h1 id="inverted-header">
-              <AnimatedHeader title={"Coding and beyond.."} />
-            </h1>
-            <p id="main-about">
-              {" "}
-              I am a growth-oriented full stack web developer with comprehensive
-              experience building websites and web apps that include designing,
-              testing, maintaining, and implementing backend-to-frontend
-              integration. Web development is a complex field in which I strive
-              to deliver quality solutions to any technical problem and aim to
-              be a team-oriented asset that can be depended on in any situation.
-              I would love to have the opportunity to help and grow with a team
-              that cares deeply about their work.
-              <FaSatellite size={"1.2em"} style={{ verticalAlign: "bottom" }} />
-            </p>{" "}
-            <br />
-            <h2 id="normal-header">Technological skills I have acquired:</h2>
-            <TechnologiesSkillsBar />
-            <br />
-            <h2 id="normal-header">Technologies currently being unpacked:</h2>
-            <FutureTechSkillsBar />
-            <br />
-            <h2 id="inverted-header">Besides coding...</h2>
-            <p id="about-secondary">
-              While I am passionate about web development, I love all things
-              art! I am a musician who likes to spend his time writing and
-              performing music of various genres. In addition to music I also
-              moonlight as an writer of sci-fi and fantasy novels. One of my
-              dream goals would be to code my own game and release it!{" "}
-              <BiSolidInvader
-                size={"1.2em"}
-                style={{ verticalAlign: "bottom" }}
-              />
-            </p>
-            {/* // ! RESUME & GITHUB HERE */}
-            <MiniAboutInfoPanel>
-              <br />
 
-              <p id="github-about">
-                <img
-                  src={githubIcon}
-                  width={"20px"}
-                  height={"20px"}
-                  style={{ paddingRight: "10px" }}
+          <Swiper
+            direction="horizontal"
+            effect={'cube'}
+            slidesPerView={1}
+            // navigation={true}
+            loop={true}
+            grabCursor={true}
+            allowTouchMove={true}
+            cubeEffect={{
+              shadow: true,
+              slideShadows: true,
+              shadowOffset: 0,
+              shadowScale: 0.02,
+            }}
+            speed={900}
+            pagination={false}
+            modules={[EffectCube, Pagination]}
+            className="mySwiper"
+            style={{
+              backgroundColor: "transparent",
+              width: "62.5vw",
+              height: "84vh",
+              marginTop: "0px",
+            }}
+          >
+            <SwiperSlide>
+              <AboutDetailsPanel>
+                <h1 id="inverted-header">
+                  <AnimatedHeader title={"Coding and beyond.."} />
+                </h1>
+                <p id="main-about">
+                  {" "}
+                  I am a growth-oriented full stack web developer with comprehensive
+                  experience building websites and web apps that include designing,
+                  testing, maintaining, and implementing backend-to-frontend
+                  integration. Web development is a complex field in which I strive
+                  to deliver quality solutions to any technical problem and aim to
+                  be a team-oriented asset that can be depended on in any situation.
+                  I would love to have the opportunity to help and grow with a team
+                  that cares deeply about their work.
+                  <FaSatellite size={"1.2em"} style={{ verticalAlign: "bottom" }} />
+                </p>{" "}
+                <br />
+                <h2 id="normal-header">Technological skills I have acquired:</h2>
+                <TechnologiesSkillsBar />
+                <br />
+                <h2 id="normal-header">Technologies currently being unpacked:</h2>
+                <FutureTechSkillsBar />
+
+                <div style={{ float: "right" }}>
+
+                  <SiteButton
+                    type=""
+                    // url="https://www.youtube.com"
+                    styling="inverted"
+                    title="More"
+                    icon={<FaArrowAltCircleRight />}
+                  />
+                </div>
+
+                {/* // ! RESUME & GITHUB HERE */}
+                <MiniAboutInfoPanel>
+                  <br />
+
+                  <p id="github-about">
+                    <img
+                      src={githubIcon}
+                      width={"20px"}
+                      height={"20px"}
+                      style={{ paddingRight: "10px" }}
+                    />
+                    <a
+                      href="https://www.github.com/MarkRodriguez003"
+                      target="_blank" rel="noreferrer"
+                    >
+                      <span style={{ fontSize: "16px" }}>
+                        {" "}
+                        Github: github.com/MarkRodriguez003
+                      </span>
+                    </a>
+                  </p>
+                  <br />
+                  <p id="resume-about">
+                    <LuMenuSquare
+                      style={{ verticalAlign: "center", paddingRight: "5px" }}
+                    />
+                    Resume:
+                    <a href={resume} download={resume}>
+                      Download
+                    </a>
+                  </p>
+                  <br />
+                </MiniAboutInfoPanel>
+              </AboutDetailsPanel>
+            </SwiperSlide>
+            <SwiperSlide>
+              <h2 id="inverted-header">Besides coding...</h2>
+              <p id="about-secondary">
+                While I am passionate about web development, I love all things
+                art! I am a musician who likes to spend his time writing and
+                performing music of various genres. In addition to music I also
+                moonlight as an writer of sci-fi and fantasy novels. One of my
+                dream goals would be to code my own game and release it!{" "}
+                <BiSolidInvader
+                  size={"1.2em"}
+                  style={{ verticalAlign: "bottom" }}
                 />
-                <a
-                  href="https://www.github.com/MarkRodriguez003"
-                  target="_blank" rel="noreferrer"
-                >
-                  <span style={{ fontSize: "16px" }}>
-                    {" "}
-                    Github: github.com/MarkRodriguez003
-                  </span>
-                </a>
               </p>
-              <br />
-              <p id="resume-about">
-                <LuMenuSquare
-                  style={{ verticalAlign: "center", paddingRight: "5px" }}
-                />
-                Resume:
-                <a href={resume} download={resume}>
-                  Download
-                </a>
-              </p>
-              <br />
-            </MiniAboutInfoPanel>
-          </AboutDetailsPanel>
+            </SwiperSlide>
+          </Swiper>
+
+
         </RightColumnPanel>
       </SectionContainer>
     </div>
