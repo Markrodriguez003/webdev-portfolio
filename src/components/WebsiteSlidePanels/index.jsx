@@ -44,35 +44,20 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
 
 // const AboutSection = lazy(() => import("../Sections/AboutSection/index.jsx"));
-const AboutSection = lazy(() =>
-  import("../Sections/AboutSection/index.jsx").then((module) => ({
-    default: module.AboutSection,
-  }))
-);
-const ProjectsSection = lazy(() =>
-  import("../Sections/ProjectsSection").then((module) => ({
-    default: module.ProjectsSection,
-  }))
-);
-
-const CommercialSection = lazy(() =>
-  import("../Sections/CommercialSection").then((module) => ({
-    default: module.CommercialSection,
-  }))
-);
-const ContactSection = lazy(() =>
-  import("../Sections/ContactSection").then((module) => ({
-    default: module.ContactSection,
-  }))
-);
 
 import BackgroundScenery from "../ui/BackgroundScenery/index.jsx";
 // import { ProjectsSection } from "../Sections/ProjectsSection/index.jsx";
 // import { ContactSection } from "../Sections/ContactSection/index.jsx";
-import Home from "../Sections/Home/index.jsx";
+import React, { memo } from "react";
 import PaginationTag from "../ui/PaginationTag/index.jsx";
 import { sections } from "../../../data/sectionNames.js";
 import LoadingScreen from "../ui/LoadingScreen/index.jsx";
+
+const Home = memo(lazy(() => import("../Sections/Home/index.jsx")));
+const AboutSection = memo(lazy(() => import("../Sections/AboutSection/index.jsx").then(module => ({ default: module.AboutSection }))));
+const ProjectsSection = memo(lazy(() => import("../Sections/ProjectsSection").then(module => ({ default: module.ProjectsSection }))));
+const CommercialSection = memo(lazy(() => import("../Sections/CommercialSection").then(module => ({ default: module.CommercialSection }))));
+const ContactSection = memo(lazy(() => import("../Sections/ContactSection").then(module => ({ default: module.ContactSection }))));
 
 function WebsiteSlidePanels() {
   const [windowHeightSize, setWindowHeightSize] = useState("auto");
@@ -166,7 +151,7 @@ function WebsiteSlidePanels() {
                 slidesPerView={1}
                 mousewheel={true}
                 simulateTouch={true}
-                speed={"985"}
+                speed={985}
                 pagination={{
                   clickable: true,
                 }}
@@ -177,19 +162,19 @@ function WebsiteSlidePanels() {
                 onSwiper={setSwiper}
               >
                 <SwiperSlide>
-                  <Home />
+                  <Suspense fallback={<LoadingScreen />}><Home /></Suspense>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <AboutSection />
+                  <Suspense fallback={<LoadingScreen />}><AboutSection /></Suspense>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <ProjectsSection />
+                  <Suspense fallback={<LoadingScreen />}><ProjectsSection /></Suspense>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <CommercialSection />
+                  <Suspense fallback={<LoadingScreen />}><CommercialSection /></Suspense>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <ContactSection />
+                  <Suspense fallback={<LoadingScreen />}><ContactSection /></Suspense>
                 </SwiperSlide>
               </StyledSwiper>
             </FullView>
