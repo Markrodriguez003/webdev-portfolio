@@ -13,43 +13,61 @@ import EndlessLandscape from "../HeaderAnimations/EndlessLandscape";
 import MorphShape from "../HeaderAnimations/MorphShape.jsx";
 import Ocean from "../HeaderAnimations/Ocean.jsx";
 import TennisBall from "../HeaderAnimations/TennisBall.jsx";
+import { useRef, useEffect, useState } from "react";
 function HeaderBorderBox({ props }) {
-  // console.log(`Headerbox Props? `, props);
-
   const { type, title } = props;
-  let animationType;
-  switch (type) {
-    case "planets":
-      animationType = <RotatingPlanets />;
-      break;
-    case "boxes":
-      animationType = <RotatingBoxes />;
-      break;
-    case "waves":
-      animationType = <Waves />;
-      break;
-    case "solar":
-      animationType = <SolarPanel />;
-      break;
-    case "endlessLandscape":
-      animationType = <EndlessLandscape />;
-      break;
-    case "morph":
-      animationType = <MorphShape />;
-      break;
-    case "ocean":
-      animationType = <Ocean />;
-      break;
-    case "tennisBall":
-      animationType = <TennisBall />;
-      break;
-    default:
-      animationType = <Waves />;
+  const containerRef = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const node = containerRef.current;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (node) {
+      observer.observe(node);
+    }
+    return () => {
+      if (node) observer.unobserve(node);
+    };
+  }, []);
+
+  let animationType = null;
+  if (inView) {
+    switch (type) {
+      case "planets":
+        animationType = <RotatingPlanets />;
+        break;
+      case "boxes":
+        animationType = <RotatingBoxes />;
+        break;
+      case "waves":
+        animationType = <Waves />;
+        break;
+      case "solar":
+        animationType = <SolarPanel />;
+        break;
+      case "endlessLandscape":
+        animationType = <EndlessLandscape />;
+        break;
+      case "morph":
+        animationType = <MorphShape />;
+        break;
+      case "ocean":
+        animationType = <Ocean />;
+        break;
+      case "tennisBall":
+        animationType = <TennisBall />;
+        break;
+      default:
+        animationType = <Waves />;
+    }
   }
 
   return (
     <>
-      <HeaderContainer>
+      <HeaderContainer ref={containerRef}>
         <BorderCenter>
           {animationType}
           <BorderFrame>
