@@ -41,11 +41,17 @@ export const AboutDetailsPanel = styled.div`
   margin-bottom: 30px;
   text-align: left;
 
-  & h1 {
+  & h1,
+  h2 {
     text-align: center;
   }
+
   & h2 {
-    text-align: center;
+    font-size: 1.4em;
+  }
+
+  & h1 {
+    /* font-size: 1.5em; */
   }
 
   // 2K/4K MONITORS

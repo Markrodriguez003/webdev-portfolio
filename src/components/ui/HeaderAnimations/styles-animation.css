@@ -35,7 +35,7 @@
 
 .outerContainer {
   display: block;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   /* background-color: tomato; */
 }
 
@@ -51,7 +51,14 @@
   --boxSize: 18px;
   --gutter: 4px;
   width: 10%;
+
   /* width: calc((var(--boxSize) + var(--gutter)) * 5); */
+}
+@media (max-width: 1199px) {
+  .boxContainer {
+    /* background-color: purple; */
+    width: 185px;
+  }
 }
 
 .box {
@@ -86,7 +93,7 @@
   animation-name: quiet;
 }
 
-.flex-cubes {
+/* .flex-r {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,17 +101,17 @@
   height: 80px;
   margin: 0 -50px 0 0;
   transform: scale(0.6) translate(0px, -70px);
-}
+} */
 
 /* cube */
-.cube-r {
+/* .cube-r {
   position: relative;
-  /* width: 100px; */
+
   height: 20px;
   margin: 0 65px 0 0;
   transform-style: preserve-3d;
-}
-.wall-r {
+} */
+/* .wall-r {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -112,87 +119,87 @@
   top: calc(-40px / 2);
   text-align: center;
   border: solid 2px #fff;
-}
-.front-r-cube {
+} */
+.front-r {
   transform: translateZ(calc(40px / 2));
 }
-.back-r-cube {
+.back-r {
   transform: translateZ(calc(-40px / 2)) rotateY(180deg);
 }
-.right-r-cube {
+.right-r {
   transform: translateX(calc(40px / 2)) rotateY(90deg);
 }
-.left-r-cube {
+.left-r {
   transform: translateX(calc(-40px / 2)) rotateY(-90deg);
 }
-.top-r-cube {
+.top-r {
   transform: translateY(calc(-40px / 2)) rotateX(90deg);
 }
-.bottom-r-cube {
+.bottom-r {
   transform: translateY(calc(40px / 2)) rotateX(-90deg);
 }
 
 /* animation */
 /* 
 //first */
-.flex:nth-of-type(4) .cube:nth-of-type(1) {
+.flex-r:nth-of-type(4) .cube-r:nth-of-type(1) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s infinite;
 }
 
 /* //sec */
-.flex:nth-of-type(3) .cube:nth-of-type(1) {
+.flex-r:nth-of-type(3) .cube-r:nth-of-type(1) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s infinite;
 }
-.flex:nth-of-type(4) .cube:nth-of-type(2) {
+.flex-r:nth-of-type(4) .cube-r:nth-of-type(2) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s infinite;
 }
 
 /* //third */
-.flex:nth-of-type(2) .cube:nth-of-type(1) {
+.flex-r:nth-of-type(2) .cube-r:nth-of-type(1) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.7s infinite;
 }
-.flex:nth-of-type(3) .cube:nth-of-type(2) {
+.flex-r:nth-of-type(3) .cube-r:nth-of-type(2) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.7s infinite;
 }
-.flex:nth-of-type(4) .cube:nth-of-type(3) {
+.flex-r:nth-of-type(4) .cube-r:nth-of-type(3) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
 }
 
 /* //forth */
-.flex:nth-of-type(1) .cube:nth-of-type(1) {
+.flex-r:nth-of-type(1) .cube-r:nth-of-type(1) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
 }
-.flex:nth-of-type(2) .cube:nth-of-type(2) {
+.flex-r:nth-of-type(2) .cube-r:nth-of-type(2) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
 }
-.flex:nth-of-type(3) .cube:nth-of-type(3) {
+.flex-r:nth-of-type(3) .cube-r:nth-of-type(3) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
 }
-.flex:nth-of-type(4) .cube:nth-of-type(4) {
+.flex-r:nth-of-type(4) .cube-r:nth-of-type(4) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
 }
 
 /* //five */
-.flex:nth-of-type(1) .cube:nth-of-type(2) {
+.flex-r:nth-of-type(1) .cube-r:nth-of-type(2) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s infinite;
 }
-.flex:nth-of-type(2) .cube:nth-of-type(3) {
+.flex-r:nth-of-type(2) .cube-r:nth-of-type(3) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s infinite;
 }
-.flex:nth-of-type(3) .cube:nth-of-type(4) {
+.flex-r:nth-of-type(3) .cube-r:nth-of-type(4) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s infinite;
 }
 
 /* //six */
-.flex:nth-of-type(1) .cube:nth-of-type(3) {
+.flex-r:nth-of-type(1) .cube-r:nth-of-type(3) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 1s infinite;
 }
-.flex:nth-of-type(2) .cube:nth-of-type(4) {
+.flex-r:nth-of-type(2) .cube-r:nth-of-type(4) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 1s infinite;
 }
 
 /* //seven */
-.flex:nth-of-type(1) .cube:nth-of-type(4) {
+.flex-r:nth-of-type(1) .cube-r:nth-of-type(4) {
   animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 1.1s infinite;
 }
 
@@ -202,7 +209,7 @@
   }
 }
 
-.wall-r {
+.wall {
   animation: color 2s linear 1.5s infinite;
 }
 

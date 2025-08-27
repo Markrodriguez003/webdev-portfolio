@@ -140,7 +140,8 @@ function ContactSectionComp({ props }, refPDF) {
       <SectionContainer ref={refPDF}>
         <LeftHeaderColumn>
           <MiniSatellite></MiniSatellite>
-          <HeaderBorderBox props={{ type: "solar", title: "CONTACT" }} />
+          {/* <HeaderBorderBox props={{ type: "solar", title: "CONTACT" }} /> */}
+          <HeaderBorderBox props={{ type: "tennisBall", title: "CONTACT" }} />
           <HeaderDetailsPanel>
             <p>
               Want to contact me? You can do so by using the contact form or by

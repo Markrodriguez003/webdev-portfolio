@@ -82,7 +82,7 @@ export const BarContainer = styled.div`
     /* animation: ${rainbowFX} 10s infinite alternate ease-in-out; */
     background-color: rgba(215, 60, 0, 1);
     color: white;
-    font-size: 30px;
+    font-size: 24px;
 
      background: linear-gradient(to right, #000000ff, #7e7e7eff, #ccc, #eee, #ccc); /* Silver gradient */
         -webkit-background-clip: text; /* Clip background to text/icon shape */

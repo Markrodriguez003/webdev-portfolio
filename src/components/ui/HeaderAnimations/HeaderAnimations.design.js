@@ -152,80 +152,79 @@ export const WavesAnimation = styled.div`
 // ***************************************
 // * CUBES
 // ***************************************
-export const BoxContainer = styled.div`
+export const BoxContainerRC = styled.div`
   /* margin-left: auto; */
   /* margin-right: auto; */
   text-align: center;
-  transform: scale(1.25) translate(80px, 70px);
+  transform: scale(1.35) translate(68px, 72px);
 
   @media (max-width: 1200px) {
-    
     transform: scale(1.15) translate(-5px, 70px);
   }
 `;
-export const BoxFlex = styled.div`
+export const BoxFlexRC = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80px;
-  height: 40px;
+  height: 45px;
 
   margin: 0 -80px 0 0;
   transform: scale(0.6) translate(0px, -70px);
-  & .cube:nth-of-type(4) .wall:nth-of-type(1) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(1) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s infinite;
   }
 
-  & .cube:nth-of-type(4) .wall:nth-of-type(1) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(1) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(2) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(2) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(1) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(1) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.7s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(2) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(2) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.7s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(3) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(3) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(1) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(1) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(2) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(2) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(3) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(3) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(4) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(4) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(2) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(2) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(3) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(3) {
     animation: rotation 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(4) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(4) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(3) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(3) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 1s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(4) {
+  &.cube:nth-of-type(4) .wall-r:nth-of-type(4) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 1s infinite;
   }
-  &.cube:nth-of-type(4) .wall:nth-of-type(4) {
+  &.cube-r:nth-of-type(4) .wall-r:nth-of-type(4) {
     animation: ${rotation} 3s cubic-bezier(0.215, 0.61, 0.355, 1) 1.1s infinite;
   }
 `;
 
 /* animation */
 
-export const Cube = styled.div`
+export const CubeRC = styled.div`
   position: relative;
   /* width: 100px; */
   height: 20px;
@@ -233,7 +232,7 @@ export const Cube = styled.div`
   transform-style: preserve-3d;
 `;
 
-export const CubeBox = styled.div`
+export const CubeBoxRC = styled.div`
   width: 40px;
   height: 40px;
   position: absolute;
@@ -241,25 +240,25 @@ export const CubeBox = styled.div`
   top: calc(-4px / 2);
   text-align: center;
   line-height: 50px;
-  border: solid 1px #fff;
+  border: solid 2.2px #fff;
   animation: color 2s linear 1.5s infinite;
 
-  &.wall .front {
+  &.wall-r .front-r {
     transform: translateZ(calc(40px / 2));
   }
-  &.wall .back {
+  &.wall-r .back-r {
     transform: translateZ(calc(-40px / 2)) rotateY(180deg);
   }
-  &.wall .right {
+  &.wall-r .right-r {
     transform: translateX(calc(40px / 2)) rotateY(90deg);
   }
-  &.wall .left {
+  &.wall-r .left-r {
     transform: translateX(calc(-40px / 2)) rotateY(-90deg);
   }
-  &.wall .top {
+  &.wall-r .top-r {
     transform: translateY(calc(-40px / 2)) rotateX(90deg);
   }
-  &.wall .bottom {
+  &.wall-r .bottom-r {
     transform: translateY(calc(40px / 2)) rotateX(-90deg);
   }
 `;
@@ -355,7 +354,7 @@ export const SolarPanelContainer = styled.div`
   height: 15vh;
   border-radius: 50%;
   /* background-color: red; */
-  transform: translate(54px, 24px) scale(1.2);
+  transform: translate(64px, 24px) scale(1.2);
 
   @media screen and (max-width: 1200px) {
     width: 20vh;
@@ -371,7 +370,7 @@ export const SolarPanelContainer = styled.div`
     top: 0;
     bottom: 0;
     border-radius: 50%;
-    filter: blur(40px);
+    /* filter: blur(40px); */
     animation: ${fadeIn} 0.5s easeIn;
     opacity: 1;
     transform: scale(1.8);

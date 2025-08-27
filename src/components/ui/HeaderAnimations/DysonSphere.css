@@ -1,0 +1,78 @@
+body {
+    background-color: black;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sphere {
+    position: relative;
+	
+    width: 300px; /* Size of the wireframe sphere */
+    height: 300px; /* Same size to form a circle */
+    animation: rotate 6s infinite linear;
+    /* No perspective needed for a flat illusion */
+    transform-origin: center center; /* Ensure the rotation axis is centered */
+		transform-style: preserve-3d;
+	
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.circle {
+    position: absolute;
+    width: 300px; /* Size of each wireframe circle */
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+ 
+}
+
+/* Positioning circles in the 'wireframe sphere' using rotateY() */
+.circle:nth-of-type(1) {
+    transform: translate(-50%, -50%) rotateY(0deg);
+}
+
+.circle:nth-of-type(2) {
+    transform: translate(-50%, -50%) rotateY(40deg);
+}
+
+.circle:nth-of-type(3) {
+    transform: translate(-50%, -50%) rotateY(80deg);
+}
+
+.circle:nth-of-type(4) {
+    transform: translate(-50%, -50%) rotateY(120deg);
+}
+
+.circle:nth-of-type(5) {
+    transform: translate(-50%, -50%) rotateY(160deg);
+}
+
+.circle:nth-of-type(6) {
+    transform: translate(-50%, -50%) rotateY(200deg);
+}
+
+.circle:nth-of-type(7) {
+    transform: translate(-50%, -50%) rotateY(240deg);
+}
+
+.circle:nth-of-type(8) {
+    transform: translate(-50%, -50%) rotateY(280deg);
+}
+
+.circle:nth-of-type(9) {
+    transform: translate(-50%, -50%) rotateY(320deg);
+}

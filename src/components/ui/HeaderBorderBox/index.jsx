@@ -12,6 +12,7 @@ import EndlessLandscape from "../HeaderAnimations/EndlessLandscape";
 
 import MorphShape from "../HeaderAnimations/MorphShape.jsx";
 import Ocean from "../HeaderAnimations/Ocean.jsx";
+import TennisBall from "../HeaderAnimations/TennisBall.jsx";
 function HeaderBorderBox({ props }) {
   // console.log(`Headerbox Props? `, props);
 
@@ -38,6 +39,9 @@ function HeaderBorderBox({ props }) {
       break;
     case "ocean":
       animationType = <Ocean />;
+      break;
+    case "tennisBall":
+      animationType = <TennisBall />;
       break;
     default:
       animationType = <Waves />;

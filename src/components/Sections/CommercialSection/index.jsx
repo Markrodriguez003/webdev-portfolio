@@ -73,7 +73,7 @@ function CommercialSectionComp({ props }, ref) {
                     <HeaderBorderBox props={{ type: "ocean", title: "COMMERCIAL" }} />
                     <HeaderDetailsPanel>
                         <p>
-                            Nothing better than working on a project that has a direct impact on some businesses. <br />
+                            Nothing better than working on a project that has a direct impact on local businesses. All of the project code are not available for viewing due to confidentiality and security reasons.<br />
                             Here are a few examples of my recent work:
                         </p>
                         <br />

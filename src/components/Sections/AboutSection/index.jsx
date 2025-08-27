@@ -183,7 +183,7 @@ function AboutSectionComp({ props }, ref) {
                   be depended on in any situation. Proven ability to learn and
                   adapt quickly to new technologies and strive to stay updated
                   with industry trends. I would love to have the opportunity to
-                  help and grow with a team that cares deeply about their work.
+                  help and grow with a team that cares deeply about their work. {' '}
                   <FaSatellite
                     size={"1.2em"}
                     style={{ verticalAlign: "bottom" }}
@@ -199,11 +199,9 @@ function AboutSectionComp({ props }, ref) {
                   Technologies currently being unpacked:
                 </h2>
                 <FutureTechSkillsBar />
-                <br />
-                <br />
-                <br />
+
                 <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
+                  style={{ display: "flex", paddingTop:"15px", justifyContent: "space-between" }}
                 >
                   <span>1/3</span>
                   <SiteButton
@@ -228,7 +226,7 @@ function AboutSectionComp({ props }, ref) {
                   workflow and improve the quality of my code. Whether it's a
                   new JavaScript library or a powerful design tool, I'm always
                   eager to learn and integrate new tools into my development
-                  process. 
+                  process.
                 </p>
                 <br />
                 <p id="about-secondary">
@@ -275,7 +273,7 @@ function AboutSectionComp({ props }, ref) {
                   While I am passionate about web development, I love all things
                   art! I am a musician who likes to spend his time writing and
                   performing music of various genres. In addition to music I
-                  also moonlight as an writer of sci-fi and fantasy novels. My parents are of Spanish descent and trying to learn Spanish when I have the time. 
+                  also moonlight as an writer of sci-fi and fantasy novels. My parents are of Spanish descent and trying to learn Spanish when I have the time.
                   I am currently dabbling with Godot engine. One of my dream goals
                   would be to code my own game and release it!{" "}
                   <BiSolidInvader
@@ -341,7 +339,7 @@ function AboutSectionComp({ props }, ref) {
           </MiniAboutInfoPanel>
         </RightColumnPanel>
       </SectionContainer>
-    </div>
+    </div >
   );
 }
 

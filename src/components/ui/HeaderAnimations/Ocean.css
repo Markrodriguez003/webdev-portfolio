@@ -21,7 +21,7 @@
   position: absolute;
 }
 .cube3D-ocean {
-  animation: rotation 2s infinite ease-in-out;
+  animation: rotationOcean 2s infinite ease-in-out;
 }
 .translate-cube3D-shadow-ocean {
   transform: translateZ(-40px);
@@ -52,7 +52,7 @@
   border: white, 2px, solid;
   transform: rotateX(-90deg) translateZ(12.3px);
 }
-@keyframes rotation {
+@keyframes rotationOcean {
   0% {
     transform: translateZ(0px);
   }
