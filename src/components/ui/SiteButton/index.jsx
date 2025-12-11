@@ -1,18 +1,11 @@
 /* eslint-disable react/prop-types */
 import { CustomAnchorBtn, CustomBtn } from "./SiteButton.design";
 export default function SiteButton(props) {
-  const { url, title, styling, icon, type } = props;
-
-  // function buttonInfo(event) {
-  //   console.log(`button clicked::: `, event);
-  //   event.preventDefault();
-  //   event.stopPropagation();
-  //   return 0;
-  // }
+  const { url, title, styling, icon, type, onClick } = props;
 
   return (
     <>
-      {props.type.toLowerCase() === "anchor" ? (
+      {props.type && props.type.toLowerCase() === "anchor" ? (
         <CustomAnchorBtn
           styling={styling}
           href={url !== undefined ? url : ""}
@@ -23,8 +16,7 @@ export default function SiteButton(props) {
           {title}
         </CustomAnchorBtn>
       ) : (
-        <CustomBtn styling={styling}>
-          {/* <CustomBtn styling={styling}> */}
+        <CustomBtn styling={styling} onClick={onClick}>
           <span style={{ verticalAlign: "center" }}>{icon}</span>
           {title}
         </CustomBtn>

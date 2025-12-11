@@ -68,13 +68,22 @@ function PDFViewer() {
   );
 }
 
+
 function AboutSectionComp({ props }, ref) {
   const [pdfModal, setPdfModal] = useState(false);
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
   function pdfModalClick(event) {
-    // event.preventDefault();
     setPdfModal(!pdfModal);
   }
+
+  // Handlers for next/prev
+  const handleNext = () => {
+    if (swiperInstance) swiperInstance.slideNext();
+  };
+  const handlePrev = () => {
+    if (swiperInstance) swiperInstance.slidePrev();
+  };
 
   return (
     <div ref={ref}>
@@ -145,8 +154,6 @@ function AboutSectionComp({ props }, ref) {
             direction="horizontal"
             effect={"cube"}
             slidesPerView={1}
-            // navigation={true}
-            // loop={true}
             grabCursor={true}
             allowTouchMove={true}
             cubeEffect={{
@@ -165,6 +172,7 @@ function AboutSectionComp({ props }, ref) {
               height: "84vh",
               marginTop: "0px",
             }}
+            onSwiper={setSwiperInstance}
           >
             {/* //todo: INJECT THIS INTO A DATA JSON AND MAP IT OUT */}
             <SwiperSlide>
@@ -201,15 +209,15 @@ function AboutSectionComp({ props }, ref) {
                 <FutureTechSkillsBar />
 
                 <div
-                  style={{ display: "flex", paddingTop:"15px", justifyContent: "space-between" }}
+                  style={{ display: "flex", paddingTop: "15px", justifyContent: "center", alignItems: "center", gap: "32px" }}
                 >
-                  <span>1/3</span>
+                  <span style={{ minWidth: 48, textAlign: "center" }}>1/3</span>
                   <SiteButton
-                    type=""
-                    // url="https://www.youtube.com"
+                    type="button"
                     styling="inverted"
-                    title="More"
+                    title="Next"
                     icon={<FaArrowAltCircleRight />}
+                    onClick={handleNext}
                   />
                 </div>
               </AboutDetailsPanel>
@@ -244,22 +252,22 @@ function AboutSectionComp({ props }, ref) {
                 <br />
                 <br />
                 <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
+                  style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "32px" }}
                 >
                   <SiteButton
-                    type=""
-                    // url="https://www.youtube.com"
+                    type="button"
                     styling="inverted"
-                    title="Back"
+                    title="Previous"
                     icon={<FaArrowAltCircleLeft />}
+                    onClick={handlePrev}
                   />
-                  <span>2/3</span>
+                  <span style={{ minWidth: 48, textAlign: "center" }}>2/3</span>
                   <SiteButton
-                    type=""
-                    // url="https://www.youtube.com"
+                    type="button"
                     styling="inverted"
-                    title="More"
+                    title="Next"
                     icon={<FaArrowAltCircleRight />}
+                    onClick={handleNext}
                   />
                 </div>
               </AboutDetailsPanel>
@@ -289,16 +297,16 @@ function AboutSectionComp({ props }, ref) {
                 <br />
                 <br />
                 <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
+                  style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "32px" }}
                 >
                   <SiteButton
-                    type=""
-                    // url="https://www.youtube.com"
+                    type="button"
                     styling="inverted"
-                    title="Back"
+                    title="Previous"
                     icon={<FaArrowAltCircleLeft />}
+                    onClick={handlePrev}
                   />
-                  <span>3/3</span>
+                  <span style={{ minWidth: 48, textAlign: "center" }}>3/3</span>
                 </div>
               </AboutDetailsPanel>
             </SwiperSlide>
