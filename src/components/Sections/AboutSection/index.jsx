@@ -1,5 +1,5 @@
 // REACT
-import { useState, forwardRef } from "react";
+import { useState, useEffect, forwardRef } from "react";
 
 // STYLING / STYLED COMPONENTS
 import {
@@ -69,9 +69,20 @@ function PDFViewer() {
 }
 
 
+
+
 function AboutSectionComp({ props }, ref) {
   const [pdfModal, setPdfModal] = useState(false);
   const [swiperInstance, setSwiperInstance] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1200);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 1200);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   function pdfModalClick(event) {
     setPdfModal(!pdfModal);
@@ -85,6 +96,148 @@ function AboutSectionComp({ props }, ref) {
     if (swiperInstance) swiperInstance.slidePrev();
   };
 
+  // Panels content (to avoid duplication)
+  const panels = [
+    <AboutDetailsPanel key="panel-1">
+      <h1 id="inverted-header">
+        <AnimatedHeader title={"Coding and beyond.."} />
+      </h1>
+      <p id="main-about">
+        {" "}
+        I am a growth-oriented full stack web developer with
+        comprehensive experience building websites and web apps that
+        include designing, testing, maintaining, and implementing
+        backend-to-frontend integration. Web development is a complex
+        field in which I strive to deliver quality solutions to any
+        technical problem and aim to be a team-oriented asset that can
+        be depended on in any situation. Proven ability to learn and
+        adapt quickly to new technologies and strive to stay updated
+        with industry trends. I would love to have the opportunity to
+        help and grow with a team that cares deeply about their work. {" "}
+        <FaSatellite size={"1.2em"} style={{ verticalAlign: "bottom" }} />
+      </p>{" "}
+      <br />
+      <h2 id="normal-header">Technological skills I have acquired:</h2>
+      <TechnologiesSkillsBar />
+      <br />
+      <h2 id="normal-header">Technologies currently being unpacked:</h2>
+      <FutureTechSkillsBar />
+      {!isMobile && (
+        <div
+          style={{
+            display: "flex",
+            paddingTop: "15px",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "32px",
+          }}
+        >
+          <span style={{ minWidth: 48, textAlign: "center" }}>1/3</span>
+          <SiteButton
+            type="button"
+            styling="inverted"
+            title="Next"
+            icon={<FaArrowAltCircleRight />}
+            onClick={handleNext}
+          />
+        </div>
+      )}
+    </AboutDetailsPanel>,
+    <AboutDetailsPanel key="panel-2">
+      <h1 id="inverted-header">
+        <AnimatedHeader title={"Tools & More.."} />
+      </h1>
+      <p id="about-secondary">
+        Developers need tools to build their projects, and I love all
+        things related to software development. I enjoy exploring new
+        libraries, frameworks, and technologies that can enhance my
+        workflow and improve the quality of my code. Whether it's a
+        new JavaScript library or a powerful design tool, I'm always
+        eager to learn and integrate new tools into my development
+        process.
+      </p>
+      <br />
+      <p id="about-secondary">
+        I am interested in game development and exploring new
+        technologies such as AI. I hope to incorporate more AI
+        elements into my projects in the future.
+      </p>
+      <br />
+      <h2 id="inverted-header">
+        Technological tools I have utilized to build my projects:
+      </h2>
+      <TechnologiesBar />
+      <br />
+      <br />
+      <br />
+      {!isMobile && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "32px",
+          }}
+        >
+          <SiteButton
+            type="button"
+            styling="inverted"
+            title="Previous"
+            icon={<FaArrowAltCircleLeft />}
+            onClick={handlePrev}
+          />
+          <span style={{ minWidth: 48, textAlign: "center" }}>2/3</span>
+          <SiteButton
+            type="button"
+            styling="inverted"
+            title="Next"
+            icon={<FaArrowAltCircleRight />}
+            onClick={handleNext}
+          />
+        </div>
+      )}
+    </AboutDetailsPanel>,
+    <AboutDetailsPanel key="panel-3">
+      <h1 id="inverted-header">
+        <AnimatedHeader title={"Besides coding.."} />
+      </h1>
+      <p id="about-secondary">
+        While I am passionate about web development, I love all things
+        art! I am a musician who likes to spend his time writing and
+        performing music of various genres. In addition to music I
+        also moonlight as an writer of sci-fi and fantasy novels. My parents are of Spanish descent and trying to learn Spanish when I have the time.
+        I am currently dabbling with Godot engine. One of my dream goals
+        would be to code my own game and release it!{" "}
+        <BiSolidInvader size={"1.2em"} style={{ verticalAlign: "bottom" }} />
+      </p>
+      <br />
+      <h2 id="normal-header">Some of my music:</h2>
+      {/* <TechnologiesSkillsBar /> */}
+      <br />
+      <br />
+      <br />
+      {!isMobile && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "32px",
+          }}
+        >
+          <SiteButton
+            type="button"
+            styling="inverted"
+            title="Previous"
+            icon={<FaArrowAltCircleLeft />}
+            onClick={handlePrev}
+          />
+          <span style={{ minWidth: 48, textAlign: "center" }}>3/3</span>
+        </div>
+      )}
+    </AboutDetailsPanel>,
+  ];
+
   return (
     <div ref={ref}>
       <SectionContainer>
@@ -97,9 +250,7 @@ function AboutSectionComp({ props }, ref) {
               </ModalExitBtn>
             </ModalOuterContainer>
           </div>
-        ) : (
-          <></>
-        )}
+        ) : null}
         {/* // todo: move this to another component */}
         <LeftHeaderColumn>
           <HeaderBorderBox props={{ type: "waves", title: "ABOUT" }} />
@@ -107,7 +258,6 @@ function AboutSectionComp({ props }, ref) {
             <p>
               Here is some information about me. I hope you find it interesting!
             </p>
-
             <br />
             <p id="github-about">
               <a
@@ -150,171 +300,41 @@ function AboutSectionComp({ props }, ref) {
           </HeaderDetailsPanel>
         </LeftHeaderColumn>
         <RightColumnPanel>
-          <Swiper
-            direction="horizontal"
-            effect={"cube"}
-            slidesPerView={1}
-            grabCursor={true}
-            allowTouchMove={true}
-            cubeEffect={{
-              shadow: true,
-              slideShadows: true,
-              shadowOffset: 0,
-              shadowScale: 0.02,
-            }}
-            speed={900}
-            pagination={false}
-            modules={[EffectCube, Pagination]}
-            className="mySwiper"
-            style={{
-              backgroundColor: "transparent",
-              width: "62.5vw",
-              height: "84vh",
-              marginTop: "0px",
-            }}
-            onSwiper={setSwiperInstance}
-          >
-            {/* //todo: INJECT THIS INTO A DATA JSON AND MAP IT OUT */}
-            <SwiperSlide>
-              <AboutDetailsPanel>
-                <h1 id="inverted-header">
-                  <AnimatedHeader title={"Coding and beyond.."} />
-                </h1>
-                <p id="main-about">
-                  {" "}
-                  I am a growth-oriented full stack web developer with
-                  comprehensive experience building websites and web apps that
-                  include designing, testing, maintaining, and implementing
-                  backend-to-frontend integration. Web development is a complex
-                  field in which I strive to deliver quality solutions to any
-                  technical problem and aim to be a team-oriented asset that can
-                  be depended on in any situation. Proven ability to learn and
-                  adapt quickly to new technologies and strive to stay updated
-                  with industry trends. I would love to have the opportunity to
-                  help and grow with a team that cares deeply about their work. {' '}
-                  <FaSatellite
-                    size={"1.2em"}
-                    style={{ verticalAlign: "bottom" }}
-                  />
-                </p>{" "}
-                <br />
-                <h2 id="normal-header">
-                  Technological skills I have acquired:
-                </h2>
-                <TechnologiesSkillsBar />
-                <br />
-                <h2 id="normal-header">
-                  Technologies currently being unpacked:
-                </h2>
-                <FutureTechSkillsBar />
-
-                <div
-                  style={{ display: "flex", paddingTop: "15px", justifyContent: "center", alignItems: "center", gap: "32px" }}
-                >
-                  <span style={{ minWidth: 48, textAlign: "center" }}>1/3</span>
-                  <SiteButton
-                    type="button"
-                    styling="inverted"
-                    title="Next"
-                    icon={<FaArrowAltCircleRight />}
-                    onClick={handleNext}
-                  />
-                </div>
-              </AboutDetailsPanel>
-            </SwiperSlide>
-            <SwiperSlide>
-              <AboutDetailsPanel>
-                <h1 id="inverted-header">
-                  <AnimatedHeader title={"Tools & More.."} />
-                </h1>
-                <p id="about-secondary">
-                  Developers need tools to build their projects, and I love all
-                  things related to software development. I enjoy exploring new
-                  libraries, frameworks, and technologies that can enhance my
-                  workflow and improve the quality of my code. Whether it's a
-                  new JavaScript library or a powerful design tool, I'm always
-                  eager to learn and integrate new tools into my development
-                  process.
-                </p>
-                <br />
-                <p id="about-secondary">
-                  I am interested in game development and exploring new
-                  technologies such as AI. I hope to incorporate more AI
-                  elements into my projects in the future.
-                </p>
-                <br />
-
-                <h2 id="inverted-header">
-                  Technological tools I have utilized to build my projects:
-                </h2>
-                <TechnologiesBar />
-                <br />
-                <br />
-                <br />
-                <div
-                  style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "32px" }}
-                >
-                  <SiteButton
-                    type="button"
-                    styling="inverted"
-                    title="Previous"
-                    icon={<FaArrowAltCircleLeft />}
-                    onClick={handlePrev}
-                  />
-                  <span style={{ minWidth: 48, textAlign: "center" }}>2/3</span>
-                  <SiteButton
-                    type="button"
-                    styling="inverted"
-                    title="Next"
-                    icon={<FaArrowAltCircleRight />}
-                    onClick={handleNext}
-                  />
-                </div>
-              </AboutDetailsPanel>
-            </SwiperSlide>
-            <SwiperSlide>
-              <AboutDetailsPanel>
-                <h1 id="inverted-header">
-                  <AnimatedHeader title={"Besides coding.."} />
-                </h1>
-                <p id="about-secondary">
-                  While I am passionate about web development, I love all things
-                  art! I am a musician who likes to spend his time writing and
-                  performing music of various genres. In addition to music I
-                  also moonlight as an writer of sci-fi and fantasy novels. My parents are of Spanish descent and trying to learn Spanish when I have the time.
-                  I am currently dabbling with Godot engine. One of my dream goals
-                  would be to code my own game and release it!{" "}
-                  <BiSolidInvader
-                    size={"1.2em"}
-                    style={{ verticalAlign: "bottom" }}
-                  />
-                </p>
-                <br />
-
-                <h2 id="normal-header">Some of my music:</h2>
-                {/* <TechnologiesSkillsBar /> */}
-                <br />
-                <br />
-                <br />
-                <div
-                  style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "32px" }}
-                >
-                  <SiteButton
-                    type="button"
-                    styling="inverted"
-                    title="Previous"
-                    icon={<FaArrowAltCircleLeft />}
-                    onClick={handlePrev}
-                  />
-                  <span style={{ minWidth: 48, textAlign: "center" }}>3/3</span>
-                </div>
-              </AboutDetailsPanel>
-            </SwiperSlide>
-          </Swiper>
+          {isMobile ? (
+            <>{panels}</>
+          ) : (
+            <Swiper
+              direction="horizontal"
+              effect={"cube"}
+              slidesPerView={1}
+              grabCursor={true}
+              allowTouchMove={true}
+              cubeEffect={{
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 0,
+                shadowScale: 0.02,
+              }}
+              speed={900}
+              pagination={false}
+              modules={[EffectCube, Pagination]}
+              className="mySwiper"
+              style={{
+                backgroundColor: "transparent",
+                width: "62.5vw",
+                height: "84vh",
+                marginTop: "0px",
+              }}
+              onSwiper={setSwiperInstance}
+            >
+              {panels.map((panel, idx) => (
+                <SwiperSlide key={idx}>{panel}</SwiperSlide>
+              ))}
+            </Swiper>
+          )}
           {/* // ! RESUME & GITHUB HERE */}
           <MiniAboutInfoPanel>
             <br />
-
             <p id="github-about">
               <img
                 src={githubIcon}
