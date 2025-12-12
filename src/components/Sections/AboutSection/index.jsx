@@ -99,7 +99,7 @@ function AboutSectionComp({ props }, ref) {
   // Panels content (to avoid duplication)
   const panels = [
     <AboutDetailsPanel key="panel-1-about">
-      <h1 id="inverted-header">
+      <h1 id="inverted-header" style={{ textAlign: isMobile ? "center" : "center" }}>
         <AnimatedHeader title={"Coding and beyond.."} />
       </h1>
       <p id="main-about">
@@ -117,10 +117,14 @@ function AboutSectionComp({ props }, ref) {
         <FaSatellite size={"1.2em"} style={{ verticalAlign: "bottom" }} />
       </p>{" "}
       <br />
-      <h2 id="normal-header">Technological skills I have acquired:</h2>
+      <h2 id="normal-header" style={{ textAlign: isMobile ? "center" : "center" }}>
+        Technological skills I have acquired:
+      </h2>
       <TechnologiesSkillsBar />
       <br />
-      <h2 id="normal-header">Technologies currently being unpacked:</h2>
+      <h2 id="normal-header" style={{ textAlign: isMobile ? "center" : "center" }}>
+        Technologies currently being unpacked:
+      </h2>
       <FutureTechSkillsBar />
       {!isMobile && (
         <div
@@ -144,7 +148,7 @@ function AboutSectionComp({ props }, ref) {
       )}
     </AboutDetailsPanel>,
     <AboutDetailsPanel key="panel-2">
-      <h1 id="inverted-header">
+      <h1 id="inverted-header" style={{ textAlign: isMobile ? "left" : "center" }}>
         <AnimatedHeader title={"Tools & More.."} />
       </h1>
       <p id="about-secondary">
@@ -163,7 +167,7 @@ function AboutSectionComp({ props }, ref) {
         elements into my projects in the future.
       </p>
       <br />
-      <h2 id="inverted-header">
+      <h2 id="inverted-header" style={{ textAlign: isMobile ? "left" : "center" }}>
         Technological tools I have utilized to build my projects:
       </h2>
       <TechnologiesBar />
@@ -198,7 +202,7 @@ function AboutSectionComp({ props }, ref) {
       )}
     </AboutDetailsPanel>,
     <AboutDetailsPanel key="panel-3">
-      <h1 id="inverted-header">
+      <h1 id="inverted-header" style={{ textAlign: isMobile ? "left" : "center" }}>
         <AnimatedHeader title={"Besides coding.."} />
       </h1>
       <p id="about-secondary">
