@@ -98,7 +98,7 @@ function AboutSectionComp({ props }, ref) {
 
   // Panels content (to avoid duplication)
   const panels = [
-    <AboutDetailsPanel key="panel-1">
+    <AboutDetailsPanel key="panel-1-about">
       <h1 id="inverted-header">
         <AnimatedHeader title={"Coding and beyond.."} />
       </h1>
