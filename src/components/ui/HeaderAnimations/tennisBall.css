@@ -88,11 +88,11 @@
 }
 
 .outerSphereContainer {
-  transform: translate(-20px, 6px);
+  transform: translate(-32px, 8px);
 }
 .outerSphereContainer svg {
-  width: 73%;
-  height: 73%;
+  width: 71%;
+  height: 71%;
   background-color: transparent;
   animation: tennisball-rotate 33s linear infinite;
 }
@@ -101,4 +101,10 @@
   stroke: white;
   stroke-width: 4.5;
   fill: rgba(0, 0, 0, 0.263);
+}
+
+@media screen and (max-width: 1200px) {
+.outerSphereContainer {
+  transform: scale(0.62) translate(-3px, -52px);
+}
 }
