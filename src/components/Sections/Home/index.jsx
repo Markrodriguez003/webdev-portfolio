@@ -10,10 +10,10 @@ import {
 // LIBRARIES
 import { useInView } from "react-intersection-observer";
 
-
 // COMPONENTS
 import AnimatedHeader from "../../ui/AnimatedHeader/index.jsx";
-import PlanetHeroScene from "../../ui/PlanetHeroScene/index.jsx";
+import { useContext, useEffect, useRef, useState, lazy, Suspense } from "react";
+const PlanetHeroScene = lazy(() => import("../../ui/PlanetHeroScene/index.jsx"));
 import SoundMeter from "../../ui/HeaderAnimations/SoundMeter.jsx";
 import { navContext } from "../../WebsiteSlidePanels/index.jsx";
 import SpeechBubble from "../../ui/SpeechBubble/index.jsx";
@@ -25,9 +25,6 @@ import astronautH from "../../../assets/images/astronaut-2.png";
 
 // ICONS
 import { FaUserAstronaut } from "react-icons/fa6";
-
-// REACT
-import { useContext, useEffect, useRef, useState } from "react";
 
 function Home({ children }) {
   const siteNav = useContext(navContext);
@@ -66,10 +63,10 @@ function Home({ children }) {
 
   return (
     <div>
-      <PlanetHeroScene />
-      {/* //! https://codesandbox.io/p/sandbox/scroll-component-forked-6rzrq2?file=%2Fsrc%2FForm.js%3A4%2C40&fontsize=14&hidenavigation=1&theme=dark */}
-      {/* //! https://www.linkedin.com/pulse/useeffect-mastery-tips-tricks-avoiding-common-mistakes-novin-noori */}
-
+      {/* lazy-loaded scene so initial bundle doesn't block */}
+      <Suspense fallback={null}>
+        <PlanetHeroScene />
+      </Suspense>
       <br />
       <br />
       <IntroductionContainer>
@@ -159,7 +156,21 @@ function Home({ children }) {
               visible={inView}
             />{" "}
           </div>
-          <img src={astronautH}></img>
+
+          {/* Only render the full astronaut image once it is in view.
+              Add loading/decoding/fetchPriority hints for faster, non-blocking loading.
+              A small placeholder div keeps layout from collapsing until the image loads. */}
+          {inView ? (
+            <img
+              src={astronautH}
+              alt="astronaut"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+            />
+          ) : (
+            <div aria-hidden="true" style={{ width: 48, height: 48 }} />
+          )}
         </AstronautMini>
       </ScrollToExplore>
     </div >
