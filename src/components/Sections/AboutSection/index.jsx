@@ -309,7 +309,7 @@ function AboutSectionComp({ props }, ref) {
             // ref={videoMiniRef}
             // onReady={handleMiniVideoLoading}
             // width="100%"
-            width="100%"
+            // width="100%"
             height="600px"
           />
         </div>
