@@ -14,6 +14,8 @@ import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "react-h5-audio-player/lib/styles.css";
+import "./About.css";
 
 // ICONS
 import {
@@ -26,8 +28,14 @@ import {
 import { CgFileDocument } from "react-icons/cg";
 import { BiSolidInvader } from "react-icons/bi";
 import { PiKeyReturnBold } from "react-icons/pi";
+import { FaPhotoFilm } from "react-icons/fa6";
+
+// LIBRARY
+import AudioPlayer from "react-h5-audio-player";
+import ReactPlayer from "react-player";
 
 // COMPONENTS
+import Accordion from "../../ui/Accordion";
 import PaginationTag from "../../ui/PaginationTag";
 import {
   TechnologiesSkillsBar,
@@ -47,10 +55,23 @@ import { Pagination, Navigation, EffectCube } from "swiper/modules";
 // ASSETS
 import githubIcon from "../../../assets/icons/github-icon-w.png";
 import resume from "../../../../public/download/Mark Rodriguez - Resume.pdf";
+import AlienScarface from "../../../assets/music/Alien Scarface.mp3";
+import AstralMathematics from "../../../assets/music/Astral Mathematics.mp3";
+import SpaceArbys from "../../../assets/music/Here at Space Arbys.mp3";
+import Wormhole from "../../../assets/music/Into the Wormhole again.mp3";
+import SpaceAdventure from "../../../assets/music/Space adventure 142F.mp3";
+import TechnicalDifficulties from "../../../assets/music/Technical difficulties.mp3";
+const videogameDemo = "https://youtu.be/NEC0p5t25r8";
 
-// ? NOTES
-// ? https://www.youtube.com/watch?v=h4227nm08G8
-// ? https://codepen.io/yomateo/pen/ypbNrJ
+// Playlist as objects so each track has a display title
+const playlist = [
+  { src: AlienScarface, title: "Alien Scarface" },
+  { src: AstralMathematics, title: "Astral Mathematics" },
+  { src: SpaceArbys, title: "Here at Space Arby's" },
+  { src: Wormhole, title: "Into the Wormhole Again" },
+  { src: SpaceAdventure, title: "Space Adventure 142F" },
+  { src: TechnicalDifficulties, title: "Technical Difficulties" },
+];
 
 function PDFViewer() {
   return (
@@ -68,13 +89,25 @@ function PDFViewer() {
   );
 }
 
-
-
-
 function AboutSectionComp({ props }, ref) {
+  const [currentTrack, setTrackIndex] = useState(0);
   const [pdfModal, setPdfModal] = useState(false);
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1200);
+
+  const handleClickNextTrack = () => {
+    console.log("click next");
+    setTrackIndex((currentTrack) =>
+      currentTrack < playlist.length - 1 ? currentTrack + 1 : 0
+    );
+  };
+
+  const handleEnd = () => {
+    console.log("end");
+    setTrackIndex((currentTrack) =>
+      currentTrack < playlist.length - 1 ? currentTrack + 1 : 0
+    );
+  };
 
   useEffect(() => {
     function handleResize() {
@@ -99,30 +132,38 @@ function AboutSectionComp({ props }, ref) {
   // Panels content (to avoid duplication)
   const panels = [
     <AboutDetailsPanel key="panel-1-about">
-      <h1 id="inverted-header" style={{ textAlign: isMobile ? "center" : "center" }}>
+      <h1
+        id="inverted-header"
+        style={{ textAlign: isMobile ? "center" : "center" }}
+      >
         <AnimatedHeader title={"Coding and beyond.."} />
       </h1>
       <p id="main-about">
         {" "}
-        I am a growth-oriented full stack web developer with
-        comprehensive experience building websites and web apps that
-        include designing, testing, maintaining, and implementing
-        backend-to-frontend integration. Web development is a complex
-        field in which I strive to deliver quality solutions to any
-        technical problem and aim to be a team-oriented asset that can
-        be depended on in any situation. Proven ability to learn and
-        adapt quickly to new technologies and strive to stay updated
-        with industry trends. I would love to have the opportunity to
-        help and grow with a team that cares deeply about their work. {" "}
+        I am a growth-oriented full stack web developer with comprehensive
+        experience building websites and web apps that include designing,
+        testing, maintaining, and implementing backend-to-frontend integration.
+        Web development is a complex field in which I strive to deliver quality
+        solutions to any technical problem and aim to be a team-oriented asset
+        that can be depended on in any situation. Proven ability to learn and
+        adapt quickly to new technologies and strive to stay updated with
+        industry trends. I would love to have the opportunity to help and grow
+        with a team that cares deeply about their work.{" "}
         <FaSatellite size={"1.2em"} style={{ verticalAlign: "bottom" }} />
       </p>{" "}
       <br />
-      <h2 id="normal-header" style={{ textAlign: isMobile ? "center" : "center" }}>
+      <h2
+        id="normal-header"
+        style={{ textAlign: isMobile ? "center" : "center" }}
+      >
         Technological skills I have acquired:
       </h2>
       <TechnologiesSkillsBar />
       <br />
-      <h2 id="normal-header" style={{ textAlign: isMobile ? "center" : "center" }}>
+      <h2
+        id="normal-header"
+        style={{ textAlign: isMobile ? "center" : "center" }}
+      >
         Technologies currently being unpacked:
       </h2>
       <FutureTechSkillsBar />
@@ -148,26 +189,31 @@ function AboutSectionComp({ props }, ref) {
       )}
     </AboutDetailsPanel>,
     <AboutDetailsPanel key="panel-2">
-      <h1 id="inverted-header" style={{ textAlign: isMobile ? "left" : "center" }}>
+      <h1
+        id="inverted-header"
+        style={{ textAlign: isMobile ? "left" : "center" }}
+      >
         <AnimatedHeader title={"Tools & More.."} />
       </h1>
       <p id="about-secondary">
-        Developers need tools to build their projects, and I love all
-        things related to software development. I enjoy exploring new
-        libraries, frameworks, and technologies that can enhance my
-        workflow and improve the quality of my code. Whether it's a
-        new JavaScript library or a powerful design tool, I'm always
-        eager to learn and integrate new tools into my development
-        process.
+        Developers need tools to build their projects, and I love all things
+        related to software development. I enjoy exploring new libraries,
+        frameworks, and technologies that can enhance my workflow and improve
+        the quality of my code. Whether it's a new JavaScript library or a
+        powerful design tool, I'm always eager to learn and integrate new tools
+        into my development process.
       </p>
       <br />
       <p id="about-secondary">
-        I am interested in game development and exploring new
-        technologies such as AI. I hope to incorporate more AI
-        elements into my projects in the future.
+        I am interested in game development and exploring new technologies such
+        as AI. I hope to incorporate more AI elements into my projects in the
+        future.
       </p>
       <br />
-      <h2 id="inverted-header" style={{ textAlign: isMobile ? "left" : "center" }}>
+      <h2
+        id="inverted-header"
+        style={{ textAlign: isMobile ? "left" : "center" }}
+      >
         Technological tools I have utilized to build my projects:
       </h2>
       <TechnologiesBar />
@@ -202,21 +248,72 @@ function AboutSectionComp({ props }, ref) {
       )}
     </AboutDetailsPanel>,
     <AboutDetailsPanel key="panel-3">
-      <h1 id="inverted-header" style={{ textAlign: isMobile ? "left" : "center" }}>
+      <h1
+        id="inverted-header"
+        style={{ textAlign: isMobile ? "left" : "center" }}
+      >
         <AnimatedHeader title={"Besides coding.."} />
       </h1>
       <p id="about-secondary">
-        While I am passionate about web development, I love all things
-        art! I am a musician who likes to spend his time writing and
-        performing music of various genres. In addition to music I
-        also moonlight as an writer of sci-fi and fantasy novels. My parents are of Spanish descent and trying to learn Spanish when I have the time.
-        I am currently dabbling with Godot engine. One of my dream goals
-        would be to code my own game and release it!{" "}
+        While I am passionate about web development, I love all things art! I am
+        a musician who likes to spend his time writing and performing music of
+        various genres. In addition to music I also moonlight as an writer of
+        sci-fi and fantasy novels. My parents are of Spanish descent and trying
+        to learn Spanish when I have the time. I am currently dabbling with
+        Godot engine. One of my dream goals would be to code my own game and
+        release it!{" "}
         <BiSolidInvader size={"1.2em"} style={{ verticalAlign: "bottom" }} />
       </p>
       <br />
-      <h2 id="normal-header">Some of my music:</h2>
-      {/* <TechnologiesSkillsBar /> */}
+      <h2 id="normal-header" style={{ padding: "0px", margin: "0px" }}>
+        <FaPhotoFilm color="white" size={"38px"} /> Media:
+      </h2>
+      <hr style={{ marginBottom: "16px" }} />
+
+      <Accordion header="Music">
+        <div>
+          <div
+            style={{ textAlign: "center", marginBottom: 8, fontWeight: 600 }}
+          >
+            {playlist[currentTrack]?.title ?? "Unknown track"}
+          </div>
+          <AudioPlayer
+            volume={0.5}
+            src={playlist[currentTrack]?.src}
+            showSkipControls
+            onClickNext={handleClickNextTrack}
+            onEnded={handleEnd}
+            onError={() => {
+              console.log("play error");
+            }}
+          />
+          <small
+            style={{ textAlign: "center", display: "block", marginTop: 8 }}
+          >
+            All this music was written for various side projects using hardware
+            and software synthesizers, Reaper & FL Studio.
+          </small>
+        </div>
+      </Accordion>
+
+      {/* https://youtu.be/NEC0p5t25r8 */}
+      <Accordion header="Video Games">
+        <div
+          className="videoPlayerWrapper"
+        >
+          <ReactPlayer
+            key={`video game demo:`}
+            url={videogameDemo}
+            controls={true}
+            playing={false}
+            // ref={videoMiniRef}
+            // onReady={handleMiniVideoLoading}
+            // width="100%"
+            width="100%"
+            height="600px"
+          />
+        </div>
+      </Accordion>
       <br />
       <br />
       <br />
@@ -369,9 +466,38 @@ function AboutSectionComp({ props }, ref) {
             </p>
             <br />
           </MiniAboutInfoPanel>
+          {/* <Accordion header="Music">
+            <div>
+              <div
+                style={{
+                  textAlign: "center",
+                  marginBottom: 8,
+                  fontWeight: 600,
+                }}
+              >
+                {playlist[currentTrack]?.title ?? "Unknown track"}
+              </div>
+              <AudioPlayer
+                volume={0.8}
+                src={playlist[currentTrack]?.src}
+                showSkipControls
+                onClickNext={handleClickNextTrack}
+                onEnded={handleEnd}
+                onError={() => {
+                  console.log("play error");
+                }}
+              />
+              <small
+                style={{ textAlign: "center", display: "block", marginTop: 8 }}
+              >
+                All this music was written for various side projects using
+                hardware and software synthesizers, Reaper & FL Studio.
+              </small>
+            </div>
+          </Accordion> */}
         </RightColumnPanel>
       </SectionContainer>
-    </div >
+    </div>
   );
 }
 

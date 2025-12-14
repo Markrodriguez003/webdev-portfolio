@@ -7,7 +7,7 @@ export const AccordionContainer = styled.div`
   justify-content: start;
   align-content: start;
   width: 100%;
-
+ 
   height: auto;
 
   & * {
@@ -18,7 +18,7 @@ export const AccordionPanel = styled.div`
   font-family: "body";
   color: white;
   margin-bottom: 40px;
-
+ 
   & h4 {
     cursor: pointer;
     padding: 0px;
