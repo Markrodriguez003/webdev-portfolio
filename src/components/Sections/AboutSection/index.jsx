@@ -22,6 +22,7 @@ import {
   FaRegEnvelope,
   FaYoutube,
   FaSatellite,
+  FaLinkedin,
   FaArrowAltCircleRight,
   FaArrowAltCircleLeft,
 } from "react-icons/fa";
@@ -65,9 +66,9 @@ const videogameDemo = "https://youtu.be/NEC0p5t25r8";
 
 // Playlist as objects so each track has a display title
 const playlist = [
-  { src: AlienScarface, title: "Alien Scarface" },
   { src: AstralMathematics, title: "Astral Mathematics" },
   { src: SpaceArbys, title: "Here at Space Arby's" },
+  { src: AlienScarface, title: "Alien Scarface" },
   { src: Wormhole, title: "Into the Wormhole Again" },
   { src: SpaceAdventure, title: "Space Adventure 142F" },
   { src: TechnicalDifficulties, title: "Technical Difficulties" },
@@ -345,7 +346,7 @@ function AboutSectionComp({ props }, ref) {
             </a>
             <br />
             <small>
-              Learning how to create simple 2d platformer using Godot game engine. No AI was used.
+              Learning how to create simple 2d platformer using Godot game engine. All character art was drawn by me. No AI was used.
             </small>
           </div>
         ) : (
@@ -358,8 +359,9 @@ function AboutSectionComp({ props }, ref) {
               width="100%"
               height="600px"
             />
-            <small>
-              Learning how to create simple 2d platformer using Godot game engine. No AI was used.
+            <br />
+            <small style={{ textAlign: "left" }}>
+              Learning how to create simple 2d platformer using Godot game engine. All character art was drawn by me. No AI was used.
             </small>
           </div>
         )}
@@ -494,6 +496,15 @@ function AboutSectionComp({ props }, ref) {
                   style={{ verticalAlign: "center", paddingRight: "5px" }}
                 />
                 Youtube{" "}
+              </a>
+            </p>
+            <br />
+            <p>
+              <a href="www.linkedin.com/in/ModulatorStudios" target="_blank" rel="noreferrer">
+                <FaLinkedin
+                  style={{ verticalAlign: "center", paddingRight: "5px" }}
+                />
+                LinkedIn
               </a>
             </p>
           </HeaderDetailsPanel>

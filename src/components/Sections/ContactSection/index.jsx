@@ -181,7 +181,7 @@ function ContactSectionComp({ props }, refPDF) {
             </p>
             <br />
             <p>
-              <a href="https://github.com/Markrodriguez003" target="_blank" rel="noreferrer">
+              <a href="www.linkedin.com/in/ModulatorStudios" target="_blank" rel="noreferrer">
                 <FaLinkedin
                   style={{ verticalAlign: "center", paddingRight: "5px" }}
                 />
