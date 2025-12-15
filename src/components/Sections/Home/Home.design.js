@@ -168,6 +168,15 @@ export const NavContainer = styled.nav`
       flex-direction: row;
       padding: 0px;
     }
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  & ul:has(li:hover) li:not(:hover) {
+    opacity: 0.3;
+    filter: grayscale(20%);
   }
 
   & ul li {

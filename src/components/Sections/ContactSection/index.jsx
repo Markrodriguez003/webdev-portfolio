@@ -278,11 +278,14 @@ function ContactSectionComp({ props }, refPDF) {
               <hr /> <br />
               <p id="resume-about">
                 <CgFileDocument
-                  style={{ verticalAlign: "center", paddingRight: "5px" }}
+                  size={"20px"}
+                  style={{ verticalAlign: "center" }}
                 />
-                Resume:{" "}
-                <a href={resume} download={resume}>
-                  Download
+                {/* Resume:{" "} */}
+                <a href={resume} download={resume} style={{ fontWeight: "bold" }}>
+                  <span style={{ fontSize: "16px", fontWeight: "bold" }}>
+                    {" "}
+                    Resume</span>
                 </a>
               </p>
               <br />
@@ -291,16 +294,15 @@ function ContactSectionComp({ props }, refPDF) {
                   src={githubIcon}
                   width={"20px"}
                   height={"20px"}
-                  style={{ paddingRight: "10px" }}
+                  style={{ paddingRight: "2px" }}
                 />
                 <a
                   href="https://www.github.com/MarkRodriguez003"
                   target="_blank" rel="noreferrer"
                 >
-                  <span style={{ fontSize: "16px" }}>
+                  <span style={{ fontSize: "16px", fontWeight: "bold" }}>
                     {" "}
-                    Github: github.com/MarkRodriguez003
-                  </span>
+                    Github</span>
                 </a>
               </p>
               <br />
@@ -309,7 +311,7 @@ function ContactSectionComp({ props }, refPDF) {
                   <FaRegEnvelope
                     style={{ verticalAlign: "center", paddingRight: "5px" }}
                   />
-                  <span >
+                  <span style={{ fontSize: "16px", fontWeight: "bold" }} >
                     Email: MarkRodriguez003@gmail.com
                   </span>
                 </a>

@@ -291,6 +291,7 @@ function AboutSectionComp({ props }, ref) {
             </div>
             <audio
               controls
+              controlsList="nodownload"
               src={playlist[currentTrack]?.src}
               style={{ width: "100%", background: "#181818", borderRadius: 8 }}
               onEnded={handleEnd}
@@ -359,6 +360,7 @@ function AboutSectionComp({ props }, ref) {
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <audio
                   controls
+                  controlsList="nodownload"
                   src={playlist[currentTrack]?.src}
                   style={{ width: "100%", maxWidth: 400, background: "#181818", borderRadius: 8 }}
                   onEnded={handleEnd}
@@ -510,6 +512,7 @@ function AboutSectionComp({ props }, ref) {
           </div>
           <audio
             controls
+            controlsList="nodownload"
             src={playlist[currentTrack]?.src}
             style={{ width: "85%", maxWidth: 320, background: "#181818" }}
             onEnded={handleEnd}
@@ -652,7 +655,7 @@ function AboutSectionComp({ props }, ref) {
           {/* // ! RESUME & GITHUB HERE */}
           <MiniAboutInfoPanel>
             <br />
-            <div style={{ position: "relative", display: "flex", flexDirection: "row", gap: "30px", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
+            {/* <div style={{ position: "relative", display: "flex", flexDirection: "row", gap: "30px", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
 
               <p id="github-about">
                 <img
@@ -682,7 +685,7 @@ function AboutSectionComp({ props }, ref) {
                   Resume
                 </a>
               </p>
-            </div>
+            </div> */}
 
             <br />
           </MiniAboutInfoPanel>
