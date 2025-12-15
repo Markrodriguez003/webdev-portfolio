@@ -237,13 +237,18 @@ export function FullProjectCard({ props }) {
                 <></>
               )}
 
-              <span onClick={ChangeSlide}>
-
+              <span
+                onClick={ChangeSlide}
+                className="shake-animation-vertical"
+                style={{
+                  display: "inline-block",
+                  // Remove any transform or animation from parent CSS that could interfere
+                }}
+              >
                 <SiteButton
                   type=""
                   styling="youtube"
                   title="Project Hightlights"
-
                   icon={<FaUserAstronaut />}
                 />
               </span>
@@ -312,7 +317,7 @@ export function FullProjectCard({ props }) {
                             setOpen(true);
                           }}
                         />{" "}
-                      
+
                         <ProjectBlurb>
                           <section>
                             <p>{content[count]}</p>

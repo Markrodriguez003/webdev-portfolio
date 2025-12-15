@@ -47,3 +47,44 @@ a {
 .swiper-button-prev:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+
+@keyframes shake-next-btn {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(-3px); }
+  20% { transform: translateX(3px); }
+  30% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  50% { transform: translateX(-1px); }
+  60% { transform: translateX(1px); }
+  70% { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes shake-up-btn {
+  0% { transform: translateY(0); }
+  10% { transform: translateY(-3px); }
+  20% { transform: translateY(3px); }
+  30% { transform: translateY(-2px); }
+  40% { transform: translateY(2px); }
+  50% { transform: translateY(-1px); }
+  60% { transform: translateY(1px); }
+  70% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+.shake-animation-horizontal{
+  display: inline-block;
+  animation: shake-next-btn 1.5s cubic-bezier(.36,.07,.19,.97) both;
+  animation-iteration-count: infinite;
+  animation-delay: 2s, 2s;
+  animation-fill-mode: both;
+}
+
+.shake-animation-vertical{
+  display: inline-block;
+  animation: shake-up-btn 1.5s cubic-bezier(.36,.07,.19,.97) both;
+  animation-iteration-count: infinite;
+  animation-delay: 2s, 2s;
+  animation-fill-mode: both;
+}

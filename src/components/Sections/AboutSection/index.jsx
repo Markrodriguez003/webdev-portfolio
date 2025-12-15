@@ -182,13 +182,17 @@ function AboutSectionComp({ props }, ref) {
           }}
         >
           <span style={{ minWidth: 48, textAlign: "center" }}>1/3</span>
-          <SiteButton
-            type="button"
-            styling="inverted"
-            title="Next"
-            icon={<FaArrowAltCircleRight />}
-            onClick={handleNext}
-          />
+          <span
+            className="shake-animation-horizontal"
+          >
+            <SiteButton
+              type="button"
+              styling="inverted"
+              title="Next"
+              icon={<FaArrowAltCircleRight />}
+              onClick={handleNext}
+            />
+          </span>
         </div>
       )}
     </AboutDetailsPanel>,
@@ -500,7 +504,7 @@ function AboutSectionComp({ props }, ref) {
             </p>
             <br />
             <p>
-              <a href="www.linkedin.com/in/ModulatorStudios" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/ModulatorStudios" target="_blank" rel="noreferrer">
                 <FaLinkedin
                   style={{ verticalAlign: "center", paddingRight: "5px" }}
                 />
