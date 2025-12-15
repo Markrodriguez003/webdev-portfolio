@@ -14,7 +14,6 @@ import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "react-h5-audio-player/lib/styles.css";
 import "./About.css";
 
 // ICONS
@@ -32,7 +31,6 @@ import { PiKeyReturnBold } from "react-icons/pi";
 import { FaPhotoFilm } from "react-icons/fa6";
 
 // LIBRARY
-import AudioPlayer from "react-h5-audio-player";
 import ReactPlayer from "react-player";
 
 // COMPONENTS
@@ -280,25 +278,53 @@ function AboutSectionComp({ props }, ref) {
 
       <Accordion header="Music" >
         {(!isMobile || !isTinyMobile) ? (
-          <div style={{ zIndex: 9999 }}>
+          <div
+            style={{
+              position: "relative",
+              background: "transparent",
+            }}
+          >
             <div
-              style={{ textAlign: "center", marginBottom: 8, fontWeight: 600 }}
+              style={{ textAlign: "center", marginBottom: 8, fontWeight: 600, color: "#fff" }}
             >
               {playlist[currentTrack]?.title ?? "Unknown track"}
             </div>
-            <AudioPlayer
-              volume={0.5}
-              showFilledVolume
-              showFilledVolumeControls
+            <audio
+              controls
               src={playlist[currentTrack]?.src}
-              showSkipControls
-              onClickNext={handleClickNextTrack}
+              style={{ width: "100%", background: "#181818", borderRadius: 8 }}
               onEnded={handleEnd}
-              onError={() => {
-                console.log("play error");
-              }}
-              style={{ width: "100%" }}
             />
+            <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 12 }}>
+              <button
+                onClick={() => setTrackIndex(prev => prev > 0 ? prev - 1 : playlist.length - 1)}
+                style={{
+                  padding: "8px 16px",
+                  borderRadius: 6,
+                  border: "none",
+                  background: "#333",
+                  color: "#fff",
+                  cursor: "pointer",
+                  fontWeight: 600,
+                }}
+              >
+                Previous
+              </button>
+              <button
+                onClick={handleClickNextTrack}
+                style={{
+                  padding: "8px 16px",
+                  borderRadius: 6,
+                  border: "none",
+                  background: "#333",
+                  color: "#fff",
+                  cursor: "pointer",
+                  fontWeight: 600,
+                }}
+              >
+                Next
+              </button>
+            </div>
             <small
               style={{ textAlign: "center", display: "block", marginTop: 8 }}
             >
@@ -311,8 +337,7 @@ function AboutSectionComp({ props }, ref) {
             <div style={{ marginBottom: 8, fontWeight: 600 }}>
               {playlist[currentTrack]?.title ?? "Unknown track"}
             </div>
-            {/* Only show the button if window width is less than 450px */}
-            {isTinyMobile && (
+            {isTinyMobile ? (
               <button
                 style={{
                   margin: "12px auto",
@@ -329,6 +354,46 @@ function AboutSectionComp({ props }, ref) {
               >
                 Play Music
               </button>
+            ) : (
+              /* Show inline player for medium mobile (450px - 1200px) */
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <audio
+                  controls
+                  src={playlist[currentTrack]?.src}
+                  style={{ width: "100%", maxWidth: 400, background: "#181818", borderRadius: 8 }}
+                  onEnded={handleEnd}
+                />
+                <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 12 }}>
+                  <button
+                    onClick={() => setTrackIndex(prev => prev > 0 ? prev - 1 : playlist.length - 1)}
+                    style={{
+                      padding: "8px 16px",
+                      borderRadius: 6,
+                      border: "none",
+                      background: "#333",
+                      color: "#fff",
+                      cursor: "pointer",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Previous
+                  </button>
+                  <button
+                    onClick={handleClickNextTrack}
+                    style={{
+                      padding: "8px 16px",
+                      borderRadius: 6,
+                      border: "none",
+                      background: "#333",
+                      color: "#fff",
+                      cursor: "pointer",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
             )}
             <small
               style={{ textAlign: "center", display: "block", marginTop: 8 }}
@@ -397,6 +462,7 @@ function AboutSectionComp({ props }, ref) {
 
   return (
     <div ref={ref}>
+      {/* Mobile audio player at bottom */}
       {isTinyMobile && showMobileAudioPlayer && (
         <div
           style={{
@@ -407,14 +473,17 @@ function AboutSectionComp({ props }, ref) {
             background: "#181818",
             zIndex: 99999,
             boxShadow: "0 -2px 12px rgba(0,0,0,0.3)",
-            padding: "8px 0 0 0",
+            padding: "12px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
           <button
             style={{
               position: "absolute",
               right: 12,
-              top: 4,
+              top: 8,
               zIndex: 100000,
               background: "transparent",
               border: "none",
@@ -427,22 +496,45 @@ function AboutSectionComp({ props }, ref) {
           >
             ×
           </button>
-          <div style={{ textAlign: "center", color: "#fff", fontWeight: 600, fontSize: 16, marginBottom: 4 }}>
+          <div style={{ textAlign: "center", color: "#fff", fontWeight: 600, fontSize: 16, marginBottom: 8 }}>
             {playlist[currentTrack]?.title ?? "Unknown track"}
           </div>
-          <AudioPlayer
-            volume={0.5}
-            showFilledVolume
-            showFilledVolumeControls
+          <audio
+            controls
             src={playlist[currentTrack]?.src}
-            showSkipControls
-            onClickNext={handleClickNextTrack}
+            style={{ width: "90%", maxWidth: 350, background: "#181818" }}
             onEnded={handleEnd}
-            onError={() => {
-              console.log("play error");
-            }}
-            style={{ width: "100vw", background: "#181818" }}
           />
+          <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 8 }}>
+            <button
+              onClick={() => setTrackIndex(prev => prev > 0 ? prev - 1 : playlist.length - 1)}
+              style={{
+                padding: "6px 14px",
+                borderRadius: 6,
+                border: "none",
+                background: "#333",
+                color: "#fff",
+                cursor: "pointer",
+                fontWeight: 600,
+              }}
+            >
+              Prev
+            </button>
+            <button
+              onClick={handleClickNextTrack}
+              style={{
+                padding: "6px 14px",
+                borderRadius: 6,
+                border: "none",
+                background: "#333",
+                color: "#fff",
+                cursor: "pointer",
+                fontWeight: 600,
+              }}
+            >
+              Next
+            </button>
+          </div>
         </div>
       )}
       <SectionContainer>
@@ -525,7 +617,7 @@ function AboutSectionComp({ props }, ref) {
               allowTouchMove={false}
               cubeEffect={{
                 shadow: true,
-                slideShadows: true,
+                slideShadows: false,
                 shadowOffset: 0,
                 shadowScale: 0.02,
               }}
@@ -583,35 +675,6 @@ function AboutSectionComp({ props }, ref) {
 
             <br />
           </MiniAboutInfoPanel>
-          {/* <Accordion header="Music">
-            <div>
-              <div
-                style={{
-                  textAlign: "center",
-                  marginBottom: 8,
-                  fontWeight: 600,
-                }}
-              >
-                {playlist[currentTrack]?.title ?? "Unknown track"}
-              </div>
-              <AudioPlayer
-                volume={0.8}
-                src={playlist[currentTrack]?.src}
-                showSkipControls
-                onClickNext={handleClickNextTrack}
-                onEnded={handleEnd}
-                onError={() => {
-                  console.log("play error");
-                }}
-              />
-              <small
-                style={{ textAlign: "center", display: "block", marginTop: 8 }}
-              >
-                All this music was written for various side projects using
-                hardware and software synthesizers, Reaper & FL Studio.
-              </small>
-            </div>
-          </Accordion> */}
         </RightColumnPanel>
       </SectionContainer>
     </div>

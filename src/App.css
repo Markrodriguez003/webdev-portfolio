@@ -88,3 +88,22 @@ a {
   animation-delay: 2s, 2s;
   animation-fill-mode: both;
 }
+
+/* Fix for audio player sliders inside CSS 3D transformed containers */
+.rhap_container {
+  transform: translateZ(0);
+}
+
+.rhap_progress-section {
+  flex: 1 0 auto;
+}
+
+.rhap_progress-container {
+  height: 20px;
+  cursor: pointer;
+}
+
+.rhap_volume-bar-area {
+  height: 20px;
+  cursor: pointer;
+}
