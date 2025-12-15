@@ -61,8 +61,8 @@ export const AboutDetailsPanel = styled.div`
   }
   /* 1326 */
   @media (max-width: 1200px) {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 7%;
+    margin-right: 7%;
     text-align: left;
     font-size: 1.2rem;
     & h1 {

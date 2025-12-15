@@ -8,6 +8,7 @@ export const AccordionContainer = styled.div`
   align-content: start;
   width: 100%;
  
+ 
   height: auto;
 
   & * {
@@ -29,7 +30,7 @@ export const AccordionPanel = styled.div`
     transition: 0.4s ease-in-out;
     position: relative;
     background-color: transparent;
-    padding-left: 25px;
+ 
     word-wrap: break-word;
     /* height: 0px; */
     max-height: ${(props) => (props.$toggle ? "1000px" : "0px")};

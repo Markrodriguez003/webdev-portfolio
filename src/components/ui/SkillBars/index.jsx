@@ -33,10 +33,10 @@ export function TechnologiesSkillsBar() {
           <IoLogoJavascript id={"flex-icon"} />
           <h3>JAVASCRIPT</h3>
         </div>
-        <div>
+        {/* <div>
           <FaWordpress id={"flex-icon"} />
           <h3>WORDPRESS</h3>
-        </div>
+        </div> */}
         <div>
           <FaReact id={"flex-icon"} />
           <h3>REACT</h3>
@@ -57,10 +57,10 @@ export function TechnologiesSkillsBar() {
           <SiTypescript id={"flex-icon"} />
           <h3>TYPESCRIPT</h3>
         </div>
-        <div>
+        {/* <div>
           <SiNeutralinojs id={"flex-icon"} />
           <h3>NEUTRALINO</h3>
-        </div>
+        </div> */}
         <div>
           <TbBrandMongodb id={"flex-icon"} />
           <h3>MONGODB</h3>
@@ -83,7 +83,7 @@ export function TechnologiesBar() {
         </div>
         <div>
           <VscCopilot id={"flex-icon"} />
-          <h3>Copilot AI Agent</h3>
+          <h3>Copilot AI</h3>
         </div>
         <div>
           <FaRobot  id={"flex-icon"} />
@@ -105,10 +105,10 @@ export function TechnologiesBar() {
           <SiPostman id={"flex-icon"} />
           <h3>Postman</h3>
         </div>
-        <div>
+        {/* <div>
           <SiPrettier id={"flex-icon"} />
           <h3>SiPrettier</h3>
-        </div>
+        </div> */}
         <div>
           <SiStyledcomponents id={"flex-icon"} />
           <h3>Styled Components</h3>

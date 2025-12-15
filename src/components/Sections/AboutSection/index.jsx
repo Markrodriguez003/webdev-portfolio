@@ -94,6 +94,8 @@ function AboutSectionComp({ props }, ref) {
   const [pdfModal, setPdfModal] = useState(false);
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1200);
+  const [showMobileAudioPlayer, setShowMobileAudioPlayer] = useState(false);
+  const [isTinyMobile, setIsTinyMobile] = useState(window.innerWidth < 450);
 
   const handleClickNextTrack = () => {
     console.log("click next");
@@ -111,6 +113,7 @@ function AboutSectionComp({ props }, ref) {
 
   useEffect(() => {
     function handleResize() {
+      setIsTinyMobile(window.innerWidth < 450);
       setIsMobile(window.innerWidth <= 1200);
     }
     window.addEventListener("resize", handleResize);
@@ -258,49 +261,83 @@ function AboutSectionComp({ props }, ref) {
         While I am passionate about web development, I love all things art! I am
         a musician who likes to spend his time writing and performing music of
         various genres. In addition to music I also moonlight as an writer of
-        sci-fi and fantasy novels. My parents are of Spanish descent and trying
-        to learn Spanish when I have the time. I am currently dabbling with
-        Godot engine. One of my dream goals would be to code my own game and
+        sci-fi and fantasy novels. My parents are of Spanish descent and i'm trying
+        to properly learn Spanish when I have the time. I am currently dabbling with
+        Godot game engine. One of my dream goals would be to code my own game and
         release it!{" "}
         <BiSolidInvader size={"1.2em"} style={{ verticalAlign: "bottom" }} />
       </p>
       <br />
       <h2 id="normal-header" style={{ padding: "0px", margin: "0px" }}>
-        <FaPhotoFilm color="white" size={"38px"} /> Media:
+        <FaPhotoFilm color="white" size={"24px"} /> Media:
       </h2>
       <hr style={{ marginBottom: "16px" }} />
 
-      <Accordion header="Music">
-        <div style={{ zIndex: 9999 }}>
-          <div
-            style={{ textAlign: "center", marginBottom: 8, fontWeight: 600 }}
-          >
-            {playlist[currentTrack]?.title ?? "Unknown track"}
+      <Accordion header="Music" >
+        {(!isMobile || !isTinyMobile) ? (
+          <div style={{ zIndex: 9999 }}>
+            <div
+              style={{ textAlign: "center", marginBottom: 8, fontWeight: 600 }}
+            >
+              {playlist[currentTrack]?.title ?? "Unknown track"}
+            </div>
+            <AudioPlayer
+              volume={0.5}
+              showFilledVolume
+              showFilledVolumeControls
+              src={playlist[currentTrack]?.src}
+              showSkipControls
+              onClickNext={handleClickNextTrack}
+              onEnded={handleEnd}
+              onError={() => {
+                console.log("play error");
+              }}
+              style={{ width: "100%" }}
+            />
+            <small
+              style={{ textAlign: "center", display: "block", marginTop: 8 }}
+            >
+              All this music was written for various side projects using hardware
+              & software synthesizers, Reaper & FL Studio. No AI was used.
+            </small>
           </div>
-          <AudioPlayer
-            volume={0.5}
-            showFilledVolume
-            showFilledVolumeControls
-            src={playlist[currentTrack]?.src}
-            showSkipControls
-            onClickNext={handleClickNextTrack}
-            onEnded={handleEnd}
-            onError={() => {
-              console.log("play error");
-            }}
-          />
-          <small
-            style={{ textAlign: "center", display: "block", marginTop: 8 }}
-          >
-            All this music was written for various side projects using hardware
-            and software synthesizers, Reaper & FL Studio.
-          </small>
-        </div>
+        ) : (
+          <div style={{ textAlign: "center" }}>
+            <div style={{ marginBottom: 8, fontWeight: 600 }}>
+              {playlist[currentTrack]?.title ?? "Unknown track"}
+            </div>
+            {/* Only show the button if window width is less than 450px */}
+            {isTinyMobile && (
+              <button
+                style={{
+                  margin: "12px auto",
+                  padding: "8px 18px",
+                  borderRadius: 8,
+                  border: "none",
+                  background: "#222",
+                  color: "#fff",
+                  fontWeight: 600,
+                  fontSize: 16,
+                  cursor: "pointer",
+                }}
+                onClick={() => setShowMobileAudioPlayer(true)}
+              >
+                Play Music
+              </button>
+            )}
+            <small
+              style={{ textAlign: "center", display: "block", marginTop: 8 }}
+            >
+              All this music was written for various side projects using hardware
+              & software synthesizers, Reaper & FL Studio. No AI was used.
+            </small>
+          </div>
+        )}
       </Accordion>
 
-      {/* https://youtu.be/NEC0p5t25r8 */}
+
       <Accordion header="Video Games">
-        <div className="videoPlayerWrapper">
+        {/* <div className="videoPlayerWrapper">
           <ReactPlayer
             key={`video game demo:`}
             url={videogameDemo}
@@ -312,6 +349,14 @@ function AboutSectionComp({ props }, ref) {
             // width="100%"
             height="600px"
           />
+        </div> */}
+
+        <div style={{ marginTop: "8px" }}>
+          <a href={videogameDemo} target="_blank" rel="noreferrer">
+            Watch Demo on YouTube
+          </a>
+          <br />
+          <small> Learning how to create simple 2d platformer using Godot game engine. No AI was used.</small>
         </div>
       </Accordion>
       <br />
@@ -341,6 +386,54 @@ function AboutSectionComp({ props }, ref) {
 
   return (
     <div ref={ref}>
+      {isTinyMobile && showMobileAudioPlayer && (
+        <div
+          style={{
+            position: "fixed",
+            left: 0,
+            bottom: 0,
+            width: "100vw",
+            background: "#181818",
+            zIndex: 99999,
+            boxShadow: "0 -2px 12px rgba(0,0,0,0.3)",
+            padding: "8px 0 0 0",
+          }}
+        >
+          <button
+            style={{
+              position: "absolute",
+              right: 12,
+              top: 4,
+              zIndex: 100000,
+              background: "transparent",
+              border: "none",
+              color: "#fff",
+              fontSize: 24,
+              cursor: "pointer",
+            }}
+            onClick={() => setShowMobileAudioPlayer(false)}
+            aria-label="Close audio player"
+          >
+            ×
+          </button>
+          <div style={{ textAlign: "center", color: "#fff", fontWeight: 600, fontSize: 16, marginBottom: 4 }}>
+            {playlist[currentTrack]?.title ?? "Unknown track"}
+          </div>
+          <AudioPlayer
+            volume={0.5}
+            showFilledVolume
+            showFilledVolumeControls
+            src={playlist[currentTrack]?.src}
+            showSkipControls
+            onClickNext={handleClickNextTrack}
+            onEnded={handleEnd}
+            onError={() => {
+              console.log("play error");
+            }}
+            style={{ width: "100vw", background: "#181818" }}
+          />
+        </div>
+      )}
       <SectionContainer>
         {pdfModal === true ? (
           <div style={{ height: "95vh" }}>
@@ -357,7 +450,7 @@ function AboutSectionComp({ props }, ref) {
           <HeaderBorderBox props={{ type: "waves", title: "ABOUT" }} />
           <HeaderDetailsPanel>
             <p>
-              Here is some information about me. I hope you find it interesting!
+              Here is some information about me. From web development, technology, AI to music & video games! I hope you find it interesting!
             </p>
             <br />
             <p id="github-about">
@@ -436,34 +529,38 @@ function AboutSectionComp({ props }, ref) {
           {/* // ! RESUME & GITHUB HERE */}
           <MiniAboutInfoPanel>
             <br />
-            <p id="github-about">
-              <img
-                src={githubIcon}
-                width={"20px"}
-                height={"20px"}
-                style={{ paddingRight: "10px" }}
-              />
-              <a
-                href="https://www.github.com/MarkRodriguez003"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span style={{ fontSize: "16px" }}>
-                  {" "}
-                  Github: github.com/MarkRodriguez003
-                </span>
-              </a>
-            </p>
-            <br />
-            <p id="resume-about">
-              <CgFileDocument
-                style={{ verticalAlign: "center", paddingRight: "5px" }}
-              />
-              Resume:
-              <a href={resume} download={resume}>
-                Download
-              </a>
-            </p>
+            <div style={{ position: "relative", display: "flex", flexDirection: "row", gap: "30px", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
+
+              <p id="github-about">
+                <img
+                  src={githubIcon}
+                  width={"20px"}
+                  height={"20px"}
+                  style={{ paddingRight: "2px" }}
+                />
+                <a
+                  href="https://www.github.com/MarkRodriguez003"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span style={{fontWeight: "bold"}}>
+                    {" "}
+                    Github
+                  </span>
+                </a>
+              </p>
+              <br />
+              <p id="resume-about">
+                <CgFileDocument
+                  size={"20px"}
+                  style={{ verticalAlign: "center", paddingRight: "2px" }}
+                />
+                <a href={resume} download={resume} style={{ fontWeight: "bold" }}>
+                  Resume
+                </a>
+              </p>
+            </div>
+
             <br />
           </MiniAboutInfoPanel>
           {/* <Accordion header="Music">
