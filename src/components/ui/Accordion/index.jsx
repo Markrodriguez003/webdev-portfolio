@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { IoMdArrowDropdown, IoMdArrowDropright, IoMdArrowDropup } from "react-icons/io";
+import {
+  IoMdArrowDropdown,
+  IoMdArrowDropright,
+  IoMdArrowDropup,
+} from "react-icons/io";
 import { AccordionContainer, AccordionPanel } from "./Accordion.design";
 
 export function AccordionPanels(props) {
@@ -11,10 +15,14 @@ export function AccordionPanels(props) {
   }
   // console.log(`props`, props);
   return (
-    <AccordionPanel onClick={handleClick} $toggle={togglePanel}>
-      <h4>
+    <AccordionPanel $toggle={togglePanel}>
+      <h4 onClick={handleClick}>
         {props.children}
-        {togglePanel ? <IoMdArrowDropup style={{ verticalAlign: "bottom" }} /> : <IoMdArrowDropdown style={{ verticalAlign: "bottom" }} />}
+        {togglePanel ? (
+          <IoMdArrowDropup style={{ verticalAlign: "bottom" }} />
+        ) : (
+          <IoMdArrowDropdown style={{ verticalAlign: "bottom" }} />
+        )}
         {/* <IoMdArrowDropdown style={{ verticalAlign: "bottom" }} />{" "} */}
       </h4>
       <section style={{ background: "transparent" }}>{props.content}</section>
@@ -28,12 +36,14 @@ function Accordion(props) {
     <AccordionContainer>
       {/* {accordionPanelHeaders.map((item, index) => { */}
       {/* return ( */}
-      <AccordionPanels key={`${props.header} - ${props.header}`} content={props.children}>
+      <AccordionPanels
+        key={`${props.header} - ${props.header}`}
+        content={props.children}
+      >
         {props.header}
       </AccordionPanels>
       {/* ); */}
       {/* })} */}
-
     </AccordionContainer>
   );
 }

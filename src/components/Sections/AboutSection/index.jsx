@@ -271,7 +271,7 @@ function AboutSectionComp({ props }, ref) {
       <hr style={{ marginBottom: "16px" }} />
 
       <Accordion header="Music">
-        <div>
+        <div style={{ zIndex: 9999 }}>
           <div
             style={{ textAlign: "center", marginBottom: 8, fontWeight: 600 }}
           >
@@ -279,6 +279,8 @@ function AboutSectionComp({ props }, ref) {
           </div>
           <AudioPlayer
             volume={0.5}
+            showFilledVolume
+            showFilledVolumeControls
             src={playlist[currentTrack]?.src}
             showSkipControls
             onClickNext={handleClickNextTrack}
@@ -298,9 +300,7 @@ function AboutSectionComp({ props }, ref) {
 
       {/* https://youtu.be/NEC0p5t25r8 */}
       <Accordion header="Video Games">
-        <div
-          className="videoPlayerWrapper"
-        >
+        <div className="videoPlayerWrapper">
           <ReactPlayer
             key={`video game demo:`}
             url={videogameDemo}
@@ -408,8 +408,8 @@ function AboutSectionComp({ props }, ref) {
               direction="horizontal"
               effect={"cube"}
               slidesPerView={1}
-              grabCursor={true}
-              allowTouchMove={true}
+              grabCursor={false}
+              allowTouchMove={false}
               cubeEffect={{
                 shadow: true,
                 slideShadows: true,
