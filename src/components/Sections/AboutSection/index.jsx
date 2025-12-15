@@ -337,27 +337,32 @@ function AboutSectionComp({ props }, ref) {
 
 
       <Accordion header="Video Games">
-        {/* <div className="videoPlayerWrapper">
-          <ReactPlayer
-            key={`video game demo:`}
-            url={videogameDemo}
-            controls={true}
-            playing={false}
-            // ref={videoMiniRef}
-            // onReady={handleMiniVideoLoading}
-            // width="100%"
-            // width="100%"
-            height="600px"
-          />
-        </div> */}
-
-        <div style={{ marginTop: "8px" }}>
-          <a href={videogameDemo} target="_blank" rel="noreferrer">
-            Watch Demo on YouTube
-          </a>
-          <br />
-          <small> Learning how to create simple 2d platformer using Godot game engine. No AI was used.</small>
-        </div>
+        {/* Show anchor link when Swiper is active (desktop/full size), ReactPlayer when responsive/mobile */}
+        {!isMobile ? (
+          <div style={{ marginTop: "8px" }} id="anchor-link-video-games">
+            <a href={videogameDemo} target="_blank" rel="noreferrer">
+              Watch Demo on YouTube
+            </a>
+            <br />
+            <small>
+              Learning how to create simple 2d platformer using Godot game engine. No AI was used.
+            </small>
+          </div>
+        ) : (
+          <div className="videoPlayerWrapper" style={{ marginTop: "8px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <ReactPlayer
+              key="video-game-demo"
+              url={videogameDemo}
+              controls={true}
+              playing={false}
+              width="100%"
+              height="600px"
+            />
+            <small>
+              Learning how to create simple 2d platformer using Godot game engine. No AI was used.
+            </small>
+          </div>
+        )}
       </Accordion>
       <br />
       <br />
@@ -543,7 +548,7 @@ function AboutSectionComp({ props }, ref) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span style={{fontWeight: "bold"}}>
+                  <span style={{ fontWeight: "bold" }}>
                     {" "}
                     Github
                   </span>
