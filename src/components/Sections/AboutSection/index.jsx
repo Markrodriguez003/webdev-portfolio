@@ -473,39 +473,48 @@ function AboutSectionComp({ props }, ref) {
             background: "#181818",
             zIndex: 99999,
             boxShadow: "0 -2px 12px rgba(0,0,0,0.3)",
-            padding: "12px",
+            padding: "16px 12px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
           }}
         >
+          {/* Close button */}
           <button
             style={{
               position: "absolute",
-              right: 12,
-              top: 8,
+              right: 35,
+              top: 5,
               zIndex: 100000,
-              background: "transparent",
+              background: "#333",
               border: "none",
               color: "#fff",
-              fontSize: 24,
+              fontSize: 20,
               cursor: "pointer",
+              width: 32,
+              height: 32,
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              lineHeight: 1,
             }}
             onClick={() => setShowMobileAudioPlayer(false)}
             aria-label="Close audio player"
           >
-            ×
+            ✕
           </button>
-          <div style={{ textAlign: "center", color: "#fff", fontWeight: 600, fontSize: 16, marginBottom: 8 }}>
+          <div style={{ textAlign: "center", color: "#fff", fontWeight: 600, fontSize: 14, marginBottom: 10, marginTop: 8 }}>
             {playlist[currentTrack]?.title ?? "Unknown track"}
           </div>
           <audio
             controls
             src={playlist[currentTrack]?.src}
-            style={{ width: "90%", maxWidth: 350, background: "#181818" }}
+            style={{ width: "85%", maxWidth: 320, background: "#181818" }}
             onEnded={handleEnd}
           />
-          <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 8 }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 10 }}>
             <button
               onClick={() => setTrackIndex(prev => prev > 0 ? prev - 1 : playlist.length - 1)}
               style={{
@@ -516,6 +525,7 @@ function AboutSectionComp({ props }, ref) {
                 color: "#fff",
                 cursor: "pointer",
                 fontWeight: 600,
+                fontSize: 14,
               }}
             >
               Prev
@@ -530,6 +540,7 @@ function AboutSectionComp({ props }, ref) {
                 color: "#fff",
                 cursor: "pointer",
                 fontWeight: 600,
+                fontSize: 14,
               }}
             >
               Next
