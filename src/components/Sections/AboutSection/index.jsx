@@ -35,6 +35,7 @@ import ReactPlayer from "react-player";
 
 // COMPONENTS
 import Accordion from "../../ui/Accordion";
+import AudioPlayer from "../../ui/AudioPlayer";
 import PaginationTag from "../../ui/PaginationTag";
 import {
   TechnologiesSkillsBar,
@@ -277,67 +278,10 @@ function AboutSectionComp({ props }, ref) {
       <hr style={{ marginBottom: "16px" }} />
 
       <Accordion header="Music" >
-        {(!isMobile || !isTinyMobile) ? (
-          <div
-            style={{
-              position: "relative",
-              background: "transparent",
-            }}
-          >
-            <div
-              style={{ textAlign: "center", marginBottom: 8, fontWeight: 600, color: "#fff" }}
-            >
-              {playlist[currentTrack]?.title ?? "Unknown track"}
-            </div>
-            <audio
-              controls
-              src={playlist[currentTrack]?.src}
-              style={{ width: "100%", background: "#181818", borderRadius: 8 }}
-              onEnded={handleEnd}
-            />
-            <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 12 }}>
-              <button
-                onClick={() => setTrackIndex(prev => prev > 0 ? prev - 1 : playlist.length - 1)}
-                style={{
-                  padding: "8px 16px",
-                  borderRadius: 6,
-                  border: "none",
-                  background: "#333",
-                  color: "#fff",
-                  cursor: "pointer",
-                  fontWeight: 600,
-                }}
-              >
-                Previous
-              </button>
-              <button
-                onClick={handleClickNextTrack}
-                style={{
-                  padding: "8px 16px",
-                  borderRadius: 6,
-                  border: "none",
-                  background: "#333",
-                  color: "#fff",
-                  cursor: "pointer",
-                  fontWeight: 600,
-                }}
-              >
-                Next
-              </button>
-            </div>
-            <small
-              style={{ textAlign: "center", display: "block", marginTop: 8 }}
-            >
-              All this music was written for various side projects using hardware
-              & software synthesizers, Reaper & FL Studio. No AI was used.
-            </small>
-          </div>
-        ) : (
-          <div style={{ textAlign: "center" }}>
-            <div style={{ marginBottom: 8, fontWeight: 600 }}>
-              {playlist[currentTrack]?.title ?? "Unknown track"}
-            </div>
-            {isTinyMobile ? (
+          {(!isMobile || !isTinyMobile) ? (
+            <AudioPlayer playlist={playlist} compact={false} />
+          ) : (
+            isTinyMobile ? (
               <button
                 style={{
                   margin: "12px auto",
@@ -355,54 +299,9 @@ function AboutSectionComp({ props }, ref) {
                 Play Music
               </button>
             ) : (
-              /* Show inline player for medium mobile (450px - 1200px) */
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <audio
-                  controls
-                  src={playlist[currentTrack]?.src}
-                  style={{ width: "100%", maxWidth: 400, background: "#181818", borderRadius: 8 }}
-                  onEnded={handleEnd}
-                />
-                <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 12 }}>
-                  <button
-                    onClick={() => setTrackIndex(prev => prev > 0 ? prev - 1 : playlist.length - 1)}
-                    style={{
-                      padding: "8px 16px",
-                      borderRadius: 6,
-                      border: "none",
-                      background: "#333",
-                      color: "#fff",
-                      cursor: "pointer",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Previous
-                  </button>
-                  <button
-                    onClick={handleClickNextTrack}
-                    style={{
-                      padding: "8px 16px",
-                      borderRadius: 6,
-                      border: "none",
-                      background: "#333",
-                      color: "#fff",
-                      cursor: "pointer",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-            )}
-            <small
-              style={{ textAlign: "center", display: "block", marginTop: 8 }}
-            >
-              All this music was written for various side projects using hardware
-              & software synthesizers, Reaper & FL Studio. No AI was used.
-            </small>
-          </div>
-        )}
+              <AudioPlayer playlist={playlist} compact={false} />
+            )
+          )}
       </Accordion>
 
 
@@ -464,81 +363,11 @@ function AboutSectionComp({ props }, ref) {
     <div ref={ref}>
       {/* Mobile audio player at bottom */}
       {isTinyMobile && showMobileAudioPlayer && (
-        <div
-          style={{
-            position: "fixed",
-            left: 0,
-            bottom: 0,
-            width: "100vw",
-            background: "#181818",
-            zIndex: 99999,
-            boxShadow: "0 -2px 12px rgba(0,0,0,0.3)",
-            padding: "12px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <button
-            style={{
-              position: "absolute",
-              right: 30,
-              top: 4,
-              zIndex: 100000,
-              background: "transparent",
-              border: "white 2px solid",
-              borderRadius: "80%",
-              width: 24,
-              height: 24,  
-              color: "#fff",
-              fontSize: 20,
-              cursor: "pointer",
-            }}
-            onClick={() => setShowMobileAudioPlayer(false)}
-            aria-label="Close audio player"
-          >
-            ×
-          </button>
-          <div style={{ textAlign: "center", color: "#fff", fontWeight: 600, fontSize: 16, marginBottom: 8 }}>
-            {playlist[currentTrack]?.title ?? "Unknown track"}
-          </div>
-          <audio
-            controls
-            src={playlist[currentTrack]?.src}
-            style={{ width: "90%", maxWidth: 350, background: "#181818" }}
-            onEnded={handleEnd}
-          />
-          <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 8 }}>
-            <button
-              onClick={() => setTrackIndex(prev => prev > 0 ? prev - 1 : playlist.length - 1)}
-              style={{
-                padding: "6px 14px",
-                borderRadius: 6,
-                border: "none",
-                background: "#333",
-                color: "#fff",
-                cursor: "pointer",
-                fontWeight: 600,
-              }}
-            >
-              Prev
-            </button>
-            <button
-              onClick={handleClickNextTrack}
-              style={{
-                padding: "6px 14px",
-                borderRadius: 6,
-                border: "none",
-                background: "#333",
-                color: "#fff",
-                cursor: "pointer",
-                fontWeight: 600,
-              }}
-            >
-              Next
-            </button>
-          </div>
-        </div>
+        <AudioPlayer
+          playlist={playlist}
+          compact={true}
+          onClose={() => setShowMobileAudioPlayer(false)}
+        />
       )}
       <SectionContainer>
         {pdfModal === true ? (
@@ -684,4 +513,4 @@ function AboutSectionComp({ props }, ref) {
   );
 }
 
-export const AboutSection = forwardRef(AboutSectionComp); 
+export const AboutSection = forwardRef(AboutSectionComp);
