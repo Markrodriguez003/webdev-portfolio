@@ -198,7 +198,7 @@ function AboutSectionComp({ props }, ref) {
     <AboutDetailsPanel key="panel-2">
       <h1
         id="inverted-header"
-        style={{ textAlign: isMobile ? "left" : "center" }}
+        style={{ textAlign: isMobile ? "center" : "center" }}
       >
         <AnimatedHeader title={"Tools & More.."} />
       </h1>
@@ -219,7 +219,7 @@ function AboutSectionComp({ props }, ref) {
       <br />
       <h2
         id="inverted-header"
-        style={{ textAlign: isMobile ? "left" : "center" }}
+        style={{ textAlign: isMobile ? "center" : "center" }}
       >
         Technological tools I have utilized to build my projects:
       </h2>
@@ -257,7 +257,7 @@ function AboutSectionComp({ props }, ref) {
     <AboutDetailsPanel key="panel-3">
       <h1
         id="inverted-header"
-        style={{ textAlign: isMobile ? "left" : "center" }}
+        style={{ textAlign: isMobile ? "center" : "center" }}
       >
         <AnimatedHeader title={"Besides coding.."} />
       </h1>
@@ -278,10 +278,12 @@ function AboutSectionComp({ props }, ref) {
       <hr style={{ marginBottom: "16px" }} />
 
       <Accordion header="Music" >
-          {(!isMobile || !isTinyMobile) ? (
-            <AudioPlayer playlist={playlist} compact={false} />
-          ) : (
-            isTinyMobile ? (
+        {(!isMobile || !isTinyMobile) ? (
+          <AudioPlayer playlist={playlist} compact={false} />
+        ) : (
+          isTinyMobile ? (
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+
               <button
                 style={{
                   margin: "12px auto",
@@ -298,10 +300,15 @@ function AboutSectionComp({ props }, ref) {
               >
                 Play Music
               </button>
-            ) : (
-              <AudioPlayer playlist={playlist} compact={false} />
-            )
-          )}
+              <small>
+                ALl music was written for various projects using hardware & software synthesizers, Reaper & FL Studios. No AI was used in the creation of these tracks.
+              </small>
+            </div>
+
+          ) : (
+            <AudioPlayer playlist={playlist} compact={false} />
+          )
+        )}
       </Accordion>
 
 
@@ -328,7 +335,7 @@ function AboutSectionComp({ props }, ref) {
               height="600px"
             />
             <br />
-            <small style={{ textAlign: "left" }}>
+            <small style={{ textAlign: "center" }}>
               Learning how to create simple 2d platformer using Godot game engine. All character art was drawn by me. No AI was used.
             </small>
           </div>
@@ -471,42 +478,6 @@ function AboutSectionComp({ props }, ref) {
             </Swiper>
           )}
           {/* // ! RESUME & GITHUB HERE */}
-          <MiniAboutInfoPanel>
-            <br />
-            <div style={{ position: "relative", display: "flex", flexDirection: "row", gap: "30px", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
-
-              <p id="github-about">
-                <img
-                  src={githubIcon}
-                  width={"20px"}
-                  height={"20px"}
-                  style={{ paddingRight: "2px" }}
-                />
-                <a
-                  href="https://www.github.com/MarkRodriguez003"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span style={{ fontWeight: "bold" }}>
-                    {" "}
-                    Github
-                  </span>
-                </a>
-              </p>
-              <br />
-              <p id="resume-about">
-                <CgFileDocument
-                  size={"20px"}
-                  style={{ verticalAlign: "center", paddingRight: "2px" }}
-                />
-                <a href={resume} download={resume} style={{ fontWeight: "bold" }}>
-                  Resume
-                </a>
-              </p>
-            </div>
-
-            <br />
-          </MiniAboutInfoPanel>
         </RightColumnPanel>
       </SectionContainer>
     </div>

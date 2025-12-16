@@ -46,9 +46,13 @@ export const AboutDetailsPanel = styled.div`
   margin-bottom: 30px;
   text-align: left;
 
+  & p {
+    text-align: left;
+    }
+
   & h1,
   h2 {
-    text-align: center;
+    text-align: start;
   }
 
   & h2 {
@@ -71,10 +75,10 @@ export const AboutDetailsPanel = styled.div`
     text-align: left;
     font-size: 1.2rem;
     & h1 {
-      text-align: center;
+      text-align: start;
     }
     & h2 {
-      text-align: center;
+      text-align: start;
     }
   }
 `;
