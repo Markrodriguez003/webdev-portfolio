@@ -37,6 +37,11 @@ export const MiniAboutInfoPanel = styled.div`
 
 export const AboutDetailsPanel = styled.div`
   /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap:18px;  
   margin-right: 120px;
   margin-bottom: 30px;
   text-align: left;
