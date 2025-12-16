@@ -14,7 +14,6 @@ import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "react-h5-audio-player/lib/styles.css";
 import "./About.css";
 
 // ICONS
@@ -22,6 +21,7 @@ import {
   FaRegEnvelope,
   FaYoutube,
   FaSatellite,
+  FaLinkedin,
   FaArrowAltCircleRight,
   FaArrowAltCircleLeft,
 } from "react-icons/fa";
@@ -31,7 +31,6 @@ import { PiKeyReturnBold } from "react-icons/pi";
 import { FaPhotoFilm } from "react-icons/fa6";
 
 // LIBRARY
-import AudioPlayer from "react-h5-audio-player";
 import ReactPlayer from "react-player";
 
 // COMPONENTS
@@ -65,9 +64,9 @@ const videogameDemo = "https://youtu.be/NEC0p5t25r8";
 
 // Playlist as objects so each track has a display title
 const playlist = [
-  { src: AlienScarface, title: "Alien Scarface" },
   { src: AstralMathematics, title: "Astral Mathematics" },
   { src: SpaceArbys, title: "Here at Space Arby's" },
+  { src: AlienScarface, title: "Alien Scarface" },
   { src: Wormhole, title: "Into the Wormhole Again" },
   { src: SpaceAdventure, title: "Space Adventure 142F" },
   { src: TechnicalDifficulties, title: "Technical Difficulties" },
@@ -94,6 +93,8 @@ function AboutSectionComp({ props }, ref) {
   const [pdfModal, setPdfModal] = useState(false);
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1200);
+  const [showMobileAudioPlayer, setShowMobileAudioPlayer] = useState(false);
+  const [isTinyMobile, setIsTinyMobile] = useState(window.innerWidth < 450);
 
   const handleClickNextTrack = () => {
     console.log("click next");
@@ -111,6 +112,7 @@ function AboutSectionComp({ props }, ref) {
 
   useEffect(() => {
     function handleResize() {
+      setIsTinyMobile(window.innerWidth < 450);
       setIsMobile(window.innerWidth <= 1200);
     }
     window.addEventListener("resize", handleResize);
@@ -178,13 +180,17 @@ function AboutSectionComp({ props }, ref) {
           }}
         >
           <span style={{ minWidth: 48, textAlign: "center" }}>1/3</span>
-          <SiteButton
-            type="button"
-            styling="inverted"
-            title="Next"
-            icon={<FaArrowAltCircleRight />}
-            onClick={handleNext}
-          />
+          <span
+            className="shake-animation-horizontal"
+          >
+            <SiteButton
+              type="button"
+              styling="inverted"
+              title="Next"
+              icon={<FaArrowAltCircleRight />}
+              onClick={handleNext}
+            />
+          </span>
         </div>
       )}
     </AboutDetailsPanel>,
@@ -258,61 +264,176 @@ function AboutSectionComp({ props }, ref) {
         While I am passionate about web development, I love all things art! I am
         a musician who likes to spend his time writing and performing music of
         various genres. In addition to music I also moonlight as an writer of
-        sci-fi and fantasy novels. My parents are of Spanish descent and trying
-        to learn Spanish when I have the time. I am currently dabbling with
-        Godot engine. One of my dream goals would be to code my own game and
+        sci-fi and fantasy novels. My parents are of Spanish descent and i'm trying
+        to properly learn Spanish when I have the time. I am currently dabbling with
+        Godot game engine. One of my dream goals would be to code my own game and
         release it!{" "}
         <BiSolidInvader size={"1.2em"} style={{ verticalAlign: "bottom" }} />
       </p>
       <br />
       <h2 id="normal-header" style={{ padding: "0px", margin: "0px" }}>
-        <FaPhotoFilm color="white" size={"38px"} /> Media:
+        <FaPhotoFilm color="white" size={"24px"} /> Media:
       </h2>
       <hr style={{ marginBottom: "16px" }} />
 
-      <Accordion header="Music">
-        <div style={{ zIndex: 9999 }}>
+      <Accordion header="Music" >
+        {(!isMobile || !isTinyMobile) ? (
           <div
-            style={{ textAlign: "center", marginBottom: 8, fontWeight: 600 }}
-          >
-            {playlist[currentTrack]?.title ?? "Unknown track"}
-          </div>
-          <AudioPlayer
-            volume={0.5}
-            showFilledVolume
-            showFilledVolumeControls
-            src={playlist[currentTrack]?.src}
-            showSkipControls
-            onClickNext={handleClickNextTrack}
-            onEnded={handleEnd}
-            onError={() => {
-              console.log("play error");
+            style={{
+              position: "relative",
+              background: "transparent",
             }}
-          />
-          <small
-            style={{ textAlign: "center", display: "block", marginTop: 8 }}
           >
-            All this music was written for various side projects using hardware
-            and software synthesizers, Reaper & FL Studio.
-          </small>
-        </div>
+            <div
+              style={{ textAlign: "center", marginBottom: 8, fontWeight: 600, color: "#fff" }}
+            >
+              {playlist[currentTrack]?.title ?? "Unknown track"}
+            </div>
+            <audio
+              controls
+              src={playlist[currentTrack]?.src}
+              style={{ width: "100%", background: "#181818", borderRadius: 8 }}
+              onEnded={handleEnd}
+            />
+            <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 12 }}>
+              <button
+                onClick={() => setTrackIndex(prev => prev > 0 ? prev - 1 : playlist.length - 1)}
+                style={{
+                  padding: "8px 16px",
+                  borderRadius: 6,
+                  border: "none",
+                  background: "#333",
+                  color: "#fff",
+                  cursor: "pointer",
+                  fontWeight: 600,
+                }}
+              >
+                Previous
+              </button>
+              <button
+                onClick={handleClickNextTrack}
+                style={{
+                  padding: "8px 16px",
+                  borderRadius: 6,
+                  border: "none",
+                  background: "#333",
+                  color: "#fff",
+                  cursor: "pointer",
+                  fontWeight: 600,
+                }}
+              >
+                Next
+              </button>
+            </div>
+            <small
+              style={{ textAlign: "center", display: "block", marginTop: 8 }}
+            >
+              All this music was written for various side projects using hardware
+              & software synthesizers, Reaper & FL Studio. No AI was used.
+            </small>
+          </div>
+        ) : (
+          <div style={{ textAlign: "center" }}>
+            <div style={{ marginBottom: 8, fontWeight: 600 }}>
+              {playlist[currentTrack]?.title ?? "Unknown track"}
+            </div>
+            {isTinyMobile ? (
+              <button
+                style={{
+                  margin: "12px auto",
+                  padding: "8px 18px",
+                  borderRadius: 8,
+                  border: "none",
+                  background: "#222",
+                  color: "#fff",
+                  fontWeight: 600,
+                  fontSize: 16,
+                  cursor: "pointer",
+                }}
+                onClick={() => setShowMobileAudioPlayer(true)}
+              >
+                Play Music
+              </button>
+            ) : (
+              /* Show inline player for medium mobile (450px - 1200px) */
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <audio
+                  controls
+                  src={playlist[currentTrack]?.src}
+                  style={{ width: "100%", maxWidth: 400, background: "#181818", borderRadius: 8 }}
+                  onEnded={handleEnd}
+                />
+                <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 12 }}>
+                  <button
+                    onClick={() => setTrackIndex(prev => prev > 0 ? prev - 1 : playlist.length - 1)}
+                    style={{
+                      padding: "8px 16px",
+                      borderRadius: 6,
+                      border: "none",
+                      background: "#333",
+                      color: "#fff",
+                      cursor: "pointer",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Previous
+                  </button>
+                  <button
+                    onClick={handleClickNextTrack}
+                    style={{
+                      padding: "8px 16px",
+                      borderRadius: 6,
+                      border: "none",
+                      background: "#333",
+                      color: "#fff",
+                      cursor: "pointer",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            )}
+            <small
+              style={{ textAlign: "center", display: "block", marginTop: 8 }}
+            >
+              All this music was written for various side projects using hardware
+              & software synthesizers, Reaper & FL Studio. No AI was used.
+            </small>
+          </div>
+        )}
       </Accordion>
 
-      {/* https://youtu.be/NEC0p5t25r8 */}
+
       <Accordion header="Video Games">
-        <div className="videoPlayerWrapper">
-          <ReactPlayer
-            key={`video game demo:`}
-            url={videogameDemo}
-            controls={true}
-            playing={false}
-            // ref={videoMiniRef}
-            // onReady={handleMiniVideoLoading}
-            // width="100%"
-            // width="100%"
-            height="600px"
-          />
-        </div>
+        {/* Show anchor link when Swiper is active (desktop/full size), ReactPlayer when responsive/mobile */}
+        {!isMobile ? (
+          <div style={{ marginTop: "8px" }} id="anchor-link-video-games">
+            <a href={videogameDemo} target="_blank" rel="noreferrer">
+              Watch Demo on YouTube
+            </a>
+            <br />
+            <small>
+              Learning how to create simple 2d platformer using Godot game engine. All character art was drawn by me. No AI was used.
+            </small>
+          </div>
+        ) : (
+          <div className="videoPlayerWrapper" style={{ marginTop: "8px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <ReactPlayer
+              key="video-game-demo"
+              url={videogameDemo}
+              controls={true}
+              playing={false}
+              width="100%"
+              height="600px"
+            />
+            <br />
+            <small style={{ textAlign: "left" }}>
+              Learning how to create simple 2d platformer using Godot game engine. All character art was drawn by me. No AI was used.
+            </small>
+          </div>
+        )}
       </Accordion>
       <br />
       <br />
@@ -341,6 +462,84 @@ function AboutSectionComp({ props }, ref) {
 
   return (
     <div ref={ref}>
+      {/* Mobile audio player at bottom */}
+      {isTinyMobile && showMobileAudioPlayer && (
+        <div
+          style={{
+            position: "fixed",
+            left: 0,
+            bottom: 0,
+            width: "100vw",
+            background: "#181818",
+            zIndex: 99999,
+            boxShadow: "0 -2px 12px rgba(0,0,0,0.3)",
+            padding: "12px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <button
+            style={{
+              position: "absolute",
+              right: 30,
+              top: 4,
+              zIndex: 100000,
+              background: "transparent",
+              border: "white 2px solid",
+              borderRadius: "80%",
+              width: 24,
+              height: 24,  
+              color: "#fff",
+              fontSize: 20,
+              cursor: "pointer",
+            }}
+            onClick={() => setShowMobileAudioPlayer(false)}
+            aria-label="Close audio player"
+          >
+            ×
+          </button>
+          <div style={{ textAlign: "center", color: "#fff", fontWeight: 600, fontSize: 16, marginBottom: 8 }}>
+            {playlist[currentTrack]?.title ?? "Unknown track"}
+          </div>
+          <audio
+            controls
+            src={playlist[currentTrack]?.src}
+            style={{ width: "90%", maxWidth: 350, background: "#181818" }}
+            onEnded={handleEnd}
+          />
+          <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 8 }}>
+            <button
+              onClick={() => setTrackIndex(prev => prev > 0 ? prev - 1 : playlist.length - 1)}
+              style={{
+                padding: "6px 14px",
+                borderRadius: 6,
+                border: "none",
+                background: "#333",
+                color: "#fff",
+                cursor: "pointer",
+                fontWeight: 600,
+              }}
+            >
+              Prev
+            </button>
+            <button
+              onClick={handleClickNextTrack}
+              style={{
+                padding: "6px 14px",
+                borderRadius: 6,
+                border: "none",
+                background: "#333",
+                color: "#fff",
+                cursor: "pointer",
+                fontWeight: 600,
+              }}
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      )}
       <SectionContainer>
         {pdfModal === true ? (
           <div style={{ height: "95vh" }}>
@@ -357,7 +556,7 @@ function AboutSectionComp({ props }, ref) {
           <HeaderBorderBox props={{ type: "waves", title: "ABOUT" }} />
           <HeaderDetailsPanel>
             <p>
-              Here is some information about me. I hope you find it interesting!
+              Here is some information about me. From web development, technology, AI to music & video games! I hope you find it interesting!
             </p>
             <br />
             <p id="github-about">
@@ -398,6 +597,15 @@ function AboutSectionComp({ props }, ref) {
                 Youtube{" "}
               </a>
             </p>
+            <br />
+            <p>
+              <a href="https://www.linkedin.com/in/ModulatorStudios" target="_blank" rel="noreferrer">
+                <FaLinkedin
+                  style={{ verticalAlign: "center", paddingRight: "5px" }}
+                />
+                LinkedIn
+              </a>
+            </p>
           </HeaderDetailsPanel>
         </LeftHeaderColumn>
         <RightColumnPanel>
@@ -412,7 +620,7 @@ function AboutSectionComp({ props }, ref) {
               allowTouchMove={false}
               cubeEffect={{
                 shadow: true,
-                slideShadows: true,
+                slideShadows: false,
                 shadowOffset: 0,
                 shadowScale: 0.02,
               }}
@@ -436,69 +644,44 @@ function AboutSectionComp({ props }, ref) {
           {/* // ! RESUME & GITHUB HERE */}
           <MiniAboutInfoPanel>
             <br />
-            <p id="github-about">
-              <img
-                src={githubIcon}
-                width={"20px"}
-                height={"20px"}
-                style={{ paddingRight: "10px" }}
-              />
-              <a
-                href="https://www.github.com/MarkRodriguez003"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span style={{ fontSize: "16px" }}>
-                  {" "}
-                  Github: github.com/MarkRodriguez003
-                </span>
-              </a>
-            </p>
-            <br />
-            <p id="resume-about">
-              <CgFileDocument
-                style={{ verticalAlign: "center", paddingRight: "5px" }}
-              />
-              Resume:
-              <a href={resume} download={resume}>
-                Download
-              </a>
-            </p>
+            <div style={{ position: "relative", display: "flex", flexDirection: "row", gap: "30px", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
+
+              <p id="github-about">
+                <img
+                  src={githubIcon}
+                  width={"20px"}
+                  height={"20px"}
+                  style={{ paddingRight: "2px" }}
+                />
+                <a
+                  href="https://www.github.com/MarkRodriguez003"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span style={{ fontWeight: "bold" }}>
+                    {" "}
+                    Github
+                  </span>
+                </a>
+              </p>
+              <br />
+              <p id="resume-about">
+                <CgFileDocument
+                  size={"20px"}
+                  style={{ verticalAlign: "center", paddingRight: "2px" }}
+                />
+                <a href={resume} download={resume} style={{ fontWeight: "bold" }}>
+                  Resume
+                </a>
+              </p>
+            </div>
+
             <br />
           </MiniAboutInfoPanel>
-          {/* <Accordion header="Music">
-            <div>
-              <div
-                style={{
-                  textAlign: "center",
-                  marginBottom: 8,
-                  fontWeight: 600,
-                }}
-              >
-                {playlist[currentTrack]?.title ?? "Unknown track"}
-              </div>
-              <AudioPlayer
-                volume={0.8}
-                src={playlist[currentTrack]?.src}
-                showSkipControls
-                onClickNext={handleClickNextTrack}
-                onEnded={handleEnd}
-                onError={() => {
-                  console.log("play error");
-                }}
-              />
-              <small
-                style={{ textAlign: "center", display: "block", marginTop: 8 }}
-              >
-                All this music was written for various side projects using
-                hardware and software synthesizers, Reaper & FL Studio.
-              </small>
-            </div>
-          </Accordion> */}
         </RightColumnPanel>
       </SectionContainer>
     </div>
   );
 }
 
-export const AboutSection = forwardRef(AboutSectionComp);
+export const AboutSection = forwardRef(AboutSectionComp); 

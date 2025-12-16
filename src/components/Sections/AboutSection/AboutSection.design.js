@@ -41,7 +41,7 @@ export const AboutDetailsPanel = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  gap:18px;  
+  // gap:18px;  
   margin-right: 120px;
   margin-bottom: 30px;
   text-align: left;
