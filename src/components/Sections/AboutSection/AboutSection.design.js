@@ -48,6 +48,7 @@ export const AboutDetailsPanel = styled.div`
 
   & p {
     text-align: left;
+    font-size: 1.1rem;
     }
 
   & h1,
@@ -73,7 +74,7 @@ export const AboutDetailsPanel = styled.div`
     margin-left: 7%;
     margin-right: 7%;
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     & h1 {
       text-align: start;
     }

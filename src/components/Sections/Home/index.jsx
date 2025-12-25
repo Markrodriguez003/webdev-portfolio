@@ -135,8 +135,8 @@ function Home({ children }) {
           </h1>
 
           <p>
-            My name is Mark Rodriguez 👋 & I am a full stack developer. Take a
-            look at my projects & please do not hesistate to contact me!
+            My name is Mark Rodriguez 👋 I am a full stack developer & IT support tech. Take a
+            look at my projects & please do not hesitate to contact me!
           </p>
         </WelcomeContainer>
       </IntroductionContainer>

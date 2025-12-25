@@ -33,6 +33,9 @@ import { FaPhotoFilm } from "react-icons/fa6";
 // LIBRARY
 import ReactPlayer from "react-player";
 
+// DATA
+import { fullStackDescription, otherITSkillsDescription, devToolsDescriptionA, devToolsDescriptionB, techITSupportSkills, BesideCoding } from "./data.json";
+
 // COMPONENTS
 import Accordion from "../../ui/Accordion";
 import AudioPlayer from "../../ui/AudioPlayer";
@@ -142,16 +145,8 @@ function AboutSectionComp({ props }, ref) {
         <AnimatedHeader title={"Coding and beyond.."} />
       </h1>
       <p id="main-about">
+        {fullStackDescription}
         {" "}
-        I am a growth-oriented full stack web developer with comprehensive
-        experience building websites and web apps that include designing,
-        testing, maintaining, and implementing backend-to-frontend integration.
-        Web development is a complex field in which I strive to deliver quality
-        solutions to any technical problem and aim to be a team-oriented asset
-        that can be depended on in any situation. Proven ability to learn and
-        adapt quickly to new technologies and strive to stay updated with
-        industry trends. I would love to have the opportunity to help and grow
-        with a team that cares deeply about their work.{" "}
         <FaSatellite size={"1.2em"} style={{ verticalAlign: "bottom" }} />
       </p>{" "}
       <br />
@@ -180,7 +175,7 @@ function AboutSectionComp({ props }, ref) {
             gap: "32px",
           }}
         >
-          <span style={{ minWidth: 48, textAlign: "center" }}>1/3</span>
+          <span style={{ minWidth: 48, textAlign: "center" }}>1/4</span>
           <span
             className="shake-animation-horizontal"
           >
@@ -203,18 +198,12 @@ function AboutSectionComp({ props }, ref) {
         <AnimatedHeader title={"Tools & More.."} />
       </h1>
       <p id="about-secondary">
-        Developers need tools to build their projects, and I love all things
-        related to software development. I enjoy exploring new libraries,
-        frameworks, and technologies that can enhance my workflow and improve
-        the quality of my code. Whether it's a new JavaScript library or a
-        powerful design tool, I'm always eager to learn and integrate new tools
-        into my development process.
+
+        {devToolsDescriptionA}
       </p>
       <br />
       <p id="about-secondary">
-        I am interested in game development and exploring new technologies such
-        as AI. I hope to incorporate more AI elements into my projects in the
-        future.
+        {devToolsDescriptionB}
       </p>
       <br />
       <h2
@@ -243,7 +232,7 @@ function AboutSectionComp({ props }, ref) {
             icon={<FaArrowAltCircleLeft />}
             onClick={handlePrev}
           />
-          <span style={{ minWidth: 48, textAlign: "center" }}>2/3</span>
+          <span style={{ minWidth: 48, textAlign: "center" }}>2/4</span>
           <SiteButton
             type="button"
             styling="inverted"
@@ -254,7 +243,65 @@ function AboutSectionComp({ props }, ref) {
         </div>
       )}
     </AboutDetailsPanel>,
+
     <AboutDetailsPanel key="panel-3">
+      <h1
+        id="inverted-header"
+        style={{ textAlign: isMobile ? "center" : "center" }}
+      >
+        <AnimatedHeader title={"Tech nerddom continues.."} />
+      </h1>
+
+      <p id="about-secondary">{otherITSkillsDescription}
+      </p>
+      <br />
+      <h2
+        id="inverted-header"
+        style={{ textAlign: isMobile ? "center" : "center" }}
+      >
+        Tech Support Skills:
+      </h2>
+      <ul style={{ marginLeft: "15px" }}>
+
+        {
+          techITSupportSkills.map((skill, index) => (
+            <li key={index}>{skill}</li>
+          ))
+        }
+      </ul>
+
+      <br />
+      <br />
+      <br />
+      {!isMobile && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "32px",
+          }}
+        >
+          <SiteButton
+            type="button"
+            styling="inverted"
+            title="Previous"
+            icon={<FaArrowAltCircleLeft />}
+            onClick={handlePrev}
+          />
+          <span style={{ minWidth: 48, textAlign: "center" }}>3/4</span>
+          <SiteButton
+            type="button"
+            styling="inverted"
+            title="Next"
+            icon={<FaArrowAltCircleRight />}
+            onClick={handleNext}
+          />
+        </div>
+      )}
+    </AboutDetailsPanel>,
+
+    <AboutDetailsPanel key="panel-4">
       <h1
         id="inverted-header"
         style={{ textAlign: isMobile ? "center" : "center" }}
@@ -262,13 +309,7 @@ function AboutSectionComp({ props }, ref) {
         <AnimatedHeader title={"Besides coding.."} />
       </h1>
       <p id="about-secondary">
-        While I am passionate about web development, I love all things art! I am
-        a musician who likes to spend his time writing and performing music of
-        various genres. In addition to music I also moonlight as an writer of
-        sci-fi and fantasy novels. My parents are of Spanish descent and i'm trying
-        to properly learn Spanish when I have the time. I am currently dabbling with
-        Godot game engine. One of my dream goals would be to code my own game and
-        release it!{" "}
+        {BesideCoding}
         <BiSolidInvader size={"1.2em"} style={{ verticalAlign: "bottom" }} />
       </p>
       <br />
@@ -360,7 +401,7 @@ function AboutSectionComp({ props }, ref) {
             icon={<FaArrowAltCircleLeft />}
             onClick={handlePrev}
           />
-          <span style={{ minWidth: 48, textAlign: "center" }}>3/3</span>
+          <span style={{ minWidth: 48, textAlign: "center" }}>4/4</span>
         </div>
       )}
     </AboutDetailsPanel>,

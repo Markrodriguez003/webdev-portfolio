@@ -49,7 +49,7 @@ export const LeftHeaderColumn = styled.div`
   & p {
     font-family: "body";
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
 
     width: 280px;
     text-align: left;
