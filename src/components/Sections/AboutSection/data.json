@@ -1,10 +1,9 @@
 {
-   
   "fullStackDescription": "I am a full stack developer experienced with React, TypeScript, JavaScript, MongoDB, HTML, CSS, REST APIs, and a variety of NPM libraries to long to list. I have  designed, built and maintained websites as well as standalone web applications. I am team-oriented, adaptable, resourceful, and able to offer multiple creative solutions to any technical issue. Given how the field of technology is always in flux, I am committed to continuously learning and staying updated with the latest industry trends and best practices. Tech is my passion and I am excited to bring my skills and enthusiasm to new challenges.",
-  "devToolsDescriptionA":"In my development work, I utilize a variety of tools to enhance productivity and streamline the development process. These include version control systems like Git and GitHub for collaborative coding and code management, code editors such as Visual Studio Code for efficient coding, and project management tools like Jira and Trello to organize tasks and track progress. Additionally, I leverage build tools like Webpack and task runners like Gulp to automate workflows. These tools help me maintain high-quality code, improve collaboration with team members, and ensure timely delivery of projects.",
-   "devToolsDescriptionB":"I am interested in game development and exploring new technologies such as AI. I hope to incorporate more AI elements into my projects in the future.",
-    "otherITSkillsDescription": "In addition to my web development skills, I have experience with IT tech support. I am proficient in diagnosing and resolving hardware and software issues, setting up and maintaining computer systems, and providing user support. I have a solid understanding of networking concepts, operating systems, and cybersecurity best practices. My strong communication skills allow me to effectively assist users with varying levels of technical knowledge. I am dedicated to ensuring optimal performance and security of IT infrastructure while delivering excellent customer service.",
-      "techITSupportSkills": [
+  "devToolsDescriptionA": "In my development work, I utilize a variety of tools to enhance productivity and streamline the development process. These include version control systems like Git and GitHub for collaborative coding and code management, code editors such as Visual Studio Code for efficient coding, and project management tools like Jira and Trello to organize tasks and track progress. Additionally, I leverage build tools like Webpack and task runners like Gulp to automate workflows. These tools help me maintain high-quality code, improve collaboration with team members, and ensure timely delivery of projects.",
+  "devToolsDescriptionB": "I am interested in game development and exploring new technologies such as AI. I hope to incorporate more AI elements into my projects in the future.",
+  "otherITSkillsDescription": "In addition to my web development skills, I have experience with IT tech support. I am proficient in diagnosing and resolving hardware and software issues, setting up and maintaining computer systems, and providing user support. I have a solid understanding of networking concepts, operating systems, and cybersecurity best practices. My strong communication skills allow me to effectively assist users with varying levels of technical knowledge. I am dedicated to ensuring optimal performance and security of IT infrastructure while delivering excellent customer service.",
+  "techITSupportSkills": [
     "Hardware & Software Troubleshooting",
     "Active Directory",
     "Networking Fundamentals",
@@ -12,11 +11,16 @@
     "Customer Service & Communication",
     "Set up and Configuration of Devices",
     "Virus & Malware Removal"
-  ], 
-  "BesideCoding": "While I am passionate about web development, I love all things art! I am a musician who likes to spend his time writing and performing music of various genres. In addition to music I also moonlight as an writer of sci-fi and fantasy novels. My parents are of Spanish descent and i'm trying to properly learn Spanish when I have the time. I am currently dabbling with Godot game engine. One of my dream goals would be to code my own game and release it!"
- 
-   
-  
- 
+  ],
+  "educationDescription": "I hold a Bachelor's degree in Information Technology from the Western Governors University. During my time there, I focused on software development, Networking, and cybersecurity. I also completed coursework in web development, databases, and computer networks. My education provided me with a strong foundation in computer science principles and practical skills that I have applied in my professional career.",
+  "degreesAndCertificates": [
+    "Associates Degree in Arts - Broward College - 2026",
+    "Bachelor's Degree in Information Technology - Western Governors University - 2026",
+    "UM Division of Continuing & International Education - Full Stack Web Developer Certificate - 2020",
+    "CompTIA Network+ Certificate - 2026",
+    "CompTIA A+ Certificate - 2026",
+    "CompTIA Security+ Certificate - 2026",
+    "CIW Certificate - 2026"
+  ],
+  "besideCoding": "While I am passionate about web development, I love all things art! I am a musician who likes to spend his time writing and performing music of various genres. In addition to music I also moonlight as an writer of sci-fi and fantasy novels. My parents are of Spanish descent and i'm trying to properly learn Spanish when I have the time. I am currently dabbling with Godot game engine. One of my dream goals would be to code my own game and release it!"
 }
-

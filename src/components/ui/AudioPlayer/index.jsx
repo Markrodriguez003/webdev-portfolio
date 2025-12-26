@@ -49,7 +49,7 @@ const AudioPlayer = ({ playlist = [], compact = false, onClose }) => {
             style={{
                 width: compact ? "90%" : "100%",
                 maxWidth: compact ? 350 : undefined,
-                background: "#181818",
+                background: "rgba(24, 24, 24, 0)",
                 borderRadius: 8,
                 margin: compact ? "0 auto" : undefined,
                 display: "flex",
@@ -66,7 +66,7 @@ const AudioPlayer = ({ playlist = [], compact = false, onClose }) => {
                 controls
                 controlsList="nodownload"
                 src={playlist[currentTrack]?.src}
-                style={{ width: "100%", background: "#181818" }}
+                style={{ width: "100%", background: "rgba(24, 24, 24, 0)" }}
                 onEnded={handleEnd}
             />
             <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 8 }}>

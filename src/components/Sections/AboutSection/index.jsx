@@ -34,7 +34,16 @@ import { FaPhotoFilm } from "react-icons/fa6";
 import ReactPlayer from "react-player";
 
 // DATA
-import { fullStackDescription, otherITSkillsDescription, devToolsDescriptionA, devToolsDescriptionB, techITSupportSkills, BesideCoding } from "./data.json";
+import {
+  fullStackDescription,
+  otherITSkillsDescription,
+  devToolsDescriptionA,
+  devToolsDescriptionB,
+  techITSupportSkills,
+  besideCoding,
+  educationDescription,
+  degreesAndCertificates,
+} from "./data.json";
 
 // COMPONENTS
 import Accordion from "../../ui/Accordion";
@@ -145,8 +154,7 @@ function AboutSectionComp({ props }, ref) {
         <AnimatedHeader title={"Coding and beyond.."} />
       </h1>
       <p id="main-about">
-        {fullStackDescription}
-        {" "}
+        {fullStackDescription}{" "}
         <FaSatellite size={"1.2em"} style={{ verticalAlign: "bottom" }} />
       </p>{" "}
       <br />
@@ -175,10 +183,8 @@ function AboutSectionComp({ props }, ref) {
             gap: "32px",
           }}
         >
-          <span style={{ minWidth: 48, textAlign: "center" }}>1/4</span>
-          <span
-            className="shake-animation-horizontal"
-          >
+          <span style={{ minWidth: 48, textAlign: "center" }}>1/5</span>
+          <span className="shake-animation-horizontal">
             <SiteButton
               type="button"
               styling="inverted"
@@ -190,21 +196,16 @@ function AboutSectionComp({ props }, ref) {
         </div>
       )}
     </AboutDetailsPanel>,
-    <AboutDetailsPanel key="panel-2">
+    <AboutDetailsPanel key="panel-2-tools">
       <h1
         id="inverted-header"
         style={{ textAlign: isMobile ? "center" : "center" }}
       >
         <AnimatedHeader title={"Tools & More.."} />
       </h1>
-      <p id="about-secondary">
-
-        {devToolsDescriptionA}
-      </p>
+      <p id="about-secondary">{devToolsDescriptionA}</p>
       <br />
-      <p id="about-secondary">
-        {devToolsDescriptionB}
-      </p>
+      <p id="about-secondary">{devToolsDescriptionB}</p>
       <br />
       <h2
         id="inverted-header"
@@ -232,7 +233,7 @@ function AboutSectionComp({ props }, ref) {
             icon={<FaArrowAltCircleLeft />}
             onClick={handlePrev}
           />
-          <span style={{ minWidth: 48, textAlign: "center" }}>2/4</span>
+          <span style={{ minWidth: 48, textAlign: "center" }}>2/5</span>
           <SiteButton
             type="button"
             styling="inverted"
@@ -244,7 +245,7 @@ function AboutSectionComp({ props }, ref) {
       )}
     </AboutDetailsPanel>,
 
-    <AboutDetailsPanel key="panel-3">
+    <AboutDetailsPanel key="panel-3-it-support">
       <h1
         id="inverted-header"
         style={{ textAlign: isMobile ? "center" : "center" }}
@@ -252,8 +253,7 @@ function AboutSectionComp({ props }, ref) {
         <AnimatedHeader title={"Tech nerddom continues.."} />
       </h1>
 
-      <p id="about-secondary">{otherITSkillsDescription}
-      </p>
+      <p id="about-secondary">{otherITSkillsDescription}</p>
       <br />
       <h2
         id="inverted-header"
@@ -261,13 +261,10 @@ function AboutSectionComp({ props }, ref) {
       >
         Tech Support Skills:
       </h2>
-      <ul style={{ marginLeft: "15px" }}>
-
-        {
-          techITSupportSkills.map((skill, index) => (
-            <li key={index}>{skill}</li>
-          ))
-        }
+      <ul style={{ marginLeft: "20px" }}>
+        {techITSupportSkills.map((skill, index) => (
+          <li key={index}>{skill}</li>
+        ))}
       </ul>
 
       <br />
@@ -289,7 +286,60 @@ function AboutSectionComp({ props }, ref) {
             icon={<FaArrowAltCircleLeft />}
             onClick={handlePrev}
           />
-          <span style={{ minWidth: 48, textAlign: "center" }}>3/4</span>
+          <span style={{ minWidth: 48, textAlign: "center" }}>3/5</span>
+          <SiteButton
+            type="button"
+            styling="inverted"
+            title="Next"
+            icon={<FaArrowAltCircleRight />}
+            onClick={handleNext}
+          />
+        </div>
+      )}
+    </AboutDetailsPanel>,
+    <AboutDetailsPanel key="panel-4-education">
+      <h1
+        id="inverted-header"
+        style={{ textAlign: isMobile ? "center" : "center" }}
+      >
+        <AnimatedHeader title={"Education"} />
+      </h1>
+      <p id="about-secondary">{educationDescription}</p>
+      <br />
+      <h2
+        id="inverted-header"
+        style={{ textAlign: isMobile ? "center" : "center" }}
+      >
+        Degrees & Certificates:
+      </h2>
+      <ul style={{ marginLeft: "20px" }}>
+        {degreesAndCertificates.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+
+      <hr style={{ marginBottom: "16px" }} />
+
+      <br />
+      <br />
+      <br />
+      {!isMobile && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "32px",
+          }}
+        >
+          <SiteButton
+            type="button"
+            styling="inverted"
+            title="Previous"
+            icon={<FaArrowAltCircleLeft />}
+            onClick={handlePrev}
+          />
+          <span style={{ minWidth: 48, textAlign: "center" }}>4/5</span>
           <SiteButton
             type="button"
             styling="inverted"
@@ -301,7 +351,7 @@ function AboutSectionComp({ props }, ref) {
       )}
     </AboutDetailsPanel>,
 
-    <AboutDetailsPanel key="panel-4">
+    <AboutDetailsPanel key="panel-5-beside-coding">
       <h1
         id="inverted-header"
         style={{ textAlign: isMobile ? "center" : "center" }}
@@ -309,7 +359,7 @@ function AboutSectionComp({ props }, ref) {
         <AnimatedHeader title={"Besides coding.."} />
       </h1>
       <p id="about-secondary">
-        {BesideCoding}
+        {besideCoding}
         <BiSolidInvader size={"1.2em"} style={{ verticalAlign: "bottom" }} />
       </p>
       <br />
@@ -318,40 +368,43 @@ function AboutSectionComp({ props }, ref) {
       </h2>
       <hr style={{ marginBottom: "16px" }} />
 
-      <Accordion header="Music" >
-        {(!isMobile || !isTinyMobile) ? (
+      <Accordion header="Music">
+        {!isMobile || !isTinyMobile ? (
           <AudioPlayer playlist={playlist} compact={false} />
+        ) : isTinyMobile ? (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <button
+              style={{
+                margin: "12px auto",
+                padding: "8px 18px",
+                borderRadius: 8,
+                border: "none",
+                background: "#222",
+                color: "#fff",
+                fontWeight: 600,
+                fontSize: 16,
+                cursor: "pointer",
+              }}
+              onClick={() => setShowMobileAudioPlayer(true)}
+            >
+              Play Music
+            </button>
+            <small>
+              ALl music was written for various projects using hardware &
+              software synthesizers, Reaper & FL Studios. No AI was used in the
+              creation of these tracks.
+            </small>
+          </div>
         ) : (
-          isTinyMobile ? (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-
-              <button
-                style={{
-                  margin: "12px auto",
-                  padding: "8px 18px",
-                  borderRadius: 8,
-                  border: "none",
-                  background: "#222",
-                  color: "#fff",
-                  fontWeight: 600,
-                  fontSize: 16,
-                  cursor: "pointer",
-                }}
-                onClick={() => setShowMobileAudioPlayer(true)}
-              >
-                Play Music
-              </button>
-              <small>
-                ALl music was written for various projects using hardware & software synthesizers, Reaper & FL Studios. No AI was used in the creation of these tracks.
-              </small>
-            </div>
-
-          ) : (
-            <AudioPlayer playlist={playlist} compact={false} />
-          )
+          <AudioPlayer playlist={playlist} compact={false} />
         )}
       </Accordion>
-
 
       <Accordion header="Video Games">
         {/* Show anchor link when Swiper is active (desktop/full size), ReactPlayer when responsive/mobile */}
@@ -362,11 +415,20 @@ function AboutSectionComp({ props }, ref) {
             </a>
             <br />
             <small>
-              Learning how to create simple 2d platformer using Godot game engine. All character art was drawn by me. No AI was used.
+              Learning how to create simple 2d platformer using Godot game
+              engine. All character art was drawn by me. No AI was used.
             </small>
           </div>
         ) : (
-          <div className="videoPlayerWrapper" style={{ marginTop: "8px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div
+            className="videoPlayerWrapper"
+            style={{
+              marginTop: "8px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
             <ReactPlayer
               key="video-game-demo"
               url={videogameDemo}
@@ -377,7 +439,8 @@ function AboutSectionComp({ props }, ref) {
             />
             <br />
             <small style={{ textAlign: "center" }}>
-              Learning how to create simple 2d platformer using Godot game engine. All character art was drawn by me. No AI was used.
+              Learning how to create simple 2d platformer using Godot game
+              engine. All character art was drawn by me. No AI was used.
             </small>
           </div>
         )}
@@ -401,7 +464,7 @@ function AboutSectionComp({ props }, ref) {
             icon={<FaArrowAltCircleLeft />}
             onClick={handlePrev}
           />
-          <span style={{ minWidth: 48, textAlign: "center" }}>4/4</span>
+          <span style={{ minWidth: 48, textAlign: "center" }}>5/5</span>
         </div>
       )}
     </AboutDetailsPanel>,
@@ -433,7 +496,9 @@ function AboutSectionComp({ props }, ref) {
           <HeaderBorderBox props={{ type: "waves", title: "ABOUT" }} />
           <HeaderDetailsPanel>
             <p>
-              Here is some information about me. From web development, technology, AI to music & video games! I hope you find it interesting!
+              Here is some information about me. From web development,
+              technology, AI to music & video games! I hope you find it
+              interesting!
             </p>
             <br />
             <p id="github-about">
@@ -476,7 +541,11 @@ function AboutSectionComp({ props }, ref) {
             </p>
             <br />
             <p>
-              <a href="https://www.linkedin.com/in/ModulatorStudios" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.linkedin.com/in/ModulatorStudios"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaLinkedin
                   style={{ verticalAlign: "center", paddingRight: "5px" }}
                 />
@@ -487,7 +556,9 @@ function AboutSectionComp({ props }, ref) {
         </LeftHeaderColumn>
         <RightColumnPanel>
           {isMobile ? (
-            <>{panels}</>
+            <>
+              <div>{panels}</div>
+            </>
           ) : (
             <Swiper
               direction="horizontal"
